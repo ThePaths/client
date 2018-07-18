@@ -2,11 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import HeaderBar from './header-bar';
-import LandingPage from './landing-page';
-import Dashboard from './dashboard';
-import RegistrationPage from './registration-page';
-import {refreshAuthToken} from '../actions/auth';
+import HeaderBar from '../Headers/UserHeader/header-bar';
+import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
+import Dashboard from '../LandingPages/LandingPageUser/dashboard';
+import RegistrationPage from '../AccountForms/Register/registration-page';
+import {refreshAuthToken} from '../../actions/auth';
+
+import Scratch from '../Scratch/scratch';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -45,6 +47,7 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
+        <Route exact path="/scratch" component={Scratch} />
       </div>
     );
   }
