@@ -25,21 +25,21 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
                     validate={[required, nonEmpty]}
+                    label='Username:'
                 />
-                <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     id="password"
                     validate={[required, nonEmpty]}
+                    label='Password:'
                 />
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
