@@ -18,10 +18,17 @@ export class HeaderBar extends React.Component {
       );
     }
     return (
-      <div className="header-bar">
-        <h1>Foo App</h1>
-        {logOutButton}
-      </div>
+      <React.Fragment>
+        <div className="header-bar">
+          <h1>The Paths</h1>
+        </div>
+        <div>
+          <button type="image">
+            <img src="" alt="User avatar, display settings."/>
+          </button>
+          {logOutButton}
+        </div>
+      </React.Fragment>
     );
   }
 }
