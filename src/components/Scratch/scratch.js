@@ -16,14 +16,14 @@ export default class Scratch extends React.Component {
  
     return (
       <div>
-      <YouTube
-        videoId={videos[2].id}
-        opts={opts}
-        host='http://localhost:3000'
-        onReady={this._onReady}
-        onEnd={()=>console.log("Go func yourself")} 
-      />
-      <iframe title='Repl.it' frameBorder="0" width="100%" height="500px" src="https://repl.it/Dn6S?lite=true"></iframe>
+        <YouTube
+          videoId={videos[2].id}
+          opts={opts}
+          host='http://localhost:3000'
+          onReady={this._onReady}
+          onEnd={()=>console.log('Go func yourself')} 
+        />
+        <iframe title='Repl.it' frameBorder="0" width="100%" height="500px" src="https://repl.it/Dn6S?lite=true"></iframe>
       </div>
     );
   }
