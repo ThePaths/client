@@ -2,13 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import HeaderBar from '../Headers/UserHeader/header-bar';
 import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 import RegistrationPage from '../AccountForms/Register/registration-page';
 import {refreshAuthToken} from '../../actions/auth';
 
 import Scratch from '../Scratch/scratch';
+import GuestHeader from '../Headers/GuestHeader/GuestHeader';
+// import UserHeader from '../Headers/UserHeader/UserHeader';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -43,7 +44,9 @@ export class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <HeaderBar />
+        <Route path="/" component={GuestHeader}/>
+        {/* Add UserHeader when user logged in */}
+
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
