@@ -9,8 +9,8 @@ console.log(videos);
 export default class Scratch extends React.Component {
   render() {
     const opts = {
-      height: '490',
-      width: '840',
+      height: '390',
+      width: '640',
      
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -20,6 +20,16 @@ export default class Scratch extends React.Component {
  
     return (
       <div className="scratch">
+<<<<<<< HEAD
+      <YouTube
+        videoId={videos[2].id}
+        opts={opts}
+        host='http://localhost:3000'
+        onReady={this._onReady}
+        onEnd={()=>console.log("Go func yourself")} 
+      />
+      <iframe className="replItIframe" title="firstAttempt" height="600px" width="45%" src="https://repl.it/@Dameon1/DemandingRecentMonotone?lite=true" scrolling="no" frameBorder="no" allowtransparency="true" allowFullScreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+=======
         <YouTube
           videoId={videos[2].id}
           opts={opts}
@@ -28,6 +38,7 @@ export default class Scratch extends React.Component {
           onEnd={()=>console.log('Go func yourself')} 
         />
         <iframe className="replItIframe" title="firstAttempt" height="850px" width="45%" src="https://repl.it/@Dameon1/DemandingRecentMonotone?lite=true" scrolling="no" frameBorder="no" allowtransparency="true" allowFullScreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+>>>>>>> 9575032b1a046fd7f08719a86ee6ccfaedb5a4e5
       </div>
     );
   }
