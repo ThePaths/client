@@ -4,6 +4,10 @@ import {connect} from 'react-redux';
 export class GuestHeader extends React.Component {
 
   render() {
+
+    // if (this.props.loggedIn) {
+    // redirect to UserHeader
+    // }
     return (
       <header>
         <div>

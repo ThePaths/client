@@ -23,7 +23,7 @@ export class UserHeader extends React.Component {
           <h1>The Paths</h1>
         </div>
         <div>
-          <button type="image">
+          <button>
             <img src="" alt="User avatar, display settings."/>
           </button>
           {logOutButton}
