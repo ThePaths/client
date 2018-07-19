@@ -48,7 +48,7 @@ export default class Scratch extends React.Component {
         opts={opts}
         host='http://localhost:3000'
         onReady={this._onReady}
-        onEnd={()=>console.log("Go function yourself")} 
+        onEnd={()=>this.buttonClickHandler()} 
       />
       
      
@@ -59,9 +59,11 @@ export default class Scratch extends React.Component {
               width="100%" 
               src={videos[this.state.currentVideoIndex].replit} 
               scrolling="no" 
-              frameborder="no" 
+              frameBorder="no"
+                
               allowtransparency="true" 
-              allowfullscreen="true" 
+              allowFullScreen="true" 
+              
               sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
       </iframe>
       </div>
