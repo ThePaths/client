@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import './scratch.css';
+import SinglePathOverview from '../SinglePathDisplay/SinglePathOverview';
 let videos = require('./scratchVideoObjects');
 
 
@@ -9,21 +10,21 @@ console.log(videos);
 export default class Scratch extends React.Component {
   constructor(props){
     super(props);
-      this.state = {
-        currentVideoIndex:0
-        }
-      }
+    this.state = {
+      currentVideoIndex:0
+    };
+  }
   
   buttonClickHandler(){
     console.log('buttonClicked');
     if(this.state.currentVideoIndex === 2){
-    return  this.setState({
+      return  this.setState({
         currentVideoIndex: 0
-      })
+      });
     }
     this.setState({
       currentVideoIndex: this.state.currentVideoIndex + 1
-    })
+    });
   }    
   
 
@@ -39,40 +40,15 @@ export default class Scratch extends React.Component {
     };
  
     return (
-      <div>
-       
-      <div className='scratch'>
-     
-      <YouTube className="youtubePlayer"
-        videoId={videos[this.state.currentVideoIndex].id}
-        opts={opts}
-        host='http://localhost:3000'
-        onReady={this._onReady}
-        onEnd={()=>this.buttonClickHandler()} 
-      />
+    <div>   
       
-     
-      <div>
-      <iframe className="replItIframe"
-              title="firstAttempt"
-              height="400px" 
-              width="100%" 
-              src={videos[this.state.currentVideoIndex].replit} 
-              scrolling="no" 
-              frameBorder="no"
-                
-              allowtransparency="true" 
-              allowFullScreen="true" 
-              
-              sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-      </iframe>
-      </div>
+        { videos.map((video,index) => ( 
+          <SinglePathOverview {...video} key={index} index={index}/>
+          )
+        )}       
+      </div>  
       
-      </div>
-      <button onClick={()=>this.buttonClickHandler()}>Button</button>
-     </div>
-        
-     
+    
     );
   }
  
@@ -81,3 +57,40 @@ export default class Scratch extends React.Component {
     event.target.playVideo();
   }
 }
+
+
+
+
+
+
+
+
+
+
+// <div className='scratch'>
+     
+// <YouTube className="youtubePlayer"
+//   videoId={videos[this.state.currentVideoIndex].id}
+//   opts={opts}
+//   host='https://localhost:3000'
+//   onReady={this._onReady}
+//   onEnd={()=>this.buttonClickHandler()} 
+// />
+
+
+// <div>
+// <iframe className="replItIframe"
+//         title="firstAttempt"
+//         height="400px" 
+//         width="100%" 
+//         src={videos[this.state.currentVideoIndex].replit} 
+//         scrolling="no" 
+//         frameBorder="no"
+//         allowtransparency="true" 
+//         allowFullScreen="true" 
+//         sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+// </iframe>
+// </div>
+
+// </div>
+// <button onClick={()=>this.buttonClickHandler()}>Button</button>

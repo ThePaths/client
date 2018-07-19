@@ -11,6 +11,7 @@ import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';
 import AuthPage from '../AccountForms/auth-page';
 // import UserHeader from '../Headers/UserHeader/UserHeader';
+import Footer from '../Footer/Footer';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -52,6 +53,8 @@ export class App extends React.Component {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/scratch" component={Scratch} />
+
+        <Route path ="/" component={Footer} />
       </div>
     );
   }
