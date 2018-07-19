@@ -11,9 +11,13 @@ export class GuestHeader extends React.Component {
     // redirect to UserHeader
     // }
     return (
-      <header className='guest-header'>
-        <h1 className='site-logo'>The Paths</h1>
-        <div className='guest-link'><Link to='/auth'>Login/Register</Link></div>
+      <header className='main-header guest-header'>
+        <div className='form-redirect-container'>
+          <Link to='/auth' className="form-redirect-btn">Login/Register</Link>
+        </div>
+        <div>
+          <h1 className='site-logo'>The Paths</h1>
+        </div>
       </header>
     );
   }

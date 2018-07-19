@@ -4,6 +4,19 @@ import Repl from '../Repl.it/Repl';
 import YouTube from 'react-youtube';
 const videos = require('../Scratch/scratchVideoObjects');
 export default class CurrentVideo extends React.Component {
+
+  buttonClickHandler() {
+    console.log('buttonClicked');
+    if (this.state.currentVideoIndex === 2) {
+      return this.setState({
+        currentVideoIndex: 0
+      });
+    }
+    this.setState({
+      currentVideoIndex: this.state.currentVideoIndex + 1
+    });
+  }
+
   render() {
     const opts = {
       height: '390',
