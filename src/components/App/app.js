@@ -50,7 +50,9 @@ export class App extends React.Component {
     let header;
     
     if (this.props.loggedIn) {
-      header = <Route path="/" component={UserHeader}/>
+      header = <Route path="/" component={UserHeader}/>;
+    } else {
+      header = <Route path="/" component={GuestHeader}/>;
     }
 
     return (

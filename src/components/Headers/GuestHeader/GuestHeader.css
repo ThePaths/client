@@ -1,12 +1,27 @@
-.guest-header {
-
+.form-redirect-container {
+  text-align: right;
 }
 
-.guest-link {
-
+.form-redirect-btn {
+  border: 2px solid #fdfdfd;
+  font-size: 0.875em;
+  padding: 0.5em;
+  color: #fdfdfd;
+  background-color: #462749;
+  border-radius: 25px;
+  transition: all 0.2s ease-in-out;
 }
 
-.site-logo {
-  font-family: 'Bungee Inline', cursive;
-  color: initial;
+.form-redirect-btn:hover {
+  color: #462749;
+  background-color: #fdfdfd;
+  border: 2px solid #462749;
+  border-radius: 25px;
+  border-color: #462749;
+}
+
+i {
+  color: #508991;
+  color: #172A3A;
+  color: #004346;
 }
