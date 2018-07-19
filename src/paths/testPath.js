@@ -5,7 +5,7 @@ export default testPath = {
   hero: 'https://cdn.pixabay.com/photo/2017/04/11/22/25/tv-2223047_1280.png',
   heroSize:[1280, 1280],
   pathCreator: 'devOps2',
-  length: 4480,
+  length: 4480, //in seconds
   description: 'A test path to display for testing.',
   videos: [
     {
@@ -13,14 +13,14 @@ export default testPath = {
       id:'UB1O30fR-EE',
       replit: 'https://repl.it/@Dameon1/thirdReplit?lite=true',
       creator: 'Traversy Media',
-      creatorURL: 'https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA',
+      channelId: 'UC29ju8bIPH5as8OGnQzwJyA',
     },  
     {
       length: 348,
       id:'bCjWAI2lC20',
       replit:'https://repl.it/@Dameon1/firstRepl?lite=true',
       creator: 'Theodore Anderson',
-      creatorURL: 'https://www.youtube.com/channel/UCFhC3Z6_9zjsxfBADZ-CEEg',
+      channelId: 'UCFhC3Z6_9zjsxfBADZ-CEEg',
 
     },  
     {
@@ -28,7 +28,7 @@ export default testPath = {
       id:'h_3nR-Huxoo',
       replit:'https://repl.it/@Dameon1/secondReplit?lite=true',
       creator: 'ACADGILD',
-      creatorURL: 'https://www.youtube.com/channel/UCaQfgvMsjpImSxrJQDBjd-Q',
+      channelId: 'UCaQfgvMsjpImSxrJQDBjd-Q',
     }
   ],
 };
