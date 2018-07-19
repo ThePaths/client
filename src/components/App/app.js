@@ -52,12 +52,9 @@ export class App extends React.Component {
 
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-<<<<<<< HEAD
         <Route exact path="/auth" component={AuthPage} />
-=======
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/classroom" component={CurrentVideo} />
->>>>>>> learning-page-mvp
         <Route exact path="/scratch" component={Scratch} />
         
         <Route path ="/" component={Footer} />
