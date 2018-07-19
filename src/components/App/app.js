@@ -11,6 +11,7 @@ import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';
 import AuthPage from '../AccountForms/auth-page';
 // import UserHeader from '../Headers/UserHeader/UserHeader';
+import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 
 export class App extends React.Component {
@@ -46,14 +47,19 @@ export class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {/* <Route path="/" component={GuestHeader}/> */}
+        <Route path="/" component={GuestHeader}/>
         {/* Add UserHeader when user logged in */}
 
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
+<<<<<<< HEAD
         <Route exact path="/auth" component={AuthPage} />
+=======
+        <Route exact path="/register" component={RegistrationPage} />
+        <Route exact path="/classroom" component={CurrentVideo} />
+>>>>>>> learning-page-mvp
         <Route exact path="/scratch" component={Scratch} />
-
+        
         <Route path ="/" component={Footer} />
       </div>
     );
