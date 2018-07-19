@@ -1,4 +1,5 @@
 import {React, Component} from 'React';
+import YouTube from 'react-youtube';
 import './CurrentVideo.css';
 
 export default class CurrentVideo extends Component {
