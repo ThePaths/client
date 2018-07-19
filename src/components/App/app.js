@@ -4,7 +4,6 @@ import {Route, withRouter} from 'react-router-dom';
 
 import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
-import RegistrationPage from '../AccountForms/Register/registration-page';
 import {refreshAuthToken} from '../../actions/auth';
 
 import Scratch from '../Scratch/scratch';
@@ -45,17 +44,19 @@ export class App extends React.Component {
   }
 
   render() {
+
     let header;
+    
     if (this.props.loggedIn) {
       header = <Route path="/" component={UserHeader}/>
     }
+
     return (
       <div className="app">
         {header}
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/auth" component={AuthPage} />
-        <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/classroom" component={CurrentVideo} />
         <Route exact path="/scratch" component={Scratch} />
         
