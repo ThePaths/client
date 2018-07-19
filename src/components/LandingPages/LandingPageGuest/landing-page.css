@@ -1,0 +1,15 @@
+.home {
+  margin: auto;
+  max-width: 800px;
+  /* text-align: center; */
+}
+
+.auth-components {
+  margin: auto;
+  max-width: 50%;
+  border: 1px solid grey;
+  height: 350px;
+  position: relative;
+  border-top: none;
+}
+
