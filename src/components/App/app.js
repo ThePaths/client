@@ -45,14 +45,14 @@ export class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {/* <Route path="/" component={GuestHeader}/> */}
+        <Route path="/" component={GuestHeader}/>
         {/* Add UserHeader when user logged in */}
 
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/scratch" component={Scratch} />
-
+        
         <Route path ="/" component={Footer} />
       </div>
     );

@@ -1,8 +1,38 @@
-* {
-  box-sizing:border-box;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
+
+:root {
+  font-size: 1em;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  line-height: 1.5;
+  font-family: 'Opens Sans', sans-serif;
+  /* background-color: #75DDDD; */
+  color: #21201D;
+} 
+
+/* Font/Color Scheme */
+body {
+  color: #75DDDD;
+  color: #508991;
+  color: #172A3A;
+  color: #004346;
+  color: #09BC8A;
+
+  color: #623CEA;
+  color: #FF9505;
+  color: #F0E100;
+  color: #5CF64A;
+
+  font-family: 'Bungee Inline', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inconsolata', monospace;
 }
