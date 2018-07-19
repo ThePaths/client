@@ -46,7 +46,7 @@ export default class Scratch extends React.Component {
       <YouTube className="youtubePlayer"
         videoId={videos[this.state.currentVideoIndex].id}
         opts={opts}
-        host='http://localhost:3000'
+        host='https://localhost:3000'
         onReady={this._onReady}
         onEnd={()=>this.buttonClickHandler()} 
       />
@@ -60,10 +60,8 @@ export default class Scratch extends React.Component {
               src={videos[this.state.currentVideoIndex].replit} 
               scrolling="no" 
               frameBorder="no"
-                
               allowtransparency="true" 
               allowFullScreen="true" 
-              
               sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
       </iframe>
       </div>
