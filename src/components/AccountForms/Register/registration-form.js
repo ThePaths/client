@@ -4,6 +4,8 @@ import {registerUser} from '../../../actions/users';
 import {login} from '../../../actions/auth';
 import Input from '../input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../../validators';
+import './registration-form.css'
+import '../auth-form.css';
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
 
@@ -19,7 +21,8 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="login-form"
+                id="register-form"
+                className="register-form auth"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -32,21 +35,21 @@ export class RegistrationForm extends React.Component {
                 <Field
                     component={Input}
                     type="text"
-                    name="username"
+                    name="reg-username"
                     validate={[required, nonEmpty, isTrimmed]}
                     label='Username:'
                 />
                 <Field
                     component={Input}
                     type="password"
-                    name="password"
+                    name="reg-password"
                     validate={[required, passwordLength, isTrimmed]}
                     label='Password:'
                 />
                 <Field
                     component={Input}
                     type="password"
-                    name="passwordConfirm"
+                    name="reg-passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                     label='Confirm password:'
                 />

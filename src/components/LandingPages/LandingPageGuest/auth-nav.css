@@ -1,0 +1,15 @@
+.auth-nav {
+  margin: auto;
+  max-width: 50%;
+}
+
+.auth-button {
+  width: 50%;
+  height: 30px;
+  border: 1px solid grey;
+}
+
+.active {
+  border-bottom: none;
+  background-color: white;
+}
