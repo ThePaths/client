@@ -14,8 +14,45 @@ export default class Scratch extends React.Component {
       currentVideoIndex: 0,
       displayVideo: false
     };
+    this.buttonChangePageState = this.buttonChangePageState.bind(this);
   }
-  
+ newPage(){
+  const opts = {
+    height: '390',
+    width: '640',     
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      'origin':'http://localhost:3000'
+    }
+  };
+    return (
+      <div className='scratch'>
+      <YouTube className="youtubePlayer"
+        videoId={videos[this.state.currentVideoIndex].id}
+        opts={opts}
+        host='https://localhost:3000'
+        onReady={this._onReady}
+        onEnd={()=>this.buttonClickHandler()} 
+      />
+     
+      <div>
+        <iframe className="replItIframe"
+                title="firstAttempt"
+                height="400px" 
+                width="100%" 
+                src={videos[this.state.currentVideoIndex].replit} 
+                scrolling="no" 
+                frameBorder="no"
+                allowtransparency="true" 
+                allowFullScreen="true" 
+                sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+        </iframe>
+      </div> 
+      <button onClick={()=>this.buttonClickHandler()}>ChangeVideos</button>
+      <button onClick={()=>this.buttonChangePageState()}>GoBack</button>   
+      </div>
+    );
+  }
   buttonClickHandler(){
     console.log('buttonClicked');
     if(this.state.currentVideoIndex === 2){
@@ -30,29 +67,27 @@ export default class Scratch extends React.Component {
   
   buttonChangePageState(){
     this.setState({
-      displayVideo: !this.state.displayViedo
+      displayVideo: !this.state.displayVideo
     })
   }
 
   render() {
-    const opts = {
-      height: '390',
-      width: '640',     
-      playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-        'origin':'http://localhost:3000'
-      }
-    };
-    if(this.state.displayVideo){
-      return (
-        {newPage}
-      )
+    // const opts = {
+    //   height: '390',
+    //   width: '640',     
+    //   playerVars: { // https://developers.google.com/youtube/player_parameters
+    //     autoplay: 1,
+    //     'origin':'http://localhost:3000'
+    //   }
+    // };
+    if(this.state.displayVideo){      
+        return this.newPage();     
     }
     return (
     <div>   
       
         { videos.map((video,index) => ( 
-          <SinglePathOverview {...video} key={index} index={index}/>
+          <SinglePathOverview {...video} key={index} index={index} onclick={this.buttonChangePageState}/>
           )
         )}       
       </div>  
@@ -71,34 +106,7 @@ export default class Scratch extends React.Component {
 
 
 
-let newPage = () => {
-  return (
-    <div className='scratch'>
-    <YouTube className="youtubePlayer"
-      videoId={videos[this.state.currentVideoIndex].id}
-      opts={opts}
-      host='https://localhost:3000'
-      onReady={this._onReady}
-      onEnd={()=>this.buttonClickHandler()} 
-    />
-    <div>
-      <iframe className="replItIframe"
-              title="firstAttempt"
-              height="400px" 
-              width="100%" 
-              src={videos[this.state.currentVideoIndex].replit} 
-              scrolling="no" 
-              frameBorder="no"
-              allowtransparency="true" 
-              allowFullScreen="true" 
-              sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-      </iframe>
-    </div>
-    
-    <button onClick={()=>this.buttonClickHandler()}>Button</button>
-    </div>
-  );
-}
+
 
 
 
