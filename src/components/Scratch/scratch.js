@@ -10,21 +10,21 @@ console.log(videos);
 export default class Scratch extends React.Component {
   constructor(props){
     super(props);
-      this.state = {
-        currentVideoIndex:0
-        }
-      }
+    this.state = {
+      currentVideoIndex:0
+    };
+  }
   
   buttonClickHandler(){
     console.log('buttonClicked');
     if(this.state.currentVideoIndex === 2){
-    return  this.setState({
+      return  this.setState({
         currentVideoIndex: 0
-      })
+      });
     }
     this.setState({
       currentVideoIndex: this.state.currentVideoIndex + 1
-    })
+    });
   }    
   
 
