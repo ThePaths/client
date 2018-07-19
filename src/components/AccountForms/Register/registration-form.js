@@ -7,15 +7,15 @@ import {required, nonEmpty, matches, length, isTrimmed} from '../../../validator
 import './registration-form.css'
 import '../auth-form.css';
 const passwordLength = length({min: 8, max: 72});
-const matchesPassword = matches('password');
+const matchesPassword = matches('regpassword');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {email, username, password} = values;
-        const user = {email, username, password};
+        const {email, regusername, regpassword} = values;
+        const user = {email, username: regusername, password: regpassword};
         return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
+            .then(() => this.props.dispatch(login(regusername, regpassword)));
     }
 
     render() {
@@ -35,21 +35,21 @@ export class RegistrationForm extends React.Component {
                 <Field
                     component={Input}
                     type="text"
-                    name="reg-username"
+                    name="regusername"
                     validate={[required, nonEmpty, isTrimmed]}
                     label='Username:'
                 />
                 <Field
                     component={Input}
                     type="password"
-                    name="reg-password"
+                    name="regpassword"
                     validate={[required, passwordLength, isTrimmed]}
                     label='Password:'
                 />
                 <Field
                     component={Input}
                     type="password"
-                    name="reg-passwordConfirm"
+                    name="regpasswordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                     label='Confirm password:'
                 />

@@ -10,7 +10,7 @@ import {refreshAuthToken} from '../../actions/auth';
 import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';
 import AuthPage from '../AccountForms/auth-page';
-// import UserHeader from '../Headers/UserHeader/UserHeader';
+import UserHeader from '../Headers/UserHeader/UserHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 
@@ -45,11 +45,13 @@ export class App extends React.Component {
   }
 
   render() {
+    let header;
+    if (this.props.loggedIn) {
+      header = <Route path="/" component={UserHeader}/>
+    }
     return (
       <div className="app">
-        <Route path="/" component={GuestHeader}/>
-        {/* Add UserHeader when user logged in */}
-
+        {header}
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/auth" component={AuthPage} />
