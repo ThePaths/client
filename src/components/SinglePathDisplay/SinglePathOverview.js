@@ -10,8 +10,7 @@ export default function SinglePathOverview (props) {
     <p>{props.id}</p>
     <p>{props.length}</p>
     <p>{props.replit}</p>
-    
-    <button onClick={()=>console.log('Working')}>CLICK ME</button>
+    <button onClick={()=>props.onclick()}>CLICK ME</button>
     </div>
   );
 }
