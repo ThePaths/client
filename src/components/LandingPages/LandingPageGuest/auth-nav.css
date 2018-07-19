@@ -7,6 +7,7 @@
   width: 50%;
   height: 30px;
   border: 1px solid grey;
+  outline: none;
 }
 
 .active {
