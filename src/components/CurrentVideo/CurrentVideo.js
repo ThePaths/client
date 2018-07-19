@@ -1,6 +1,9 @@
 import {React, Component} from 'React';
 import './CurrentVideo.css';
 
+let videos = require('./scratchVideoObjects');
+
+
 export default class CurrentVideo extends Component {
 
 
@@ -8,7 +11,7 @@ export default class CurrentVideo extends Component {
     return (
       <YouTube className="?????"
 //=======================Connect this line with state==================================
-        videoId={videos[this.state.currentVideoIndex].id}
+        videoId={videos[0].id}
         opts={opts}
         host='http://localhost:3000'
         onReady={this._onReady}

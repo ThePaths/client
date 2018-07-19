@@ -11,7 +11,8 @@ export default class Scratch extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      currentVideoIndex:0
+      currentVideoIndex: 0,
+      displayVideo: false
     };
   }
   
@@ -27,18 +28,26 @@ export default class Scratch extends React.Component {
     });
   }    
   
+  buttonChangePageState(){
+    this.setState({
+      displayVideo: !this.state.displayViedo
+    })
+  }
 
   render() {
     const opts = {
       height: '390',
-      width: '640',
-     
+      width: '640',     
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         'origin':'http://localhost:3000'
       }
     };
- 
+    if(this.state.displayVideo){
+      return (
+        {newPage}
+      )
+    }
     return (
     <div>   
       
@@ -62,35 +71,42 @@ export default class Scratch extends React.Component {
 
 
 
+let newPage = () => {
+  return (
+    <div className='scratch'>
+    <YouTube className="youtubePlayer"
+      videoId={videos[this.state.currentVideoIndex].id}
+      opts={opts}
+      host='https://localhost:3000'
+      onReady={this._onReady}
+      onEnd={()=>this.buttonClickHandler()} 
+    />
+    <div>
+      <iframe className="replItIframe"
+              title="firstAttempt"
+              height="400px" 
+              width="100%" 
+              src={videos[this.state.currentVideoIndex].replit} 
+              scrolling="no" 
+              frameBorder="no"
+              allowtransparency="true" 
+              allowFullScreen="true" 
+              sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+      </iframe>
+    </div>
+    
+    <button onClick={()=>this.buttonClickHandler()}>Button</button>
+    </div>
+  );
+}
 
 
 
 
 
-// <div className='scratch'>
      
-// <YouTube className="youtubePlayer"
-//   videoId={videos[this.state.currentVideoIndex].id}
-//   opts={opts}
-//   host='https://localhost:3000'
-//   onReady={this._onReady}
-//   onEnd={()=>this.buttonClickHandler()} 
-// />
 
 
-// <div>
-// <iframe className="replItIframe"
-//         title="firstAttempt"
-//         height="400px" 
-//         width="100%" 
-//         src={videos[this.state.currentVideoIndex].replit} 
-//         scrolling="no" 
-//         frameBorder="no"
-//         allowtransparency="true" 
-//         allowFullScreen="true" 
-//         sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-// </iframe>
-// </div>
 
-// </div>
-// <button onClick={()=>this.buttonClickHandler()}>Button</button>
+
+

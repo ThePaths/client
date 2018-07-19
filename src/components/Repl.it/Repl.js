@@ -1,5 +1,7 @@
 import React from 'react';
 
+let videos = require('./scratchVideoObjects');
+
 export default function Repl (){
   return (
     <iframe className="??????????"
@@ -7,7 +9,7 @@ export default function Repl (){
       height="400px" 
       width="100%" 
 //=======================Connect this line with state==================================
-      src={videos[this.state.currentVideoIndex].replit} 
+      src={videos[0].replit} 
       scrolling="no" 
       frameBorder="no"
       allowtransparency="true" 
