@@ -8,6 +8,7 @@
   padding: 0.5em;
   color: #fdfdfd;
   background-color: #462749;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
   border-radius: 25px;
   transition: all 0.2s ease-in-out;
 }
@@ -15,7 +16,6 @@
 .form-redirect-btn:hover {
   color: #462749;
   background-color: #fdfdfd;
-  border: 2px solid #462749;
   border-radius: 25px;
   border-color: #462749;
 }
