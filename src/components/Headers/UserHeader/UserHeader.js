@@ -18,9 +18,9 @@ export class UserHeader extends React.Component {
       );
     }
     return (
-      <header>
+      <header className='main-header user-header'>
         <div>
-          <h1>The Paths</h1>
+          <h1 className="site-logo">The Paths</h1>
         </div>
         <div>
           <button>
