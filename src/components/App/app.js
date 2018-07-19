@@ -13,6 +13,8 @@ import AuthPage from '../AccountForms/auth-page';
 // import UserHeader from '../Headers/UserHeader/UserHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
+import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
+
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -55,7 +57,7 @@ export class App extends React.Component {
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/classroom" component={CurrentVideo} />
-        <Route exact path="/scratch" component={Scratch} />
+        <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
         
         <Route path ="/" component={Footer} />
       </div>
