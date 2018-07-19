@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../../../actions/auth';
 import {clearAuthToken} from '../../../local-storage';
 
-export class HeaderBar extends React.Component {
+export class UserHeader extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
@@ -18,10 +18,17 @@ export class HeaderBar extends React.Component {
       );
     }
     return (
-      <div className="header-bar">
-        <h1>Foo App</h1>
-        {logOutButton}
-      </div>
+      <header>
+        <div>
+          <h1>The Paths</h1>
+        </div>
+        <div>
+          <button>
+            <img src="" alt="User avatar, display settings."/>
+          </button>
+          {logOutButton}
+        </div>
+      </header>
     );
   }
 }
@@ -30,4 +37,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(HeaderBar);
+export default connect(mapStateToProps)(UserHeader);

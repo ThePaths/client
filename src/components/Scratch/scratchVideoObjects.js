@@ -1,19 +1,22 @@
-
+// eslint-disable-next-line
+'use strict';
 let videos = [
   {
     length:'1:00:44',
     id:'UB1O30fR-EE',
-  },
-  
-  {
-    length:'8:08',
-    id:'h_3nR-Huxoo',
-  },
-  
+    replit:'https://repl.it/@Dameon1/thirdReplit?lite=true"'
+  },  
   {
     length:'5:48',
     id:'bCjWAI2lC20',
-  }
+    replit:'https://repl.it/@Dameon1/firstRepl?lite=true'
+  },  
+  {
+    length:'8:08',
+    id:'h_3nR-Huxoo',
+    replit:'https://repl.it/@Dameon1/secondReplit?lite=true'
+  },
+ 
 ];
 
 module.exports = videos;
