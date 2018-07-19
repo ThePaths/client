@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom'
+import './GuestHeader.css'
 
 export class GuestHeader extends React.Component {
 
@@ -9,13 +11,9 @@ export class GuestHeader extends React.Component {
     // redirect to UserHeader
     // }
     return (
-      <header>
-        <div>
-          <h1>The Paths</h1>
-        </div>
-        <div>
-          <button>Login/Register</button>
-        </div>
+      <header className='guest-header'>
+          <h1 className='site-name'>The Paths</h1>
+          <div className='guest-link'><Link to='/auth'>Login/Register</Link></div>
       </header>
     );
   }

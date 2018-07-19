@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import './scratch.css';
+import SinglePathOverview from '../SinglePathDisplay/SinglePathOverview';
 let videos = require('./scratchVideoObjects');
 
 
@@ -10,7 +11,8 @@ export default class Scratch extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      currentVideoIndex:0
+      currentVideoIndex: 0,
+      displayVideo: false
     };
   }
   
@@ -26,34 +28,61 @@ export default class Scratch extends React.Component {
     });
   }    
   
+  buttonChangePageState(){
+    this.setState({
+      displayVideo: !this.state.displayViedo
+    })
+  }
 
   render() {
     const opts = {
       height: '390',
-      width: '640',
-     
+      width: '640',     
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         'origin':'http://localhost:3000'
       }
     };
- 
+    if(this.state.displayVideo){
+      return (
+        {newPage}
+      )
+    }
     return (
-      <div>
-       
-        <div className='scratch'>
-     
-          <YouTube className="youtubePlayer"
-            videoId={videos[this.state.currentVideoIndex].id}
-            opts={opts}
-            host='http://localhost:3000'
-            onReady={this._onReady}
-            onEnd={()=>this.buttonClickHandler()} 
-          />
+    <div>   
       
-     
-          <div>
-            <iframe className="replItIframe"
+        { videos.map((video,index) => ( 
+          <SinglePathOverview {...video} key={index} index={index}/>
+          )
+        )}       
+      </div>  
+      
+    
+    );
+  }
+ 
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.playVideo();
+  }
+}
+
+
+
+
+
+let newPage = () => {
+  return (
+    <div className='scratch'>
+    <YouTube className="youtubePlayer"
+      videoId={videos[this.state.currentVideoIndex].id}
+      opts={opts}
+      host='https://localhost:3000'
+      onReady={this._onReady}
+      onEnd={()=>this.buttonClickHandler()} 
+    />
+    <div>
+      <iframe className="replItIframe"
               title="firstAttempt"
               height="400px" 
               width="100%" 
@@ -63,19 +92,21 @@ export default class Scratch extends React.Component {
               allowtransparency="true" 
               allowFullScreen="true" 
               sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-            </iframe>
-          </div>
-      
-        </div>
-        <button onClick={()=>this.buttonClickHandler()}>Button</button>
-      </div>
-        
-     
-    );
-  }
- 
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.playVideo();
-  }
+      </iframe>
+    </div>
+    
+    <button onClick={()=>this.buttonClickHandler()}>Button</button>
+    </div>
+  );
 }
+
+
+
+
+
+     
+
+
+
+
+
