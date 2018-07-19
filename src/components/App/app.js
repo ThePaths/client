@@ -60,7 +60,6 @@ export class App extends React.Component {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/classroom" component={CurrentVideo} />
-        <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
         
         <Route path ="/" component={Footer} />
       </div>
