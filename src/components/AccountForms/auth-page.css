@@ -1,13 +1,13 @@
 .auth-container {
   margin: auto;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .auth-components {
   margin: auto;
   max-width: 50%;
   border: 1px solid grey;
-  height: 350px;
+  height: 450px;
   position: relative;
   border-top: none;
 }
