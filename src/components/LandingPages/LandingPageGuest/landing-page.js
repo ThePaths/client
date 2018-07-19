@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import LoginForm from '../../AccountForms/Login/login-form';
-import RegisterForm from '../../AccountForms/Register/registration-form'
-import AuthNav from './auth-nav'
+import GuestHeader from '../../Headers/GuestHeader/GuestHeader'
 import './landing-page.css'
 
 export function LandingPage(props) {
@@ -15,11 +13,11 @@ export function LandingPage(props) {
 
   return (
     <div className="home">
-      <h2>Welcome to Foo App</h2>
-      <AuthNav />
-      <div className='auth-components'>
-        <LoginForm />
-        <RegisterForm />
+      <GuestHeader />
+      <div className='guest-container'>
+        <h2>Welcome to DevOps2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nostrum assumenda et aperiam, ex magnam, perspiciatis delectus fugit exercitationem aliquid quia in maxime pariatur! Omnis at rem, optio reiciendis suscipit vitae aut soluta vel praesentium ullam dolores nam voluptas, quisquam quas? Porro magni temporibus iure aspernatur? Vel explicabo obcaecati quidem?</p>
+        <p>Check out some of our Paths below</p>
       </div>
     </div>
   );
