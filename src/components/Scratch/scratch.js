@@ -7,6 +7,26 @@ let videos = require('./scratchVideoObjects');
 
 console.log(videos);
 export default class Scratch extends React.Component {
+  constructor(props){
+    super(props);
+      this.state = {
+        currentVideoIndex:0
+        }
+      }
+  
+  buttonClickHandler(){
+    console.log('buttonClicked');
+    if(this.state.currentVideoIndex === 2){
+    return  this.setState({
+        currentVideoIndex: 0
+      })
+    }
+    this.setState({
+      currentVideoIndex: this.state.currentVideoIndex + 1
+    })
+  }    
+  
+
   render() {
     const opts = {
       height: '390',
@@ -19,27 +39,38 @@ export default class Scratch extends React.Component {
     };
  
     return (
-      <div className="scratch">
-<<<<<<< HEAD
-      <YouTube
-        videoId={videos[2].id}
+      <div>
+       
+      <div className='scratch'>
+     
+      <YouTube className="youtubePlayer"
+        videoId={videos[this.state.currentVideoIndex].id}
         opts={opts}
         host='http://localhost:3000'
         onReady={this._onReady}
-        onEnd={()=>console.log("Go func yourself")} 
+        onEnd={()=>console.log("Go function yourself")} 
       />
-      <iframe className="replItIframe" title="firstAttempt" height="600px" width="45%" src="https://repl.it/@Dameon1/DemandingRecentMonotone?lite=true" scrolling="no" frameBorder="no" allowtransparency="true" allowFullScreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-=======
-        <YouTube
-          videoId={videos[2].id}
-          opts={opts}
-          host='http://localhost:3000'
-          onReady={this._onReady}
-          onEnd={()=>console.log('Go func yourself')} 
-        />
-        <iframe className="replItIframe" title="firstAttempt" height="850px" width="45%" src="https://repl.it/@Dameon1/DemandingRecentMonotone?lite=true" scrolling="no" frameBorder="no" allowtransparency="true" allowFullScreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
->>>>>>> 9575032b1a046fd7f08719a86ee6ccfaedb5a4e5
+      
+     
+      <div>
+      <iframe className="replItIframe"
+              title="firstAttempt"
+              height="400px" 
+              width="100%" 
+              src={videos[this.state.currentVideoIndex].replit} 
+              scrolling="no" 
+              frameborder="no" 
+              allowtransparency="true" 
+              allowfullscreen="true" 
+              sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+      </iframe>
       </div>
+      
+      </div>
+      <button onClick={()=>this.buttonClickHandler()}>Button</button>
+     </div>
+        
+     
     );
   }
  

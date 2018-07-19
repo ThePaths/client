@@ -44,7 +44,7 @@ export class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Route path="/" component={GuestHeader}/>
+        {/* <Route path="/" component={GuestHeader}/> */}
         {/* Add UserHeader when user logged in */}
 
         <Route exact path="/" component={LandingPage} />
