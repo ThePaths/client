@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import './scratch.css';
-let videos = require('./scratchVideoObjects');
+const videos = require('./scratchVideoObjects');
 
 
 
