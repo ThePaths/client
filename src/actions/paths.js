@@ -68,6 +68,6 @@ export const setDisplay = (pathId) => (dispatch, getState) => {
     return data
   })
   .then(data => dispatch(authSuccess(data)))
-  // .then(() => window.location.href = '/dashboard/path-overview')
+  .then(() => window.location.href = '/classroom')
     .catch(err => console.log(err));
 };
