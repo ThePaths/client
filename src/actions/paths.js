@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-import { authSuccess } from './auth';
+import { authSuccess, refreshAuthToken } from './auth';
 
 export const PATHS_REQUEST = 'PATHS_REQUEST';
 export const pathsRequest = () => ({
@@ -44,14 +44,13 @@ export const addToSaved = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-    .then(res => res.json())
-    .then(data => {
-      console.log('data: ', data);
-      return data;
-    })
-    .then(data => dispatch(authSuccess(data)))
-    .catch(err => console.log(err));
-};
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  .then(data => dispatch(authSuccess(data)))
+  .catch(err => console.log(err))
+}
 
 export const setDisplay = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -64,12 +63,11 @@ export const setDisplay = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-    .then(res => res.json())
-    .then(data => {
-      console.log('data: ', data);
-      return data;
-    })
-    .then(data => dispatch(authSuccess(data)))
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  .then(data => dispatch(authSuccess(data)))
   // .then(() => window.location.href = '/dashboard/path-overview')
     .catch(err => console.log(err));
 };
