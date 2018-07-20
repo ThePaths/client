@@ -1,0 +1,6 @@
+
+@media (min-width: 1px) and (max-width: 40em) {
+  .repl {
+    display: none;
+  }
+}

@@ -1,10 +1,11 @@
+
 .form-redirect-container {
   text-align: right;
 }
 
 .form-redirect-btn {
   border: 2px solid #fdfdfd;
-  font-size: 0.875em;
+  font-size: 0.75em;
   padding: 0.5em;
   color: #fdfdfd;
   background-color: #462749;
@@ -13,7 +14,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.form-redirect-btn:hover {
+.form-redirect-btn:hover,
+.form-redirect-btn:focus {
   color: #462749;
   background-color: #fdfdfd;
   border-radius: 25px;
