@@ -6,7 +6,7 @@ import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 import {refreshAuthToken} from '../../actions/auth';
 
-import Scratch from '../Scratch/scratch';
+//import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';
 import AuthPage from '../AccountForms/auth-page';
 import UserHeader from '../Headers/UserHeader/UserHeader';
