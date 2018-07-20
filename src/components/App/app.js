@@ -58,10 +58,13 @@ export class App extends React.Component {
     return (
       <div className="app">
         {header}
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route exact path="/auth" component={AuthPage} />
-        <Route exact path="/classroom" component={CurrentVideo} />
+        <main className="main-content">
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/auth" component={AuthPage} />
+          <Route exact path="/classroom" component={CurrentVideo} />
+          <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
+        </main>
         
         <Route path ="/" component={Footer} />
       </div>

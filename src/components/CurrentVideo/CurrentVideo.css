@@ -32,4 +32,6 @@
 
 }
 
-/* Monoton|Montserrat+Alternates:700|Montserrat+Subrayada:700 */
+.video-player {
+  max-width: 100%;
+}

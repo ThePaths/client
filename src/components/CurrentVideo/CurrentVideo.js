@@ -1,6 +1,6 @@
 import React from 'react';
 import './CurrentVideo.css';
-import Repl from '../Repl.it/Repl';
+import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
 const videos = require('../Scratch/scratchVideoObjects');
 export default class CurrentVideo extends React.Component {
