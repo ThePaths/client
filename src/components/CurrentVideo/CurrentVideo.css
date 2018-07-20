@@ -1,6 +1,6 @@
 .main-header {
   font-size: 1.4rem;
-  background-color: #75DDDD;
+  background-color: #5eabc5;
   max-width: 100%;
   padding: 1.5em 4%;
   min-height: 12em;
@@ -13,38 +13,51 @@
 .site-logo {
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-family: 'Montserrat Alternates', cursive;
+  font-family: 'Ubuntu', cursive;
   margin: 0;
   text-align: center;
   padding-top: 2em;
-  text-shadow: 0 1px 0 #75DDDD,
-               0 2px 0 #75DDDD,
-               0 3px 0 #75DDDD,
-               0 4px 0 #75DDDD,
-               0 5px 0 #75DDDD,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 #5eabc5,
+               0 2px 0 #5eabc5,
+               0 3px 0 #5eabc5,
+               0 4px 0 #fdfdfd,
+               0 5px 0 #fdfdfd,
+               0 6px 1px rgba(255, 255, 255,.1),
+               0 0 5px rgba(255, 255, 255,.1),
+               0 1px 3px rgba(255, 255, 255,.3),
+               0 3px 5px rgba(255, 255, 255,.2),
+               0 5px 10px rgba(255, 255, 255,.25),
+               0 10px 10px rgba(255, 255, 255,.2),
+               0 20px 20px rgba(255, 255, 255,.15);
 
+}
+
+.classroom-section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .video-player-container {
-  background-color: #462749;
   color: #fdfdfd;
   font-size: 1.1rem;
+  border: 1px solid transparent;
+}
+
+.video-player {
+  width: 100%;
 }
 
 .video-header {
-  border-top-left-radius: 5px;
-  border-top-left-radius: 5px;
+  background-color: #181716;
 }
 
 .video-player-container h2 {
-  font-family: 'Montserrat Alternates', cursive;
+  font-family: 'Ubuntu', cursive;
+}
+
+.video-recap {
+  color: #bdbcbb;
 }
 
 .video-header,
@@ -52,6 +65,55 @@
   padding: 1em;
 }
 
-.video-player {
+.video-footer {
+  margin-top: -8px;
+  background-color: #292C2D;
+}
+
+/* fancy link hover styles */
+.video-creator-link {
+  text-decoration: none;
+  color: #5d686c;
+
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.video-creator-link:before,
+.video-creator-link:after {
+  content: '';
+  background: #5d686c;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.video-creator-link:before {
+  top: 0;
+  left: 0;
+}
+
+.video-creator-link:after {
+  top: 100%;
+  right: 0;
+}
+.video-creator-link:hover,
+.video-creator-link:focus {
+  color: #5eabc5;
+}
+
+
+.video-creator-link:hover:before,
+.video-creator-link:hover:after,
+.video-creator-link:focus:before,
+.video-creator-link:focus:after {
   width: 100%;
 }

@@ -31,7 +31,7 @@ export default class CurrentVideo extends React.Component {
       <section className="classroom-section">
         <div className="video-player-container">
           <header className="video-header">
-            <h2 className="video-title">This is a placeholder header</h2>
+            <h2 className="video-title">HTML Crash Course For Absolute Beginners</h2>
           </header>
           <YouTube className="video-player"
           //=======================Connect this line with state==================================
@@ -43,7 +43,18 @@ export default class CurrentVideo extends React.Component {
           />
           <footer className="video-footer">
             <h2>Show Notes</h2>
-            
+            <p className="video-recap">
+              To recap, in this video you took your first steps into website development by learning some of the fundamentals of HTML! You learned about core elements such as the div, p, img, and button tag.
+            </p>
+            <h3 className="video-creator-title">Content Creator - Traversy Media</h3>
+            <ul>
+              <li>
+                <a className="video-creator-link" href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+              </li>
+              <li>
+                <a className="video-creator-link" href="https://www.patreon.com/traversymedia" target="_blank" rel="noopener noreferrer">Patreon</a>
+              </li>
+            </ul>
           </footer>
         </div>
         <Repl />
