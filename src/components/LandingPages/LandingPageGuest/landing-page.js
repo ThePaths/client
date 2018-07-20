@@ -14,7 +14,6 @@ export function LandingPage(props) {
 
   return (
     <div className="home">
-      <GuestHeader />
       <div className='guest-container'>
         <h2>Welcome to DevOps2</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nostrum assumenda et aperiam, ex magnam, perspiciatis delectus fugit exercitationem aliquid quia in maxime pariatur! Omnis at rem, optio reiciendis suscipit vitae aut soluta vel praesentium ullam dolores nam voluptas, quisquam quas? Porro magni temporibus iure aspernatur? Vel explicabo obcaecati quidem?</p>
