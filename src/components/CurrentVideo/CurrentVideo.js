@@ -35,7 +35,7 @@ export default class CurrentVideo extends React.Component {
           </header>
           <YouTube className="video-player"
           //=======================Connect this line with state==================================
-            videoId={videos[0].id}
+            videoId={this.props.videos[this.props.path.index].id}
             opts={opts}
             host='http://localhost:3000'
             onReady={this._onReady}
@@ -67,3 +67,7 @@ export default class CurrentVideo extends React.Component {
     event.target.playVideo();
   }
 }
+
+const mapStateToProps = state => ({
+  display: state.auth.currentUser.displayPath
+});

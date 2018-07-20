@@ -16,9 +16,9 @@ class Dashboard extends React.Component {
     }
     return (
       <div className="dashboard">
-        <Route path='/dashboard' component={Home} />
-        <Route exact path='/dashboard/explore' component={Explore} />
-        <Route exact path='/dashboard/path-overview' component={PathOverview} />
+        {/* <Route path='/dashboard' component={Home} /> */}
+        <Route exact path='/dashboard' component={Explore} />
+        {/* <Route exact path='/dashboard/path-overview' component={PathOverview} /> */}
       </div>
     );
   }
