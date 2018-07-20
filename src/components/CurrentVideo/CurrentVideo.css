@@ -32,6 +32,26 @@
 
 }
 
+.video-player-container {
+  background-color: #462749;
+  color: #fdfdfd;
+  font-size: 1.1rem;
+}
+
+.video-header {
+  border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.video-player-container h2 {
+  font-family: 'Montserrat Alternates', cursive;
+}
+
+.video-header,
+.video-footer {
+  padding: 1em;
+}
+
 .video-player {
-  max-width: 100%;
+  width: 100%;
 }

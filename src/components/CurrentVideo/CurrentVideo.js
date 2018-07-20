@@ -18,25 +18,34 @@ export default class CurrentVideo extends React.Component {
   }
 
   render() {
-    const opts = {
-      height: '390',
-      width: '640',     
+    const opts = {    
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
-        'origin':'http://localhost:3000'
+        'origin':'http://localhost:3000',
+        rel: 0,
+        showinfo: 0
       }
     };
 
     return (
       <section className="classroom-section">
-        <YouTube className="video-player"
-        //=======================Connect this line with state==================================
-          videoId={videos[0].id}
-          opts={opts}
-          host='http://localhost:3000'
-          onReady={this._onReady}
-          onEnd={()=>this.buttonClickHandler()} 
-        />
+        <div className="video-player-container">
+          <header className="video-header">
+            <h2 className="video-title">This is a placeholder header</h2>
+          </header>
+          <YouTube className="video-player"
+          //=======================Connect this line with state==================================
+            videoId={videos[0].id}
+            opts={opts}
+            host='http://localhost:3000'
+            onReady={this._onReady}
+            onEnd={()=>this.buttonClickHandler()} 
+          />
+          <footer className="video-footer">
+            <h2>Show Notes</h2>
+            
+          </footer>
+        </div>
         <Repl />
       </section>
     );
