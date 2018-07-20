@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { fetchPaths } from '../../../actions/paths';
+import { Redirect } from 'react-router-dom';
+import { fetchPaths, addToSaved, setDisplay } from '../../../actions/paths';
 
 class Explore extends React.Component {
 
@@ -13,7 +14,10 @@ class Explore extends React.Component {
       return (
         <li key={index}>
           <p>{path.title}</p>
-          <img src={path.hero} alt='' onClick={() => console.log(`${path.title} clicked`)} />
+          <img src={path.hero} alt='' onClick={() => {
+            this.props.dispatch(setDisplay(path.id))
+            // window.location.href = '/dashboard/path-overview'
+          }} />
         </li>
       )
     })
@@ -27,7 +31,8 @@ class Explore extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  paths: state.paths.paths
+  paths: state.paths.paths,
+  current: state.auth.currentUser
 })
 
 export default connect(mapStateToProps)(Explore)

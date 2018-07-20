@@ -16,6 +16,7 @@ const pathsReducer = ( state = initialState, action) => {
 
     case PATHS_SUCCESS:
       return {
+        ...state,
         loading: false,
         error: null,
         paths: action.paths
@@ -23,6 +24,7 @@ const pathsReducer = ( state = initialState, action) => {
 
     case PATHS_ERROR:
       return {
+        ...state,
         loading: false,
         error: action.error
       }

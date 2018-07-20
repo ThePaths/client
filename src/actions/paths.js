@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { authSuccess } from './auth';
 
 export const PATHS_REQUEST = 'PATHS_REQUEST';
 export const pathsRequest = () => ({
@@ -30,4 +31,45 @@ export const fetchPaths = () => (dispatch, getState) => {
   .then(res => res.json())
   .then(paths => dispatch(pathsSuccess(paths)))
   .catch(error => dispatch(pathsError(error)))
+}
+
+export const addToSaved = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/paths/save`, {
+    method: 'POST',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('data: ', data)
+    return data
+  })
+  .then(data => dispatch(authSuccess(data)))
+  .catch(err => console.log(err))
+}
+
+export const setDisplay = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/paths/display`, {
+    method: 'POST',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('data: ', data)
+    return data
+  })
+  .then(data => dispatch(authSuccess(data)))
+  // .then(() => window.location.href = '/dashboard/path-overview')
+  .catch(err => console.log(err))
 }
