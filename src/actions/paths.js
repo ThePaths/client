@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-import { authSuccess } from './auth';
+import { authSuccess, refreshAuthToken } from './auth';
 
 export const PATHS_REQUEST = 'PATHS_REQUEST';
 export const pathsRequest = () => ({
@@ -46,7 +46,6 @@ export const addToSaved = (pathId) => (dispatch, getState) => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log('data: ', data)
     return data
   })
   .then(data => dispatch(authSuccess(data)))
@@ -66,7 +65,6 @@ export const setDisplay = (pathId) => (dispatch, getState) => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log('data: ', data)
     return data
   })
   .then(data => dispatch(authSuccess(data)))
