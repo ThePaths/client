@@ -1,8 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import './Repl.css';
 const videos = require('../Scratch/scratchVideoObjects');
-// testing for commit
 
 export class Repl extends React.Component {
   render() {

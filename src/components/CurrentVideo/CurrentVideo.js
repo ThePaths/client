@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
+import { Redirect } from 'react-router-dom';
 import { getLesson } from '../../actions/paths';
 const videos = require('../Scratch/scratchVideoObjects');
 
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props)
+    console.log(this.props);
     // this.props.dispatch(getLesson(this.props.path[0].path))
   }
 

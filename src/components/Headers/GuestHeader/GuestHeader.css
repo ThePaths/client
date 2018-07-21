@@ -1,4 +1,38 @@
 
+.main-header {
+  font-size: 1.4rem;
+  background-color: #5eabc5;
+  max-width: 100%;
+  padding: 1.5em 4%;
+  min-height: 12em;
+}
+
+.main-header a {
+  text-decoration: none;
+}
+
+.site-logo {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', cursive;
+  margin: 0;
+  text-align: center;
+  padding-top: 2em;
+  text-shadow: 0 1px 0 #5eabc5,
+               0 2px 0 #5eabc5,
+               0 3px 0 #5eabc5,
+               0 4px 0 #fdfdfd,
+               0 5px 0 #fdfdfd,
+               0 6px 1px rgba(255, 255, 255,.1),
+               0 0 5px rgba(255, 255, 255,.1),
+               0 1px 3px rgba(255, 255, 255,.3),
+               0 3px 5px rgba(255, 255, 255,.2),
+               0 5px 10px rgba(255, 255, 255,.25),
+               0 10px 10px rgba(255, 255, 255,.2),
+               0 20px 20px rgba(255, 255, 255,.15);
+
+}
+
 .form-redirect-container {
   text-align: right;
 }
@@ -20,10 +54,18 @@
   background-color: #fdfdfd;
   border-radius: 25px;
   border-color: #462749;
+  cursor: pointer;
 }
 
-i {
-  color: #508991;
-  color: #172A3A;
-  color: #004346;
+/* media queries */
+@media (min-width: 36em) {
+  /* testing bgc - disable after */
+  /* body {
+    background-color: orange;
+  } */
+
+  .main-header {
+    font-size: 1.7rem;
+    padding: 2em 6%;
+  }
 }
