@@ -1,21 +1,21 @@
-import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, LESSON_SUCCESS } from "../actions/paths";
+import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CURRENT_CLASSROOM_CHANGE} from "../actions/guestPaths";
 
 const initialState = {
   loading: false,
   paths: [],
   error: null,
-  lesson: null
+  currentPath:null
 };
 
-const pathsReducer = ( state = initialState, action) => {
+const guestPathsReducer = ( state = initialState, action) => {
   switch(action.type) {
-    case PATHS_REQUEST:
+    case GUEST_PATHS_REQUEST:
       return {
         ...state,
         loading: true
       }
 
-    case PATHS_SUCCESS:
+    case GUEST_PATHS_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -23,17 +23,17 @@ const pathsReducer = ( state = initialState, action) => {
         paths: action.paths
       }
 
-    case PATHS_ERROR:
+    case GUEST_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
-
-    case LESSON_SUCCESS:
+      case GUEST_CURRENT_CLASSROOM_CHANGE:
       return {
         ...state,
-        lesson: action.lesson
+        loading: false,
+        currentPath: action.path
       }
 
     default:
@@ -41,4 +41,4 @@ const pathsReducer = ( state = initialState, action) => {
   }
 }
 
-export default pathsReducer
+export default guestPathsReducer

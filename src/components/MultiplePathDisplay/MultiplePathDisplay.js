@@ -1,18 +1,18 @@
 import React from 'react';
 import './multiplePathDisplay.css';
-let videos = require('../Scratch/scratchVideoObjects');
+//let videos = require('../Scratch/scratchVideoObjects');
 
-export default function MultiplePathDisplay () {
+export default function MultiplePathDisplay (props) {
   return (
     <div >
-      <h3>Choose a Path</h3>
-      {videos.map((video,index) => {
-        return <img src={`http://img.youtube.com/vi/${video.id}/0.jpg`} 
+     {/* <h1>Hello World</h1> */}
+     
+    {console.log(props)} 
+        <img src={`http://img.youtube.com/vi/${props.paths.videos[0].id}/0.jpg`} 
           alt='FIX' 
-          key={index}
           className="multiplePathDisplay"
           onClick={() => console.log('Fix MultiplePathDisplay')}/>;
-      })};
+      
     
 
     </div>

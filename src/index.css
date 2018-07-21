@@ -15,7 +15,7 @@ html {
 
 body {
   line-height: 1.5;
-  font-family: 'Opens Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 } 
 
 body {
@@ -33,17 +33,22 @@ img {
 }
 
 .main-content {
-  padding: 2em 4%;
+  padding: 5em 4%;
   flex-grow: 1;
 }
 
 /* Font/Color Scheme */
 i {
-  color: #75DDDD;
-  color: #508991;
-  color: #172A3A;
-  color: #004346;
-  color: #09BC8A;
+  color: #181716; /* bgc black */
+  color: #292C2D; /* bgc darkgray */
+  color: #fdfdfd; /* header color */
+  color: #5eabc5; /* header bgc || highlight */
+  color: #462749; /* header btn bgc */
+  color: #bdbcbb; /* body color */
+  color: #64615e; /* body accent color */
+  color: #5d686c; /* body alt accent color || link color */
+  color: #485053; /* btn bgc */
+  color: #495355; /* btn bgc hover */
 
   color: #623CEA;
   color: #FF9505;

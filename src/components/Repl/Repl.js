@@ -1,9 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import './Repl.css';
 const videos = require('../Scratch/scratchVideoObjects');
 // testing for commit
 
-export default class Repl extends React.Component {
+export class Repl extends React.Component {
   render() {
     return (
       <iframe className="repl"
@@ -11,7 +12,7 @@ export default class Repl extends React.Component {
         height="400px" 
         width="100%" 
         //=======================Connect this line with state==================================
-        src={videos[0].replit} 
+        // src={this.props.repl[this.props.index]} 
         scrolling="no" 
         frameBorder="no"
         allowtransparency="true" 
@@ -21,3 +22,10 @@ export default class Repl extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  // repl: state.auth.currentUser.displayPath.videos || null,
+  // index: state.auth.currentUser.displayPath.index || null
+});
+
+export default connect(mapStateToProps)(Repl);

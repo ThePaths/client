@@ -6,7 +6,7 @@ import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 import {refreshAuthToken} from '../../actions/auth';
 
-import Scratch from '../Scratch/scratch';
+//import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';
 import AuthPage from '../AccountForms/auth-page';
 import UserHeader from '../Headers/UserHeader/UserHeader';
@@ -16,34 +16,6 @@ import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
 
 
 export class App extends React.Component {
-  componentDidUpdate(prevProps) {
-    if (!prevProps.loggedIn && this.props.loggedIn) {
-      // When we are logged in, refresh the auth token periodically
-      this.startPeriodicRefresh();
-    } else if (prevProps.loggedIn && !this.props.loggedIn) {
-      // Stop refreshing when we log out
-      this.stopPeriodicRefresh();
-    }
-  }
-
-  componentWillUnmount() {
-    this.stopPeriodicRefresh();
-  }
-
-  startPeriodicRefresh() {
-    this.refreshInterval = setInterval(
-      () => this.props.dispatch(refreshAuthToken()),
-      60 * 60 * 1000 // One hour
-    );
-  }
-
-  stopPeriodicRefresh() {
-    if (!this.refreshInterval) {
-      return;
-    }
-
-    clearInterval(this.refreshInterval);
-  }
 
   render() {
 

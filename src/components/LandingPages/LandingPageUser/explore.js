@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom';
-import { fetchPaths, addToSaved, setDisplay } from '../../../actions/paths';
+import { fetchPaths, addToSaved, setDisplay, getLesson, addToCurrent } from '../../../actions/paths';
 
 class Explore extends React.Component {
 
@@ -15,7 +15,8 @@ class Explore extends React.Component {
         <li key={index}>
           <p>{path.title}</p>
           <img src={path.hero} alt='' onClick={() => {
-            this.props.dispatch(setDisplay(path.id))
+            console.log(path.id)
+            this.props.dispatch(getLesson(path.id))
             // window.location.href = '/dashboard/path-overview'
           }} />
         </li>
