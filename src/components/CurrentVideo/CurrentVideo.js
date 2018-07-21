@@ -37,7 +37,7 @@ export default class CurrentVideo extends React.Component {
           onReady={this._onReady}
           onEnd={()=>this.buttonClickHandler()} 
         />
-        <Repl />
+        {/* <Repl /> */}
       </section>
     );
   }

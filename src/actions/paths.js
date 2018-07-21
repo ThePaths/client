@@ -18,6 +18,12 @@ export const pathsError = error => ({
   error
 });
 
+export const LESSON_SUCCESS = 'LESSON_SUCCESS';
+export const lessonSuccess = lesson => ({
+  type: LESSON_SUCCESS,
+  lesson
+})
+
 export const fetchPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(pathsRequest());
@@ -32,6 +38,25 @@ export const fetchPaths = () => (dispatch, getState) => {
     .then(paths => dispatch(pathsSuccess(paths)))
     .catch(error => dispatch(pathsError(error)));
 };
+
+export const addToCurrent = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/paths/start`, {
+    method: 'POST',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  .then(data => dispatch(authSuccess(data)))
+  .catch(err => console.log(err))
+}
 
 export const addToSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -68,6 +93,22 @@ export const setDisplay = (pathId) => (dispatch, getState) => {
     return data
   })
   .then(data => dispatch(authSuccess(data)))
-  .then(() => window.location.href = '/classroom')
+  // .then(() => dispatch(refreshAuthToken()))
+  // .then(() => window.location.href = '/classroom')
     .catch(err => console.log(err));
 };
+
+export const getLesson = (id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/paths/u/${id}`, {
+    method: 'GET',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+  })
+  .then(res => res.json())
+  .then(data => dispatch(lessonSuccess(data)))
+  .catch(err => console.log(err));
+}

@@ -1,9 +1,10 @@
-import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR } from "../actions/paths";
+import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, LESSON_SUCCESS } from "../actions/paths";
 
 const initialState = {
   loading: false,
   paths: [],
-  error: null
+  error: null,
+  lesson: null
 };
 
 const pathsReducer = ( state = initialState, action) => {
@@ -27,6 +28,12 @@ const pathsReducer = ( state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error
+      }
+
+    case LESSON_SUCCESS:
+      return {
+        ...state,
+        lesson: action.lesson
       }
 
     default:
