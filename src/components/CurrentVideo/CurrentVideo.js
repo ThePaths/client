@@ -10,7 +10,7 @@ const videos = require('../Scratch/scratchVideoObjects');
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     // this.props.dispatch(getLesson(this.props.path[0].path))
   }
 
@@ -19,6 +19,7 @@ export class CurrentVideo extends React.Component {
   }
 
   render() {
+    console.log('this rannnnnn', this.props.user);
     const opts = {    
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -70,7 +71,7 @@ export class CurrentVideo extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.auth,
+  user: state.auth.currentUser,
   lesson: state.paths.lesson
 });
 
