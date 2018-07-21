@@ -1,20 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
+import { getLesson } from '../../actions/paths';
 const videos = require('../Scratch/scratchVideoObjects');
-export default class CurrentVideo extends React.Component {
+
+export class CurrentVideo extends React.Component {
+
+  componentDidMount() {
+    console.log(this.props)
+    // this.props.dispatch(getLesson(this.props.path[0].path))
+  }
 
   buttonClickHandler() {
     console.log('buttonClicked');
-    if (this.state.currentVideoIndex === 2) {
-      return this.setState({
-        currentVideoIndex: 0
-      });
-    }
-    this.setState({
-      currentVideoIndex: this.state.currentVideoIndex + 1
-    });
   }
 
   render() {
@@ -35,7 +35,7 @@ export default class CurrentVideo extends React.Component {
           </header>
           <YouTube className="video-player"
           //=======================Connect this line with state==================================
-            videoId={this.props.videos[this.props.path.index].id}
+            // videoId={this.props.videos[this.props.path.index].id}
             opts={opts}
             host='http://localhost:3000'
             onReady={this._onReady}
@@ -69,5 +69,8 @@ export default class CurrentVideo extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  display: state.auth.currentUser.displayPath
+  user: state.auth,
+  lesson: state.paths.lesson
 });
+
+export default connect(mapStateToProps)(CurrentVideo);
