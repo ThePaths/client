@@ -12,7 +12,7 @@ export class Repl extends React.Component {
         height="400px" 
         width="100%" 
         //=======================Connect this line with state==================================
-        src={this.props.repl[0].repl} 
+        src={this.props.repl[this.props.index]} 
         scrolling="no" 
         frameBorder="no"
         allowtransparency="true" 
