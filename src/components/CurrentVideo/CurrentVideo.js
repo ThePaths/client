@@ -3,21 +3,18 @@ import { connect } from 'react-redux';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { getLesson } from '../../actions/paths';
-const videos = require('../Scratch/scratchVideoObjects');
+//import { getLesson, fetchPaths } from '../../actions/paths';
+import Spinner from 'react-spinkit';
 
 export class CurrentVideo extends React.Component {
 
-  componentDidMount() {
-    console.log(this.props)
-    // this.props.dispatch(getLesson(this.props.path[0].path))
-  }
-
-  buttonClickHandler() {
-    console.log('buttonClicked');
-  }
-
   render() {
+    console.log(this.props.paths.loading);
+    if (this.props.paths.loading) {
+      return <Spinner spinnername="circle" fadeIn='none' />;
+      };
+    if(this.props.lesson=== undefined){return <Spinner spinnername="circle" fadeIn='none' />;}
+     
     const opts = {    
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -26,8 +23,9 @@ export class CurrentVideo extends React.Component {
         showinfo: 0
       }
     };
-
-    return (
+     
+    if(this.props.lesson)
+{    return (
       <section className="classroom-section">
         <div className="video-player-container">
           <header className="video-header">
@@ -35,11 +33,11 @@ export class CurrentVideo extends React.Component {
           </header>
           <YouTube className="video-player"
           //=======================Connect this line with state==================================
-            // videoId={this.props.videos[this.props.path.index].id}
+            videoId={this.props.lesson}
             opts={opts}
-            host='http://localhost:3000'
-            onReady={this._onReady}
-            onEnd={()=>this.buttonClickHandler()} 
+            
+            // onReady={this._onReady}
+            // onEnd={()=>this.buttonClickHandler()} 
           />
           <footer className="video-footer">
             <h2>Show Notes</h2>
@@ -59,18 +57,85 @@ export class CurrentVideo extends React.Component {
         </div>
         <Repl />
       </section>
-    );
+     )}else {return null}
+   }
   }
 
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.playVideo();
-  }
-}
 
-const mapStateToProps = state => ({
-  user: state.auth,
-  lesson: state.paths.lesson
-});
+  const mapStateToProps = state => ({
+    user: state.auth || null,
+    paths: state.paths,
+    lesson: state.paths.lesson ,
+    authToken: state.auth.authToken
+  });
+  
+  export default connect(mapStateToProps)(CurrentVideo);
+ 
 
-export default connect(mapStateToProps)(CurrentVideo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    // return (
+   
+ //}
+
+  // _onReady(event) {
+  //   // access to player in all event handlers via event.target
+  //   event.target.playVideo();
+  // }
+//}
+
+// const mapStateToProps = state => ({
+//   user: state.auth,
+//   lesson: state.paths.lesson
+// });
+
+// export default connect(mapStateToProps)(CurrentVideo);
+// const mapStateToProps = state => ({
+//   loggedIn: state.auth !== null,
+//   paths: state.guests.paths || null
+// });
+
+//export default connect(mapStateToProps)(CurrentVideo);

@@ -1,10 +1,12 @@
-import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, LESSON_SUCCESS } from "../actions/paths";
+import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, 
+         LESSON_REQUEST, LESSON_SUCCESS, LESSON_ERROR } from "../actions/paths";
 
 const initialState = {
   loading: false,
   paths: [],
   error: null,
-  lesson: null
+  lesson: 'UB1O30fR-EE',
+  replit: ''
 };
 
 const pathsReducer = ( state = initialState, action) => {
@@ -14,14 +16,16 @@ const pathsReducer = ( state = initialState, action) => {
         ...state,
         loading: true
       }
+      
+     
 
     case PATHS_SUCCESS:
-      return {
-        ...state,
+      return Object.assign({},state,{ 
         loading: false,
         error: null,
-        paths: action.paths
+        paths: action.paths 
       }
+      )
 
     case PATHS_ERROR:
       return {
@@ -29,13 +33,26 @@ const pathsReducer = ( state = initialState, action) => {
         loading: false,
         error: action.error
       }
+      case LESSON_REQUEST:
+      return Object.assign({},state,{
+        loading: true
+      }
+    )
 
     case LESSON_SUCCESS:
-      return {
-        ...state,
-        lesson: action.lesson
+      return Object.assign({},state,{
+        lesson: action.lesson.videos[0].videoId,
+        replit: action.lesson.videos[0].replit,
+        loading: false
       }
-
+    )
+    case LESSON_ERROR:
+      return Object.assign({},state,{
+        error: action.error,
+        loading: false
+      }
+    )
+        
     default:
       return state
   }

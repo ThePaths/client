@@ -1,4 +1,9 @@
 
+.repl{
+  height:100vh;
+  margin: 0 15px;
+ }
+
 @media (min-width: 1px) and (max-width: 40em) {
   .repl {
     display: none;

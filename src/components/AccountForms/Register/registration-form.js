@@ -17,6 +17,7 @@ export class RegistrationForm extends React.Component {
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(regusername, regpassword)));
     }
+    
 
     render() {
         return (

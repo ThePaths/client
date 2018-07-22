@@ -3,7 +3,7 @@
   background-color: #5eabc5;
   max-width: 100%;
   padding: 1.5em 4%;
-  min-height: 12em;
+  min-height: 6em;
 }
 
 .main-header a {
@@ -16,7 +16,7 @@
   font-family: 'Ubuntu', cursive;
   margin: 0;
   text-align: center;
-  padding-top: 2em;
+  /* padding-top: 2em; */
   text-shadow: 0 1px 0 #5eabc5,
                0 2px 0 #5eabc5,
                0 3px 0 #5eabc5,
@@ -123,4 +123,7 @@
 .video-creator-link:focus:before,
 .video-creator-link:focus:after {
   width: 100%;
+}
+.classroom-section{
+  display:flex;
 }

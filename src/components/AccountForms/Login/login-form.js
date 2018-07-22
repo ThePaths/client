@@ -5,10 +5,12 @@ import {login} from '../../../actions/auth';
 import {required, nonEmpty} from '../../../validators';
 import '../auth-form.css';
 import './login-form.css'
+//import { getLesson, fetchPaths } from '../../../actions/paths';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
-        return this.props.dispatch(login(values.username, values.password));
+        return this.props.dispatch(login(values.username, values.password))
+        // .then(()=>this.props.dispatch(fetchPaths('5b4f9ee2de939e0e5c4d0b71')));
     }
 
     render() {

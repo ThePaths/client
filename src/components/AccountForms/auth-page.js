@@ -7,8 +7,10 @@ import LoginForm from './Login/login-form'
 import RegisterForm from './Register/registration-form'
 import './auth-page.css'
 
-function AuthPage(props) {
-  if (props.loggedIn) {
+export class AuthPage extends React.Component{
+ 
+ render(){
+  if (this.props.loggedIn) {
     return <Redirect to="/dashboard" />;
   }
 
@@ -21,11 +23,10 @@ function AuthPage(props) {
       </div>
     </div>
   )
-}
-
+}}
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(AuthPage);
