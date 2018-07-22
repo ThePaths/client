@@ -33,6 +33,8 @@ const pathsReducer = ( state = initialState, action) => {
         loading: false,
         error: action.error
       }
+
+      
       case LESSON_REQUEST:
       return Object.assign({},state,{
         loading: true

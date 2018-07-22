@@ -113,7 +113,6 @@ export const getLesson = (id,authToken) => (dispatch) => {
   fetch(`${API_BASE_URL}/api/paths/u/${id}`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
     },

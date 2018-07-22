@@ -22,29 +22,24 @@ export class App extends React.Component {
     
     return (
       <div className="app">
-
         <header role='banner'> 
           {(this.props.loggedIn) ? <UserHeader/> : <GuestHeader/>}
         </header>
-
         <main className="main-content">
-
           <Route exact path="/auth" component={AuthPage} />
-
           <Route exact path="/dashboard" component={Explore} />
-
           <Route exact path="/classroom" component={CurrentVideo} />
-
+        </main>
+          <Route path ="/" component={Footer} />
+      
           {/* <Route exact path="/" component={LandingPage} />
-          // <Route exact path="/dashboard" component={Dashboard} />*/
-         
+          // <Route exact path="/dashboard" component={Dashboard} />*/         
           /*
            */}
           {/* <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} /> */}
-        </main>
         
-        <Route path ="/" component={Footer} />
-      </div>
+        
+          </div>   
     );
   }
 }
