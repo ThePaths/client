@@ -16,7 +16,7 @@ class Explore extends React.Component {
           <p>{path.title}</p>
           <img src={path.hero} alt='' onClick={() => {
             console.log(path.id)
-            this.props.dispatch(getLesson(path.id))
+            this.props.dispatch(setDisplay(path.id))
             // window.location.href = '/dashboard/path-overview'
           }} />
         </li>
