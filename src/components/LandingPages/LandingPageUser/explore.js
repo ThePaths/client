@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { fetchPaths, addToSaved, setDisplay, getLesson, addToCurrent } from '../../../actions/paths';
+import { setUserDisplay } from '../../../actions/userPaths';
 import { addToUserSaved } from '../../../actions/userPaths';
 
 class Explore extends React.Component {
@@ -21,6 +22,11 @@ class Explore extends React.Component {
             this.props.dispatch(addToUserSaved(path.id))
             // window.location.href = '/dashboard/path-overview'
           }}>Save Path</button>
+          <button onClick={() => {
+              this.props.dispatch(setUserDisplay(path.id))
+              window.location.href = '/dashboard/path-overview'
+            }
+          }>View Path</button>
         </li>
       )
     })
