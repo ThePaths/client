@@ -1,12 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { fetchUserPaths } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
+
+  componentDidMount() {
+    this.props.dispatch(fetchUserPaths())
+  }
+
   render() {
+    if(!this.props.loading) {
     const videos = this.props.path.videos.map((video, index) => {
       return (
         <li key={index}>
-          <img src={`http://img.youtube.com/vi/${video.videoId}/1.jpg`} alt='FIX' />
+          <img src={`http://img.youtube.com/vi/${video.videoId}/1.jpg`} alt='FIX' 
+            onClick={() => window.location.href = '/classroom'}
+          />
         </li>
       )
     })
@@ -18,10 +27,15 @@ export class PathOverview extends React.Component {
       </div>
     )
   }
+  return (
+    null
+  )
+  }
 }
 
 const mapStateToProps = state => ({
-  path: state.auth.currentUser.displayPath
+  path: state.userPaths.userPaths.displayPath,
+  loading: state.userPaths.loading
 })
 
 export default connect(mapStateToProps)(PathOverview);

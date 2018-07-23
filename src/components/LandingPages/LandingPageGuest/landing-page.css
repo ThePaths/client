@@ -3,3 +3,12 @@
   max-width: 800px;
   text-align: center;
 }
+
+.gp-container {
+  list-style: none;
+  display: flex;
+}
+
+.gp-container li {
+  margin: 10px;
+}
