@@ -11,7 +11,9 @@ export class SavedPaths extends React.Component {
 
   render() {
     if (!this.props.loading) {
-      const savedPaths = this.props.saved.map((path, index) => {
+      let savedPaths;
+      if (this.props.saved.length > 0) {
+      savedPaths = this.props.saved.map((path, index) => {
         return (
           <li key={index}>
             <p>{path.title}</p>
@@ -22,7 +24,10 @@ export class SavedPaths extends React.Component {
             } />
           </li>
         );
-      });
+      })
+    } else {
+        savedPaths = <li><p>no saved paths yet</p></li>
+    }
       return (
         <ul>
           {savedPaths}

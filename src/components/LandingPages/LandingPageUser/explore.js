@@ -17,7 +17,7 @@ class Explore extends React.Component {
           <p>{path.title}</p>
           <img src={path.hero} alt='' onClick={() => {
             console.log(path.id)
-            // this.props.dispatch(addToUserSaved(path.id))
+            this.props.dispatch(addToUserSaved(path.id))
             // window.location.href = '/dashboard/path-overview'
           }} />
         </li>
