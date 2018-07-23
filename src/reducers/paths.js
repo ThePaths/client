@@ -6,7 +6,7 @@ const initialState = {
   paths: [],
   error: null,
   lesson: 'UB1O30fR-EE',
-  replit: ''
+  replit: "https://repl.it/@ThePaths/JJSoEo8JSnc?lite=true"
 };
 
 const pathsReducer = ( state = initialState, action) => {
@@ -34,7 +34,7 @@ const pathsReducer = ( state = initialState, action) => {
         error: action.error
       }
 
-      
+
       case LESSON_REQUEST:
       return Object.assign({},state,{
         loading: true
