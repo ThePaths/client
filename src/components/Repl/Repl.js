@@ -12,7 +12,7 @@ export class Repl extends React.Component {
         height="400px" 
         width="100%" 
         //=======================Connect this line with state==================================
-        // src={this.props.repl[this.props.index]} 
+        src={this.props.display.videos[this.props.display.index].replit} 
         scrolling="no" 
         frameBorder="no"
         allowtransparency="true" 
@@ -26,6 +26,7 @@ export class Repl extends React.Component {
 const mapStateToProps = state => ({
   // repl: state.auth.currentUser.displayPath.videos || null,
   // index: state.auth.currentUser.displayPath.index || null
+  display: state.userPaths.userPaths.displayPath
 });
 
 export default connect(mapStateToProps)(Repl);
