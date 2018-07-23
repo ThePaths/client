@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { fetchPaths, addToSaved, setDisplay, getLesson, addToCurrent } from '../../../actions/paths';
+import { addToUserSaved } from '../../../actions/userPaths';
 
 class Explore extends React.Component {
 

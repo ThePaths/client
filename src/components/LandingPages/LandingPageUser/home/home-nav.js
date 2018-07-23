@@ -8,7 +8,7 @@ export default function HomeNav(props) {
         <li><NavLink exact to='/dashboard'>Current Path</NavLink></li>
         <li><NavLink exact to='/dashboard/saved'>Saved Path</NavLink></li>
         <li><NavLink exact to='/dashboard/completed'>Completed Paths</NavLink></li>
-        <li><NavLink exact to='/dashboard/path-overview'>overview</NavLink></li>
+        <li><NavLink exact to='/dashboard/explore'>explore</NavLink></li>
       </ul>
     </nav>
   )

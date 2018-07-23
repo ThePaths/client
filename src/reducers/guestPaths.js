@@ -1,7 +1,7 @@
 import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CURRENT_CLASSROOM_CHANGE} from "../actions/guestPaths";
 
 const initialState = {
-  loading: false,
+  loading: true,
   paths: [],
   error: null,
   currentPath:null
