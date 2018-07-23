@@ -7,12 +7,12 @@ import 'console.image';
 //import GuestHeader from '../../Headers/GuestHeader/GuestHeader';
 //import MultiplePathDisplay from '../../MultiplePathDisplay/MultiplePathDisplay';
 import './landing-page.css';
-import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths'
+import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths';
 
 export class LandingPage extends React.Component {
 
   handleImageClicked(classroomInfo) {
-    this.props.dispatch(changeGuestCurrentClassroom(classroomInfo))
+    this.props.dispatch(changeGuestCurrentClassroom(classroomInfo));
     console.log('working');
   }
 
@@ -20,7 +20,7 @@ export class LandingPage extends React.Component {
 
   componentDidMount() {
     if (!this.props.loggedIn)
-      this.props.dispatch(fetchGuestPaths())
+      this.props.dispatch(fetchGuestPaths());
   }
   render() {
     if (this.props.loggedIn) {
@@ -47,9 +47,9 @@ export class LandingPage extends React.Component {
             key={index}
             onClick={() => this.handleImageClicked(path)} />
         </li>
-      )
+      );
 
-    })
+    });
     return (
       <div className="home">
         <div className='guest-container'>

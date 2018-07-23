@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
 
-import Home from './home/home'
+import Home from './home/home';
 import Explore from './explore';
 import PathOverview from '../../PathOverview/pathOverview';
 import { fetchUserPaths } from '../../../actions/userPaths';
@@ -13,7 +13,7 @@ import SavedPaths from './home/savedpaths';
 class Dashboard extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchUserPaths())
+    this.props.dispatch(fetchUserPaths());
   }
 
   render() {

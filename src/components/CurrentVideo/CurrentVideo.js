@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { Redirect } from 'react-router-dom';
 import { getLesson } from '../../actions/paths';
 import { fetchUserPaths } from '../../actions/userPaths';
 const videos = require('../Scratch/scratchVideoObjects');
@@ -12,12 +11,12 @@ const videos = require('../Scratch/scratchVideoObjects');
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props)
-    this.props.dispatch(fetchUserPaths())
+    console.log(this.props);
+    this.props.dispatch(fetchUserPaths());
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps)
+    console.log(prevProps);
     if (prevProps.loggedIn && !this.props.loggedIn) {
       // Stop refreshing when we log out
       <Redirect to="/" />;
@@ -74,25 +73,20 @@ export class CurrentVideo extends React.Component {
     }
     return (
       null
-    )
+    );
   }
 
 
-_onReady(event) {
+  _onReady(event) {
   // access to player in all event handlers via event.target
-  event.target.playVideo();
-}
+    event.target.playVideo();
+  }
 }
 
 const mapStateToProps = state => ({
-<<<<<<< HEAD
-  user: state.auth.currentUser,
-  lesson: state.paths.lesson
-=======
   display: state.userPaths.userPaths.displayPath,
   loading: state.userPaths.loading,
   loggedIn: state.auth.currentUser !== null
->>>>>>> badbfe2bc12bcaf4564c5b27627fe863edb6b73a
 });
 
 export default connect(mapStateToProps)(CurrentVideo);
