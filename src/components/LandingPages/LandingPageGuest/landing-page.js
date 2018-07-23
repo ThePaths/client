@@ -42,11 +42,10 @@ export class LandingPage extends React.Component {
     const paths = this.props.paths.map((path, index) => {
       return (
         <li key={index}>
-          <img src={`http://img.youtube.com/vi/${path.videos[0].videoId}/0.jpg`}
+          <img src={path.hero}
             alt="FIX"
             key={index}
             onClick={() => this.handleImageClicked(path)} />
-            <NavLink exact to='/classroom' onClick={() => this.handleImageClicked(path)}>classroom</NavLink>
         </li>
       )
 
