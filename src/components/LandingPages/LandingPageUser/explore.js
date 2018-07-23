@@ -15,11 +15,12 @@ class Explore extends React.Component {
       return (
         <li key={index}>
           <p>{path.title}</p>
-          <img src={path.hero} alt='' onClick={() => {
+          <img src={path.hero} alt=''/>
+          <button onClick={() => {
             console.log(path.id)
             this.props.dispatch(addToUserSaved(path.id))
             // window.location.href = '/dashboard/path-overview'
-          }} />
+          }}>Save Path</button>
         </li>
       )
     })
