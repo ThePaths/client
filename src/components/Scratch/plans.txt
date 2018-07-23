@@ -1,0 +1,65 @@
+
+
+Landing Page => Initial Landing => Guest
+
+Header
+
+Content
+  1.Description of site ,. Who we are and why this site is recommended 
+  2.How to get started with signing up or going to Overview
+  3.Link to an Overview site with First video to be an option to try
+
+--------------------------------------------------------------------
+
+Landing Page => DashBoard => User
+
+Header
+
+Content
+  1.Window with tabs
+
+    a. Current Path Selected progress tab => Display paths the user has started
+      1.ability to check each path to see progress of that path =/displayed in window
+        a.videos completed
+        b.videos left
+        c.time left
+      2.button on path to path overview page for that path =/paths displayed below progress window
+        a.button that says  'see complete path' || 'go to path ovreview' 
+        b.^ability to switch between paths to see progress 
+
+    b. Completed Courses tab
+      1.displays courses that user has completed with an option to start over => delete and post?
+      2.button on path to path overview page for that path
+        a.button that says  'see complete path' || 'go to path ovreview'
+    
+    c. Explore New Paths => Link to Explore Page 
+      1.Display path options with course overview Link(view course), start course link
+      2.start course / view course -- funtionality linking from path to path overview 
+      3.Start course saves to profile
+      
+-----------------------------------------------------------------------
+
+Path Overview => Guest / User
+
+Header
+  1.Explain to guest that they are on a guest account and can only view first videos
+
+Content
+  1.Path Name
+  2.Path Description ,. ie, this course with help with understanding javascript
+  3.Path Boxes
+    a.Thumbnails
+    b.Video Title
+    c.Length
+    d.value learned
+      
+
+
+
+
+
+
+
+
+
+

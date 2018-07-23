@@ -13,16 +13,19 @@ export class PathOverview extends React.Component {
     const videos = this.props.path.videos.map((video, index) => {
       return (
         <li key={index}>
+          <h2>{this.props.path.title}</h2>
+          <p>{this.props.path.description}</p>
           <img src={`http://img.youtube.com/vi/${video.videoId}/1.jpg`} alt='FIX' 
             onClick={() => window.location.href = '/classroom'}
           />
+         
         </li>
       )
     })
     return (
       <div>
         <h2>{this.props.path.title}</h2>
-        <p>{this.props.path.description}</p>
+         <p>{this.props.path.description}</p>
         <ul>{videos}</ul>
       </div>
     )
