@@ -8,6 +8,7 @@ import 'console.image';
 //import MultiplePathDisplay from '../../MultiplePathDisplay/MultiplePathDisplay';
 import './landing-page.css';
 import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths'
+import { fetchPaths } from '../../../actions/paths';
 
 export class LandingPage extends React.Component {
 
@@ -19,8 +20,7 @@ export class LandingPage extends React.Component {
   // If we are logged in redirect straight to the user's dashboard
 
   componentDidMount() {
-    if (!this.props.loggedIn)
-      this.props.dispatch(fetchGuestPaths())
+    this.props.dispatch(fetchGuestPaths())
   }
   render() {
     if (this.props.loggedIn) {
@@ -45,11 +45,11 @@ export class LandingPage extends React.Component {
           <img src={path.hero}
             alt="FIX"
             key={index}
-            onClick={() => this.handleImageClicked(path)} />
+            onClick={() => console.log(path.id)} />
         </li>
       )
-
     })
+
     return (
       <div className="home">
         <div className='guest-container'>

@@ -38,7 +38,7 @@ export const guestCurrentClassroomChange = (path) => ({
 
 export const fetchGuestPaths = () => (dispatch, getState) => {
   dispatch(guestPathsRequest());
-  fetch(`${API_BASE_URL}/api/paths`, {
+  fetch(`${API_BASE_URL}/api/paths/guest`, {
     method: 'GET',
   })
     .then(res => res.json())
