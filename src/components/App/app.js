@@ -19,17 +19,17 @@ export class App extends React.Component {
 
   render() {
 
-    let header;
+    // let header;
     
-    if (this.props.loggedIn) {
-      header = <Route path="/" component={ClassroomHeader}/>;
-    } else {
-      header = <Route path="/" component={MainHeader}/>;
-    }
+    // if (this.props.loggedIn) {
+    //   header = <Route path="/" component={ClassroomHeader}/>;
+    // } else {
+    //   header = <Route path="/" component={MainHeader}/>;
+    // }
 
     return (
       <div className="app">
-        {header}
+        <Route path="/" component={MainHeader} />
         <main className="main-content">
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />
