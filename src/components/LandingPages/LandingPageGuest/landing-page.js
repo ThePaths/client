@@ -1,19 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// Link,goes in react-router-dom
-import { Redirect, NavLink, Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import 'console.image';
-
-//import GuestHeader from '../../Headers/GuestHeader/GuestHeader';
-//import MultiplePathDisplay from '../../MultiplePathDisplay/MultiplePathDisplay';
 import './landing-page.css';
-import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths'
-import { fetchPaths } from '../../../actions/paths';
+import { fetchGuestPaths } from '../../../actions/guestPaths'
 
 export class LandingPage extends React.Component {
 
   handleImageClicked(classroomInfo) {
-    this.props.dispatch(changeGuestCurrentClassroom(classroomInfo))
     console.log('working');
   }
 
@@ -41,12 +35,10 @@ export class LandingPage extends React.Component {
     console.image(terrance);
     const paths = this.props.paths.map((path, index) => {
       return (
-        
-        <Link to={ `/classroom/${path.id}` }>
-        <li key={index}>
+        <Link to={ `/classroom/${path.id}` } key={index}>
+        <li>
           <img src={path.hero}
             alt="FIX"
-            key={index}
             onClick={() => console.log(path.id)} />
         </li>
         </Link>

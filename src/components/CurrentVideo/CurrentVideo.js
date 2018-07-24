@@ -4,9 +4,7 @@ import { Redirect } from 'react-router-dom';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { getLesson } from '../../actions/paths';
 import { fetchUserPaths } from '../../actions/userPaths';
-const videos = require('../Scratch/scratchVideoObjects');
 
 export class CurrentVideo extends React.Component {
 

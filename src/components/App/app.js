@@ -4,7 +4,7 @@ import {Route, withRouter} from 'react-router-dom';
 
 import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
-import {refreshAuthToken} from '../../actions/auth';
+// import {refreshAuthToken} from '../../actions/auth';
 
 //import Scratch from '../Scratch/scratch';
 import GuestHeader from '../Headers/GuestHeader/GuestHeader';

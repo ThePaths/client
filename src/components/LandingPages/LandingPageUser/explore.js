@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { Redirect } from 'react-router-dom';
-import { fetchPaths, addToSaved, setDisplay, getLesson, addToCurrent } from '../../../actions/paths';
+import { fetchPaths } from '../../../actions/paths';
 import { setUserDisplay } from '../../../actions/userPaths';
 import { addToUserSaved } from '../../../actions/userPaths';
 

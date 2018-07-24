@@ -4,15 +4,14 @@ import { Redirect } from 'react-router-dom';
 //import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { getLesson } from '../../actions/paths';
-import { fetchUserPaths } from '../../actions/userPaths';
-import { fetchGuestPaths } from  '../../actions/guestPaths';
-const videos = require('../Scratch/scratchVideoObjects');
+import { fetchGuestClassroom } from '../../actions/guestPaths';
 
 export class CurrentVideo extends React.Component {
 
-  componentDidMount() {   
-    this.props.dispatch(fetchGuestPaths())
+  componentDidMount() {
+    const id = this.props.match.params.id
+    console.log(id)
+    this.props.dispatch(fetchGuestClassroom(id))
   }
 
   componentDidUpdate(prevProps) {
@@ -36,7 +35,8 @@ export class CurrentVideo extends React.Component {
         showinfo: 0
       }
     };
-    
+
+    if (!this.props.loading) {
       return (
         <section className="classroom-section">
           <div className="video-player-container">
@@ -45,7 +45,7 @@ export class CurrentVideo extends React.Component {
             </header>
             <YouTube className="video-player"
               //=======================Connect this line with state==================================
-              //videoId={this.props.display.videos[this.props.display.index].videoId}
+              videoId={this.props.display.videos[0].videoId}
               opts={opts}
               host='http://localhost:3000'
               onReady={this._onReady}
@@ -67,23 +67,22 @@ export class CurrentVideo extends React.Component {
             </ul> */}
             </footer>
           </div>
-          {/* <Repl /> */}
+          <Repl repl={this.props.display.videos[0].replit}/>
         </section>
       );
-    
-   
+    }
+    return null;
   }
 
-
-_onReady(event) {
-  // access to player in all event handlers via event.target
-  event.target.playVideo();
-}
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.playVideo();
+  }
 }
 
 const mapStateToProps = state => ({
-  display: state.guests.paths,
-  loading: state.userPaths.loading,
+  display: state.guests.classroom,
+  loading: state.guests.loading,
   loggedIn: state.auth.currentUser !== null
 });
 

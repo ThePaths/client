@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import './Repl.css';
-const videos = require('../Scratch/scratchVideoObjects');
 // testing for commit
 
 export class Repl extends React.Component {
@@ -12,7 +11,7 @@ export class Repl extends React.Component {
         height="400px" 
         width="100%" 
         //=======================Connect this line with state==================================
-        src={this.props.display.videos[this.props.display.index].replit} 
+        src={this.props.repl} 
         scrolling="no" 
         frameBorder="no"
         allowtransparency="true" 
