@@ -36,7 +36,7 @@ export class LandingPage extends React.Component {
     const paths = this.props.paths.map((path, index) => {
       return (
         // <Link to={ `/classroom/${path.id}` } key={index}>
-        <li onClick={() => window.location.href = `/classroom/${path.id}`}>
+        <li key={index} onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={path.hero}
             alt="FIX"
             onClick={() => console.log(path.id)} />
