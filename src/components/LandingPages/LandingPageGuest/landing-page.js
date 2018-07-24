@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Link,goes in react-router-dom
-import { Redirect, NavLink } from 'react-router-dom';
+import { Redirect, NavLink, Link } from 'react-router-dom';
 import 'console.image';
 
 //import GuestHeader from '../../Headers/GuestHeader/GuestHeader';
@@ -41,12 +41,15 @@ export class LandingPage extends React.Component {
     console.image(terrance);
     const paths = this.props.paths.map((path, index) => {
       return (
+        
+        <Link to={ `/classroom/${path.id}` }>
         <li key={index}>
           <img src={path.hero}
             alt="FIX"
             key={index}
             onClick={() => console.log(path.id)} />
         </li>
+        </Link>
       )
     })
 
