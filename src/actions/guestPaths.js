@@ -19,6 +19,12 @@ export const guestPathsError = error => ({
   error
 });
 
+export const GUEST_CLASSROOM_SUCCESS = 'GUEST_CLASSROOM_SUCCESS';
+export const guestClassroomSuccess = classroom => ({
+  type: GUEST_CLASSROOM_SUCCESS,
+  classroom
+})
+
 // export const GUEST_CURRENT_PATH_REQUEST = 'GUEST_CURRENT_PATH_REQUEST';
 // export const guestCurrentPathRequest = () => ({
 //   type: GUEST_CURRENT_PATH_REQUEST
@@ -36,7 +42,7 @@ export const guestCurrentClassroomChange = (path) => ({
 //   error
 // });
 
-export const fetchGuestPaths = () => (dispatch, getState) => {
+export const fetchGuestPaths = () => dispatch => {
   dispatch(guestPathsRequest());
   fetch(`${API_BASE_URL}/api/paths/guest`, {
     method: 'GET',
@@ -46,6 +52,12 @@ export const fetchGuestPaths = () => (dispatch, getState) => {
     .catch(error => dispatch(guestPathsError(error)));
 };
 
-export const changeGuestCurrentClassroom = (path) => (dispatch) => {
-  dispatch(guestCurrentClassroomChange(path))
+export const fetchGuestClassroom = id => dispatch => {
+  dispatch(guestPathsRequest());
+  fetch(`${API_BASE_URL}/api/paths/${id}`, {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(classroom => dispatch(guestClassroomSuccess(classroom)))
+    .catch(error => dispatch(guestPathsError(error)));
 }

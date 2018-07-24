@@ -1,10 +1,10 @@
-import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CURRENT_CLASSROOM_CHANGE} from "../actions/guestPaths";
+import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CURRENT_CLASSROOM_CHANGE, GUEST_CLASSROOM_SUCCESS} from "../actions/guestPaths";
 
 const initialState = {
   loading: true,
   paths: [],
   error: null,
-  currentPath:null
+  classroom: null
 };
 
 const guestPathsReducer = ( state = initialState, action) => {
@@ -34,6 +34,13 @@ const guestPathsReducer = ( state = initialState, action) => {
         ...state,
         loading: false,
         currentPath: action.path
+      }
+
+    case GUEST_CLASSROOM_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        classroom: action.classroom
       }
 
     default:
