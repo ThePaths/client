@@ -54,3 +54,16 @@
 .site-creator-link:focus:after {
   width: 100%;
 }
+
+/* media queries */
+@media (min-width: 36em) {
+  /* testing bgc - disable after */
+  /* body {
+    background-color: orange;
+  } */
+
+  .main-footer {
+    font-size: 0.925rem;
+    padding: 1.2em 6%;
+  }
+}

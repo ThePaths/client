@@ -2,8 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import 'console.image';
+<<<<<<< HEAD:src/components/Guest/LandingPage/LandingPage.js
 import './landingPage.css';
 import { fetchGuestPaths } from '../../../actions/guestPaths'
+=======
+import './landing-page.css';
+import { fetchGuestPaths } from '../../../actions/guestPaths';
+>>>>>>> 1d2910123b6d9146701ed37f7a8d5548261f42f1:src/components/LandingPages/LandingPageGuest/landing-page.js
 
 export class LandingPage extends React.Component {
 
@@ -14,7 +19,7 @@ export class LandingPage extends React.Component {
   // If we are logged in redirect straight to the user's dashboard
 
   componentDidMount() {
-    this.props.dispatch(fetchGuestPaths())
+    this.props.dispatch(fetchGuestPaths());
   }
   render() {
     if (this.props.loggedIn) {
@@ -44,8 +49,8 @@ export class LandingPage extends React.Component {
           <p>{path.description}</p>
         </li>
         // </Link>
-      )
-    })
+      );
+    });
 
     return (
       <div className="home">

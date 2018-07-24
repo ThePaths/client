@@ -1,15 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
+<<<<<<< HEAD
 import {Route, withRouter} from 'react-router-dom';
 import LandingPage from '../Guest/LandingPage/LandingPage';
 //import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
+=======
+import {Route, withRouter, Switch} from 'react-router-dom';
+
+import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
+>>>>>>> 1d2910123b6d9146701ed37f7a8d5548261f42f1
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 // import {refreshAuthToken} from '../../actions/auth';
 
 //import Scratch from '../Scratch/scratch';
-import GuestHeader from '../Headers/GuestHeader/GuestHeader';
+import MainHeader from '../Headers/MainHeader/MainHeader';
 import AuthPage from '../AccountForms/auth-page';
-import UserHeader from '../Headers/UserHeader/UserHeader';
+import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
@@ -20,10 +26,28 @@ export class App extends React.Component {
 
   render() {
 
+<<<<<<< HEAD
     return (
       <div className="app">
         
       {(this.props.loggedIn) ? <UserHeader/> : <GuestHeader/>}
+=======
+    // let header;
+    
+    // if (this.props.loggedIn) {
+    //   header = <Route path="/" component={ClassroomHeader}/>;
+    // } else {
+    //   header = <Route path="/" component={MainHeader}/>;
+    // }
+
+    return (
+      <div className="app">
+        <Switch>
+          <Route exact path="/classroom" component={ClassroomHeader} />
+          <Route path="/" component={MainHeader} />
+        </Switch>
+
+>>>>>>> 1d2910123b6d9146701ed37f7a8d5548261f42f1
         <main className="main-content">
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />

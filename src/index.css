@@ -55,3 +55,15 @@ i {
   color: #F0E100;
   color: #5CF64A;
 }
+
+/* media queries */
+@media (min-width: 36em) {
+  /* testing bgc - disable after */
+  /* body {
+    background-color: orange;
+  } */
+
+  .main-content {
+    padding: 6em 6%;
+  }
+}
