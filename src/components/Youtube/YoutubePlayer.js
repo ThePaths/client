@@ -1,26 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-//import './CurrentVideo.css';
+import './youtube.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
 import { fetchGuestClassroom } from '../../actions/guestPaths';
 import InstructionModal from '../Modal/InstructionModal';
-export class CurrentVideo extends React.Component {
 
-  componentDidMount() {
-    const id = this.props.match.params.id
-    console.log(id)
-    this.props.dispatch(fetchGuestClassroom(id))
-  }
 
-  buttonClickHandler() {
-    console.log('buttonClicked');
-  }
+
+export class YoutubePlayer extends React.Component {
+
+ 
+
+  
 
   render() {
+    console.log(this.props)
     const opts = {
-      playerVars: { // https://developers.google.com/youtube/player_parameters
+      playerVars: { 
         autoplay: 1,
         'origin': 'https://www.youtube.com',
         rel: 0,
@@ -28,16 +26,14 @@ export class CurrentVideo extends React.Component {
       }
     };
 
-    if (!this.props.loading) {
+    
       return (
-        <section className="classroom-section">
-          <InstructionModal />
+        
           <div className="video-player-container">
             <header className="video-header">
               <h2 className="video-title">{this.props.display.title}</h2>
             </header>
             <YouTube className="video-player"
-              //=======================Connect this line with state==================================
               videoId={this.props.display.videos[0].videoId}
               opts={opts}
               host='https://www.youtube.com'
@@ -50,13 +46,11 @@ export class CurrentVideo extends React.Component {
               </p>
             </footer>
           </div>
-          <Repl repl={this.props.display.videos[0].replit}/>
-        </section>
       );
     }
-    return null;
+    
   }
-}
+
 
 const mapStateToProps = state => ({
   display: state.guests.classroom,
@@ -64,4 +58,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(CurrentVideo);
+export default connect(mapStateToProps)(YoutubePlayer);

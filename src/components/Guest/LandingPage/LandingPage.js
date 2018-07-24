@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import 'console.image';
-import './landing-page.css';
+import './landingPage.css';
 import { fetchGuestPaths } from '../../../actions/guestPaths'
 
 export class LandingPage extends React.Component {

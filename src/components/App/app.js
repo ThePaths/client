@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
-
-import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
+import LandingPage from '../Guest/LandingPage/LandingPage';
+//import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 // import {refreshAuthToken} from '../../actions/auth';
 
@@ -13,29 +13,23 @@ import UserHeader from '../Headers/UserHeader/UserHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
-import GuestClassroom from '../Guest/GuestClassroom';
+//import GuestClassroom from '../Guest/GuestClassroom';
+import Classroom from '../Guest/Classroom/Classroom';
 
 export class App extends React.Component {
 
   render() {
 
-    let header;
-    
-    if (this.props.loggedIn) {
-      header = <Route path="/" component={UserHeader}/>;
-    } else {
-      header = <Route path="/" component={GuestHeader}/>;
-    }
-
     return (
       <div className="app">
-        {header}
+        
+      {(this.props.loggedIn) ? <UserHeader/> : <GuestHeader/>}
         <main className="main-content">
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/auth" component={AuthPage} />
           <Route exact path="/classroom" component={CurrentVideo} />
-          <Route exact path="/classroom/:id" component={ GuestClassroom } />
+          <Route exact path="/classroom/:id" component={ Classroom } />
           <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
         </main>
         
