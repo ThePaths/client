@@ -13,7 +13,7 @@ import UserHeader from '../Headers/UserHeader/UserHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
-
+import GuestClassroom from '../Guest/GuestClassroom';
 
 export class App extends React.Component {
 
@@ -35,6 +35,7 @@ export class App extends React.Component {
           <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/auth" component={AuthPage} />
           <Route exact path="/classroom" component={CurrentVideo} />
+          <Route exact path="/classroom/:id" component={ GuestClassroom } />
           <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
         </main>
         
