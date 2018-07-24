@@ -40,6 +40,8 @@ export class LandingPage extends React.Component {
           <img src={path.hero}
             alt="FIX"
             onClick={() => console.log(path.id)} />
+          <h2>{path.title}</h2>
+          <p>{path.description}</p>
         </li>
         // </Link>
       )
