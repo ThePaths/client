@@ -14,14 +14,6 @@ export class CurrentVideo extends React.Component {
     this.props.dispatch(fetchGuestClassroom(id))
   }
 
-  // componentDidUpdate(prevProps) {
-  //   console.log(prevProps)
-  //   if (prevProps.loggedIn && !this.props.loggedIn) {
-  //     // Stop refreshing when we log out
-  //     <Redirect to="/" />;
-  //   }
-  // }
-
   buttonClickHandler() {
     console.log('buttonClicked');
   }
@@ -38,9 +30,8 @@ export class CurrentVideo extends React.Component {
 
     if (!this.props.loading) {
       return (
-        
         <section className="classroom-section">
-        <InstructionModal />
+          <InstructionModal />
           <div className="video-player-container">
             <header className="video-header">
               <h2 className="video-title">{this.props.display.title}</h2>
@@ -50,7 +41,6 @@ export class CurrentVideo extends React.Component {
               videoId={this.props.display.videos[0].videoId}
               opts={opts}
               host='https://www.youtube.com'
-              onReady={this._onReady}
               onEnd={() => this.buttonClickHandler()}
             />
             <footer className="video-footer">
@@ -58,15 +48,6 @@ export class CurrentVideo extends React.Component {
               <p className="video-recap">
                 {this.props.display.description}
               </p>
-              {/* <h3 className="video-creator-title">Content Creator - Traversy Media</h3>
-            <ul>
-              <li>
-                <a className="video-creator-link" href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
-              </li>
-              <li>
-                <a className="video-creator-link" href="https://www.patreon.com/traversymedia" target="_blank" rel="noopener noreferrer">Patreon</a>
-              </li>
-            </ul> */}
             </footer>
           </div>
           <Repl repl={this.props.display.videos[0].replit}/>
@@ -74,11 +55,6 @@ export class CurrentVideo extends React.Component {
       );
     }
     return null;
-  }
-
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.playVideo();
   }
 }
 

@@ -1,13 +1,9 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import { connect } from 'react-redux';
-export class InstructionModal extends React.Component {
 
-  
-  
-  
+export class InstructionModal extends React.Component {
   state = {
-    
     open:true,
   }
 
@@ -18,9 +14,6 @@ export class InstructionModal extends React.Component {
   onCloseModal = () => {
     this.setState({ open: false });
   };
-
-
-
 
   render(){
     if(this.props.loggedIn){
