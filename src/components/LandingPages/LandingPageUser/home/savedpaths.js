@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setDisplay } from '../../../../actions/paths';
 import { fetchUserPaths, setUserDisplay } from '../../../../actions/userPaths';
 
 export class SavedPaths extends React.Component {

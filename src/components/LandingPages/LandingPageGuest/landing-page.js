@@ -1,26 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// Link,goes in react-router-dom
-import { Redirect, NavLink } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import 'console.image';
-
-//import MainHeader from '../../Headers/MainHeader/MainHeader';
-//import MultiplePathDisplay from '../../MultiplePathDisplay/MultiplePathDisplay';
 import './landing-page.css';
-import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths';
+import { fetchGuestPaths } from '../../../actions/guestPaths';
 
 export class LandingPage extends React.Component {
 
   handleImageClicked(classroomInfo) {
-    this.props.dispatch(changeGuestCurrentClassroom(classroomInfo));
     console.log('working');
   }
 
   // If we are logged in redirect straight to the user's dashboard
 
   componentDidMount() {
-    if (!this.props.loggedIn)
-      this.props.dispatch(fetchGuestPaths());
+    this.props.dispatch(fetchGuestPaths());
   }
   render() {
     if (this.props.loggedIn) {
@@ -41,15 +35,18 @@ export class LandingPage extends React.Component {
     console.image(terrance);
     const paths = this.props.paths.map((path, index) => {
       return (
-        <li key={index}>
+        // <Link to={ `/classroom/${path.id}` } key={index}>
+        <li key={index} onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={path.hero}
             alt="FIX"
-            key={index}
-            onClick={() => this.handleImageClicked(path)} />
+            onClick={() => console.log(path.id)} />
+          <h2>{path.title}</h2>
+          <p>{path.description}</p>
         </li>
+        // </Link>
       );
-
     });
+
     return (
       <div className="home">
         <div className='guest-container'>

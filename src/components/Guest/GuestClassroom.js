@@ -1,24 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import './CurrentVideo.css';
+//import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { fetchUserPaths } from '../../actions/userPaths';
-
+import { fetchGuestClassroom } from '../../actions/guestPaths';
+import InstructionModal from '../Modal/InstructionModal';
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props);
-    this.props.dispatch(fetchUserPaths());
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log(prevProps);
-    if (prevProps.loggedIn && !this.props.loggedIn) {
-      // Stop refreshing when we log out
-      <Redirect to="/" />;
-    }
+    const id = this.props.match.params.id
+    console.log(id)
+    this.props.dispatch(fetchGuestClassroom(id))
   }
 
   buttonClickHandler() {
@@ -27,25 +20,27 @@ export class CurrentVideo extends React.Component {
 
   render() {
     const opts = {
-      playerVars: { 
+      playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0
       }
     };
+
     if (!this.props.loading) {
       return (
         <section className="classroom-section">
+          <InstructionModal />
           <div className="video-player-container">
             <header className="video-header">
               <h2 className="video-title">{this.props.display.title}</h2>
             </header>
             <YouTube className="video-player"
-              videoId={this.props.display.videos[this.props.display.index].videoId}
+              //=======================Connect this line with state==================================
+              videoId={this.props.display.videos[0].videoId}
               opts={opts}
               host='https://www.youtube.com'
-              onReady={this._onReady}
               onEnd={() => this.buttonClickHandler()}
             />
             <footer className="video-footer">
@@ -55,25 +50,17 @@ export class CurrentVideo extends React.Component {
               </p>
             </footer>
           </div>
-          <Repl repl={this.props.display.videos[this.props.display.index].replit}/>
+          <Repl repl={this.props.display.videos[0].replit}/>
         </section>
       );
     }
-    return (
-      null
-    );
-  }
-
-
-  _onReady(event) {
-  // access to player in all event handlers via event.target
-    event.target.playVideo();
+    return null;
   }
 }
 
 const mapStateToProps = state => ({
-  display: state.userPaths.userPaths.displayPath,
-  loading: state.userPaths.loading,
+  display: state.guests.classroom,
+  loading: state.guests.loading,
   loggedIn: state.auth.currentUser !== null
 });
 

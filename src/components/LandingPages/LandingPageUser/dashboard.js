@@ -8,7 +8,6 @@ import Home from './home/home';
 import Explore from './explore';
 import PathOverview from '../../PathOverview/pathOverview';
 import { fetchUserPaths } from '../../../actions/userPaths';
-import SavedPaths from './home/savedpaths';
 
 class Dashboard extends React.Component {
 
