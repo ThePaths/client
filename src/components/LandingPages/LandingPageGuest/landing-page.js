@@ -35,13 +35,13 @@ export class LandingPage extends React.Component {
     console.image(terrance);
     const paths = this.props.paths.map((path, index) => {
       return (
-        <Link to={ `/classroom/${path.id}` } key={index}>
-        <li>
+        // <Link to={ `/classroom/${path.id}` } key={index}>
+        <li onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={path.hero}
             alt="FIX"
             onClick={() => console.log(path.id)} />
         </li>
-        </Link>
+        // </Link>
       )
     })
 

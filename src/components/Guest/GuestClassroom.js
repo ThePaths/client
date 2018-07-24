@@ -14,13 +14,13 @@ export class CurrentVideo extends React.Component {
     this.props.dispatch(fetchGuestClassroom(id))
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps)
-    if (prevProps.loggedIn && !this.props.loggedIn) {
-      // Stop refreshing when we log out
-      <Redirect to="/" />;
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   console.log(prevProps)
+  //   if (prevProps.loggedIn && !this.props.loggedIn) {
+  //     // Stop refreshing when we log out
+  //     <Redirect to="/" />;
+  //   }
+  // }
 
   buttonClickHandler() {
     console.log('buttonClicked');
