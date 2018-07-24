@@ -27,9 +27,9 @@ export class CurrentVideo extends React.Component {
 
   render() {
     const opts = {
-      playerVars: { // https://developers.google.com/youtube/player_parameters
+      playerVars: { 
         autoplay: 1,
-        'origin': 'http://localhost:3000',
+        'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0
       }
@@ -42,10 +42,9 @@ export class CurrentVideo extends React.Component {
               <h2 className="video-title">{this.props.display.title}</h2>
             </header>
             <YouTube className="video-player"
-              //=======================Connect this line with state==================================
               videoId={this.props.display.videos[this.props.display.index].videoId}
               opts={opts}
-              host='http://localhost:3000'
+              host='https://www.youtube.com'
               onReady={this._onReady}
               onEnd={() => this.buttonClickHandler()}
             />
@@ -54,18 +53,9 @@ export class CurrentVideo extends React.Component {
               <p className="video-recap">
                 {this.props.display.description}
               </p>
-              {/* <h3 className="video-creator-title">Content Creator - Traversy Media</h3>
-            <ul>
-              <li>
-                <a className="video-creator-link" href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
-              </li>
-              <li>
-                <a className="video-creator-link" href="https://www.patreon.com/traversymedia" target="_blank" rel="noopener noreferrer">Patreon</a>
-              </li>
-            </ul> */}
             </footer>
           </div>
-          <Repl />
+          <Repl repl={this.props.display.videos[this.props.display.index].replit}/>
         </section>
       );
     }
