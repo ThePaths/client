@@ -7,9 +7,9 @@ import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 import {refreshAuthToken} from '../../actions/auth';
 
 //import Scratch from '../Scratch/scratch';
-import GuestHeader from '../Headers/GuestHeader/GuestHeader';
+import MainHeader from '../Headers/MainHeader/MainHeader';
 import AuthPage from '../AccountForms/auth-page';
-import UserHeader from '../Headers/UserHeader/UserHeader';
+import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
@@ -22,9 +22,9 @@ export class App extends React.Component {
     let header;
     
     if (this.props.loggedIn) {
-      header = <Route path="/" component={UserHeader}/>;
+      header = <Route path="/" component={ClassroomHeader}/>;
     } else {
-      header = <Route path="/" component={GuestHeader}/>;
+      header = <Route path="/" component={MainHeader}/>;
     }
 
     return (

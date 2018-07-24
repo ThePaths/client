@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import 'console.image';
 
-//import GuestHeader from '../../Headers/GuestHeader/GuestHeader';
+//import MainHeader from '../../Headers/MainHeader/MainHeader';
 //import MultiplePathDisplay from '../../MultiplePathDisplay/MultiplePathDisplay';
 import './landing-page.css';
 import { fetchGuestPaths, changeGuestCurrentClassroom } from '../../../actions/guestPaths';

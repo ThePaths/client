@@ -23,9 +23,9 @@ class Explore extends React.Component {
             // window.location.href = '/dashboard/path-overview'
           }}>Save Path</button>
           <button onClick={() => {
-              this.props.dispatch(setUserDisplay(path.id))
-              window.location.href = '/dashboard/path-overview'
-            }
+            this.props.dispatch(setUserDisplay(path.id));
+            window.location.href = '/dashboard/path-overview';
+          }
           }>View Path</button>
         </li>
       );
