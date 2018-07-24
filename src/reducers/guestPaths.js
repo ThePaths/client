@@ -1,4 +1,4 @@
-import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CURRENT_CLASSROOM_CHANGE, GUEST_CLASSROOM_SUCCESS} from "../actions/guestPaths";
+import { GUEST_PATHS_REQUEST, GUEST_PATHS_SUCCESS, GUEST_PATHS_ERROR , GUEST_CLASSROOM_SUCCESS} from "../actions/guestPaths";
 
 const initialState = {
   loading: true,
@@ -28,12 +28,6 @@ const guestPathsReducer = ( state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error
-      }
-      case GUEST_CURRENT_CLASSROOM_CHANGE:
-      return {
-        ...state,
-        loading: false,
-        currentPath: action.path
       }
 
     case GUEST_CLASSROOM_SUCCESS:
