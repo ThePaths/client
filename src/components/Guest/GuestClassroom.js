@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
 import { fetchGuestClassroom } from '../../actions/guestPaths';
-
+import InstructionModal from '../Modal/InstructionModal';
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
@@ -38,7 +38,9 @@ export class CurrentVideo extends React.Component {
 
     if (!this.props.loading) {
       return (
+        
         <section className="classroom-section">
+        <InstructionModal />
           <div className="video-player-container">
             <header className="video-header">
               <h2 className="video-title">{this.props.display.title}</h2>

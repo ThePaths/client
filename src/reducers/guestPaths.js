@@ -29,13 +29,7 @@ const guestPathsReducer = ( state = initialState, action) => {
         loading: false,
         error: action.error
       }
-      case GUEST_CURRENT_CLASSROOM_CHANGE:
-      return {
-        ...state,
-        loading: false,
-        currentPath: action.path
-      }
-
+     
     case GUEST_CLASSROOM_SUCCESS:
       return {
         ...state,

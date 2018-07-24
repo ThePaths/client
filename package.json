@@ -8,14 +8,17 @@
   "dependencies": {
     "console.image": "^1.0.2",
     "jwt-decode": "^2.2.0",
+    "modal": "^1.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.4",
+    "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.1.1",
     "react-youtube": "^7.6.0",
     "redux": "^4.0.0",
     "redux-form": "^7.3.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "responsive": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
