@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, withRouter, Switch} from 'react-router-dom';
 
 import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
 import Dashboard from '../LandingPages/LandingPageUser/dashboard';
@@ -29,7 +29,11 @@ export class App extends React.Component {
 
     return (
       <div className="app">
-        <Route path="/" component={MainHeader} />
+        <Switch>
+          <Route exact path="/classroom" component={ClassroomHeader} />
+          <Route path="/" component={MainHeader} />
+        </Switch>
+
         <main className="main-content">
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />
