@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import AuthNav from './auth-nav'
-import LoginForm from './Login/login-form'
-import RegisterForm from './Register/registration-form'
-import './auth-page.css'
+import AuthNav from './auth-nav';
+import LoginForm from './Login/login-form';
+import RegisterForm from './Register/registration-form';
+import './auth-page.css';
 
 function AuthPage(props) {
   if (props.loggedIn) {
@@ -20,7 +20,7 @@ function AuthPage(props) {
         <RegisterForm />
       </div>
     </div>
-  )
+  );
 }
 
 

@@ -2,17 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import HomeNav from './home-nav'
-import CurrentPath from './currentpath';
-import CompletedPaths from './completedpaths';
+//import CurrentPath from './currentpath';
+//import CompletedPaths from './completedpaths';
 import SavedPaths from './savedpaths';
-import { fetchUserPaths } from '../../../../actions/userPaths';
+//import { fetchUserPaths } from '../../../../actions/userPaths';
 
 export class Home extends React.Component {
   
-  // componentDidMount() {
-  //   this.props.dispatch(fetchUserPaths())
-  // }
-
   render() {
     return (
       <div>

@@ -9,12 +9,12 @@ import { fetchUserPaths } from '../../actions/userPaths';
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props)
-    this.props.dispatch(fetchUserPaths())
+    console.log(this.props);
+    this.props.dispatch(fetchUserPaths());
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps)
+    console.log(prevProps);
     if (prevProps.loggedIn && !this.props.loggedIn) {
       // Stop refreshing when we log out
       <Redirect to="/" />;
@@ -61,14 +61,14 @@ export class CurrentVideo extends React.Component {
     }
     return (
       null
-    )
+    );
   }
 
 
-_onReady(event) {
+  _onReady(event) {
   // access to player in all event handlers via event.target
-  event.target.playVideo();
-}
+    event.target.playVideo();
+  }
 }
 
 const mapStateToProps = state => ({

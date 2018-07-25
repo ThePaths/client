@@ -10,6 +10,11 @@
   outline: none;
 }
 
+.auth-button:hover,
+.auth-button:focus {
+  cursor: pointer;
+}
+
 .active {
   border-bottom: none;
   background-color: white;

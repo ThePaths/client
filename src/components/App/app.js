@@ -1,45 +1,38 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, withRouter, Switch} from 'react-router-dom';
 
-import LandingPage from '../LandingPages/LandingPageGuest/landing-page';
-import Dashboard from '../LandingPages/LandingPageUser/dashboard';
-// import {refreshAuthToken} from '../../actions/auth';
+import MainHeader from '../Headers/MainHeader/MainHeader';
+import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
 
-//import Scratch from '../Scratch/scratch';
-import GuestHeader from '../Headers/GuestHeader/GuestHeader';
+import LandingPage from '../Guest/LandingPage/LandingPage';
+import Classroom from '../Guest/Classroom/Classroom';
+
 import AuthPage from '../AccountForms/auth-page';
-import UserHeader from '../Headers/UserHeader/UserHeader';
+
+import Dashboard from '../LandingPages/LandingPageUser/dashboard';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
-import GuestClassroom from '../Guest/GuestClassroom';
 
 export class App extends React.Component {
 
   render() {
-
-    let header;
-    
-    if (this.props.loggedIn) {
-      header = <Route path="/" component={UserHeader}/>;
-    } else {
-      header = <Route path="/" component={GuestHeader}/>;
-    }
-
     return (
       <div className="app">
-        {header}
+        <Switch>
+          <Route exact path="/classroom" component={ ClassroomHeader }/>
+          <Route path="/" component={ MainHeader }/>
+        </Switch>
         <main className="main-content">
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route exact path="/auth" component={AuthPage} />
-          <Route exact path="/classroom" component={CurrentVideo} />
-          <Route exact path="/classroom/:id" component={ GuestClassroom } />
-          <Route exact path="/MultiplePathDisplay" component={MultiplePathDisplay} />
+          <Route exact path="/" component={ LandingPage }/>
+          <Route path="/dashboard" component={ Dashboard }/>
+          <Route exact path="/auth" component={ AuthPage }/>
+          <Route exact path="/classroom" component={ CurrentVideo }/>
+          <Route exact path="/classroom/:id" component={ Classroom }/>
+          <Route exact path="/MultiplePathDisplay" component={ MultiplePathDisplay }/>
         </main>
-        
-        <Route path ="/" component={Footer} />
+        <Route path ="/" component={ Footer }/>
       </div>
     );
   }
