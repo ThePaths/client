@@ -9,7 +9,7 @@ import LandingPage from '../Guest/LandingPage/LandingPage';
 import Classroom from '../Guest/Classroom/Classroom';
 
 import AuthPage from '../AccountForms/auth-page';
-import Explore from '../Explore/Explore'
+import Explore from '../Explore/Explore';
 import Dashboard from '../User/Dashboard/Dashboard';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
