@@ -14,7 +14,7 @@ export class MainHeader extends React.Component {
 
   render() {
 
-    let url = document.location.href;
+    let url = window.location.href;
     let linkText = '';
     let linkTo = '';
     let navClassList = 'site-nav';
