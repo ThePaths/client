@@ -19,6 +19,7 @@ export class MainHeader extends React.Component {
     let linkTo = '';
     let navClassList = 'site-nav';
 
+    console.log(url, 'this is the url');
     console.log(MAIN_HEADER_URL);
     console.log(AUTH_HEADER_URL);
 
