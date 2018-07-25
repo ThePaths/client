@@ -3,18 +3,17 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
-import { fetchUserPaths } from '../../../actions/userPaths';
+import { fetchCurrentPaths, fetchSavedPaths } from '../../../actions/userPaths';
 
-import CurrenPaths from '../CurrentPaths/CurrentPaths';
+import CurrentPaths from '../CurrentPaths/CurrentPaths';
 import CompletedPaths from '../CompletedPaths/CompletedPaths';
 import SavedPaths from '../SavedPaths/SavedPaths';
-
-
 
 class Dashboard extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchUserPaths());
+    this.props.dispatch(fetchCurrentPaths());
+    this.props.dispatch(fetchSavedPaths())
   }
 
   render() {
@@ -24,7 +23,7 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
-          <CurrenPaths/>
+          <CurrentPaths/>
           <SavedPaths/>
           <CompletedPaths/>
       </div>
@@ -34,9 +33,6 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
-  completedPaths: state.userPaths.userPaths.completedPaths,
-  currentPaths: state.userPaths.userPaths.currentPaths,
-  savedPaths: state.userPaths.userPaths.savedPaths
 });
 
 

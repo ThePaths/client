@@ -4,13 +4,12 @@ import { Redirect } from 'react-router-dom';
 import './CurrentVideo.css';
 import Repl from '../Repl/Repl';
 import YouTube from 'react-youtube';
-import { fetchUserPaths } from '../../actions/userPaths';
 
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    this.props.dispatch(fetchUserPaths());
+    // this.props.dispatch(fetchUserPaths());
   }
 
   componentDidUpdate(prevProps) {
