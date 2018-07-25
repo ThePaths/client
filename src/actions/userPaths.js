@@ -5,10 +5,16 @@ export const userPathsRequest = () => ({
   type: USER_PATHS_REQUEST
 });
 
-export const USER_PATHS_SUCCESS = 'USER_PATHS_SUCCESS';
-export const userPathsSuccess = userPaths => ({
-  type: USER_PATHS_SUCCESS,
-  userPaths
+export const CURRENT_PATHS_SUCCESS = 'CURRENT_PATHS_SUCCESS';
+export const currentPathsSuccess = currentPaths => ({
+  type: CURRENT_PATHS_SUCCESS,
+  currentPaths
+});
+
+export const SAVED_PATHS_SUCCESS = 'SAVED_PATHS_SUCCESS';
+export const savedPathsSuccess = savedPaths => ({
+  type: SAVED_PATHS_SUCCESS,
+  savedPaths
 });
 
 export const USER_PATHS_ERROR = 'USER_PATHS_ERROR';
@@ -17,10 +23,10 @@ export const userPathsError = error => ({
   error
 });
 
-export const fetchUserPaths = () => (dispatch, getState) => {
+export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
-  fetch(`${API_BASE_URL}/api/userpaths`, {
+  fetch(`${API_BASE_URL}/api/dashboard/keeplearning`, {
     method: 'GET',
     headers: {
       // Provide our auth token as credentials
@@ -29,39 +35,56 @@ export const fetchUserPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      dispatch(userPathsSuccess(paths));
+      dispatch(currentPathsSuccess(paths))
     })
     .catch(error => dispatch(userPathsError(error)));
 };
 
-export const addToUserSaved = (pathId) => (dispatch, getState) => {
+export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/save`, {
-    method: 'PUT',
+  dispatch(userPathsRequest());
+  fetch(`${API_BASE_URL}/api/dashboard/savedPaths`, {
+    method: 'GET',
     headers: {
       // Provide our auth token as credentials
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({pathId})
+    }
   })
     .then(res => res.json())
-    .then(() => dispatch(fetchUserPaths()))
-    .catch(err => console.log(err));
+    .then(paths => {
+      dispatch(savedPathsSuccess(paths))
+    })
+    .catch(error => dispatch(userPathsError(error)));
 };
 
-export const setUserDisplay = pathId => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/display`, {
-    method: 'PUT',
-    headers: {
-      // Provide our auth token as credentials
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({pathId})
-  })
-    .then(res => res.json())
-    .then(() => dispatch(fetchUserPaths()))
-    .catch(err => console.log(err));
-};
+// export const addToUserSaved = (pathId) => (dispatch, getState) => {
+//   const authToken = getState().auth.authToken;
+//   fetch(`${API_BASE_URL}/api/userpaths/save`, {
+//     method: 'PUT',
+//     headers: {
+//       // Provide our auth token as credentials
+//       'Content-Type': 'application/json',
+//       Authorization: `Bearer ${authToken}`
+//     },
+//     body: JSON.stringify({pathId})
+//   })
+//   .then(res => res.json())
+//   .then(() => dispatch(fetchUserPaths()))
+//   .catch(err => console.log(err))
+// }
+
+// export const setUserDisplay = pathId => (dispatch, getState) => {
+//   const authToken = getState().auth.authToken;
+//   fetch(`${API_BASE_URL}/api/userpaths/display`, {
+//     method: 'PUT',
+//     headers: {
+//       // Provide our auth token as credentials
+//       'Content-Type': 'application/json',
+//       Authorization: `Bearer ${authToken}`
+//     },
+//     body: JSON.stringify({pathId})
+//   })
+//   .then(res => res.json())
+//   .then(() => dispatch(fetchUserPaths()))
+//   .catch(err => console.log(err))
+// }
