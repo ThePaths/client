@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchCurrentPaths());
-    this.props.dispatch(fetchSavedPaths())
+    this.props.dispatch(fetchSavedPaths());
   }
 
   render() {
@@ -23,9 +23,9 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
-          <CurrentPaths/>
-          <SavedPaths/>
-          <CompletedPaths/>
+        <CurrentPaths/>
+        <SavedPaths/>
+        <CompletedPaths/>
       </div>
     );
   }

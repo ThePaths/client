@@ -4,9 +4,9 @@ import { fetchUserPaths } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch(fetchUserPaths());
-  }
+  // componentDidMount() {
+  //   this.props.dispatch(fetchUserPaths());
+  // }
 
   render() {
     return (
