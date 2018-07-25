@@ -20,8 +20,8 @@ export class CurrentVideo extends React.Component {
       return (
         <section className="classroom-section">
           <InstructionModal />
-          <YoutubePlayer props={this.props}/>
-          <Repl repl={this.props.display.videos[0].replit}/>
+          <YoutubePlayer props={ this.props }/>
+          <Repl repl={ this.props.display.videos[0].replit }/>
         </section>
       );
     }
