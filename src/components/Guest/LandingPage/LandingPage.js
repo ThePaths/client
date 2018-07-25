@@ -29,29 +29,16 @@ export class LandingPage extends React.Component {
     console.image(terrance);
 
     const paths = this.props.paths.map((path, index) => {
-<<<<<<< HEAD:src/components/LandingPages/LandingPageGuest/landing-page.js
-      return (
-        <li key={index} onClick={() => window.location.href = `/classroom/${path.id}`}>
-          <img src={path.hero}
-            alt="FIX"
-            onClick={() => console.log(path.id)} />
-          <h2>{path.title}</h2>
-          <p>{path.description}</p>
-        </li>
-      )
-    })
-=======
       return (        
         <li key={ index } onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={ path.hero }
-               alt="FIX"
-               onClick={ () => console.log(path.id) } />
+            alt="FIX"
+          />
           <h2>{ path.title }</h2>
           <p>{ path.description }</p>
         </li>       
       );
     });
->>>>>>> ebef9eec2576e68ebb3b2ed8181dc5f287e7c5bf:src/components/Guest/LandingPage/LandingPage.js
 
     return (
       <div className="home">
