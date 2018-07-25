@@ -32,8 +32,8 @@ export class LandingPage extends React.Component {
       return (        
         <li key={ index } onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={ path.hero }
-               alt="FIX"
-               onClick={ () => console.log(path.id) } />
+            alt="FIX"
+          />
           <h2>{ path.title }</h2>
           <p>{ path.description }</p>
         </li>       
