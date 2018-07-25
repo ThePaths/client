@@ -13,7 +13,6 @@ import Explore from '../Explore/Explore';
 import Dashboard from '../User/Dashboard/Dashboard';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
-import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';
 
 export class App extends React.Component {
 
@@ -31,7 +30,6 @@ export class App extends React.Component {
           <Route exact path="/auth" component={ AuthPage }/>
           <Route exact path="/classroom" component={ CurrentVideo }/>
           <Route exact path="/classroom/:id" component={ Classroom }/>
-          <Route exact path="/MultiplePathDisplay" component={ MultiplePathDisplay }/>
         </main>
         <Route path ="/" component={ Footer }/>
       </div>
