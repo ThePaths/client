@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-//import './CurrentVideo.css';
-import Repl from '../../Repl/Repl';
-import YouTube from 'react-youtube';
 import { fetchGuestClassroom } from '../../../actions/guestPaths';
+
+import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
-import YoutubePlayer from '../../Youtube/YoutubePlayer'
+import YoutubePlayer from '../../Youtube/YoutubePlayer';
+
+
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
@@ -16,8 +16,6 @@ export class CurrentVideo extends React.Component {
   }
 
   render() {
-   
-
     if (!this.props.loading) {
       return (
         <section className="classroom-section">
