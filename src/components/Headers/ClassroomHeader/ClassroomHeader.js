@@ -5,18 +5,12 @@ import {clearAuth} from '../../../actions/auth';
 import {clearAuthToken} from '../../../local-storage';
 
 export class ClassroomHeader extends React.Component {
-  // logOut() {
-  //   this.props.dispatch(clearAuth());
-  //   clearAuthToken();
-  // }
+  logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+  }
 
   render() {
-    // let logOutButton;
-    // if (this.props.loggedIn) {
-    //   logOutButton = (
-    //     <button className="form-redirect-link" onClick={() => this.logOut()}>Log Out</button>
-    //   );
-    // }
     return (
       <header className="main-header classroom-header">
         <div>
