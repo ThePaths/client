@@ -10,7 +10,20 @@ export class PathOverview extends React.Component {
 
   render() {
     return (
-      <p>Hai</p>
+      <div className="path-overview-container">
+        <section className="path-info-container">
+          <h1>placeholder path title</h1>
+          <p>placeholder path description</p>
+          <div>
+            {/* conditional btns go here */}
+          </div>
+        </section>
+        <section className="path-videos-info-container">
+          <ul>
+            {/* render videos here */}
+          </ul>
+        </section>
+      </div>
     );
   }
 }

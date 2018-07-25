@@ -29,7 +29,7 @@ export const fetchUserPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      dispatch(userPathsSuccess(paths))
+      dispatch(userPathsSuccess(paths));
     })
     .catch(error => dispatch(userPathsError(error)));
 };
@@ -45,10 +45,10 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-  .then(res => res.json())
-  .then(() => dispatch(fetchUserPaths()))
-  .catch(err => console.log(err))
-}
+    .then(res => res.json())
+    .then(() => dispatch(fetchUserPaths()))
+    .catch(err => console.log(err));
+};
 
 export const setUserDisplay = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -61,7 +61,7 @@ export const setUserDisplay = pathId => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-  .then(res => res.json())
-  .then(() => dispatch(fetchUserPaths()))
-  .catch(err => console.log(err))
-}
+    .then(res => res.json())
+    .then(() => dispatch(fetchUserPaths()))
+    .catch(err => console.log(err));
+};
