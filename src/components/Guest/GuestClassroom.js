@@ -22,7 +22,7 @@ export class CurrentVideo extends React.Component {
     const opts = {
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
-        'origin': 'https://www.youtube.com',
+        origin: 'http://localhost:3000',
         rel: 0,
         showinfo: 0
       }
@@ -40,7 +40,7 @@ export class CurrentVideo extends React.Component {
               //=======================Connect this line with state==================================
               videoId={this.props.display.videos[0].videoId}
               opts={opts}
-              host='https://www.youtube.com'
+              host='http://localhost:3000'
               onEnd={() => this.buttonClickHandler()}
             />
             <footer className="video-footer">

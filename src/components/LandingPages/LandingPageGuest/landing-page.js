@@ -35,7 +35,6 @@ export class LandingPage extends React.Component {
     console.image(terrance);
     const paths = this.props.paths.map((path, index) => {
       return (
-        // <Link to={ `/classroom/${path.id}` } key={index}>
         <li key={index} onClick={() => window.location.href = `/classroom/${path.id}`}>
           <img src={path.hero}
             alt="FIX"
@@ -43,7 +42,6 @@ export class LandingPage extends React.Component {
           <h2>{path.title}</h2>
           <p>{path.description}</p>
         </li>
-        // </Link>
       )
     })
 
