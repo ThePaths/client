@@ -10,7 +10,7 @@ import Classroom from '../Guest/Classroom/Classroom';
 
 import AuthPage from '../AccountForms/auth-page';
 
-import Dashboard from '../LandingPages/LandingPageUser/dashboard';
+import Dashboard from '../User/Dashboard/Dashboard';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 import MultiplePathDisplay from '../MultiplePathDisplay/MultiplePathDisplay';

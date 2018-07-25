@@ -25,7 +25,7 @@ export class YoutubePlayer extends React.Component {
                    videoId={this.props.display.videos[0].videoId}
                    opts={opts}
                    host='https://www.youtube.com'
-                   onEnd={() => this.buttonClickHandler()}
+                   onEnd={() => console.log('End Of Video')}
           />
           <footer className="video-footer">
             <h2>Show Notes</h2>
