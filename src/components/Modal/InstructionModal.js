@@ -26,7 +26,11 @@ export class InstructionModal extends React.Component {
       <Modal open={ open } 
              onClose={ this.onCloseModal } 
              center>
-        <p>Simple centered modal</p>
+        <p>This is the classroom page of The Paths!</p>
+        <p>
+          Here you have access to the first video of the path and a repl.it for that video.
+          The repl.it allows you to code along with and try the things you learned in the video.
+        </p>
       </Modal>
     </div>
     )
