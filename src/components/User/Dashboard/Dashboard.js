@@ -21,23 +21,22 @@ class Dashboard extends React.Component {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
+
     return (
       <div className="dashboard">
-      
-        <div>
           <CurrenPaths/>
           <SavedPaths/>
           <CompletedPaths/>
-        </div>
-     
-      
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  completedPaths: state.userPaths.userPaths.completedPaths,
+  currentPaths: state.userPaths.userPaths.currentPaths,
+  savedPaths: state.userPaths.userPaths.savedPaths
 });
 
 
