@@ -22,7 +22,7 @@ export const LESSON_SUCCESS = 'LESSON_SUCCESS';
 export const lessonSuccess = lesson => ({
   type: LESSON_SUCCESS,
   lesson
-})
+});
 
 export const fetchPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -50,13 +50,13 @@ export const addToCurrent = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-  .then(res => res.json())
-  .then(data => {
-    return data
-  })
-  .then(data => dispatch(authSuccess(data)))
-  .catch(err => console.log(err))
-}
+    .then(res => res.json())
+    .then(data => {
+      return data;
+    })
+    .then(data => dispatch(authSuccess(data)))
+    .catch(err => console.log(err));
+};
 
 export const addToSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -69,13 +69,13 @@ export const addToSaved = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-  .then(res => res.json())
-  .then(data => {
-    return data
-  })
-  .then(data => dispatch(authSuccess(data)))
-  .catch(err => console.log(err))
-}
+    .then(res => res.json())
+    .then(data => {
+      return data;
+    })
+    .then(data => dispatch(authSuccess(data)))
+    .catch(err => console.log(err));
+};
 
 export const setDisplay = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -88,11 +88,11 @@ export const setDisplay = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({pathId})
   })
-  .then(res => res.json())
-  .then(data => {
-    return data
-  })
-  .then(data => dispatch(authSuccess(data)))
+    .then(res => res.json())
+    .then(data => {
+      return data;
+    })
+    .then(data => dispatch(authSuccess(data)))
   // .then(() => dispatch(refreshAuthToken()))
   // .then(() => window.location.href = '/classroom')
     .catch(err => console.log(err));
@@ -108,7 +108,7 @@ export const getLesson = (id) => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     },
   })
-  .then(res => res.json())
-  .then(data => dispatch(lessonSuccess(data)))
-  .catch(err => console.log(err));
-}
+    .then(res => res.json())
+    .then(data => dispatch(lessonSuccess(data)))
+    .catch(err => console.log(err));
+};
