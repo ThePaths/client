@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import {MAIN_HEADER_URL, AUTH_HEADER_URL} from '../../../config';
 import './MainHeader.css';
 import {clearAuth} from '../../../actions/auth';
 import {clearAuthToken} from '../../../local-storage';
@@ -18,7 +19,7 @@ export class MainHeader extends React.Component {
     let linkTo = '';
     let navClassList = 'site-nav';
 
-    if (url === 'http://localhost:3000/' || url === 'http://localhost:3000/auth') {
+    if (url === MAIN_HEADER_URL || url === AUTH_HEADER_URL) {
       linkText = 'Login/Register';
       navClassList += ' hide';
     } else {
