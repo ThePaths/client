@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchPathOverview } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
@@ -14,9 +15,35 @@ export class PathOverview extends React.Component {
     if (!this.props.loading) {
       let videos = this.props.path.videos.map((item, index) => {
         return (
-          <li key={index}><p>{item.title}</p></li>
+          <li key={index}>
+            <div>
+              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`} alt="Path Thumbnail" />
+            </div>
+            <div>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+            </div>
+            <div>
+
+            </div>
+            <p>{item.title}</p>
+          </li>
         );
       });
+
+      let pathProgressBtn;
+      if (this.props.path.status === 'current') {
+        pathProgressBtn = 'Continue';
+      } else {
+        pathProgressBtn = 'Start';
+      }
+
+      // add functionality to save path
+      let saveButton;
+      if (this.props.path.status === 'saved') {
+        saveButton = '';
+      }
+
       return (
         <div className="path-overview-container">
           <section className="path-info-container">
@@ -24,14 +51,16 @@ export class PathOverview extends React.Component {
             <p>{this.props.path.videos[0].description}</p>
             <div>
               {/* conditional btns go here */}
+              <Link to='/classroom'>
+                {pathProgressBtn}
+              </Link>
+              {saveButton}
             </div>
           </section>
           <section className="path-videos-info-container">
             <ul>
               {videos}
               {/* render videos here */}
-              {/* <div>{this.props.path.videos[0].description}</div> */}
-
             </ul>
           </section>
         </div>
