@@ -35,7 +35,7 @@ export const fetchCurrentPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      dispatch(currentPathsSuccess(paths))
+      dispatch(currentPathsSuccess(paths));
     })
     .catch(error => dispatch(userPathsError(error)));
 };
@@ -52,7 +52,7 @@ export const fetchSavedPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      dispatch(savedPathsSuccess(paths))
+      dispatch(savedPathsSuccess(paths));
     })
     .catch(error => dispatch(userPathsError(error)));
 };
@@ -70,7 +70,7 @@ export const fetchPathOverview = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      dispatch(savedPathsSuccess(paths))
+      dispatch(savedPathsSuccess(paths));
     })
     .catch(error => dispatch(userPathsError(error)));
 };

@@ -25,7 +25,7 @@ export class App extends React.Component {
         </Switch>
         <main className="main-content">
           <Route exact path="/" component={ LandingPage }/>
-          <Route exact path="/dashboard" component={ Dashboard }/>
+          <Route path="/dashboard" component={ Dashboard }/>
           <Route exact path="/auth" component={ AuthPage }/>
           <Route exact path="/classroom" component={ CurrentVideo }/>
           <Route exact path="/classroom/:id" component={ Classroom }/>
