@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchCurrentPaths());
-    this.props.dispatch(fetchSavedPaths())
+    this.props.dispatch(fetchSavedPaths());
   }
 
   render() {
@@ -22,8 +22,14 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
+<<<<<<< HEAD
           <Route exact path='/dashboard' component={ UserPaths } />
           <Route exact path="/dashboard/explore" component={ ExplorePaths }/> 
+=======
+        <CurrentPaths/>
+        <SavedPaths/>
+        <CompletedPaths/>
+>>>>>>> learning-page-mvp
       </div>
     );
   }
