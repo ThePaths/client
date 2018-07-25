@@ -17,7 +17,7 @@ class ExplorePaths extends React.Component {
           <p>{path.title}</p>          
           <img src={path.hero} alt=''/>
           <p>{path.description}</p>         
-          <button onClick={() =>{ window.location.href = '/dashboard/path-overview' }}>View Path</button>
+          <button onClick={() =>{ window.location.href = `/dashboard/overview/${path.id}`;}}>View Path</button>
         </li>
       );
     });

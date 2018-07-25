@@ -23,6 +23,17 @@ export const userPathsError = error => ({
   error
 });
 
+export const PATH_OVERVIEW_REQUEST = 'PATH_OVERVIEW_REQUEST';
+export const pathOverviewRequest = () => ({
+  type: PATH_OVERVIEW_REQUEST
+});
+
+export const PATH_OVERVIEW_SUCCESS = 'PATH_OVERVIEW_SUCCESS';
+export const fetchPathOverviewSuccess = overview => ({
+  type: PATH_OVERVIEW_SUCCESS,
+  overview
+});
+
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -58,10 +69,10 @@ export const fetchSavedPaths = () => (dispatch, getState) => {
 };
 
 // path overview action
-export const fetchPathOverview = () => (dispatch, getState) => {
+export const fetchPathOverview = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(userPathsRequest());
-  fetch(`${API_BASE_URL}/api/dashboard/savedPaths`, {
+  dispatch(pathOverviewRequest());
+  fetch(`${API_BASE_URL}/api/overview/${id}`, {
     method: 'GET',
     headers: {
       // Provide our auth token as credentials
@@ -69,8 +80,8 @@ export const fetchPathOverview = () => (dispatch, getState) => {
     }
   })
     .then(res => res.json())
-    .then(paths => {
-      dispatch(savedPathsSuccess(paths));
+    .then(overview => {
+      dispatch(fetchPathOverviewSuccess(overview)); //change to new action
     })
     .catch(error => dispatch(userPathsError(error)));
 };

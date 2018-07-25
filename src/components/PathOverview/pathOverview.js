@@ -1,36 +1,49 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUserPaths } from '../../actions/userPaths';
+import { fetchPathOverview } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 
-  // componentDidMount() {
-  //   this.props.dispatch(fetchUserPaths());
-  // }
+  componentDidMount() {
+    let id = this.props.match.params.id;
+    console.log(id);
+    this.props.dispatch(fetchPathOverview(id));
+  }
 
   render() {
-    return (
-      <div className="path-overview-container">
-        <section className="path-info-container">
-          <h1>placeholder path title</h1>
-          <p>placeholder path description</p>
-          <div>
-            {/* conditional btns go here */}
-          </div>
-        </section>
-        <section className="path-videos-info-container">
-          <ul>
-            {/* render videos here */}
-          </ul>
-        </section>
-      </div>
-    );
+    if (!this.props.loading) {
+      let videos = this.props.path.videos.map((item, index) => {
+        return (
+          <li key={index}><p>{item.title}</p></li>
+        );
+      });
+      return (
+        <div className="path-overview-container">
+          <section className="path-info-container">
+            <h1>{this.props.path.title}</h1>
+            <p>{this.props.path.videos[0].description}</p>
+            <div>
+              {/* conditional btns go here */}
+            </div>
+          </section>
+          <section className="path-videos-info-container">
+            <ul>
+              {videos}
+              {/* render videos here */}
+              {/* <div>{this.props.path.videos[0].description}</div> */}
+
+            </ul>
+          </section>
+        </div>
+      );
+    } 
+    return null;
   }
 }
 
 const mapStateToProps = state => ({
-  path: state.userPaths.userPaths.displayPath,
-  loading: state.userPaths.loading
+  path: state.userPaths.overview,
+  loading: state.userPaths.overviewLoading
 });
 
 export default connect(mapStateToProps)(PathOverview);

@@ -6,6 +6,7 @@ import requiresLogin from '../requires-login';
 import { fetchCurrentPaths, fetchSavedPaths } from '../../../actions/userPaths';
 import  UserPaths  from '../UserPaths/UserPaths';
 import ExplorePaths from '../ExplorePaths/ExplorePaths';
+import PathOverview from '../../PathOverview/pathOverview';
 
 
 class Dashboard extends React.Component {
@@ -22,14 +23,9 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
-<<<<<<< HEAD
-          <Route exact path='/dashboard' component={ UserPaths } />
-          <Route exact path="/dashboard/explore" component={ ExplorePaths }/> 
-=======
-        <CurrentPaths/>
-        <SavedPaths/>
-        <CompletedPaths/>
->>>>>>> learning-page-mvp
+        <Route exact path='/dashboard' component={ UserPaths } />
+        <Route exact path="/dashboard/explore" component={ ExplorePaths }/> 
+        <Route exact path="/dashboard/overview/:id" component={ PathOverview }/> 
       </div>
     );
   }
