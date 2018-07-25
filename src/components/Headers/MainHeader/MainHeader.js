@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-import {MAIN_HEADER_URL, AUTH_HEADER_URL} from '../../../config';
 import './MainHeader.css';
 import {clearAuth} from '../../../actions/auth';
 import {clearAuthToken} from '../../../local-storage';
@@ -18,17 +17,20 @@ export class MainHeader extends React.Component {
     let linkText = '';
     let linkTo = '';
     let navClassList = 'site-nav';
+    const mainHeaderUrls = [
+      'http://localhost:3000/',
+      'https://the-paths-client.herokuapp.com/',
+      'http://localhost:3000/auth',
+      'https://the-paths-client.herokuapp.com/auth'  
+    ];
 
-    console.log(url, 'this is the url');
-    console.log(MAIN_HEADER_URL);
-    console.log(AUTH_HEADER_URL);
-    console.log(this.props);
+    navClassList = 'site-nav';
 
-    if (url === MAIN_HEADER_URL || url === AUTH_HEADER_URL) {
-      linkText = 'Login/Register';
-      navClassList += ' hide';
-    } else {
-      navClassList = 'site-nav';
+    for (let i = 0; i <= mainHeaderUrls.length; i++) {
+      if (url === mainHeaderUrls[i]) {
+        linkText = 'Login/Register';
+        navClassList += ' hide';
+      }
     }
 
     if (this.props.loggedIn) {
