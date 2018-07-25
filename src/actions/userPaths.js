@@ -29,7 +29,6 @@ export const fetchUserPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
-      console.log(paths)
       dispatch(userPathsSuccess(paths))
     })
     .catch(error => dispatch(userPathsError(error)));
