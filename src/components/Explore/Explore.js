@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { fetchPaths } from '../../../actions/paths';
-import { setUserDisplay } from '../../../actions/userPaths';
-import { addToUserSaved } from '../../../actions/userPaths';
+import { fetchPaths } from '../../actions/paths';
+import { setUserDisplay, addToUserSaved } from '../../actions/userPaths';
+
 
 class Explore extends React.Component {
 
