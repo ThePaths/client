@@ -7,8 +7,8 @@ export class InstructionModal extends React.Component {
     open:true,
   }
 
-  onOpenModal = () => {
-    this.setState({ open: true });
+  onOpenModal = () => { 
+    this.setState({ open: true }); 
   };
 
   onCloseModal = () => {
@@ -17,19 +17,20 @@ export class InstructionModal extends React.Component {
 
   render(){
     if(this.props.loggedIn){
-      this.setState.onCloseModal
+      this.setState.onCloseModal();
     }
     const { open } = this.state;
     return (
       <div>
-      <button onClick={this.onOpenModal}>?</button>
-      <Modal open={open} onClose={ this.onCloseModal } center>
+      <button onClick={ this.onOpenModal }>?</button>
+      <Modal open={ open } 
+             onClose={ this.onCloseModal } 
+             center>
         <p>Simple centered modal</p>
       </Modal>
     </div>
     )
   }
-
 }
 
 const mapStateToProps = state => ({
