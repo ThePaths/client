@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
 import { fetchUserPaths } from '../../../actions/userPaths';
 
-//import Explore from '../Explore/Explore';
-//import PathOverview from '../PathOverview/pathOverview';
+import CurrenPaths from '../CurrentPaths/CurrentPaths';
+import CompletedPaths from '../CompletedPaths/CompletedPaths';
+import SavedPaths from '../SavedPaths/SavedPaths';
+
 
 
 class Dashboard extends React.Component {
@@ -21,15 +23,14 @@ class Dashboard extends React.Component {
     }
     return (
       <div className="dashboard">
-        {/* <Route path="/dashboard/explore" component={ Dashboard }/> 
-         <Route path="/dashboard/explore" component={ Dashboard }/> 
-         <Route path="/dashboard/explore" component={ Dashboard }/> */}
-        <div>Component CurrentPathS</div>
-        <div>Component SavedPaths</div>
-        <div>Component CompletedPaths</div>
-        {/* <Route exact path='/dashboard/explore' component={Explore} />
-        <Route exact path='/dashboard/saved' component={SavedPaths} /> 
-        <Route exact path='/dashboard/path-overview' component={PathOverview} /> */}
+      
+        <div>
+          <CurrenPaths/>
+          <SavedPaths/>
+          <CompletedPaths/>
+        </div>
+     
+      
       </div>
     );
   }
