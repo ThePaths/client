@@ -9,7 +9,7 @@ import LandingPage from '../Guest/LandingPage/LandingPage';
 import Classroom from '../Guest/Classroom/Classroom';
 
 import AuthPage from '../AccountForms/auth-page';
-import Explore from '../Explore/Explore';
+
 import Dashboard from '../User/Dashboard/Dashboard';
 import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
@@ -27,7 +27,6 @@ export class App extends React.Component {
         <main className="main-content">
           <Route exact path="/" component={ LandingPage }/>
           <Route exact path="/dashboard" component={ Dashboard }/>
-          <Route exact path="/dashboard/explore" component={ Explore }/> 
           <Route exact path="/auth" component={ AuthPage }/>
           <Route exact path="/classroom" component={ CurrentVideo }/>
           <Route exact path="/classroom/:id" component={ Classroom }/>
