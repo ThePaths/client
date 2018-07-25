@@ -19,9 +19,6 @@ export class MainHeader extends React.Component {
     let linkTo = '';
     let navClassList = 'site-nav';
 
-    console.log(MAIN_HEADER_URL);
-    console.log(AUTH_HEADER_URL);
-
     if (url === MAIN_HEADER_URL || url === AUTH_HEADER_URL) {
       linkText = 'Login/Register';
       navClassList += ' hide';
