@@ -22,6 +22,7 @@ export class MainHeader extends React.Component {
     console.log(url, 'this is the url');
     console.log(MAIN_HEADER_URL);
     console.log(AUTH_HEADER_URL);
+    console.log(this.props);
 
     if (url === MAIN_HEADER_URL || url === AUTH_HEADER_URL) {
       linkText = 'Login/Register';
