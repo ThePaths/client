@@ -23,9 +23,12 @@ class ExplorePaths extends React.Component {
     });
 
     return (
+      <div>
+      <h2>Choose from these many wonderful Paths</h2>
       <ul>
         {paths}
       </ul>
+      </div>
     );
   }
 }
