@@ -11,7 +11,7 @@ export default () => Component => {
             return <Redirect to="/" />;
         }
 
-        return <Component {...passThroughProps} />;
+        return <Component { ...passThroughProps } />;
     }
 
     const displayName = Component.displayName || Component.name || 'Component';

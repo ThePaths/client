@@ -33,6 +33,7 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
+  loading:state.auth.currentUser !== null,
 });
 
 

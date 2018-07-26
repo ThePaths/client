@@ -8,3 +8,8 @@
   margin: 0 auto;
   display: inline-block;
 }
+.heroImage{
+  width: 200px;
+  margin:20px;
+  height:200px;
+}

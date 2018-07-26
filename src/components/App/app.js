@@ -6,13 +6,13 @@ import MainHeader from '../Headers/MainHeader/MainHeader';
 import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
 
 import LandingPage from '../Guest/LandingPage/LandingPage';
-import Classroom from '../Guest/Classroom/Classroom';
+import GuestClassroom from '../Guest/Classroom/GuestClassroom';
 //import PathOverview from '../PathOverview/pathOverview';
 
 import AuthPage from '../AccountForms/auth-page';
-
+import Classroom from '../User/Classroom/Classroom';
 import Dashboard from '../User/Dashboard/Dashboard';
-import CurrentVideo from '../CurrentVideo/CurrentVideo';
+//import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 
 export class App extends React.Component {
@@ -28,8 +28,8 @@ export class App extends React.Component {
           <Route exact path="/" component={ LandingPage }/>
           <Route path="/dashboard" component={ Dashboard }/>
           <Route exact path="/auth" component={ AuthPage }/>
-          <Route exact path="/classroom" component={ CurrentVideo }/>
-          <Route exact path="/classroom/:id" component={ Classroom }/>
+          <Route exact path="/classroom" component={ Classroom }/>
+          <Route exact path="/classroom/:id" component={ GuestClassroom }/>
         </main>
         <Route path ="/" component={ Footer }/>
       </div>
