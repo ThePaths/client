@@ -18,13 +18,20 @@ export class CurrentVideo extends React.Component {
     const index = this.props.match.params.videoIndex;
     const id = this.props.match.params.id;
     let nextIndex = parseInt(index, 10);
-    nextIndex += 1;
-    
-    
+    nextIndex += 1;    
     if(nextIndex === this.props.overview.videos.length){
       window.location.href = `/dashboard/classroom/${id}/0`
     } else { window.location.href = `/dashboard/classroom/${id}/${nextIndex}` }
+   }
    
+   handleCompletedCourses(){
+     let array = this.props.overview.completedVideos
+     console.log(this.props.overview.completedVideos)
+     if(!array.includes('false')) {
+       alert('Completed');
+     //dispatch action to change database
+     //make new call to database
+   }
   }
 
   render() {
@@ -47,6 +54,7 @@ export class CurrentVideo extends React.Component {
         <section className="classroom-section">
           <InstructionModal />
           <YoutubePlayer
+            completed={ () => this.handleCompletedCourses() }
             video={ this.props.overview.videos[index] }
             title={this.props.overview.title}
             nextBtnClicked={() => this.nextBtnClicked()} />
