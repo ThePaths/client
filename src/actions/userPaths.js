@@ -39,11 +39,12 @@ export const getPathStatus = status => ({
   type: GET_PATH_STATUS,
   status
 });
+
 export const USER_CLASSROOM_SUCCESS = 'USER_CLASSROOM_SUCCESS';
 export const userClassroomSuccess = classroom => ({
   type: USER_CLASSROOM_SUCCESS,
   classroom
-})
+});
 
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -175,7 +176,14 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     })
     .then(res => {
       console.log(res, 'fetch overview action');
+<<<<<<< HEAD
       dispatch(fetchStatus(id))
+=======
+    })
+    .then(status => {
+      console.log('status: ', status);
+      dispatch(getPathStatus(status));
+>>>>>>> fd4ace3ad380a9993fda4203fe880a95d3a6ee91
     })
     .catch(error => dispatch(userPathsError(error)));
 };
@@ -189,4 +197,4 @@ export const fetchUserClassroom = id => dispatch => {
     .then(res => res.json())
     .then(classroom => dispatch(userClassroomSuccess(classroom)))
     .catch(error => dispatch(userPathsError(error)));
-}
+};

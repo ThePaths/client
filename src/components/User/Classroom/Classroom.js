@@ -9,20 +9,47 @@ import YoutubePlayer from './YoutubePlayer';
 export class CurrentVideo extends React.Component {
 
   componentDidMount() {
-    const id = this.props.match.params.id
-    this.props.dispatch(fetchPathOverview(id))
-    this.props.dispatch(fetchCurrentPaths())
+    const id = this.props.match.params.id;
+    this.props.dispatch(fetchPathOverview(id));
+    this.props.dispatch(fetchCurrentPaths());
+  }
+
+  nextBtnClicked() {
+    const index = this.props.match.params.videoIndex;
+    const id = this.props.match.params.id;
+    let nextIndex = parseInt(index);
+    nextIndex += 1;
+    if (index < this.props.overview.videos.length) {
+      window.location.href = `/dashboard/classroom/${id}/${nextIndex}`;
+    } else if (index >= this.props.overview.videos.length) {
+      window.location.href = `/dashboard/classroom/${id}/0`;
+    }
   }
 
   render() {
-    const index = this.props.match.params.videoIndex
+    // USER STORIES
+    // ="/dashboard/classroom/:id/:videoIndex
+    // thats the endpoint for classroom
+    // videoindex is taken from whatever video you click
+    // and the classroom componenet uses that index to populate the videos and replits
+    // need a next button
+    // that either takes you to /dashboard/classroom/:id/:videoIndex+1
+    // or a completed button if at the final video in that path
+
+    
+
     if (!this.props.loading) {
+      const index = parseInt(this.props.match.params.videoIndex);
+      
+
       return (
         <section className="classroom-section">
           <InstructionModal />
-          <h1>{this.props.currentVideo.title}</h1>
-          <YoutubePlayer video={ this.props.currentVideo.videos[index] }/>
-          <Repl repl={ this.props.currentVideo.videos[index].replit }/>
+          <YoutubePlayer
+            video={ this.props.overview.videos[index] }
+            title={this.props.overview.title}
+            nextBtnClicked={() => this.nextBtnClicked()} />
+          <Repl repl={ this.props.overview.videos[index].replit }/>
         </section>
       );
     }
@@ -32,7 +59,7 @@ export class CurrentVideo extends React.Component {
 
 const mapStateToProps = state => ({
   loading: state.userPaths.overviewLoading,
-  currentVideo: state.userPaths.overview,
+  overview: state.userPaths.overview,
   loggedIn: state.auth.currentUser !== null
 });
 
