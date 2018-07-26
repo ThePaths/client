@@ -176,14 +176,7 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     })
     .then(res => {
       console.log(res, 'fetch overview action');
-<<<<<<< HEAD
       dispatch(fetchStatus(id))
-=======
-    })
-    .then(status => {
-      console.log('status: ', status);
-      dispatch(getPathStatus(status));
->>>>>>> fd4ace3ad380a9993fda4203fe880a95d3a6ee91
     })
     .catch(error => dispatch(userPathsError(error)));
 };
