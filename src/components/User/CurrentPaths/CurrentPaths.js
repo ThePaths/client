@@ -23,7 +23,7 @@ export function CurrentPaths(props) {
   return (
     <div className="currentPathsContainer">
       <ul>
-        {currentPath}
+        { currentPath }
       </ul>
     </div>
   )
