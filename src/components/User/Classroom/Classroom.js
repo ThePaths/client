@@ -17,13 +17,14 @@ export class CurrentVideo extends React.Component {
   nextBtnClicked() {
     const index = this.props.match.params.videoIndex;
     const id = this.props.match.params.id;
-    let nextIndex = parseInt(index);
+    let nextIndex = parseInt(index, 10);
     nextIndex += 1;
-    if (index < this.props.overview.videos.length) {
-      window.location.href = `/dashboard/classroom/${id}/${nextIndex}`;
-    } else if (index >= this.props.overview.videos.length) {
-      window.location.href = `/dashboard/classroom/${id}/0`;
-    }
+    
+    
+    if(nextIndex === this.props.overview.videos.length){
+      window.location.href = `/dashboard/classroom/${id}/0`
+    } else { window.location.href = `/dashboard/classroom/${id}/${nextIndex}` }
+   
   }
 
   render() {
@@ -39,7 +40,7 @@ export class CurrentVideo extends React.Component {
     
 
     if (!this.props.loading) {
-      const index = parseInt(this.props.match.params.videoIndex);
+      const index = parseInt(this.props.match.params.videoIndex, 10);
       
 
       return (

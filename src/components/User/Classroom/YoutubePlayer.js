@@ -5,6 +5,8 @@ import YouTube from 'react-youtube';
 
 export class YoutubePlayer extends React.Component { 
 
+  
+
   render() {
     const opts = {
       playerVars: { 
@@ -33,6 +35,7 @@ export class YoutubePlayer extends React.Component {
             <p className="video-recap">
               {this.props.video.description}
             </p>
+            <button onClick={() => this.props.nextBtnClicked()}>Next</button>
             <button onClick={() => this.props.nextBtnClicked()}>Next</button>
           </footer>
         </div>
