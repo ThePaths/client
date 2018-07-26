@@ -59,7 +59,7 @@ export class PathOverview extends React.Component {
             </div>
             <div>
               {/* add link to path's classroom */}
-              <Link to='/'>Go &gt;</Link>
+              <Link to={`/dashboard/classroom/${item.id}`}>Go &gt;</Link>
             </div>
           </li>
         );
