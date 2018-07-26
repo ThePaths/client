@@ -52,7 +52,6 @@ export class PathOverview extends React.Component {
             <h1>{ this.props.path.title }</h1>
             <p>{ this.props.path.videos[0].description }</p>
             <div>
-              {/* conditional btns go here */}
               <Link to='/classroom'>
                 { pathProgressBtn }
               </Link>
