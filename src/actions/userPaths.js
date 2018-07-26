@@ -46,6 +46,22 @@ export const userClassroomSuccess = classroom => ({
   classroom
 });
 
+export const fetchStatus = id => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/status/${id}`, {
+    method: 'GET',
+    headers: {
+      // Provide our auth token as credentials
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+  .then(res => res.json())
+  .then(status =>{
+    console.log('status: ', status)
+    dispatch(getPathStatus(status))})
+  .catch(err => dispatch(userPathsError(err)))
+}
+
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -75,10 +91,8 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
-    .then(res => {
-      console.log(res, 'add saved action');
-    })
-    .then(status => dispatch(getPathStatus(status)))
+    .then(() => dispatch(fetchSavedPaths()))
+    .then(() => dispatch(fetchStatus(pathId)))
     .catch(err => console.log(err));
 };
 
@@ -94,10 +108,8 @@ export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
-    .then(res => {
-      console.log(res, 'remove saved action');
-    })
-    .then(status => dispatch(getPathStatus(status)))
+    .then(() => dispatch(fetchSavedPaths()))
+    .then(() => dispatch(fetchStatus(pathId)))
     .catch(err => console.log(err));
 };
 
@@ -115,6 +127,20 @@ export const addToUserCurrent = (pathId) => (dispatch, getState) => {
     .catch(err => console.log(err));
 };
 
+export const completeVideo = (id, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({id, index})
+  })
+  .then(res => res.json())
+  .catch(error => dispatch(userPathsError(error)))
+}
+
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -127,6 +153,7 @@ export const fetchSavedPaths = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(paths => {
+      console.log(paths)
       dispatch(savedPathsSuccess(paths));
     })
     .catch(error => dispatch(userPathsError(error)));
@@ -149,10 +176,7 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     })
     .then(res => {
       console.log(res, 'fetch overview action');
-    })
-    .then(status => {
-      console.log('status: ', status);
-      dispatch(getPathStatus(status));
+      dispatch(fetchStatus(id))
     })
     .catch(error => dispatch(userPathsError(error)));
 };
