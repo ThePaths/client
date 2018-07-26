@@ -15,7 +15,9 @@ export class YoutubePlayer extends React.Component {
               showinfo: 0
             }
           };
-
+    //Creating two youtube players 1 for guest and 1 for user . 
+    //Trying to figure out how to use this component dynamically
+    if (!this.props.loggedIn) {
     return (
         <div className="video-player-container">
           <header className="video-header">
@@ -35,6 +37,7 @@ export class YoutubePlayer extends React.Component {
           </footer>
         </div>
       );
+    } return null;
     }    
   }
 

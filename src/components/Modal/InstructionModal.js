@@ -17,7 +17,7 @@ export class InstructionModal extends React.Component {
 
   render(){
     if(this.props.loggedIn){
-      this.setState.onCloseModal();
+      this.setState({ open: false });
     }
     const { open } = this.state;
     return (
