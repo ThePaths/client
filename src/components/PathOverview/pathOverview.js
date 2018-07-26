@@ -27,8 +27,8 @@ export class PathOverview extends React.Component {
 
       let saveButton;
       if (this.props.path.status === 'saved') {
-        saveButton = <button 
-          onClick={() => this.addToSaved()}>
+        saveButton = <button>
+          {/* add click () => to unsave */}
           Unsave
         </button>;
       } else {
