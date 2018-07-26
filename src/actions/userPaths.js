@@ -67,6 +67,35 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
     .catch(err => console.log(err));
 };
 
+export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/unsave`, {
+    method: 'PUT',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err));
+};
+
+export const addToUserCurrent = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/start`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err));
+};
+
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -101,35 +130,3 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     })
     .catch(error => dispatch(userPathsError(error)));
 };
-
-// export const addToUserSaved = (pathId) => (dispatch, getState) => {
-//   const authToken = getState().auth.authToken;
-//   fetch(`${API_BASE_URL}/api/userpaths/save`, {
-//     method: 'PUT',
-//     headers: {
-//       // Provide our auth token as credentials
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${authToken}`
-//     },
-//     body: JSON.stringify({pathId})
-//   })
-//   .then(res => res.json())
-//   .then(() => dispatch(fetchUserPaths()))
-//   .catch(err => console.log(err))
-// }
-
-// export const setUserDisplay = pathId => (dispatch, getState) => {
-//   const authToken = getState().auth.authToken;
-//   fetch(`${API_BASE_URL}/api/userpaths/display`, {
-//     method: 'PUT',
-//     headers: {
-//       // Provide our auth token as credentials
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${authToken}`
-//     },
-//     body: JSON.stringify({pathId})
-//   })
-//   .then(res => res.json())
-//   .then(() => dispatch(fetchUserPaths()))
-//   .catch(err => console.log(err))
-// }
