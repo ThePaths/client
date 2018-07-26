@@ -7,8 +7,8 @@ export function SavedPaths(props) {
     savedPath = props.saved.map((path, index) => {
       return (
         <li key={ index }>
-          <p>{ path.path.title }</p>
-          <img src={ path.path.hero } alt='' className="heroImage"/>
+          <p>{ path.title }</p>
+          <img src={ path.hero } alt='' className="heroImage"/>
         </li>
       )
     })
