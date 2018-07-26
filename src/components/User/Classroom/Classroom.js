@@ -4,7 +4,7 @@ import { fetchCurrentPaths } from '../../../actions/userPaths';
 import './classroom.css';
 //import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
-import YoutubePlayer from '../../Youtube/YoutubePlayer';
+import YoutubePlayer from './YoutubePlayer';
 
 
 export class CurrentVideo extends React.Component {
@@ -13,7 +13,7 @@ export class CurrentVideo extends React.Component {
     const id = this.props.match.params.id
     console.log(id)
     this.props.dispatch(fetchCurrentPaths())
-    //this.props.dispatch(fetchGuestClassroom(id))
+   
   }
 
   render() {

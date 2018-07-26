@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './youtube.css';
+import './youtubePlayer.css';
 import YouTube from 'react-youtube';
 
 export class YoutubePlayer extends React.Component { 
@@ -15,15 +15,15 @@ export class YoutubePlayer extends React.Component {
               showinfo: 0
             }
           };
-    
+   
 
     return (
         <div className="video-player-container">
           <header className="video-header">
-            <h2 className="video-title">{this.props.display.title}</h2>
+            {/* <h2 className="video-title">{this.props.display.title}</h2> */}
           </header>
           <YouTube className="video-player"
-                   videoId={ this.props.display.videos[0].videoId }
+                   //videoId={ this.props.display.videos[0].videoId }
                    opts={ opts }
                    host='https://www.youtube.com'
                    onEnd={ () => console.log('End Of Video') }
@@ -31,7 +31,7 @@ export class YoutubePlayer extends React.Component {
           <footer className="video-footer">
             <h2>Show Notes</h2>
             <p className="video-recap">
-             {this.props.display.description}
+             {/* {this.props.display.description} */}
             </p>
           </footer>
         </div>
@@ -40,8 +40,8 @@ export class YoutubePlayer extends React.Component {
   }
 
 const mapStateToProps = state => ({
-  display: state.guests.classroom,
-  loading: state.guests.loading,
+  display: state.auth.currentUser.classroom,
+  loading: state.auth.currentUser.loading,
   loggedIn: state.auth.currentUser !== null
 });
 

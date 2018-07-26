@@ -28,7 +28,7 @@ export class App extends React.Component {
           <Route exact path="/" component={ LandingPage }/>
           <Route path="/dashboard" component={ Dashboard }/>
           <Route exact path="/auth" component={ AuthPage }/>
-          <Route exact path="/classroom" component={ Classroom }/>
+          <Route exact path="/classroom/user/:id" component={ Classroom }/>
           <Route exact path="/classroom/:id" component={ GuestClassroom }/>
         </main>
         <Route path ="/" component={ Footer }/>

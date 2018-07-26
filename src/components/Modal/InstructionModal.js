@@ -3,8 +3,15 @@ import Modal from 'react-responsive-modal';
 import { connect } from 'react-redux';
 
 export class InstructionModal extends React.Component {
+
+  componentDidMount(){
+    if(!this.props.loggedIn){
+      this.onOpenModal();
+      }
+  }
+
   state = {
-    open:true,
+    open:false,
   }
 
   onOpenModal = () => { 
@@ -16,9 +23,7 @@ export class InstructionModal extends React.Component {
   };
 
   render(){
-    if(this.props.loggedIn){
-      this.setState({ open: false });
-    }
+  
     const { open } = this.state;
     return (
       <div>
