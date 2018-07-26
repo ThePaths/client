@@ -20,10 +20,10 @@ export class YoutubePlayer extends React.Component {
     return (
         <div className="video-player-container">
           <header className="video-header">
-            {/* <h2 className="video-title">{this.props.display.title}</h2> */}
+            <h2 className="video-title">{this.props.video.title}</h2>
           </header>
           <YouTube className="video-player"
-                  // videoId={ this.props }
+                  videoId={ this.props.video.videoId }
                    opts={ opts }
                    host='https://www.youtube.com'
                    onEnd={ () => console.log('End Of Video') }
@@ -31,7 +31,7 @@ export class YoutubePlayer extends React.Component {
           <footer className="video-footer">
             <h2>Show Notes</h2>
             <p className="video-recap">
-             {/* {this.props.display.description} */}
+             {this.props.video.description}
             </p>
           </footer>
         </div>
