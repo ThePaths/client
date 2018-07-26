@@ -23,7 +23,7 @@ export class YoutubePlayer extends React.Component {
             {/* <h2 className="video-title">{this.props.display.title}</h2> */}
           </header>
           <YouTube className="video-player"
-                   //videoId={ this.props.display.videos[0].videoId }
+                  // videoId={ this.props }
                    opts={ opts }
                    host='https://www.youtube.com'
                    onEnd={ () => console.log('End Of Video') }

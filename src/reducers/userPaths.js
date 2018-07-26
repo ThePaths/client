@@ -1,4 +1,4 @@
-import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS } from "../actions/userPaths";
+import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS, USER_CLASSROOM_SUCCESS } from "../actions/userPaths";
 
 const initialState = {
   loading: true,
@@ -53,6 +53,13 @@ const userPathsReducer = (state = initialState, action) => {
       return {
         ...state,
         overviewLoading: true
+      }
+      case USER_CLASSROOM_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        current: action.classroom
       }
 
     default:

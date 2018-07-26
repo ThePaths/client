@@ -34,6 +34,12 @@ export const fetchPathOverviewSuccess = overview => ({
   overview
 });
 
+export const USER_CLASSROOM_SUCCESS = 'USER_CLASSROOM_SUCCESS';
+export const userClassroomSuccess = classroom => ({
+  type: USER_CLASSROOM_SUCCESS,
+  classroom
+})
+
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -130,3 +136,14 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     })
     .catch(error => dispatch(userPathsError(error)));
 };
+
+
+export const fetchUserClassroom = id => dispatch => {
+  dispatch(userPathsRequest());
+  fetch(`${API_BASE_URL}/api/paths/${id}`, {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(classroom => dispatch(userClassroomSuccess(classroom)))
+    .catch(error => dispatch(userPathsError(error)));
+}
