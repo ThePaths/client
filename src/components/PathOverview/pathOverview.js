@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPathOverview, addToUserSaved } from '../../actions/userPaths';
+import { fetchPathOverview, addToUserSaved, removeFromUserSaved } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 
@@ -15,8 +15,15 @@ export class PathOverview extends React.Component {
     this.props.dispatch(addToUserSaved(id));
   }
 
+  removeFromSaved() {
+    let id = this.props.match.params.id;
+    this.props.dispatch(removeFromUserSaved(id));
+  }
+
   render() {
     if (!this.props.loading) {
+      console.log(this.props.status, 'path overview status');
+
       // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
@@ -26,9 +33,9 @@ export class PathOverview extends React.Component {
       }
 
       let saveButton;
-      if (this.props.path.status === 'saved') {
-        saveButton = <button>
-          {/* add click () => to unsave */}
+      if (this.props.status === 'saved') {
+        saveButton = <button 
+          onClick={() => this.removeFromSaved()}>
           Unsave
         </button>;
       } else {
@@ -84,6 +91,7 @@ export class PathOverview extends React.Component {
 
 const mapStateToProps = state => ({
   path: state.userPaths.overview,
+  status: state.userPaths.status,
   loading: state.userPaths.overviewLoading
 });
 

@@ -34,6 +34,12 @@ export const fetchPathOverviewSuccess = overview => ({
   overview
 });
 
+export const GET_PATH_STATUS = 'GET_PATH_STATUS';
+export const getPathStatus = status => ({
+  type: GET_PATH_STATUS,
+  status
+});
+
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
@@ -63,7 +69,10 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
-    // .then(() => dispatch(fetchSavedPaths()))
+    .then(res => {
+      console.log(res, 'add saved action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(err => console.log(err));
 };
 
@@ -79,6 +88,10 @@ export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
+    .then(res => {
+      console.log(res, 'remove saved action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(err => console.log(err));
 };
 
@@ -128,5 +141,9 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     .then(overview => {
       dispatch(fetchPathOverviewSuccess(overview)); //change to new action
     })
+    .then(res => {
+      console.log(res, 'fetch overview action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(error => dispatch(userPathsError(error)));
 };

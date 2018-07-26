@@ -1,4 +1,4 @@
-import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS } from "../actions/userPaths";
+import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS, GET_PATH_STATUS } from "../actions/userPaths";
 
 const initialState = {
   loading: true,
@@ -7,6 +7,7 @@ const initialState = {
   saved: [],
   completed: [],
   overview: null,
+  status: null,
   error: null
 }
 
@@ -53,6 +54,12 @@ const userPathsReducer = (state = initialState, action) => {
       return {
         ...state,
         overviewLoading: true
+      }
+
+      case GET_PATH_STATUS:
+      return {
+        ...state,
+        status: action.status
       }
 
     default:
