@@ -6,7 +6,7 @@ export function SavedPaths(props) {
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
       return (
-        <li key={ index }>
+        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
           <p>{ path.title }</p>
           <img src={ path.hero } alt='' className="heroImage"/>
         </li>
