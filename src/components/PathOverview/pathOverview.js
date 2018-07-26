@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPathOverview } from '../../actions/userPaths';
+import { fetchPathOverview, addToUserSaved } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 
   componentDidMount() {
     let id = this.props.match.params.id;
     this.props.dispatch(fetchPathOverview(id));
+  }
+
+  addToSaved() {
+    let id = this.props.match.params.id;
+    this.props.dispatch(addToUserSaved(id));
   }
 
   render() {
@@ -20,10 +25,17 @@ export class PathOverview extends React.Component {
         pathProgressBtn = 'Start';
       }
 
-      // add functionality to save path
       let saveButton;
       if (this.props.path.status === 'saved') {
-        saveButton = '';
+        saveButton = <button>
+          {/* add click () => to unsave */}
+          Unsave
+        </button>;
+      } else {
+        saveButton = <button 
+          onClick={() => this.addToSaved()}>
+          Save
+        </button>;
       }
 
       let videos = this.props.path.videos.map((item, index) => {
@@ -55,7 +67,7 @@ export class PathOverview extends React.Component {
               <Link to='/classroom'>
                 { pathProgressBtn }
               </Link>
-              { saveButton }
+              {saveButton}
             </div>
           </section>
           <section className="path-videos-info-container">
@@ -76,31 +88,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(PathOverview);
-
-
-
-// reference code
-// if(!this.props.loading) {
-//   const videos = this.props.path.videos.map((video, index) => {
-//     return (
-//       <li key={index}>
-//         <h2>{this.props.path.title}</h2>
-//         <p>{this.props.path.description}</p>
-//         <img src={`http://img.youtube.com/vi/${video.videoId}/1.jpg`} alt='FIX' 
-//           onClick={() => window.location.href = '/classroom'}
-//         />
-     
-//       </li>
-//     );
-//   });
-//   return (
-//     <div>
-//       <h2>{this.props.path.title}</h2>
-//       <p>{this.props.path.description}</p>
-//       <ul>{videos}</ul>
-//     </div>
-//   );
-// }
-// return (
-//   null
-// );
