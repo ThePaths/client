@@ -7,9 +7,9 @@ export function CompletedPaths(props) {
   if (props.saved.length > 0) {
     completedPath = props.saved.map((path, index) => {
       return (
-        <li key={ index }>
-          <p>{ path.path.title }</p>
-          <img src={ path.path.hero } alt='' className="heroImage"/>
+        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
+          <p>{ path.title }</p>
+          <img src={ path.hero } alt='' className="heroImage"/>
         </li>
       )
     })
