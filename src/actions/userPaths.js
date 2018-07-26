@@ -34,11 +34,19 @@ export const fetchPathOverviewSuccess = overview => ({
   overview
 });
 
+<<<<<<< HEAD
+export const GET_PATH_STATUS = 'GET_PATH_STATUS';
+export const getPathStatus = status => ({
+  type: GET_PATH_STATUS,
+  status
+});
+=======
 export const USER_CLASSROOM_SUCCESS = 'USER_CLASSROOM_SUCCESS';
 export const userClassroomSuccess = classroom => ({
   type: USER_CLASSROOM_SUCCESS,
   classroom
 })
+>>>>>>> 879cb241c5009f982156d06e54f9191084f6d16e
 
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -69,7 +77,10 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
-    // .then(() => dispatch(fetchSavedPaths()))
+    .then(res => {
+      console.log(res, 'add saved action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(err => console.log(err));
 };
 
@@ -85,6 +96,10 @@ export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
     body: JSON.stringify({pathId})
   })
     .then(res => res.json())
+    .then(res => {
+      console.log(res, 'remove saved action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(err => console.log(err));
 };
 
@@ -134,7 +149,14 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     .then(overview => {
       dispatch(fetchPathOverviewSuccess(overview)); //change to new action
     })
+    .then(res => {
+      console.log(res, 'fetch overview action');
+    })
+    .then(status => dispatch(getPathStatus(status)))
     .catch(error => dispatch(userPathsError(error)));
+<<<<<<< HEAD
+};
+=======
 };
 
 
@@ -147,3 +169,4 @@ export const fetchUserClassroom = id => dispatch => {
     .then(classroom => dispatch(userClassroomSuccess(classroom)))
     .catch(error => dispatch(userPathsError(error)));
 }
+>>>>>>> 879cb241c5009f982156d06e54f9191084f6d16e
