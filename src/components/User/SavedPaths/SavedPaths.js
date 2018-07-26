@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import './savedPaths.css';
 export function SavedPaths(props) {
   let savedPath;
   if (props.saved.length > 0) {
@@ -17,7 +17,7 @@ export function SavedPaths(props) {
   }
 
   return (
-    <div>
+    <div className="savedPathsContainer">
       <ul>
         {savedPath}
       </ul>

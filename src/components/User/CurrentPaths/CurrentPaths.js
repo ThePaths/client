@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import './currentPaths.css';
 export function CurrentPaths(props) {
   let currentPath;
   if (props.current.length > 0) {
@@ -13,11 +13,14 @@ export function CurrentPaths(props) {
       )
     })
   } else {
-    currentPath = <li><p>You are currently following no paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>
+    currentPath = <li>
+                    <p>You are currently following no paths, go to explore to find some</p>
+                    <button className="currentPathsBUtton" onClick={() => window.location.href = '/dashboard/explore'}>Explore</button>
+                  </li>
   }
 
   return (
-    <div>
+    <div className="currentPathsContainer">
       <ul>
         {currentPath}
       </ul>

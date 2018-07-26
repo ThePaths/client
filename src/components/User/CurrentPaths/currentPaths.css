@@ -1,0 +1,10 @@
+
+.currentPathsContainer {
+  border:2px solid black;
+  margin:5px;
+  padding:5px;
+}
+.currentPathsBUtton {
+  margin: 0 auto;
+  display: inline-block;
+}

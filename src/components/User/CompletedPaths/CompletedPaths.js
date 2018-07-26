@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './completedPaths.css';
 
 export function CompletedPaths(props) {
   let completedPath;
@@ -17,7 +18,7 @@ export function CompletedPaths(props) {
   }
 
   return (
-    <div>
+    <div className="completedPathsContainer">
       <ul>
         {completedPath}
       </ul>

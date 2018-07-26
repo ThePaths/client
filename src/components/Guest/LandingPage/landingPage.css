@@ -12,3 +12,15 @@
 .gp-container li {
   margin: 10px;
 }
+
+.heroImage{
+  width: 200px;
+  margin:20px;
+  height:200px;
+}
+.landingPageBoxes {
+  width: 250px;
+  display:inline-block;
+  margin:15px;
+  text-align:center;
+}

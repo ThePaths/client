@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { fetchPaths } from '../../../actions/paths';
-
+import './explorePaths.css';
 
 
 class ExplorePaths extends React.Component {
@@ -13,7 +13,7 @@ class ExplorePaths extends React.Component {
   render() {
     const paths = this.props.paths.map((path, index) => {
       return (
-        <li key={index}>
+        <li key={index} className="exploreBoxes">
           <p>{path.title}</p>          
           <img src={path.hero} alt=''/>
           <p>{path.description}</p>         
