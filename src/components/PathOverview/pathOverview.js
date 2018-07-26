@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPathOverview, addToUserSaved, removeFromUserSaved, fetchStatus } from '../../actions/userPaths';
+import { fetchPathOverview, addToUserSaved, removeFromUserSaved, fetchStatus, addToUserCurrent } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 
@@ -27,9 +27,15 @@ export class PathOverview extends React.Component {
       // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
-        pathProgressBtn = 'Continue';
+        pathProgressBtn = <button onClick={() => window.location.href = `/dashboard/classroom/${this.props.path.id}/${this.props.path.lastVideoIndex}`}>Continue</button>;
       } else {
-        pathProgressBtn = 'Start';
+        pathProgressBtn = <button onClick={() => {
+          if(this.props.status === 'saved') {
+            this.removeFromSaved()
+          }
+          this.props.dispatch(addToUserCurrent(this.props.path.id))
+          window.location.href = `/dashboard/classroom/${this.props.path.id}/0`
+        }}>Start</button>;
       }
 
       let saveButton;
@@ -71,9 +77,7 @@ export class PathOverview extends React.Component {
             <h1>{ this.props.path.title }</h1>
             <p>{ this.props.path.videos[0].description }</p>
             <div>
-              <Link to='/classroom'>
                 { pathProgressBtn }
-              </Link>
               {saveButton}
             </div>
           </section>

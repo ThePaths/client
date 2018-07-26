@@ -3,27 +3,24 @@ import { connect } from 'react-redux';
 import './youtubePlayer.css';
 import YouTube from 'react-youtube';
 
-export class YoutubePlayer extends React.Component { 
-
-  
+export default class YoutubePlayer extends React.Component {
 
   render() {
     const opts = {
-      playerVars: { 
+      playerVars: {
         autoplay: 1,
         'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0
       }
     };
-
     return (
       <div className="video-player-container">
         <YouTube className="video-player"
-          videoId={ this.props.video.videoId }
-          opts={ opts }
+          videoId={this.props.video.videoId}
+          opts={opts}
           host='https://www.youtube.com'
-          onEnd={ () => console.log('End Of Video') }
+          onEnd={() => console.log('End Of Video')}
         />
         <div className="video-info-section">
           <header className="video-header">
@@ -36,19 +33,10 @@ export class YoutubePlayer extends React.Component {
               {this.props.video.description}
             </p>
             <button onClick={() => this.props.nextBtnClicked()}>Next</button>
-            <button onClick={() => this.props.nextBtnClicked()}>Next</button>
+            <button onClick={() => console.log('ayyyyy')}>Complete</button>
           </footer>
         </div>
       </div>
     );
-  }    
+  }
 }
-
-const mapStateToProps = state => ({
-  currentVideo: state.userPaths.overview,
-  display: state.auth.currentUser.classroom,
-  loading: state.auth.currentUser.loading,
-  loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(YoutubePlayer);
