@@ -11,11 +11,6 @@ import PathOverview from '../../PathOverview/pathOverview';
 
 class Dashboard extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch(fetchCurrentPaths());
-    this.props.dispatch(fetchSavedPaths());
-  }
-
   render() {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
