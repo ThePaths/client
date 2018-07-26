@@ -15,13 +15,14 @@ export class CurrentVideo extends React.Component {
   }
 
   render() {
-    if (!this.props.loading && !this.props.loading2) {
+    const index = this.props.match.params.videoIndex
+    if (!this.props.loading) {
       return (
         <section className="classroom-section">
           <InstructionModal />
           <h1>{this.props.currentVideo.title}</h1>
-          <YoutubePlayer video={ this.props.currentVideo.videos[this.props.index[0].lastVideoIndex] }/>
-          <Repl repl={ this.props.currentVideo.videos[this.props.index[0].lastVideoIndex].replit }/>
+          <YoutubePlayer video={ this.props.currentVideo.videos[index] }/>
+          <Repl repl={ this.props.currentVideo.videos[index].replit }/>
         </section>
       );
     }
@@ -30,8 +31,6 @@ export class CurrentVideo extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  index: state.userPaths.current,
-  loading2: state.userPaths.loading,
   loading: state.userPaths.overviewLoading,
   currentVideo: state.userPaths.overview,
   loggedIn: state.auth.currentUser !== null

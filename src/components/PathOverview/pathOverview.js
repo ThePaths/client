@@ -59,8 +59,8 @@ export class PathOverview extends React.Component {
             </div>
             <div>
               {/* add link to path's classroom */}
-              <Link to={`/dashboard/classroom/${this.props.path.id}`}>Go &gt;</Link>
-              <button onClick={ () => {window.location.href = `/dashboard/classroom/${this.props.path.id}`;} }>go2</button>
+              <Link to={`/dashboard/classroom/${this.props.path.id}/${index}`}>Go &gt;</Link>
+              <button onClick={ () => {window.location.href = `/dashboard/classroom/${this.props.path.id}/${index}`;} }>go2</button>
             </div>
           </li>
         );
