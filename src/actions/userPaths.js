@@ -51,6 +51,22 @@ export const fetchCurrentPaths = () => (dispatch, getState) => {
     .catch(error => dispatch(userPathsError(error)));
 };
 
+export const addToUserSaved = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/save`, {
+    method: 'PUT',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({pathId})
+  })
+    .then(res => res.json())
+    // .then(() => dispatch(fetchSavedPaths()))
+    .catch(err => console.log(err));
+};
+
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userPathsRequest());
