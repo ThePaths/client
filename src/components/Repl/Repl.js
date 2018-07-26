@@ -7,7 +7,7 @@ export default function Repl(props) {
       title="firstAttempt"
       height="400px"
       width="100%"
-      src={props.repl}
+      src={ props.repl }
       scrolling="no"
       frameBorder="no"
       allowtransparency="true"

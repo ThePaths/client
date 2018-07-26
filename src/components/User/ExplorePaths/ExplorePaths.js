@@ -13,11 +13,11 @@ class ExplorePaths extends React.Component {
   render() {
     const paths = this.props.paths.map((path, index) => {
       return (
-        <li key={index} className="exploreBoxes">
-          <p>{path.title}</p>          
-          <img src={path.hero} alt=''/>
-          <p>{path.description}</p>         
-          <button onClick={() =>{ window.location.href = `/dashboard/overview/${path.id}`;}}>View Path</button>
+        <li key={ index } className="exploreBoxes">
+          <p>{ path.title }</p>          
+          <img src={ path.hero } alt=''className="heroImage"/>
+          <p>{ path.description }</p>         
+          <button onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>View Path</button>
         </li>
       );
     });
@@ -26,7 +26,7 @@ class ExplorePaths extends React.Component {
       <div>
         <h2>Choose from these many wonderful Paths</h2>
         <ul>
-          {paths}
+          { paths }
         </ul>
       </div>
     );

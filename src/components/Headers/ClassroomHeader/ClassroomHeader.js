@@ -22,7 +22,8 @@ export class ClassroomHeader extends React.Component {
           </Link>
         </div>
         <div className='form-redirect-container'>
-          <Link className="form-redirect-link" onClick={() => this.logOut()} to='/'>Sign Out</Link>
+          <Link className="form-redirect-link" 
+                onClick={ () => this.logOut() } to='/'>Sign Out</Link>
         </div>
       </header>
     );

@@ -7,9 +7,9 @@ export function CompletedPaths(props) {
   if (props.saved.length > 0) {
     completedPath = props.saved.map((path, index) => {
       return (
-        <li key={index}>
-          <p>{path.path.title}</p>
-          <img src={path.path.hero} alt='' />
+        <li key={ index }>
+          <p>{ path.path.title }</p>
+          <img src={ path.path.hero } alt='' className="heroImage"/>
         </li>
       )
     })
@@ -20,7 +20,7 @@ export function CompletedPaths(props) {
   return (
     <div className="completedPathsContainer">
       <ul>
-        {completedPath}
+        { completedPath }
       </ul>
     </div>
   )

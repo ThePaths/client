@@ -1,13 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, withRouter, Switch} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, withRouter, Switch } from 'react-router-dom';
 
 import MainHeader from '../Headers/MainHeader/MainHeader';
 import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
 
 import LandingPage from '../Guest/LandingPage/LandingPage';
 import Classroom from '../Guest/Classroom/Classroom';
-import PathOverview from '../PathOverview/pathOverview';
+//import PathOverview from '../PathOverview/pathOverview';
 
 import AuthPage from '../AccountForms/auth-page';
 

@@ -7,7 +7,6 @@ export class PathOverview extends React.Component {
 
   componentDidMount() {
     let id = this.props.match.params.id;
-    console.log(id);
     this.props.dispatch(fetchPathOverview(id));
   }
 
@@ -15,18 +14,19 @@ export class PathOverview extends React.Component {
     if (!this.props.loading) {
       let videos = this.props.path.videos.map((item, index) => {
         return (
-          <li key={index}>
+          <li key={ index }>
             <div>
-              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`} alt="Path Thumbnail" />
+              <img src={ `http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg` } 
+                   alt="Path Thumbnail" />
             </div>
             <div>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
+              <h2>{ item.title }</h2>
+              <p>{ item.description }</p>
             </div>
             <div>
 
             </div>
-            <p>{item.title}</p>
+            <p>{ item.title }</p>
           </li>
         );
       });
@@ -47,19 +47,19 @@ export class PathOverview extends React.Component {
       return (
         <div className="path-overview-container">
           <section className="path-info-container">
-            <h1>{this.props.path.title}</h1>
-            <p>{this.props.path.videos[0].description}</p>
+            <h1>{ this.props.path.title }</h1>
+            <p>{ this.props.path.videos[0].description }</p>
             <div>
               {/* conditional btns go here */}
               <Link to='/classroom'>
-                {pathProgressBtn}
+                { pathProgressBtn }
               </Link>
-              {saveButton}
+              { saveButton }
             </div>
           </section>
           <section className="path-videos-info-container">
             <ul>
-              {videos}
+              { videos }
               {/* render videos here */}
             </ul>
           </section>
