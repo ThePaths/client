@@ -12,25 +12,7 @@ export class PathOverview extends React.Component {
 
   render() {
     if (!this.props.loading) {
-      let videos = this.props.path.videos.map((item, index) => {
-        return (
-          <li key={ index }>
-            <div>
-              <img src={ `http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg` } 
-                   alt="Path Thumbnail" />
-            </div>
-            <div>
-              <h2>{ item.title }</h2>
-              <p>{ item.description }</p>
-            </div>
-            <div>
-
-            </div>
-            <p>{ item.title }</p>
-          </li>
-        );
-      });
-
+      // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
         pathProgressBtn = 'Continue';
@@ -43,6 +25,26 @@ export class PathOverview extends React.Component {
       if (this.props.path.status === 'saved') {
         saveButton = '';
       }
+
+      let videos = this.props.path.videos.map((item, index) => {
+        return (
+          <li key={ index }>
+            <div>
+              <img src={ `http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg` } 
+                alt="Path Thumbnail" />
+            </div>
+            <div>
+              {/* in css add checkmark to h2 with ::after */}
+              <h2>{ item.title }</h2>
+              <p>{ item.description }</p>
+            </div>
+            <div>
+              {/* add link to path's classroom */}
+              <Link to='/'>Go &gt;</Link>
+            </div>
+          </li>
+        );
+      });
 
       return (
         <div className="path-overview-container">
@@ -60,7 +62,6 @@ export class PathOverview extends React.Component {
           <section className="path-videos-info-container">
             <ul>
               { videos }
-              {/* render videos here */}
             </ul>
           </section>
         </div>
