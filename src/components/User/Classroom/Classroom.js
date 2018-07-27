@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPathOverview, fetchCurrentPaths } from '../../../actions/userPaths';
+import { fetchPathOverview, fetchCurrentPaths, changeLastVideoIndex } from '../../../actions/userPaths';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
@@ -10,9 +10,21 @@ export class Classroom extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.id;
+    const index = parseInt(this.props.match.params.videoIndex);
     this.props.dispatch(fetchPathOverview(id));
-    this.props.dispatch(fetchCurrentPaths());
-  }
+    this.props.dispatch(changeLastVideoIndex(id,index))
+    
+  
+    }
+  
+
+//   changeVideoIndex(){
+//     const id = this.props.match.params.id;
+//     const index = parseInt(this.props.match.params.videoIndex);
+//   if(this.props.match.params.videoIndex !== this.props.overview.lastVideoIndex) {
+//     console.log(id);
+//  this.props.dispatch(changeLastVideoIndex(id,index))
+//   }}
 
   nextBtnClicked() {
     const index = this.props.match.params.videoIndex;
@@ -41,6 +53,7 @@ export class Classroom extends React.Component {
 
       return (
         <section className="classroom-section">
+       
           <InstructionModal />
           <YoutubePlayer
             completed={ () => this.handleCompletedCourses() }
@@ -58,6 +71,7 @@ export class Classroom extends React.Component {
 const mapStateToProps = state => ({
   loading: state.userPaths.overviewLoading,
   overview: state.userPaths.overview,
+  //lastVideoIndex:state.userPaths.overview.lastVideoIndex,
   loggedIn: state.auth.currentUser !== null
 });
 

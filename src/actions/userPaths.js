@@ -46,6 +46,25 @@ export const userClassroomSuccess = classroom => ({
   classroom
 });
 
+export const USER_LAST_VIDEO_INDEX_REQUEST = 'USER_LAST_VIDEO_INDEX_REQUEST';
+export const  changeUsersLastVideoIndexRequest = () => ({
+  type: USER_LAST_VIDEO_INDEX_REQUEST,
+  });
+
+
+export const USER_LAST_VIDEO_INDEX_SUCCESS = 'USER_LAST_VIDEO_INDEX_SUCCESS';
+export const  changeUsersLastVideoIndexSuccess = index=> ({
+  type: USER_LAST_VIDEO_INDEX_SUCCESS,
+  index
+});
+
+export const USER_LAST_VIDEO_INDEX_ERROR = 'USER_LAST_VIDEO_INDEX_ERROR';
+export const  changeUsersLastVideoIndexError = error => ({
+  type: USER_LAST_VIDEO_INDEX_ERROR,
+  error
+});
+
+
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   fetch(`${API_BASE_URL}/api/userpaths/status/${id}`, {
@@ -191,3 +210,23 @@ export const fetchUserClassroom = id => dispatch => {
     .then(classroom => dispatch(userClassroomSuccess(classroom)))
     .catch(error => dispatch(userPathsError(error)));
 };
+
+
+
+
+  export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(changeUsersLastVideoIndexRequest());
+    fetch(`${API_BASE_URL}/api/userpaths/setVideoIndex`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
+      },
+      body: JSON.stringify({pathId: id, videoIndex: index})
+    })
+    .then(() => dispatch(changeUsersLastVideoIndexSuccess(index)))
+    .catch(error => dispatch(changeUsersLastVideoIndexError(error)))
+  }
+
+

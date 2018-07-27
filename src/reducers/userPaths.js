@@ -1,4 +1,4 @@
-import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS, USER_CLASSROOM_SUCCESS, GET_PATH_STATUS } from "../actions/userPaths";
+import { USER_PATHS_REQUEST, USER_PATHS_ERROR, CURRENT_PATHS_SUCCESS, SAVED_PATHS_SUCCESS, PATH_OVERVIEW_REQUEST, PATH_OVERVIEW_SUCCESS, USER_CLASSROOM_SUCCESS, GET_PATH_STATUS, USER_LAST_VIDEO_INDEX_REQUEST, USER_LAST_VIDEO_INDEX_SUCCESS, USER_LAST_VIDEO_INDEX_ERROR } from "../actions/userPaths";
 
 const initialState = {
   loading: true,
@@ -8,7 +8,8 @@ const initialState = {
   completed: [],
   overview: null,
   status: null,
-  error: null
+  error: null,
+  lastVideoIndex:0
 }
 
 const userPathsReducer = (state = initialState, action) => {
@@ -47,7 +48,8 @@ const userPathsReducer = (state = initialState, action) => {
         ...state,
         overview: action.overview,
         overviewLoading: false,
-        error: null
+        error: null,
+        lastVideoIndex:action.overview.lastVideoIndex
       }
 
       case PATH_OVERVIEW_REQUEST:
@@ -67,6 +69,27 @@ const userPathsReducer = (state = initialState, action) => {
       return {
         ...state,
         status: action.status
+      }
+
+      case USER_LAST_VIDEO_INDEX_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+
+      case USER_LAST_VIDEO_INDEX_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        lastVideoIndex:action.index
+      }
+
+    case USER_LAST_VIDEO_INDEX_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
       }
 
     default:

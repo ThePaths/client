@@ -17,6 +17,7 @@ export function CurrentPaths(props) {
       <p>You are currently following no paths, go to explore to find some</p>
       <button className="currentPathsBUtton"
         onClick={() => window.location.href = '/dashboard/explore'}>Explore</button>
+        
     </li>
   }
 
