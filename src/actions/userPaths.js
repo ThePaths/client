@@ -226,7 +226,7 @@ export const removeFromUserCurrent = pathId => (dispatch, getState) => {
 };
 
 
-export const completeVideo = (id, index) => (dispatch, getState) => {
+export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
     method: 'PUT',
@@ -234,7 +234,7 @@ export const completeVideo = (id, index) => (dispatch, getState) => {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
     },
-    body: JSON.stringify({ id, index })
+    body: JSON.stringify({ pathId, videoIndex })
   })
     .then(res => res.json())
     .catch(error => dispatch(userPathsError(error)))

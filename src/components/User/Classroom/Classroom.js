@@ -34,16 +34,17 @@ export class Classroom extends React.Component {
   }
 
   handleCompletedCourses() {
-    const index = this.props.match.params.videoIndex;
-    const id = this.props.match.params.id;
+    const videoIndex = this.props.match.params.videoIndex;
+    const pathId = this.props.match.params.id;
     let array = this.props.overview.completedVideos;
     console.log(array);
-    this.props.dispatch(completeVideo(id, index))
+    this.props.dispatch(completeVideo(pathId, videoIndex))
     if (!array.includes('false')) {
       alert('Completed');
-      this.props.dispatch(removeFromUserCurrent(id))
-      this.props.dispatch(addToUserCompleted(id))
+      this.props.dispatch(removeFromUserCurrent(pathId))
+      this.props.dispatch(addToUserCompleted(pathId))
     }
+    console.log(array)
     console.log('noice')
   }
 
