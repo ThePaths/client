@@ -37,12 +37,14 @@ export class Classroom extends React.Component {
     const videoIndex = this.props.match.params.videoIndex;
     const pathId = this.props.match.params.id;
     let array = this.props.overview.completedVideos;
+    let completed = true;
     console.log(array);
     this.props.dispatch(completeVideo(pathId, videoIndex))
-    if (!array.includes('false')) {
+    if (!array.includes(false)) {
       alert('Completed');
       this.props.dispatch(removeFromUserCurrent(pathId))
       this.props.dispatch(addToUserCompleted(pathId))
+      console.log('completed')
     }
     console.log(array)
     console.log('noice')
