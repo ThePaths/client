@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPathOverview, fetchUserClassroom, fetchCurrentPaths } from '../../../actions/userPaths';
+import { fetchPathOverview, fetchCurrentPaths } from '../../../actions/userPaths';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
 import YoutubePlayer from './YoutubePlayer';
 
-export class CurrentVideo extends React.Component {
+export class Classroom extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -26,7 +26,6 @@ export class CurrentVideo extends React.Component {
    
    handleCompletedCourses(){
      let array = this.props.overview.completedVideos
-     console.log(this.props.overview.completedVideos)
      if(!array.includes('false')) {
        alert('Completed');
      //dispatch action to change database
@@ -35,17 +34,7 @@ export class CurrentVideo extends React.Component {
   }
 
   render() {
-    // USER STORIES
-    // ="/dashboard/classroom/:id/:videoIndex
-    // thats the endpoint for classroom
-    // videoindex is taken from whatever video you click
-    // and the classroom componenet uses that index to populate the videos and replits
-    // need a next button
-    // that either takes you to /dashboard/classroom/:id/:videoIndex+1
-    // or a completed button if at the final video in that path
-
     
-
     if (!this.props.loading) {
       const index = parseInt(this.props.match.params.videoIndex, 10);
       
@@ -72,4 +61,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(CurrentVideo);
+export default connect(mapStateToProps)(Classroom);

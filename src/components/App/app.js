@@ -4,15 +4,11 @@ import { Route, withRouter, Switch } from 'react-router-dom';
 
 import MainHeader from '../Headers/MainHeader/MainHeader';
 import ClassroomHeader from '../Headers/ClassroomHeader/ClassroomHeader';
-
 import LandingPage from '../Guest/LandingPage/LandingPage';
 import GuestClassroom from '../Guest/Classroom/GuestClassroom';
-//import PathOverview from '../PathOverview/pathOverview';
-
 import AuthPage from '../AccountForms/auth-page';
 import Classroom from '../User/Classroom/Classroom';
 import Dashboard from '../User/Dashboard/Dashboard';
-//import CurrentVideo from '../CurrentVideo/CurrentVideo';
 import Footer from '../Footer/Footer';
 
 export class App extends React.Component {
@@ -42,5 +38,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));

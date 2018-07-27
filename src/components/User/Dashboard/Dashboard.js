@@ -3,11 +3,9 @@ import {Route} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
-import { fetchCurrentPaths, fetchSavedPaths } from '../../../actions/userPaths';
 import  UserPaths  from '../UserPaths/UserPaths';
 import ExplorePaths from '../ExplorePaths/ExplorePaths';
 import PathOverview from '../../PathOverview/pathOverview';
-
 
 class Dashboard extends React.Component {
 
