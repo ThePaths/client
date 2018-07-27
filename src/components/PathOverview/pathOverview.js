@@ -30,7 +30,7 @@ export class PathOverview extends React.Component {
         pathProgressBtn = <button onClick={() => window.location.href = `/dashboard/classroom/${this.props.path.id}/${this.props.path.lastVideoIndex}`}>Continue</button>;
       } else {
         pathProgressBtn = <button onClick={() => {
-          if(this.props.status === 'saved') {
+          if (this.props.status === 'saved') {
             this.removeFromSaved();
           }
           this.props.dispatch(addToUserCurrent(this.props.path.id));
@@ -40,12 +40,12 @@ export class PathOverview extends React.Component {
 
       let saveButton;
       if (this.props.status === 'saved') {
-        saveButton = <button 
+        saveButton = <button
           onClick={() => this.removeFromSaved()}>
           Unsave
         </button>;
       } else {
-        saveButton = <button 
+        saveButton = <button
           onClick={() => this.addToSaved()}>
           Save
         </button>;
@@ -54,19 +54,21 @@ export class PathOverview extends React.Component {
       let completedVideos = this.props.path.completedVideos;
       let videos = this.props.path.videos.map((item, index) => {
         let completedClass;
-        if (completedVideos[index] === true) {
-          completedClass = ' completed';
-        } else completedClass = '';
+        if (completedVideos) {
+          if (completedVideos[index] === true) {
+            completedClass = ' completed';
+          } else completedClass = '';
+        }
         return (
-          <li key={ index }>
+          <li key={index}>
             <div>
-              <img src={ `http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg` } 
+              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                 alt="Path Thumbnail" />
             </div>
             <div>
               {/* in css add checkmark to h2 with ::after */}
-              <h2 className={`overview-video-title${completedClass}`}>{ item.title }</h2>
-              <p>{ item.description }</p>
+              <h2 className={`overview-video-title${completedClass}`}>{item.title}</h2>
+              <p>{item.description}</p>
             </div>
             <div>
               {/* add link to path's classroom */}
@@ -79,21 +81,21 @@ export class PathOverview extends React.Component {
       return (
         <div className="path-overview-container">
           <section className="path-info-container">
-            <h1>{ this.props.path.title }</h1>
-            <p>{ this.props.path.videos[0].description }</p>
+            <h1>{this.props.path.title}</h1>
+            <p>{this.props.path.videos[0].description}</p>
             <div>
-              { pathProgressBtn }
+              {pathProgressBtn}
               {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}
             </div>
           </section>
           <section className="path-videos-info-container">
             <ul>
-              { videos }
+              {videos}
             </ul>
           </section>
         </div>
       );
-    } 
+    }
     return null;
   }
 }

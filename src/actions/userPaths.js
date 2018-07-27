@@ -47,19 +47,19 @@ export const userClassroomSuccess = classroom => ({
 });
 
 export const USER_LAST_VIDEO_INDEX_REQUEST = 'USER_LAST_VIDEO_INDEX_REQUEST';
-export const  changeUsersLastVideoIndexRequest = () => ({
+export const changeUsersLastVideoIndexRequest = () => ({
   type: USER_LAST_VIDEO_INDEX_REQUEST,
-  });
+});
 
 
 export const USER_LAST_VIDEO_INDEX_SUCCESS = 'USER_LAST_VIDEO_INDEX_SUCCESS';
-export const  changeUsersLastVideoIndexSuccess = index=> ({
+export const changeUsersLastVideoIndexSuccess = index => ({
   type: USER_LAST_VIDEO_INDEX_SUCCESS,
   index
 });
 
 export const USER_LAST_VIDEO_INDEX_ERROR = 'USER_LAST_VIDEO_INDEX_ERROR';
-export const  changeUsersLastVideoIndexError = error => ({
+export const changeUsersLastVideoIndexError = error => ({
   type: USER_LAST_VIDEO_INDEX_ERROR,
   error
 });
@@ -74,11 +74,12 @@ export const fetchStatus = id => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     }
   })
-  .then(res => res.json())
-  .then(status =>{
-    console.log('status: ', status)
-    dispatch(getPathStatus(status))})
-  .catch(err => dispatch(userPathsError(err)))
+    .then(res => res.json())
+    .then(status => {
+      console.log('status: ', status)
+      dispatch(getPathStatus(status))
+    })
+    .catch(err => dispatch(userPathsError(err)))
 }
 
 export const fetchCurrentPaths = () => (dispatch, getState) => {
@@ -97,68 +98,6 @@ export const fetchCurrentPaths = () => (dispatch, getState) => {
     })
     .catch(error => dispatch(userPathsError(error)));
 };
-
-export const addToUserSaved = (pathId) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/save`, {
-    method: 'PUT',
-    headers: {
-      // Provide our auth token as credentials
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({pathId})
-  })
-    .then(res => res.json())
-    .then(() => dispatch(fetchSavedPaths()))
-    .then(() => dispatch(fetchStatus(pathId)))
-    .catch(err => console.log(err));
-};
-
-export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/unsave`, {
-    method: 'PUT',
-    headers: {
-      // Provide our auth token as credentials
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({pathId})
-  })
-    .then(res => res.json())
-    .then(() => dispatch(fetchSavedPaths()))
-    .then(() => dispatch(fetchStatus(pathId)))
-    .catch(err => console.log(err));
-};
-
-export const addToUserCurrent = (pathId) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/start`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({pathId})
-  })
-    .then(res => res.json())
-    .catch(err => console.log(err));
-};
-
-export const completeVideo = (id, index) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({id, index})
-  })
-  .then(res => res.json())
-  .catch(error => dispatch(userPathsError(error)))
-}
 
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -200,7 +139,6 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     .catch(error => dispatch(userPathsError(error)));
 };
 
-
 export const fetchUserClassroom = id => dispatch => {
   dispatch(userPathsRequest());
   fetch(`${API_BASE_URL}/api/paths/${id}`, {
@@ -211,22 +149,111 @@ export const fetchUserClassroom = id => dispatch => {
     .catch(error => dispatch(userPathsError(error)));
 };
 
+export const addToUserSaved = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/save`, {
+    method: 'PUT',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId })
+  })
+    .then(res => res.json())
+    .then(() => dispatch(fetchSavedPaths()))
+    .then(() => dispatch(fetchStatus(pathId)))
+    .catch(err => console.log(err));
+};
+
+export const addToUserCompleted = pathId => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/complete`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId })
+  })
+  .then(res => res.json())
+  .catch(err => console.log(err));
+};
+
+export const addToUserCurrent = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/start`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId })
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err));
+};
+
+export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/unsave`, {
+    method: 'PUT',
+    headers: {
+      // Provide our auth token as credentials
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId })
+  })
+    .then(res => res.json())
+    .then(() => dispatch(fetchSavedPaths()))
+    .then(() => dispatch(fetchStatus(pathId)))
+    .catch(err => console.log(err));
+};
+
+export const removeFromUserCurrent = pathId => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/unstart`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId })
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err));
+};
 
 
+export const completeVideo = (id, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ id, index })
+  })
+    .then(res => res.json())
+    .catch(error => dispatch(userPathsError(error)))
+}
 
-  export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    dispatch(changeUsersLastVideoIndexRequest());
-    fetch(`${API_BASE_URL}/api/userpaths/setVideoIndex`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${authToken}`
-      },
-      body: JSON.stringify({pathId: id, videoIndex: index})
-    })
+export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  dispatch(changeUsersLastVideoIndexRequest());
+  fetch(`${API_BASE_URL}/api/userpaths/setVideoIndex`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({ pathId: id, videoIndex: index })
+  })
     .then(() => dispatch(changeUsersLastVideoIndexSuccess(index)))
     .catch(error => dispatch(changeUsersLastVideoIndexError(error)))
-  }
+}
+
 
 
