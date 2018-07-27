@@ -78,7 +78,7 @@ export class PathOverview extends React.Component {
             <p>{ this.props.path.videos[0].description }</p>
             <div>
               { pathProgressBtn }
-              { saveButton }
+              {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}
             </div>
           </section>
           <section className="path-videos-info-container">
