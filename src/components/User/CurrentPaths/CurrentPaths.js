@@ -22,6 +22,7 @@ export function CurrentPaths(props) {
 
   return (
     <div className="currentPathsContainer">
+    <h2>Keep Learning</h2>
       <ul>
         {currentPath}
       </ul>

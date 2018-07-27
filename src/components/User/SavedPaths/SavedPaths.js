@@ -18,6 +18,7 @@ export function SavedPaths(props) {
 
   return (
     <div className="savedPathsContainer">
+    <h2>Your Saved Paths</h2>
       <ul>
         { savedPath }
       </ul>

@@ -13,7 +13,7 @@ ul {
   font-size: 1.4rem;
   background-color: #5eabc5;
   max-width: 100%;
-  padding: 1.5em 4%;
+  padding: .5em 4%;
   min-height: 12em;
 }
 
@@ -27,7 +27,7 @@ ul {
   font-family: 'Ubuntu', cursive;
   margin: 0;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 0.5em;
   text-shadow: 0 1px 0 #5eabc5,
                0 2px 0 #5eabc5,
                0 3px 0 #5eabc5,
