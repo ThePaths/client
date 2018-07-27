@@ -13,15 +13,7 @@ export class Classroom extends React.Component {
     const index = parseInt(this.props.match.params.videoIndex, 10);
     this.props.dispatch(fetchPathOverview(id));
     this.props.dispatch(changeLastVideoIndex(id, index))
-  }
-
-  //   changeVideoIndex(){
-  //     const id = this.props.match.params.id;
-  //     const index = parseInt(this.props.match.params.videoIndex);
-  //   if(this.props.match.params.videoIndex !== this.props.overview.lastVideoIndex) {
-  //     console.log(id);
-  //  this.props.dispatch(changeLastVideoIndex(id,index))
-  //   }}
+}
 
   nextBtnClicked() {
     const index = this.props.match.params.videoIndex;
@@ -76,6 +68,7 @@ export class Classroom extends React.Component {
 const mapStateToProps = state => ({
   loading: state.userPaths.overviewLoading,
   overview: state.userPaths.overview,
+  status: state.userPaths.status,
   //lastVideoIndex:state.userPaths.overview.lastVideoIndex,
   loggedIn: state.auth.currentUser !== null
 });
