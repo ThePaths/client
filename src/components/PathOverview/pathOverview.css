@@ -1,14 +1,15 @@
 
 .heroImage {
   width: 200px;
-  margin:20px;
-  height:200px;
+  margin: 20px;
+  height: 200px;
 }
 
 
 .pathOverviewBoxes {
    width: 250px;
-  display:inline-block;
-  margin:15px;
-  text-align:center;
+  display: inline-block;
+  margin: 15px;
+  text-align: center;
 }
+

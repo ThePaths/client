@@ -31,10 +31,10 @@ export class PathOverview extends React.Component {
       } else {
         pathProgressBtn = <button onClick={() => {
           if(this.props.status === 'saved') {
-            this.removeFromSaved()
+            this.removeFromSaved();
           }
-          this.props.dispatch(addToUserCurrent(this.props.path.id))
-          window.location.href = `/dashboard/classroom/${this.props.path.id}/0`
+          this.props.dispatch(addToUserCurrent(this.props.path.id));
+          window.location.href = `/dashboard/classroom/${this.props.path.id}/0`;
         }}>Start</button>;
       }
 
@@ -51,7 +51,12 @@ export class PathOverview extends React.Component {
         </button>;
       }
 
+      let completedVideos = this.props.path.completedVideos;
       let videos = this.props.path.videos.map((item, index) => {
+        let completedClass;
+        if (completedVideos[index] === true) {
+          completedClass = ' completed';
+        } else completedClass = '';
         return (
           <li key={ index }>
             <div>
@@ -60,7 +65,7 @@ export class PathOverview extends React.Component {
             </div>
             <div>
               {/* in css add checkmark to h2 with ::after */}
-              <h2>{ item.title }</h2>
+              <h2 className={`overview-video-title${completedClass}`}>{ item.title }</h2>
               <p>{ item.description }</p>
             </div>
             <div>
