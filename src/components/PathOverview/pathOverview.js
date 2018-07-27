@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPathOverview, addToUserSaved, removeFromUserSaved, fetchStatus, addToUserCurrent } from '../../actions/userPaths';
+import { fetchPathOverview, addToUserSaved, removeFromUserSaved, addToUserCurrent } from '../../actions/userPaths';
 
 export class PathOverview extends React.Component {
 

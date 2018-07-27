@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './youtubePlayer.css';
 import YouTube from 'react-youtube';
 
