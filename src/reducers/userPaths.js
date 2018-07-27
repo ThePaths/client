@@ -9,7 +9,8 @@ const initialState = {
   overview: null,
   status: null,
   error: null,
-  lastVideoIndex:0
+  lastVideoIndex:0,
+  completedVideos:[],
 }
 
 const userPathsReducer = (state = initialState, action) => {
@@ -49,7 +50,8 @@ const userPathsReducer = (state = initialState, action) => {
         overview: action.overview,
         overviewLoading: false,
         error: null,
-        lastVideoIndex:action.overview.lastVideoIndex
+        lastVideoIndex:action.overview.lastVideoIndex,
+        completedVideos:action.overview.completedVideos
       }
 
       case PATH_OVERVIEW_REQUEST:

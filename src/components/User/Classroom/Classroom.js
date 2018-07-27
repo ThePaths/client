@@ -53,6 +53,8 @@ export class Classroom extends React.Component {
 
           <InstructionModal />
           <YoutubePlayer
+            index={index}
+            completedVideos={this.props.completedVideos}
             completed={() => this.handleCompletedCourses()}
             video={this.props.overview.videos[index]}
             title={this.props.overview.title}
@@ -69,8 +71,8 @@ const mapStateToProps = state => ({
   loading: state.userPaths.overviewLoading,
   overview: state.userPaths.overview,
   status: state.userPaths.status,
-  //lastVideoIndex:state.userPaths.overview.lastVideoIndex,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  completedVideos: state.userPaths.completedVideos,
 });
 
 export default connect(mapStateToProps)(Classroom);
