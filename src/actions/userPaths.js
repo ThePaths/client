@@ -64,6 +64,24 @@ export const changeUsersLastVideoIndexError = error => ({
   error
 });
 
+export const USER_MARK_VIDEO_COMPLETED_REQUEST = 'USER_MARK_VIDEO_COMPLETED_REQUEST';
+export const userMarkVideoCompletedRequest = () => ({
+  type: USER_MARK_VIDEO_COMPLETED_REQUEST,
+});
+
+
+export const USER_MARK_VIDEO_COMPLETED_SUCCESS = 'USER_MARK_VIDEO_COMPLETED_SUCCESS';
+export const userMarkVideoCompletedSuccess = () => ({
+  type: USER_MARK_VIDEO_COMPLETED_SUCCESS,
+  
+});
+
+export const USER_MARK_VIDEO_COMPLETED_ERROR = 'USER_MARK_VIDEO_COMPLETED_ERROR';
+export const userMarkVideoCompletedError = error => ({
+  type: USER_MARK_VIDEO_COMPLETED_ERROR,
+  error
+});
+
 
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -151,6 +169,7 @@ export const fetchUserClassroom = id => dispatch => {
 
 export const addToUserSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  
   fetch(`${API_BASE_URL}/api/userpaths/save`, {
     method: 'PUT',
     headers: {
@@ -228,6 +247,7 @@ export const removeFromUserCurrent = pathId => (dispatch, getState) => {
 
 export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(userMarkVideoCompletedRequest());
   fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
     method: 'PUT',
     headers: {
@@ -236,7 +256,7 @@ export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId, videoIndex })
   })
-    .then(res => res.json())
+    .then(() => dispatch(userMarkVideoCompletedSuccess()))
     .catch(error => dispatch(userPathsError(error)))
 }
 

@@ -92,6 +92,11 @@
   width: 100%;
 }
 
+.hideCompleted {
+  display:none;
+}
+
+
 /* media queries */
 @media (min-width: 36em) {
   /* testing bgc - disable after */

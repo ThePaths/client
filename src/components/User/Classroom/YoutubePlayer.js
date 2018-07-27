@@ -34,7 +34,7 @@ export default class YoutubePlayer extends React.Component {
             <button onClick={() => this.props.nextBtnClicked()}>Next</button>
             
            {(!this.props.completedVideos[this.props.index])?
-            <button onClick={() => this.props.completed()}>Complete</button>:null} 
+            <button id="completedButton" onClick={() => this.props.completed()}>Complete</button>:null} 
           </footer>
         </div>
       </div>
