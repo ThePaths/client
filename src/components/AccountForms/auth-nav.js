@@ -1,6 +1,6 @@
 import React from 'react';
-import './auth-nav.css';
-
+//import './auth-nav.css';
+import './styles/accountForm.css';
 export default function AuthNav(props) {
 
   function showForm(formId, buttonId) {
