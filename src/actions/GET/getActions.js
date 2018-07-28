@@ -1,4 +1,5 @@
-import { API_BASE_URL } from '../config';//GET'ing && PUT'ing
+import { API_BASE_URL } from '../../config';//GET'ing && PUT'ing
+
 
 //GET
 export const GET_USER_PATHS_REQUEST = 'GET_USER_PATHS_REQUEST';
@@ -17,14 +18,16 @@ export const getUserPathsError = error => ({
   error
 });
 
+//GET
 export const GET_CURRENT_PATHS_REQUEST = 'GET_CURRENT_PATHS_REQUEST';
 export const getCurrentPathsRequest = () => ({
-  type: GET_USER_PATHS_REQUEST
+  type: GET_CURRENT_PATHS_REQUEST
 });
 
 export const GET_CURRENT_PATHS_SUCCESS = 'GET_CURRENT_PATHS_SUCCESS';
-export const getCurrentPathsSuccess = () => ({
-  type: GET_USER_PATHS_SUCCESS
+export const getCurrentPathsSuccess = paths => ({
+  type: GET_CURRENT_PATHS_SUCCESS,
+  paths
 });
 
 export const GET_CURRENT_PATHS_ERROR = 'GET_CURRENT_PATHS_ERROR';
@@ -40,8 +43,9 @@ export const getSavedPathsRequest = () => ({
 });
 
 export const GET_SAVED_PATHS_SUCCESS = 'GET_SAVED_PATHS_SUCCESS';
-export const getSavedPathsSuccess = () => ({
-  type: GET_SAVED_PATHS_SUCCESS
+export const getSavedPathsSuccess = (paths) => ({
+  type: GET_SAVED_PATHS_SUCCESS,
+  paths
 });
 
 export const GET_SAVED_PATHS_ERROR = 'GET_SAVED_PATHS_ERROR';
@@ -67,6 +71,7 @@ export const getCompletedPathsError = error => ({
   error
 });
 
+
 //GET
 export const GET_PATH_OVERVIEW_REQUEST = 'GET_PATH_OVERVIEW_REQUEST';
 export const getPathOverviewRequest = () => ({
@@ -87,9 +92,9 @@ export const getPathOverviewError = error => ({
 
 //GET
 export const GET_PATH_STATUS_REQUEST = 'GET_PATH_STATUS_REQUEST';
-export const getPathStatusRequest = status => ({
+export const getPathStatusRequest = () => ({
   type: GET_PATH_STATUS_REQUEST,
-  status
+  
 });
 export const GET_PATH_STATUS_SUCCESS = 'GET_PATH_STATUS_SUCCESS';
 export const getPathStatusSuccess = status => ({
@@ -97,12 +102,11 @@ export const getPathStatusSuccess = status => ({
   status
 });
 export const GET_PATH_STATUS_ERROR = 'GET_PATH_STATUS_ERROR';
-export const getPathStatusError = status => ({
+export const getPathStatusError = error => ({
   type: GET_PATH_STATUS_ERROR,
-  status
+  error
 });
 
-//Path Status
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getPathStatusRequest())
@@ -171,6 +175,7 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     .then(res => dispatch(fetchStatus(id)))
     .catch(error => dispatch(getPathOverviewError(error)));
 };
+
 
 
 ///------MISSING GET COMPLETED PATHS

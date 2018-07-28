@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { fetchPaths } from '../../../actions/paths';
+import { fetchPaths } from '../../../actions/EXPLORE/paths';
 import './explorePaths.css';
 
 

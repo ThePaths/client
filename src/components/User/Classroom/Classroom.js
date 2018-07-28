@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPathOverview, changeLastVideoIndex, userCompletedVideo } from '../../../actions/userPaths';
+import { fetchPathOverview } from '../../../actions/GET/getActions';
+import { changeLastVideoIndex, userCompletedVideo } from '../../../actions/PUT/putActions';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';

@@ -16,7 +16,7 @@ export class YoutubePlayer extends React.Component {
             }
           };
     
-
+          if(!this.props.loading){
     return (
         <div className="video-player-container">
           <header className="video-header">
@@ -35,7 +35,8 @@ export class YoutubePlayer extends React.Component {
             </p>
           </footer>
         </div>
-      );
+      );}
+      return null
     }    
   }
 
