@@ -1,211 +1,326 @@
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL } from '../config';//GET'ing && PUT'ing
 
-export const USER_PATHS_REQUEST = 'USER_PATHS_REQUEST';
-export const userPathsRequest = () => ({
-  type: USER_PATHS_REQUEST
+//GET
+export const GET_USER_PATHS_REQUEST = 'GET_USER_PATHS_REQUEST';
+export const getUserPathsRequest = () => ({
+  type: GET_USER_PATHS_REQUEST
 });
 
-export const CURRENT_PATHS_SUCCESS = 'CURRENT_PATHS_SUCCESS';
-export const currentPathsSuccess = currentPaths => ({
-  type: CURRENT_PATHS_SUCCESS,
-  currentPaths
+export const GET_USER_PATHS_SUCCESS = 'GET_USER_PATHS_SUCCESS';
+export const getUserPathsSuccess = () => ({
+  type: GET_USER_PATHS_SUCCESS
 });
 
-export const SAVED_PATHS_SUCCESS = 'SAVED_PATHS_SUCCESS';
-export const savedPathsSuccess = savedPaths => ({
-  type: SAVED_PATHS_SUCCESS,
-  savedPaths
-});
-
-export const USER_PATHS_ERROR = 'USER_PATHS_ERROR';
-export const userPathsError = error => ({
-  type: USER_PATHS_ERROR,
+export const GET_USER_PATHS_ERROR = 'GET_USER_PATHS_ERROR';
+export const getUserPathsError = error => ({
+  type: GET_USER_PATHS_ERROR,
   error
 });
 
-export const PATH_OVERVIEW_REQUEST = 'PATH_OVERVIEW_REQUEST';
-export const pathOverviewRequest = () => ({
-  type: PATH_OVERVIEW_REQUEST
+//GET
+export const GET_CURRENT_PATHS_REQUEST = 'GET_CURRENT_PATHS_REQUEST';
+export const getCurrentPathsRequest = () => ({
+  type: GET_CURRENT_PATHS_REQUEST
 });
 
-export const PATH_OVERVIEW_SUCCESS = 'PATH_OVERVIEW_SUCCESS';
-export const fetchPathOverviewSuccess = overview => ({
-  type: PATH_OVERVIEW_SUCCESS,
+export const GET_CURRENT_PATHS_SUCCESS = 'GET_CURRENT_PATHS_SUCCESS';
+export const getCurrentPathsSuccess = paths => ({
+  type: GET_CURRENT_PATHS_SUCCESS,
+  paths
+});
+
+export const GET_CURRENT_PATHS_ERROR = 'GET_CURRENT_PATHS_ERROR';
+export const getCurrentPathsError = error => ({
+  type: GET_CURRENT_PATHS_ERROR,
+  error
+});
+
+//GET
+export const GET_SAVED_PATHS_REQUEST = 'GET_SAVED_PATHS_REQUEST';
+export const getSavedPathsRequest = () => ({
+  type: GET_USER_PATHS_REQUEST
+});
+
+export const GET_SAVED_PATHS_SUCCESS = 'GET_SAVED_PATHS_SUCCESS';
+export const getSavedPathsSuccess = (paths) => ({
+  type: GET_SAVED_PATHS_SUCCESS,
+  paths
+});
+
+export const GET_SAVED_PATHS_ERROR = 'GET_SAVED_PATHS_ERROR';
+export const getSavedPathsError = error => ({
+  type: GET_SAVED_PATHS_ERROR,
+  error
+});
+
+//GET
+export const GET_COMPLETED_PATHS_REQUEST = 'GET_COMPLETED_PATHS_REQUEST';
+export const getCompletedPathsRequest = () => ({
+  type: GET_COMPLETED_PATHS_REQUEST
+});
+
+export const GET_COMPLETED_PATHS_SUCCESS = 'GET_COMPLETED_PATHS_SUCCESS';
+export const getCompletedPathsSuccess = () => ({
+  type: GET_COMPLETED_PATHS_SUCCESS
+});
+
+export const GET_COMPLETED_PATHS_ERROR = 'GET_COMPLETED_PATHS_ERROR';
+export const getCompletedPathsError = error => ({
+  type: GET_COMPLETED_PATHS_ERROR,
+  error
+});
+
+
+//GET
+export const GET_PATH_OVERVIEW_REQUEST = 'GET_PATH_OVERVIEW_REQUEST';
+export const getPathOverviewRequest = () => ({
+  type: GET_PATH_OVERVIEW_REQUEST
+});
+
+export const GET_PATH_OVERVIEW_SUCCESS = 'GET_PATH_OVERVIEW_SUCCESS';
+export const getPathOverviewSuccess = overview => ({
+  type: GET_PATH_OVERVIEW_SUCCESS,
   overview
 });
 
-export const GET_PATH_STATUS = 'GET_PATH_STATUS';
-export const getPathStatus = status => ({
-  type: GET_PATH_STATUS,
+export const GET_PATH_OVERVIEW_ERROR = 'GET_PATH_OVERVIEW_ERROR';
+export const getPathOverviewError = error => ({
+  type: GET_PATH_OVERVIEW_ERROR,
+  error
+});
+
+//GET
+export const GET_PATH_STATUS_REQUEST = 'GET_PATH_STATUS_REQUEST';
+export const getPathStatusRequest = () => ({
+  type: GET_PATH_STATUS_REQUEST,
+  
+});
+export const GET_PATH_STATUS_SUCCESS = 'GET_PATH_STATUS_SUCCESS';
+export const getPathStatusSuccess = status => ({
+  type: GET_PATH_STATUS_SUCCESS,
   status
 });
-
-export const USER_CLASSROOM_SUCCESS = 'USER_CLASSROOM_SUCCESS';
-export const userClassroomSuccess = classroom => ({
-  type: USER_CLASSROOM_SUCCESS,
-  classroom
+export const GET_PATH_STATUS_ERROR = 'GET_PATH_STATUS_ERROR';
+export const getPathStatusError = error => ({
+  type: GET_PATH_STATUS_ERROR,
+  error
 });
 
-export const USER_LAST_VIDEO_INDEX_REQUEST = 'USER_LAST_VIDEO_INDEX_REQUEST';
-export const changeUsersLastVideoIndexRequest = () => ({
-  type: USER_LAST_VIDEO_INDEX_REQUEST,
+//PUT
+export const UPDATE_USERS_CURRENT_PATHS_REQUEST = 'UPDATE_USERS_CURRENT_PATHS_REQUEST';
+export const updateUsersCurrentPathsRequest = () => ({
+  type: UPDATE_USERS_SAVED_PATHS_REQUEST
 });
 
+export const UPDATE_USERS_CURRENT_PATHS_SUCCESS = 'UPDATE_USERS_CURRENT_PATHS_SUCCESS';
+export const updateUsersCurrentPathsSuccess = () => ({
+  type: UPDATE_USERS_CURRENT_PATHS_SUCCESS
+});
 
-export const USER_LAST_VIDEO_INDEX_SUCCESS = 'USER_LAST_VIDEO_INDEX_SUCCESS';
-export const changeUsersLastVideoIndexSuccess = index => ({
-  type: USER_LAST_VIDEO_INDEX_SUCCESS,
+export const UPDATE_USERS_CURRENT_PATHS_ERROR = 'UPDATE_USERS_CURRENT_PATHS_ERROR';
+export const updateUsersCurrentPathsError = error => ({
+  type: UPDATE_USERS_CURRENT_PATHS_ERROR,
+  error
+});
+
+//PUT
+export const UPDATE_USERS_SAVED_PATHS_REQUEST = 'UPDATE_USERS_SAVED_PATHS_REQUEST';
+export const updateUsersSavedPathsRequest = () => ({
+  type: UPDATE_USERS_SAVED_PATHS_REQUEST
+});
+
+export const UPDATE_USERS_SAVED_PATHS_SUCCESS = 'UPDATE_USERS_SAVED_PATHS_SUCCESS';
+export const updateUsersSavedPathSSuccess = () => ({
+  type: UPDATE_USERS_SAVED_PATHS_SUCCESS
+});
+
+export const UPDATE_USERS_SAVED_PATHS_ERROR = 'UPDATE_USERS_SAVED_PATHS_ERROR';
+export const updateUsersSavedPathsError = error => ({
+  type: UPDATE_USERS_SAVED_PATHS_ERROR,
+  error
+});
+
+//PUT
+export const UPDATE_USER_LAST_VIDEO_INDEX_REQUEST = 'UPDATE_USER_LAST_VIDEO_INDEX_REQUEST';
+export const updateUsersLastVideoIndexRequest = () => ({
+  type: UPDATE_USER_LAST_VIDEO_INDEX_REQUEST,
+});
+
+export const UPDATE_USER_LAST_VIDEO_INDEX_SUCCESS = 'UPDATE_USER_LAST_VIDEO_INDEX_SUCCESS';
+export const updateUsersLastVideoIndexSuccess = index => ({
+  type: UPDATE_USER_LAST_VIDEO_INDEX_SUCCESS,
   index
 });
 
-export const USER_LAST_VIDEO_INDEX_ERROR = 'USER_LAST_VIDEO_INDEX_ERROR';
-export const changeUsersLastVideoIndexError = error => ({
-  type: USER_LAST_VIDEO_INDEX_ERROR,
+export const UPDATE_USER_LAST_VIDEO_INDEX_ERROR = 'UPDATE_USER_LAST_VIDEO_INDEX_ERROR';
+export const updateUsersLastVideoIndexError = error => ({
+  type: UPDATE_USER_LAST_VIDEO_INDEX_ERROR,
   error
 });
 
-export const USER_MARK_VIDEO_COMPLETED_REQUEST = 'USER_MARK_VIDEO_COMPLETED_REQUEST';
-export const userMarkVideoCompletedRequest = () => ({
-  type: USER_MARK_VIDEO_COMPLETED_REQUEST,
+//PUT
+export const UPDATE_USER_MARK_VIDEO_COMPLETED_REQUEST = 'UPDATE_USER_MARK_VIDEO_COMPLETED_REQUEST';
+export const updateUserMarkVideoCompletedRequest = () => ({
+  type: UPDATE_USER_MARK_VIDEO_COMPLETED_REQUEST,
 });
 
-
-export const USER_MARK_VIDEO_COMPLETED_SUCCESS = 'USER_MARK_VIDEO_COMPLETED_SUCCESS';
-export const userMarkVideoCompletedSuccess = () => ({
-  type: USER_MARK_VIDEO_COMPLETED_SUCCESS,
-  
+export const UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS = 'UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS';
+export const updateUserMarkVideoCompletedSuccess = () => ({
+  type: UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS,
 });
 
-export const USER_MARK_VIDEO_COMPLETED_ERROR = 'USER_MARK_VIDEO_COMPLETED_ERROR';
-export const userMarkVideoCompletedError = error => ({
-  type: USER_MARK_VIDEO_COMPLETED_ERROR,
+export const UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR = 'UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR';
+export const updateUserMarkVideoCompletedError = error => ({
+  type: UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR,
   error
 });
 
-export const USER_COMPLETED_COURSE_REQUEST = 'USER_COMPLETED_COURSE_REQUEST_REQUEST';
-export const userCompletedCourseRequest = () => ({
-  type: USER_COMPLETED_COURSE_REQUEST,
+//PUT
+export const UPDATE_USER_COMPLETED_COURSE_REQUEST = 'UPDATE_USER_COMPLETED_COURSE_REQUEST';
+export const upadateUserCompletedCourseRequest = () => ({
+  type: UPDATE_USER_COMPLETED_COURSE_REQUEST,
 });
 
-
-export const USER_COMPLETED_COURSE_REQUEST_SUCCESS = 'USER_COMPLETED_COURSE_REQUEST_SUCCESS';
-export const userCompletedCourseSuccess = () => ({
-  type: USER_COMPLETED_COURSE_REQUEST_SUCCESS,
-  
+export const UPDATE_USER_COMPLETED_COURSE_SUCCESS = 'UPDATE_USER_COMPLETED_COURSE_SUCCESS';
+export const updateUserCompletedCourseSuccess = () => ({
+  type: UPDATE_USER_COMPLETED_COURSE_SUCCESS,
 });
 
-export const USER_COMPLETED_COURSE_REQUEST_ERROR = 'USER_COMPLETED_COURSE_REQUEST_ERROR';
-export const userCompletedCoureError = error => ({
-  type: USER_COMPLETED_COURSE_REQUEST_ERROR,
+export const UPDATE_USER_COMPLETED_COURSE_ERROR = 'UPDATE_USER_COMPLETED_COURSE_ERROR';
+export const updateUserCompletedCourseError = error => ({
+  type: UPDATE_USER_COMPLETED_COURSE_ERROR,
+  error
+});
+
+//DELETE
+export const DELETE_CURRENT_COURSE_REQUEST = 'DELETE_CURRENT_COURSE_REQUEST';
+export const deleteCurrentCourseRequest = () => ({
+  type: DELETE_CURRENT_COURSE_REQUEST,
+});
+
+export const DELETE_CURRENT_COURSE_SUCCESS = 'DELETE_CURRENT_COURSE_SUCCESS';
+export const deleteCurrentCourseSuccess = () => ({
+  type: DELETE_CURRENT_COURSE_SUCCESS,
+});
+
+export const DELETE_CURRENT_COURSE_ERROR = 'DELETE_CURRENT_COURSE_ERROR';
+export const deleteCurrentCourseError = error => ({
+  type: DELETE_CURRENT_COURSE_ERROR,
+  error
+});
+
+//DELETE
+export const DELETE_SAVED_COURSE_REQUEST = 'DELETE_SAVED_COURSE_REQUEST';
+export const deleteSavedCourseRequest = () => ({
+  type: DELETE_SAVED_COURSE_REQUEST,
+});
+
+export const DELETE_SAVED_COURSE_SUCCESS = 'DELETE_SAVED_COURSE_SUCCESS';
+export const deleteSavedCourseSuccess = () => ({
+  type: DELETE_SAVED_COURSE_SUCCESS,
+});
+
+export const DELETE_SAVED_COURSE_ERROR = 'DELETE_SAVED_COURSE_ERROR';
+export const deleteSavedCourseError = error => ({
+  type: DELETE_SAVED_COURSE_ERROR,
   error
 });
 
 
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(getPathStatusRequest())
   fetch(`${API_BASE_URL}/api/userpaths/status/${id}`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
-    .then(res => res.json())
-    .then(status => {
-      console.log('status: ', status)
-      dispatch(getPathStatus(status))
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
     })
-    .catch(err => dispatch(userPathsError(err)))
+    .then(status => dispatch(getPathStatusSuccess(status)))
+    .catch(err => dispatch(getPathStatusError(err)))
 }
 
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(userPathsRequest());
+  dispatch(getCurrentPathsRequest());
   fetch(`${API_BASE_URL}/api/dashboard/keeplearning`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
-    .then(res => res.json())
-    .then(paths => {
-      dispatch(currentPathsSuccess(paths));
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
     })
-    .catch(error => dispatch(userPathsError(error)));
+    .then(paths => dispatch(getCurrentPathsSuccess(paths)))
+    .catch(error => dispatch(getCurrentPathsError(error)));
 };
 
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(userPathsRequest());
+  dispatch(getSavedPathsRequest());
   fetch(`${API_BASE_URL}/api/dashboard/savedPaths`, {
     method: 'GET',
-    headers: {
-      // Provide our auth token as credentials
+    headers: {     
       Authorization: `Bearer ${authToken}`
     }
   })
-    .then(res => res.json())
-    .then(paths => {
-      console.log(paths)
-      dispatch(savedPathsSuccess(paths));
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
     })
-    .catch(error => dispatch(userPathsError(error)));
+    .then(paths =>dispatch(getSavedPathsSuccess(paths)))
+    .catch(error => dispatch(getSavedPathsError(error)));
 };
 
-// path overview action
 export const fetchPathOverview = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(pathOverviewRequest());
+  dispatch(getPathOverviewRequest());
   fetch(`${API_BASE_URL}/api/overview/${id}`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
-    .then(res => res.json())
-    .then(overview => {
-      dispatch(fetchPathOverviewSuccess(overview)); //change to new action
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
     })
-    .then(res => {
-      console.log(res, 'fetch overview action');
-      dispatch(fetchStatus(id))
-    })
-    .catch(error => dispatch(userPathsError(error)));
+    .then(overview => dispatch(getPathOverviewSuccess(overview)))
+    .then(res => dispatch(fetchStatus(id)))
+    .catch(error => dispatch(getPathOverviewError(error)));
 };
 
-export const fetchUserClassroom = id => dispatch => {
-  dispatch(userPathsRequest());
-  fetch(`${API_BASE_URL}/api/paths/${id}`, {
-    method: 'GET',
-  })
-    .then(res => res.json())
-    .then(classroom => dispatch(userClassroomSuccess(classroom)))
-    .catch(error => dispatch(userPathsError(error)));
-};
-
+//PUT AND GET
 export const addToUserSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  
+  dispatch(updateUsersSavedPathsRequest())
   fetch(`${API_BASE_URL}/api/userpaths/save`, {
     method: 'PUT',
     headers: {
-      // Provide our auth token as credentials
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({ pathId })
   })
-    .then(res => res.json())
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
+    //------------------------next 2 lines do what??
     .then(() => dispatch(fetchSavedPaths()))
     .then(() => dispatch(fetchStatus(pathId)))
-    .catch(err => console.log(err));
+    .catch(err => dispatch(updateUsersSavedPathsRequest(err)));
 };
 
 export const addToUserCompleted = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(userCompletedCourseRequest())
+  dispatch(upadateUserCompletedCourseRequest())
   fetch(`${API_BASE_URL}/api/userpaths/complete`, {
     method: 'PUT',
     headers: {
@@ -214,13 +329,17 @@ export const addToUserCompleted = pathId => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId })
   })
-  .then(res => res.json())
-  .then((response)=>dispatch(userCompletedCourseSuccess(response)))
-  .catch(err => console.log(err));
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
+  .then((response)=>dispatch(updateUserCompletedCourseSuccess(response)))
+  .catch(err => dispatch(updateUserCompletedCourseError(err)));
 };
 
 export const addToUserCurrent = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(updateUsersCurrentPathsRequest())
   fetch(`${API_BASE_URL}/api/userpaths/start`, {
     method: 'PUT',
     headers: {
@@ -229,12 +348,18 @@ export const addToUserCurrent = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId })
   })
-    .then(res => res.json())
-    .catch(err => console.log(err));
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
+    .then(res => dispatch(updateUsersCurrentPathsSuccess()))
+    .catch(err => dispatch(updateUsersCurrentPathsError(err)));
 };
 
+//Delete
 export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(deleteSavedCourseRequest())
   fetch(`${API_BASE_URL}/api/userpaths/unsave`, {
     method: 'PUT',
     headers: {
@@ -244,14 +369,19 @@ export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId })
   })
-    .then(res => res.json())
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
     .then(() => dispatch(fetchSavedPaths()))
     .then(() => dispatch(fetchStatus(pathId)))
-    .catch(err => console.log(err));
+    .catch(err => dispatch(deleteSavedCourseError(err)));
 };
 
-export const removeFromUserCurrent = pathId => (dispatch, getState) => {
+//Delete
+export const removeCourseFromUserCurrent = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(deleteCurrentCourseRequest())
   fetch(`${API_BASE_URL}/api/userpaths/unstart`, {
     method: 'PUT',
     headers: {
@@ -260,28 +390,17 @@ export const removeFromUserCurrent = pathId => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId })
   })
-    .then(res => res.json())
-    .catch(err => console.log(err));
+    .then(res => {
+      if (!res.ok) { return Promise.reject(res.statusText)}
+        dispatch(deleteCurrentCourseSuccess())
+      })
+    .catch(err => dispatch(deleteCurrentCourseError(err)));
 };
 
 
-// export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
-//   const authToken = getState().auth.authToken;
-//   dispatch(userMarkVideoCompletedRequest());
-//   fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${authToken}`
-//     },
-//     body: JSON.stringify({ pathId, videoIndex })
-//   })
-//     .then(() => dispatch(userMarkVideoCompletedSuccess()))
-//     .catch(error => dispatch(userPathsError(error)))
-// }
-export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
+export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(userMarkVideoCompletedRequest());
+  dispatch(updateUserMarkVideoCompletedRequest());
   fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
     method: 'PUT',
     headers: {
@@ -290,25 +409,23 @@ export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId, videoIndex })
   })
-    .then((response) => {
-      return response.json()
-     })
-    .then((resp)=>{
-      console.log(resp)
-   
-        if (!resp.includes(false)) {
-      alert('Completed');
-      dispatch(removeFromUserCurrent(pathId))
-      dispatch(addToUserCompleted(pathId))
-      console.log('completed')
-    }
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
     })
-    .catch(error => dispatch(userPathsError(error)))
+    .then((resp)=>{
+      dispatch(updateUserMarkVideoCompletedSuccess())
+      if (!resp.includes(false)) {        
+      //dispatch(removeFromUserCurrent(pathId))
+      dispatch(addToUserCompleted(pathId))
+     }
+    })
+    .catch(error => dispatch(updateUserMarkVideoCompletedError(error)))
 }
 
 export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(changeUsersLastVideoIndexRequest());
+  dispatch(updateUsersLastVideoIndexRequest());
   fetch(`${API_BASE_URL}/api/userpaths/setVideoIndex`, {
     method: 'PUT',
     headers: {
@@ -317,9 +434,13 @@ export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId: id, videoIndex: index })
   })
-    .then(() => dispatch(changeUsersLastVideoIndexSuccess(index)))
-    .catch(error => dispatch(changeUsersLastVideoIndexError(error)))
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
+    .then(() => dispatch(updateUsersLastVideoIndexSuccess(index)))
+    .catch(error => dispatch(updateUsersLastVideoIndexError(error)))
 }
 
 
-
+//fetch completed paths ??
