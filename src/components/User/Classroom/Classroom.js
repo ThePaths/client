@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPathOverview, fetchCurrentPaths, changeLastVideoIndex, removeFromUserCurrent, addToUserCompleted, completeVideo } from '../../../actions/userPaths';
+import { fetchPathOverview } from '../../../actions/GET/getActions';
+import { changeLastVideoIndex, userCompletedVideo } from '../../../actions/PUT/putActions';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
@@ -25,40 +26,13 @@ export class Classroom extends React.Component {
     } else { window.location.href = `/dashboard/classroom/${id}/${nextIndex}`; }
   }
 
+
   handleCompletedCourses() {
     const videoIndex = this.props.match.params.videoIndex;
     const pathId = this.props.match.params.id;
-    let array = this.props.overview.completedVideos;
-    // let completed = true;
-    
-    this.props.dispatch(completeVideo(pathId, videoIndex))
-    //document.getElementById("completedButton").className = "hideCompleted";
-    // if (!array.includes(false)) {
-    //   alert('Completed');
-    //   this.props.dispatch(removeFromUserCurrent(pathId))
-    //   this.props.dispatch(addToUserCompleted(pathId))
-    //   console.log('completed')
-    // }
-    console.log(array)
-    console.log('noice')
-  }
-  handleCompletedCourses() {
-    const videoIndex = this.props.match.params.videoIndex;
-    const pathId = this.props.match.params.id;
-    let array = this.props.overview.completedVideos;
-    // let completed = true;
-    
-    this.props.dispatch(completeVideo(pathId, videoIndex))
+    this.props.dispatch(userCompletedVideo(pathId, videoIndex))
     document.getElementById("completedButton").className = "hideCompleted";
-    // if (!array.includes(false)) {
-    //   alert('Completed');
-    //   this.props.dispatch(removeFromUserCurrent(pathId))
-    //   this.props.dispatch(addToUserCompleted(pathId))
-    //   console.log('completed')
-    // }
-    console.log(array)
-    console.log('noice')
-  }
+   }
 
   render() {
 

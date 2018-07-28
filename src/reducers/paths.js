@@ -1,4 +1,4 @@
-import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, LESSON_SUCCESS } from "../actions/paths";
+import { PATHS_REQUEST, PATHS_SUCCESS, PATHS_ERROR, LESSON_SUCCESS } from "../actions/EXPLORE/paths";
 
 const initialState = {
   loading: false,
@@ -12,7 +12,7 @@ const pathsReducer = ( state = initialState, action) => {
     case PATHS_REQUEST:
       return {
         ...state,
-        loading: true
+        loading:true
       }
 
     case PATHS_SUCCESS:
