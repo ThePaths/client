@@ -82,6 +82,24 @@ export const userMarkVideoCompletedError = error => ({
   error
 });
 
+export const USER_COMPLETED_COURSE_REQUEST = 'USER_COMPLETED_COURSE_REQUEST_REQUEST';
+export const userCompletedCourseRequest = () => ({
+  type: USER_COMPLETED_COURSE_REQUEST,
+});
+
+
+export const USER_COMPLETED_COURSE_REQUEST_SUCCESS = 'USER_COMPLETED_COURSE_REQUEST_SUCCESS';
+export const userCompletedCourseSuccess = () => ({
+  type: USER_COMPLETED_COURSE_REQUEST_SUCCESS,
+  
+});
+
+export const USER_COMPLETED_COURSE_REQUEST_ERROR = 'USER_COMPLETED_COURSE_REQUEST_ERROR';
+export const userCompletedCoureError = error => ({
+  type: USER_COMPLETED_COURSE_REQUEST_ERROR,
+  error
+});
+
 
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -187,6 +205,7 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
 
 export const addToUserCompleted = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(userCompletedCourseRequest())
   fetch(`${API_BASE_URL}/api/userpaths/complete`, {
     method: 'PUT',
     headers: {
@@ -196,6 +215,7 @@ export const addToUserCompleted = pathId => (dispatch, getState) => {
     body: JSON.stringify({ pathId })
   })
   .then(res => res.json())
+  .then((response)=>dispatch(userCompletedCourseSuccess(response)))
   .catch(err => console.log(err));
 };
 
@@ -245,6 +265,20 @@ export const removeFromUserCurrent = pathId => (dispatch, getState) => {
 };
 
 
+// export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
+//   const authToken = getState().auth.authToken;
+//   dispatch(userMarkVideoCompletedRequest());
+//   fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Authorization: `Bearer ${authToken}`
+//     },
+//     body: JSON.stringify({ pathId, videoIndex })
+//   })
+//     .then(() => dispatch(userMarkVideoCompletedSuccess()))
+//     .catch(error => dispatch(userPathsError(error)))
+// }
 export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(userMarkVideoCompletedRequest());
@@ -256,7 +290,19 @@ export const completeVideo = (pathId, videoIndex) => (dispatch, getState) => {
     },
     body: JSON.stringify({ pathId, videoIndex })
   })
-    .then(() => dispatch(userMarkVideoCompletedSuccess()))
+    .then((response) => {
+      return response.json()
+     })
+    .then((resp)=>{
+      console.log(resp)
+   
+        if (!resp.includes(false)) {
+      alert('Completed');
+      dispatch(removeFromUserCurrent(pathId))
+      dispatch(addToUserCompleted(pathId))
+      console.log('completed')
+    }
+    })
     .catch(error => dispatch(userPathsError(error)))
 }
 

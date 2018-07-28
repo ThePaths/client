@@ -32,6 +32,23 @@ export class Classroom extends React.Component {
     // let completed = true;
     
     this.props.dispatch(completeVideo(pathId, videoIndex))
+    //document.getElementById("completedButton").className = "hideCompleted";
+    // if (!array.includes(false)) {
+    //   alert('Completed');
+    //   this.props.dispatch(removeFromUserCurrent(pathId))
+    //   this.props.dispatch(addToUserCompleted(pathId))
+    //   console.log('completed')
+    // }
+    console.log(array)
+    console.log('noice')
+  }
+  handleCompletedCourses() {
+    const videoIndex = this.props.match.params.videoIndex;
+    const pathId = this.props.match.params.id;
+    let array = this.props.overview.completedVideos;
+    // let completed = true;
+    
+    this.props.dispatch(completeVideo(pathId, videoIndex))
     document.getElementById("completedButton").className = "hideCompleted";
     // if (!array.includes(false)) {
     //   alert('Completed');
