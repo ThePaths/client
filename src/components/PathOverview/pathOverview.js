@@ -74,7 +74,10 @@ export class PathOverview extends React.Component {
               {/* add link to video's classroom */}
               <Link 
                 onClick={() => {
-                  if (this.props.status !== 'current' && this.props.status !== 'completed') {
+                  if (this.props.status === 'saved') {
+                    this.removeFromSaved()
+                    this.props.dispatch(addToUserCurrent(this.props.path.id));
+                  } else if (this.props.status !== 'current' && this.props.status !== 'completed') {
                     this.props.dispatch(addToUserCurrent(this.props.path.id));
                   }
                 }}
