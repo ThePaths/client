@@ -18,6 +18,7 @@ export class App extends React.Component {
       <div className="app">
         <Switch>
           <Route path="/dashboard/classroom" component={ ClassroomHeader }/>
+          <Route path="/classroom" component={ ClassroomHeader }/>
           <Route path="/" component={ MainHeader }/>
         </Switch>
         <main className="main-content">
