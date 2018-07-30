@@ -16,15 +16,13 @@ export class GuestClassroom extends React.Component {
 
   render() {
     if (!this.props.loading) {
-      const index = parseInt(this.props.match.params.videoIndex, 10);
       return (
         <section className="classroom-section">
           <InstructionModal />
           <YoutubePlayer
-            index = {index}
             props={ this.props }
-            creatorLink={this.props.overview.videos[index].creator.youtube}
-            creatorName={this.props.overview.videos[index].creator.name} />
+            creatorLink={this.props.display.videos[0].creator.youtube}
+            creatorName={this.props.display.videos[0].creator.name} />
           <Repl repl={ this.props.display.videos[0].replit }/>
         </section>
       );
@@ -36,8 +34,7 @@ export class GuestClassroom extends React.Component {
 const mapStateToProps = state => ({
   display: state.guests.classroom,
   loading: state.guests.loading,
-  loggedIn: state.auth.currentUser !== null,
-  overview: state.userPaths.overview,
+  loggedIn: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(GuestClassroom);
