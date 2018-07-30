@@ -42,8 +42,7 @@ export class Classroom extends React.Component {
 
       return (
         <section className="classroom-section">
-
-          <InstructionModal />
+          <a href={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</a>
           <YoutubePlayer
             index={index}
             completedVideos={this.props.completedVideos}
@@ -52,6 +51,7 @@ export class Classroom extends React.Component {
             title={this.props.overview.title}
             nextBtnClicked={() => this.nextBtnClicked()} />
           <Repl repl={this.props.overview.videos[index].replit} />
+          <InstructionModal />
         </section>
       );
     }

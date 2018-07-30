@@ -2,11 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {clearAuth} from '../../../actions/auth';
+import {clearUserPathState} from '../../../actions/DELETE/deleteActions';
 import {clearAuthToken} from '../../../local-storage';
 
 export class ClassroomHeader extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
+    this.props.dispatch(clearUserPathState());
     clearAuthToken();
   }
 
