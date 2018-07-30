@@ -13,6 +13,14 @@ export class ClassroomHeader extends React.Component {
   }
 
   render() {
+    let headerBtn;
+    if (this.props.loggedIn) {
+      headerBtn = <Link className="form-redirect-link" 
+        onClick={ () => this.logOut() } to='/'>Sign Out</Link>;
+    } else {
+      headerBtn = <Link className="form-redirect-link" to='/auth'>Login/Register</Link>;
+    }
+
     return (
       <header className="main-header classroom-header">
         <div>
@@ -24,8 +32,7 @@ export class ClassroomHeader extends React.Component {
           </Link>
         </div>
         <div className='form-redirect-container'>
-          <Link className="form-redirect-link" 
-            onClick={ () => this.logOut() } to='/'>Sign Out</Link>
+          {headerBtn}
         </div>
       </header>
     );
