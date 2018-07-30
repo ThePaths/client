@@ -14,8 +14,9 @@ import {
   UPDATE_USER_COMPLETED_COURSE_ERROR } from '../actions/PUT/putActions'
   
 import {
-  DELETE_CURRENT_COURSE_REQUEST, DELETE_CURRENT_COURSE_SUCCESS,
-  DELETE_CURRENT_COURSE_ERROR, DELETE_SAVED_COURSE_REQUEST, DELETE_SAVED_COURSE_SUCCESS, DELETE_SAVED_COURSE_ERROR} from "../actions/DELETE/deleteActions";
+  DELETE_CURRENT_COURSE_REQUEST, DELETE_CURRENT_COURSE_SUCCESS, DELETE_CURRENT_COURSE_ERROR, DELETE_SAVED_COURSE_REQUEST, DELETE_SAVED_COURSE_SUCCESS, DELETE_SAVED_COURSE_ERROR,
+  CLEAR_USER_PATH_STATE,
+} from "../actions/DELETE/deleteActions";
 
 
 const initialState = {
@@ -38,19 +39,19 @@ const userPathsReducer = (state = initialState, action) => {
         ...state,
         loading: true
       }
-      case GET_USER_PATHS_SUCCESS:
+    case GET_USER_PATHS_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case GET_USER_PATHS_ERROR:
+    case GET_USER_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case GET_CURRENT_PATHS_REQUEST:
+    case GET_CURRENT_PATHS_REQUEST:
       return {
         ...state,
         loading: true
@@ -63,14 +64,14 @@ const userPathsReducer = (state = initialState, action) => {
         current: action.paths,
         loading: false,
       }
-      case GET_CURRENT_PATHS_ERROR:
+    case GET_CURRENT_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case GET_SAVED_PATHS_REQUEST:
+    case GET_SAVED_PATHS_REQUEST:
       return {
         ...state,
         loading: true
@@ -82,37 +83,37 @@ const userPathsReducer = (state = initialState, action) => {
         error: null,
         saved: action.paths
       }
-      case GET_SAVED_PATHS_ERROR:
+    case GET_SAVED_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case GET_COMPLETED_PATHS_REQUEST:
+    case GET_COMPLETED_PATHS_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case GET_COMPLETED_PATHS_SUCCESS:
+    case GET_COMPLETED_PATHS_SUCCESS:
       return {
         ...state,
         loading: false,
         completed:action.comp
       }
-      case GET_COMPLETED_PATHS_ERROR:
+    case GET_COMPLETED_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case GET_PATH_OVERVIEW_REQUEST:
+    case GET_PATH_OVERVIEW_REQUEST:
       return {
         ...state,
         overviewLoading: true
       }
-      case GET_PATH_OVERVIEW_SUCCESS:
+    case GET_PATH_OVERVIEW_SUCCESS:
       return {
         ...state,
         overview: action.overview,
@@ -121,152 +122,168 @@ const userPathsReducer = (state = initialState, action) => {
         lastVideoIndex:action.overview.lastVideoIndex,
         completedVideos:action.overview.completedVideos
       }
-      case GET_PATH_OVERVIEW_ERROR:
+    case GET_PATH_OVERVIEW_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case GET_PATH_STATUS_REQUEST:
+    case GET_PATH_STATUS_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case GET_PATH_STATUS_SUCCESS:
+    case GET_PATH_STATUS_SUCCESS:
       return {
         ...state,
         status: action.status,
         loading: false
       }
-      case GET_PATH_STATUS_ERROR:
+    case GET_PATH_STATUS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case UPDATE_USERS_CURRENT_PATHS_REQUEST:
+    case UPDATE_USERS_CURRENT_PATHS_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case UPDATE_USERS_CURRENT_PATHS_SUCCESS:
+    case UPDATE_USERS_CURRENT_PATHS_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case UPDATE_USERS_CURRENT_PATHS_ERROR:
+    case UPDATE_USERS_CURRENT_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case UPDATE_USERS_SAVED_PATHS_REQUEST:
+    case UPDATE_USERS_SAVED_PATHS_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case UPDATE_USERS_SAVED_PATHS_SUCCESS:
+    case UPDATE_USERS_SAVED_PATHS_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case UPDATE_USERS_SAVED_PATHS_ERROR:
+    case UPDATE_USERS_SAVED_PATHS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case UPDATE_USER_LAST_VIDEO_INDEX_REQUEST:
+    case UPDATE_USER_LAST_VIDEO_INDEX_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case UPDATE_USER_LAST_VIDEO_INDEX_SUCCESS:
+    case UPDATE_USER_LAST_VIDEO_INDEX_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
         lastVideoIndex:action.index
       }
-      case UPDATE_USER_LAST_VIDEO_INDEX_ERROR:
+    case UPDATE_USER_LAST_VIDEO_INDEX_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case UPDATE_USER_MARK_VIDEO_COMPLETED_REQUEST:
+    case UPDATE_USER_MARK_VIDEO_COMPLETED_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS:
+    case UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR:
+    case UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case UPDATE_USER_COMPLETED_COURSE_REQUEST:
+    case UPDATE_USER_COMPLETED_COURSE_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case UPDATE_USER_COMPLETED_COURSE_SUCCESS:
+    case UPDATE_USER_COMPLETED_COURSE_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case UPDATE_USER_COMPLETED_COURSE_ERROR:
+    case UPDATE_USER_COMPLETED_COURSE_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case DELETE_CURRENT_COURSE_REQUEST:
+    case DELETE_CURRENT_COURSE_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case DELETE_CURRENT_COURSE_SUCCESS:
+    case DELETE_CURRENT_COURSE_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case DELETE_CURRENT_COURSE_ERROR:
+    case DELETE_CURRENT_COURSE_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
 
-      case DELETE_SAVED_COURSE_REQUEST:
+    case DELETE_SAVED_COURSE_REQUEST:
       return {
         ...state,
         loading: true
       }
-      case DELETE_SAVED_COURSE_SUCCESS:
+    case DELETE_SAVED_COURSE_SUCCESS:
       return {
         ...state,
         loading: false
       }
-      case DELETE_SAVED_COURSE_ERROR:
+    case DELETE_SAVED_COURSE_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
       }
-      default:
+
+    case CLEAR_USER_PATH_STATE:
+      return {
+        ...state,
+        loading: false,
+        overviewLoading: true,
+        current: [],
+        saved: [],
+        completed: [],
+        overview: null,
+        status: null,
+        error: null,
+        lastVideoIndex:0,
+        completedVideos:[],
+      }
+
+    default:
       return state
   }
 }
