@@ -24,12 +24,10 @@ export class PathOverview extends React.Component {
 
   render() {
     if (!this.props.loading) {
-      console.log(this.props.status, 'path overview status');
-
       // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
-        pathProgressBtn = <button onClick={() => window.location.href = `/dashboard/classroom/${this.props.path.id}/${this.props.path.lastVideoIndex}`}>Continue</button>;
+        pathProgressBtn = <button onClick={() => window.location.href = `/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>Continue</button>;
       } else {
         pathProgressBtn = <button onClick={() => {
           if (this.props.status === 'saved') {
@@ -110,6 +108,7 @@ export class PathOverview extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  lastVideoIndex: state.userPaths.lastVideoIndex,
   path: state.userPaths.overview,
   status: state.userPaths.status,
   loading: state.userPaths.overviewLoading
