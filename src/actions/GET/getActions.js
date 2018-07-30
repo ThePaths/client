@@ -61,8 +61,9 @@ export const getCompletedPathsRequest = () => ({
 });
 
 export const GET_COMPLETED_PATHS_SUCCESS = 'GET_COMPLETED_PATHS_SUCCESS';
-export const getCompletedPathsSuccess = () => ({
-  type: GET_COMPLETED_PATHS_SUCCESS
+export const getCompletedPathsSuccess = (paths) => ({
+  type: GET_COMPLETED_PATHS_SUCCESS,
+  paths
 });
 
 export const GET_COMPLETED_PATHS_ERROR = 'GET_COMPLETED_PATHS_ERROR';
