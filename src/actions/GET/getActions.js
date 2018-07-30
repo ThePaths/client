@@ -158,6 +158,23 @@ export const fetchSavedPaths = () => (dispatch, getState) => {
     .catch(error => dispatch(getSavedPathsError(error)));
 };
 
+export const fetchCompletedPaths = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  dispatch(getCompletedPathsRequest());
+  fetch(`${API_BASE_URL}/api/dashboard/completedPaths`, {
+    method: 'GET',
+    headers: {     
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+  .then(res => {
+    if (!res.ok) { return Promise.reject(res.statusText)}
+    return res.json();
+    })
+    .then(paths =>dispatch(getCompletedPathsSuccess(paths)))
+    .catch(error => dispatch(getCompletedPathsError(error)));
+};
+
 export const fetchPathOverview = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getPathOverviewRequest());

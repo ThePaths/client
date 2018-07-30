@@ -39,11 +39,17 @@ export class Classroom extends React.Component {
     if (!this.props.loading) {
       const index = parseInt(this.props.match.params.videoIndex, 10);
 
+    let completedVideos;
+    if (this.props.completedVideos) {
+      completedVideos = this.props.completedVideos[index]
+    } else {
+      completedVideos = null
+    }
+
 
       return (
         <section className="classroom-section">
-
-          <InstructionModal />
+          <a href={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</a>
           <YoutubePlayer
             index={index}
             completedVideos={this.props.completedVideos}
@@ -52,6 +58,7 @@ export class Classroom extends React.Component {
             title={this.props.overview.title}
             nextBtnClicked={() => this.nextBtnClicked()} />
           <Repl repl={this.props.overview.videos[index].replit} />
+          <InstructionModal />
         </section>
       );
     }

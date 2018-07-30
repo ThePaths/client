@@ -1,7 +1,7 @@
 import { API_BASE_URL } from '../../config';
 import { fetchSavedPaths , fetchStatus } from '../GET/getActions'
 
-//DELETE
+// DELETE
 export const DELETE_CURRENT_COURSE_REQUEST = 'DELETE_CURRENT_COURSE_REQUEST';
 export const deleteCurrentCourseRequest = () => ({
   type: DELETE_CURRENT_COURSE_REQUEST,
@@ -18,7 +18,6 @@ export const deleteCurrentCourseError = error => ({
   error
 });
 
-//DELETE
 export const DELETE_SAVED_COURSE_REQUEST = 'DELETE_SAVED_COURSE_REQUEST';
 export const deleteSavedCourseRequest = () => ({
   type: DELETE_SAVED_COURSE_REQUEST,
@@ -34,6 +33,12 @@ export const deleteSavedCourseError = error => ({
   type: DELETE_SAVED_COURSE_ERROR,
   error
 });
+
+// CLEAR STATE
+export const CLEAR_USER_PATH_STATE = 'CLEAR_USER_PATH_STATE';
+export const clearUserPathState = () => ({
+  type: CLEAR_USER_PATH_STATE,
+})
 
 //Delete
 export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
