@@ -56,6 +56,8 @@ export class Classroom extends React.Component {
             completed={() => this.handleCompletedCourses()}
             video={this.props.overview.videos[index]}
             title={this.props.overview.title}
+            creatorLink={this.props.overview.videos[index].creator.youtube}
+            creatorName={this.props.overview.videos[index].creator.name}
             nextBtnClicked={() => this.nextBtnClicked()} />
           <Repl repl={this.props.overview.videos[index].replit} />
           <InstructionModal />
@@ -71,7 +73,7 @@ const mapStateToProps = state => ({
   overview: state.userPaths.overview,
   status: state.userPaths.status,
   loggedIn: state.auth.currentUser !== null,
-  completedVideos: state.userPaths.completedVideos,
+  completedVideos: state.userPaths.completedVideos
 });
 
 export default connect(mapStateToProps)(Classroom);

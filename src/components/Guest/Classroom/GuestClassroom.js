@@ -10,16 +10,21 @@ import YoutubePlayer from '../../Youtube/YoutubePlayer';
 export class GuestClassroom extends React.Component {
 
   componentDidMount() {
-    const id = this.props.match.params.id
-    this.props.dispatch(fetchGuestClassroom(id))
+    const id = this.props.match.params.id;
+    this.props.dispatch(fetchGuestClassroom(id));
   }
 
   render() {
     if (!this.props.loading) {
+      const index = parseInt(this.props.match.params.videoIndex, 10);
       return (
         <section className="classroom-section">
           <InstructionModal />
-          <YoutubePlayer props={ this.props }/>
+          <YoutubePlayer
+            index = {index}
+            props={ this.props }
+            creatorLink={this.props.overview.videos[index].creator.youtube}
+            creatorName={this.props.overview.videos[index].creator.name} />
           <Repl repl={ this.props.display.videos[0].replit }/>
         </section>
       );
@@ -31,7 +36,8 @@ export class GuestClassroom extends React.Component {
 const mapStateToProps = state => ({
   display: state.guests.classroom,
   loading: state.guests.loading,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  overview: state.userPaths.overview,
 });
 
 export default connect(mapStateToProps)(GuestClassroom);
