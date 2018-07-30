@@ -3,6 +3,7 @@ import './Repl.css';
 
 export default function Repl(props) {
   return (
+   <div title="firstAttempt">
     <iframe className="repl"
       title="firstAttempt"
       height="400px"
@@ -14,5 +15,7 @@ export default function Repl(props) {
       allowFullScreen="true"
       sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
     </iframe>
+    
+    </div>
   );
 }
