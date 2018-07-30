@@ -13,6 +13,13 @@ export default class YoutubePlayer extends React.Component {
         showinfo: 0
       }
     };
+    let completeButton;
+    if (this.props.completedVideos && !this.props.completedVideos[this.props.index]) {
+      completeButton = <button id="completedButton" onClick={() => this.props.completed()}>Complete</button>
+    } else {
+      completeButton = null
+    }
+    
     return (
       <div className="video-player-container">
         <YouTube className="video-player"
@@ -32,9 +39,7 @@ export default class YoutubePlayer extends React.Component {
               {this.props.video.description}
             </p>
             <button onClick={() => this.props.nextBtnClicked()}>Next</button>
-            
-           {(!this.props.completedVideos[this.props.index])?
-            <button id="completedButton" onClick={() => this.props.completed()}>Complete</button>:null} 
+            {completeButton}
           </footer>
         </div>
       </div>

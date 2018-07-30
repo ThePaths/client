@@ -39,6 +39,13 @@ export class Classroom extends React.Component {
     if (!this.props.loading) {
       const index = parseInt(this.props.match.params.videoIndex, 10);
 
+    let completedVideos;
+    if (this.props.completedVideos) {
+      completedVideos = this.props.completedVideos[index]
+    } else {
+      completedVideos = null
+    }
+
 
       return (
         <section className="classroom-section">

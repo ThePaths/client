@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '../../config';
 import { fetchSavedPaths , fetchStatus } from '../GET/getActions'
+import { removeCourseFromUserCurrent } from '../DELETE/deleteActions';
 //PUT
 export const UPDATE_USERS_CURRENT_PATHS_REQUEST = 'UPDATE_USERS_CURRENT_PATHS_REQUEST';
 export const updateUsersCurrentPathsRequest = () => ({
@@ -163,8 +164,8 @@ export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) =
     .then((resp)=>{
       dispatch(updateUserMarkVideoCompletedSuccess())
       if (!resp.includes(false)) {        
-      //dispatch(removeFromUserCurrent(pathId))
-      //dispatch(addToUserCompleted(pathId))
+      dispatch(removeCourseFromUserCurrent(pathId))
+      dispatch(addToUserCompleted(pathId))
      }
     })
     .catch(error => dispatch(updateUserMarkVideoCompletedError(error)))
