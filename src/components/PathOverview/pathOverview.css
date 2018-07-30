@@ -13,3 +13,16 @@
   text-align: center;
 }
 
+.overview-video-title::after {
+  content: '\221A';
+  color: green;
+  border: 1px solid green;
+  border-radius: 100%;
+  padding: 0.1em 0.5em;
+  opacity: 0.3;
+  margin-left: 0.5em;
+}
+
+.completed::after {
+  opacity: 1;
+}

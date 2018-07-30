@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchPathOverview } from '../../actions/GET/getActions';
-import { addToUserSaved, addToUserCurrent } from '../../actions/PUT/putActions'
-import { removeFromUserSaved } from '../../actions/DELETE/deleteActions'
+import { addToUserSaved, addToUserCurrent } from '../../actions/PUT/putActions';
+import { removeFromUserSaved } from '../../actions/DELETE/deleteActions';
+import './pathOverview.css';
 export class PathOverview extends React.Component {
 
   componentDidMount() {
@@ -54,11 +55,11 @@ export class PathOverview extends React.Component {
 
       let completedVideos = this.props.path.completedVideos;
       let videos = this.props.path.videos.map((item, index) => {
-        let completedClass;
+        let videoTitleClass;
         if (completedVideos) {
           if (completedVideos[index] === true) {
-            completedClass = ' completed';
-          } else completedClass = '';
+            videoTitleClass = 'overview-video-title completed';
+          } else videoTitleClass = 'overview-video-title';
         }
         return (
           <li key={index}>
@@ -68,18 +69,18 @@ export class PathOverview extends React.Component {
             </div>
             <div>
               {/* in css add checkmark to h2 with ::after */}
-              <h2 className={`overview-video-title${completedClass}`}>{item.title}</h2>
+              <h2 className={videoTitleClass}>{item.title}</h2>
               <p>{item.description}</p>
             </div>
             <div>
-              {/* add link to path's classroom */}
+              {/* add link to video's classroom */}
               <Link 
-              onClick={() => {
-                if (this.props.status !== 'current') {
-                  this.props.dispatch(addToUserCurrent(this.props.path.id))
-                }
-              }}
-              to={`/dashboard/classroom/${this.props.path.id}/${index}`}
+                onClick={() => {
+                  if (this.props.status !== 'current') {
+                    this.props.dispatch(addToUserCurrent(this.props.path.id));
+                  }
+                }}
+                to={`/dashboard/classroom/${this.props.path.id}/${index}`}
               >Go &gt;</Link>
             </div>
           </li>
