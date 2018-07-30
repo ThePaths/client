@@ -74,7 +74,7 @@ export class PathOverview extends React.Component {
               {/* add link to video's classroom */}
               <Link 
                 onClick={() => {
-                  if (this.props.status !== 'current') {
+                  if (this.props.status !== 'current' && this.props.status !== 'completed') {
                     this.props.dispatch(addToUserCurrent(this.props.path.id));
                   }
                 }}
@@ -91,7 +91,7 @@ export class PathOverview extends React.Component {
             <h1>{this.props.path.title}</h1>
             <p>{this.props.path.videos[0].description}</p>
             <div>
-              {pathProgressBtn}
+              {this.props.status === 'completed' ? undefined : pathProgressBtn}
               {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}
             </div>
           </section>

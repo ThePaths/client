@@ -99,7 +99,7 @@ const userPathsReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        completed:action.comp
+        completed:action.paths
       }
     case GET_COMPLETED_PATHS_ERROR:
       return {
