@@ -33,7 +33,7 @@ export class YoutubePlayer extends React.Component {
             <p className="video-recap">
               {this.props.display.description}
             </p>
-            <p>Video Creator: <a href={this.props.creatorLink}>{this.props.creatorName}</a></p>
+            <p>Video Creator: <a href={this.props.creatorLink} target="_blank" rel="noopener">{this.props.creatorName}</a></p>
           </footer>
         </div>
       );}
