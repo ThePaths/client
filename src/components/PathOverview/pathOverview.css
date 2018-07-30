@@ -1,17 +1,17 @@
 
-.heroImage {
+/* .heroImage {
   width: 200px;
   margin: 20px;
   height: 200px;
-}
+} */
 
 
-.pathOverviewBoxes {
-   width: 250px;
+/* .pathOverviewBoxes {
+  width: 250px;
   display: inline-block;
   margin: 15px;
   text-align: center;
-}
+} */
 
 .overview-video-title::after {
   content: '\221A';
