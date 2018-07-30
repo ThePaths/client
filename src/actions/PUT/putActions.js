@@ -164,7 +164,7 @@ export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) =
       dispatch(updateUserMarkVideoCompletedSuccess())
       if (!resp.includes(false)) {        
       //dispatch(removeFromUserCurrent(pathId))
-      dispatch(addToUserCompleted(pathId))
+      //dispatch(addToUserCompleted(pathId))
      }
     })
     .catch(error => dispatch(updateUserMarkVideoCompletedError(error)))
