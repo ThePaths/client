@@ -13,8 +13,8 @@ export class Classroom extends React.Component {
     const id = this.props.match.params.id;
     const index = parseInt(this.props.match.params.videoIndex, 10);
     this.props.dispatch(fetchPathOverview(id));
-    this.props.dispatch(changeLastVideoIndex(id, index))
-}
+    this.props.dispatch(changeLastVideoIndex(id, index));
+  }
 
   nextBtnClicked() {
     const index = this.props.match.params.videoIndex;
@@ -30,21 +30,21 @@ export class Classroom extends React.Component {
   handleCompletedCourses() {
     const videoIndex = this.props.match.params.videoIndex;
     const pathId = this.props.match.params.id;
-    this.props.dispatch(userCompletedVideo(pathId, videoIndex))
-    document.getElementById("completedButton").className = "hideCompleted";
-   }
+    this.props.dispatch(userCompletedVideo(pathId, videoIndex));
+    document.getElementById('completedButton').className = 'hideCompleted';
+  }
 
   render() {
 
     if (!this.props.loading) {
       const index = parseInt(this.props.match.params.videoIndex, 10);
 
-    let completedVideos;
-    if (this.props.completedVideos) {
-      completedVideos = this.props.completedVideos[index]
-    } else {
-      completedVideos = null
-    }
+      let completedVideos;
+      if (this.props.completedVideos) {
+        completedVideos = this.props.completedVideos[index];
+      } else {
+        completedVideos = null;
+      }
 
 
       return (
