@@ -20,8 +20,6 @@ export default class YoutubePlayer extends React.Component {
       completeButton = null;
     }
 
-    console.log(this.props.creatorLink);
-    
     return (
       <div className="video-player-container">
         <div className="video-info-section">
@@ -51,8 +49,5 @@ export default class YoutubePlayer extends React.Component {
       </div>
     );
   }
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
+ 
 }

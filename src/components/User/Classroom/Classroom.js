@@ -30,7 +30,7 @@ export class Classroom extends React.Component {
     if (nextIndex === this.props.overview.videos.length) {
       this.props.history.push(`/dashboard/classroom/${id}/0`);
     
-      //window.location.href = `/dashboard/classroom/${id}/0`;
+     
     } else {
       this.props.history.push(`/dashboard/classroom/${id}/${nextIndex}`);
     }}

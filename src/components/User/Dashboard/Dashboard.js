@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { Redirect, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
 import  UserPaths  from '../UserPaths/UserPaths';
