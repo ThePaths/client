@@ -7,10 +7,11 @@ export function SavedPaths(props) {
   let savedPath;
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
+      console.log('saved', path)
       return (
-        <li>
-          <Link className='path' key={index} to={`/dashboard/overview/${path.id}`}>
-            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
+        <li className='path' key={index}>
+          <Link to={`/dashboard/overview/${path.id}`}>
+            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}`} alt='' className="heroImage" />
             <p>{path.title}</p>
           </Link>
         </li>
