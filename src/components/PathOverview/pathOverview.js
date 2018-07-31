@@ -27,15 +27,17 @@ export class PathOverview extends React.Component {
       // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
-        pathProgressBtn = <button onClick={() => window.location.href = `/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>Continue</button>;
+        pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>
+        <button>Continue</button></Link>;
       } else {
-        pathProgressBtn = <button onClick={() => {
-          if (this.props.status === 'saved') {
-            this.removeFromSaved();
-          }
-          this.props.dispatch(addToUserCurrent(this.props.path.id));
-          window.location.href = `/dashboard/classroom/${this.props.path.id}/0`;
-        }}>Start</button>;
+        pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/0`}>
+                            <button onClick={() => {
+                              if (this.props.status === 'saved') {
+                                  this.removeFromSaved();
+                                  }
+                              this.props.dispatch(addToUserCurrent(this.props.path.id));
+                            }}>Start</button>
+                          </Link>;
       }
 
       let saveButton;
