@@ -7,7 +7,7 @@ export default function Repl(props) {
     <div>
     <iframe 
       title="firstAttempt"
-      height="400px"
+      height="900px"
       width="100%"
       src={ props.repl }
       scrolling="no"
