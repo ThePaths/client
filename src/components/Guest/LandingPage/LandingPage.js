@@ -33,7 +33,7 @@ export class LandingPage extends React.Component {
         <li key={ index } 
           onClick={ () => window.location.href = `/classroom/${path.id}` } 
           className="landingPageBoxes">
-          <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${this.props.paths[index].id}`}
+          <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}.png`}
             alt="FIX" // FIX THISSSSSSS
             className="heroImage"
           />
