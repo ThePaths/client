@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../UserPaths/userPaths.css';
 
 export function CompletedPaths(props) {
@@ -7,9 +8,11 @@ export function CompletedPaths(props) {
   if (props.saved.length > 0) {
     completedPath = props.saved.map((path, index) => {
       return (
-        <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
-          <p>{ path.title }</p>
-          <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
+        <li>
+          <Link className='path' key={ index } to={`/dashboard/overview/${path.id}`}>
+            <p>{ path.title }</p>
+            <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
+          </Link>
         </li>
       );
     });

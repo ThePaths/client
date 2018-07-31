@@ -1,19 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../UserPaths/userPaths.css';
+
 export function SavedPaths(props) {
   let savedPath;
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
       return (
-        <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
-          <img src={ path.hero } alt='' className="heroImage"/>
-          <p>{ path.title }</p>
+        <li>
+          <Link className='path' key={ index } to= {`/dashboard/overview/${path.id}`}>
+            <img src={ path.hero } alt='' className="heroImage"/>
+            <p>{ path.title }</p>
+          </Link>
         </li>
       );
     });
   } else {
-    savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>;
+    savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p>
+    <Link to={'/dashboard/explore'}><button >Explore</button></Link></li>;
   }
 
   return (
