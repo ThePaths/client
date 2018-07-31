@@ -6,10 +6,11 @@ export function CurrentPaths(props) {
   let currentPath;
   if (props.current.length > 0) {
     currentPath = props.current.map((path, index) => {
-      return (<li>
+      return (
+        <li className='path' key={index} onClick={ () => {window.location.href = `/dashboard/overview/${path.path.id}`} }>
         <Link key={index} to={`/dashboard/overview/${path.path.id}`}>
+          <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
           <p>{path.path.title}</p>
-          <img src={path.path.hero} alt='' className="heroImage" />
         </Link>
         </li>
       );

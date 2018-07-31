@@ -9,23 +9,23 @@ export function SavedPaths(props) {
     savedPath = props.saved.map((path, index) => {
       return (
         <li>
-          <Link className='path' key={ index } to= {`/dashboard/overview/${path.id}`}>
-            <img src={ path.hero } alt='' className="heroImage"/>
-            <p>{ path.title }</p>
+          <Link className='path' key={index} to={`/dashboard/overview/${path.id}`}>
+            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
+            <p>{path.title}</p>
           </Link>
         </li>
       );
     });
   } else {
     savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p>
-    <Link to={'/dashboard/explore'}><button >Explore</button></Link></li>;
+      <Link to={'/dashboard/explore'}><button >Explore</button></Link></li>;
   }
 
   return (
     <div className="Paths-Container">
-    <h2>Your Saved Paths</h2>
+      <h2>Your Saved Paths</h2>
       <ul>
-        { savedPath }
+        {savedPath}
       </ul>
     </div>
   );

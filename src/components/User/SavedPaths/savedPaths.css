@@ -1,4 +1,4 @@
-
+/* 
 .savedPathsContainer {
   border:2px solid black;
   margin:5px;
@@ -15,7 +15,7 @@ li{
 
 .savedPathsContainer ul {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .path-container {
@@ -27,4 +27,4 @@ li{
   -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
      -moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
-}
+} */
