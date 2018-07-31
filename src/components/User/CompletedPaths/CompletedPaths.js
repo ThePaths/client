@@ -1,24 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './completedPaths.css';
+import '../UserPaths/userPaths.css';
 
 export function CompletedPaths(props) {
   let completedPath;
   if (props.saved.length > 0) {
     completedPath = props.saved.map((path, index) => {
       return (
-        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>
+        <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
           <p>{ path.title }</p>
           <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
         </li>
       );
     });
   } else {
-    completedPath = <li><p>You have not completed any paths.</p></li>;
+    completedPath = <li className='empty' ><p>You have not completed any paths.</p></li>
   }
 
   return (
-    <div className="completedPathsContainer">
+    <div className="Paths-Container">
+      <h2>Your Completed Paths</h2>
       <ul>
         { completedPath }
       </ul>

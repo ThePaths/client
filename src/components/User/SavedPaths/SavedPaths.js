@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './savedPaths.css';
+import '../UserPaths/userPaths.css';
 export function SavedPaths(props) {
   let savedPath;
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
       return (
-        <li className='path-container' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
-          <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
+        <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
+          <img src={ path.hero } alt='' className="heroImage"/>
           <p>{ path.title }</p>
         </li>
       );
@@ -17,8 +17,8 @@ export function SavedPaths(props) {
   }
 
   return (
-    <div className="savedPathsContainer">
-      <h2>Your Saved Paths</h2>
+    <div className="Paths-Container">
+    <h2>Your Saved Paths</h2>
       <ul>
         { savedPath }
       </ul>
