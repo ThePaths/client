@@ -6,28 +6,28 @@ export function SavedPaths(props) {
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
       return (
-        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
+        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>
           <p>{ path.title }</p>
-          <img src={ path.hero } alt='' className="heroImage"/>
+          <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
         </li>
-      )
-    })
+      );
+    });
   } else {
-    savedPath = <li><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>
+    savedPath = <li><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>;
   }
 
   return (
     <div className="savedPathsContainer">
-    <h2>Your Saved Paths</h2>
+      <h2>Your Saved Paths</h2>
       <ul>
         { savedPath }
       </ul>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = state => ({
   saved: state.userPaths.saved || 0
-})
+});
 
-export default connect(mapStateToProps)(SavedPaths)
+export default connect(mapStateToProps)(SavedPaths);
