@@ -7,7 +7,6 @@ export default class YoutubePlayer extends React.Component {
   render() {
     const opts = {
       playerVars: {
-        autoplay: 1,
         'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0
