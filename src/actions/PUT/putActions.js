@@ -90,7 +90,7 @@ export const updateUserCompletedCourseError = error => ({
 export const addToUserSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateUsersSavedPathsRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/save`, {
+  fetch(`${API_BASE_URL}/userpaths/save`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ export const addToUserSaved = (pathId) => (dispatch, getState) => {
 export const addToUserCompleted = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(upadateUserCompletedCourseRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/complete`, {
+  fetch(`${API_BASE_URL}/userpaths/complete`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ export const addToUserCompleted = pathId => (dispatch, getState) => {
 export const addToUserCurrent = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateUsersCurrentPathsRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/start`, {
+  fetch(`${API_BASE_URL}/userpaths/start`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ export const addToUserCurrent = (pathId) => (dispatch, getState) => {
 export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateUserMarkVideoCompletedRequest());
-  fetch(`${API_BASE_URL}/api/userpaths/completeVideo`, {
+  fetch(`${API_BASE_URL}/userpaths/completeVideo`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -174,7 +174,7 @@ export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) =
 export const changeLastVideoIndex = (id, index) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateUsersLastVideoIndexRequest());
-  fetch(`${API_BASE_URL}/api/userpaths/setVideoIndex`, {
+  fetch(`${API_BASE_URL}/userpaths/setVideoIndex`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

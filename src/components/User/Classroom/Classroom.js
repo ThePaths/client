@@ -28,12 +28,12 @@ export class Classroom extends React.Component {
     let nextIndex = parseInt(index, 10);
     nextIndex += 1;
     if (nextIndex === this.props.overview.videos.length) {
-      this.props.history.push(`/dashboard/classroom/${id}/0`)
+      this.props.history.push(`/dashboard/classroom/${id}/0`);
     
      
     } else {
-    this.props.history.push(`/dashboard/classroom/${id}/${nextIndex}`)
-  }}
+      this.props.history.push(`/dashboard/classroom/${id}/${nextIndex}`);
+    }}
 
 
   handleCompletedCourses() {
@@ -53,15 +53,15 @@ export class Classroom extends React.Component {
         <section className="classroom-section">
           <a href={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</a>
           
-           <YoutubePlayer
-             index={index}
-             completedVideos={this.props.completedVideos}
-             completed={() => this.handleCompletedCourses()}
-             video={this.props.overview.videos[index]}
-             title={this.props.overview.title}
-             creatorLink={this.props.overview.videos[index].creator.youtube}
-             creatorName={this.props.overview.videos[index].creator.name}
-             nextBtnClicked={() => this.nextBtnClicked()} />
+          <YoutubePlayer
+            index={index}
+            completedVideos={this.props.completedVideos}
+            completed={() => this.handleCompletedCourses()}
+            video={this.props.overview.videos[index]}
+            title={this.props.overview.title}
+            creatorLink={this.props.overview.videos[index].creator.youtube}
+            creatorName={this.props.overview.videos[index].creator.name}
+            nextBtnClicked={() => this.nextBtnClicked()} />
           <Repl repl={this.props.overview.videos[index].replit} title="replit"/>
           <InstructionModal />
         </section>

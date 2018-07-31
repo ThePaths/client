@@ -11,7 +11,7 @@ export class UserPaths extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchCurrentPaths());
     this.props.dispatch(fetchSavedPaths());
-    this.props.dispatch(fetchCompletedPaths())
+    this.props.dispatch(fetchCompletedPaths());
   }
 
   render() {
@@ -21,7 +21,7 @@ export class UserPaths extends React.Component {
         <SavedPaths />
         <CompletedPaths />
       </div>
-    )
+    );
   }
 }
 

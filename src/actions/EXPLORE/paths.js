@@ -27,7 +27,7 @@ export const lessonSuccess = lesson => ({
 export const fetchPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(pathsRequest());
-  fetch(`${API_BASE_URL}/api/paths`, {
+  fetch(`${API_BASE_URL}/paths`, {
     method: 'GET',
     headers: {
       // Provide our auth token as credentials
@@ -41,7 +41,7 @@ export const fetchPaths = () => (dispatch, getState) => {
 
 export const addToCurrent = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/api/paths/start`, {
+  fetch(`${API_BASE_URL}/paths/start`, {
     method: 'POST',
     headers: {
       // Provide our auth token as credentials

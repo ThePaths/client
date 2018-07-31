@@ -8,7 +8,6 @@ export default class YoutubePlayer extends React.Component {
    
     const opts = {
       playerVars: {
-        
         'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0

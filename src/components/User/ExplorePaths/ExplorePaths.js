@@ -15,7 +15,9 @@ class ExplorePaths extends React.Component {
       return (
         <li key={ index } className="exploreBoxes"
           onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>         
-          <img src={ path.hero } alt=''className="heroImage"/>
+          <img 
+            src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } 
+            alt=''className="heroImage"/>
           <h3 className='path-title'>{ path.title }</h3> 
           <p className='path-description'>{ path.description }</p>         
           {/* <button className='view-path-button'
