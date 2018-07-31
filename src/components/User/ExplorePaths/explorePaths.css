@@ -50,3 +50,11 @@ ul{
      -moz-box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
           box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
 }
+
+.exploreBoxes:focus {
+  transition: 0.15s;
+  transform: scale(1.01);
+  -webkit-box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
+}
