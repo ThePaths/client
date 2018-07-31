@@ -7,8 +7,8 @@ export function CurrentPaths(props) {
     currentPath = props.current.map((path, index) => {
       return (
         <li className='path' key={index} onClick={ () => {window.location.href = `/dashboard/overview/${path.path.id}`} }>
-          <p>{path.path.title}</p>
           <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
+          <p>{path.path.title}</p>
         </li>
       );
     });

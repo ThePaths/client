@@ -8,8 +8,8 @@ export function CompletedPaths(props) {
     completedPath = props.saved.map((path, index) => {
       return (
         <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
-          <p>{ path.title }</p>
           <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
+          <p>{ path.title }</p>
         </li>
       );
     });
