@@ -6,7 +6,7 @@ import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
 import YoutubePlayer from './YoutubePlayer';
-
+import { Redirect } from 'react-router-dom';
 export class Classroom extends React.Component {
 
   componentDidMount() {
@@ -28,9 +28,12 @@ export class Classroom extends React.Component {
     let nextIndex = parseInt(index, 10);
     nextIndex += 1;
     if (nextIndex === this.props.overview.videos.length) {
-      window.location.href = `/dashboard/classroom/${id}/0`;
-    } else { window.location.href = `/dashboard/classroom/${id}/${nextIndex}`; }
-  }
+      this.props.history.push(`/dashboard/classroom/${id}/0`)
+    
+      //window.location.href = `/dashboard/classroom/${id}/0`;
+    } else {
+    this.props.history.push(`/dashboard/classroom/${id}/${nextIndex}`)
+  }}
 
 
   handleCompletedCourses() {
@@ -59,7 +62,7 @@ export class Classroom extends React.Component {
              creatorLink={this.props.overview.videos[index].creator.youtube}
              creatorName={this.props.overview.videos[index].creator.name}
              nextBtnClicked={() => this.nextBtnClicked()} />
-          <Repl repl={this.props.overview.videos[index].replit} />
+          <Repl repl={this.props.overview.videos[index].replit} title="replit"/>
           <InstructionModal />
         </section>
       );

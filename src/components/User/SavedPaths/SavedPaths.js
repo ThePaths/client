@@ -6,14 +6,14 @@ export function SavedPaths(props) {
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
       return (
-        <li key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>
-          <p>{ path.title }</p>
+        <li className='path-container' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
           <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
+          <p>{ path.title }</p>
         </li>
       );
     });
   } else {
-    savedPath = <li><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>;
+    savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>;
   }
 
   return (

@@ -7,6 +7,7 @@
 .gp-container {
   list-style: none;
   display: flex;
+  justify-content: center
 }
 
 .gp-container li {
@@ -18,9 +19,22 @@
   margin:20px;
   height:200px;
 }
+
 .landingPageBoxes {
-  width: 250px;
-  display:inline-block;
+  width: 280px;
   margin:15px;
   text-align:center;
+  transition: 0.15s;
+
+  -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.landingPageBoxes:hover {
+  transition: 0.15s;
+  transform: scale(1.01);
+  -webkit-box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.35);
 }

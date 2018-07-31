@@ -5,7 +5,7 @@
 
 .auth-components {
   margin: auto;
-  max-width: 50%;
+  max-width: 60%;
   border: 1px solid grey;
   height: 450px;
   position: relative;
@@ -14,12 +14,12 @@
 
 .auth-nav {
   margin: auto;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .auth-button {
   width: 50%;
-  height: 30px;
+  height: 40px;
   border: 1px solid grey;
   outline: none;
 }
@@ -40,7 +40,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 350px;
 }
 
 /* .auth button {
@@ -90,7 +90,8 @@
    background-color:grey; 
  }
  .login-form {
-  border: solid grey 2px;
+  /* border: solid grey 2px; */
+  max-width: 100%;
   font-size: 24px;
   background-color: white;
   border-radius: 5px;
