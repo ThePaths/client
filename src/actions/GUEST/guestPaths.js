@@ -38,7 +38,7 @@ export const guestClassroomError = error => ({
 
 export const fetchGuestPaths = () => dispatch => {
   dispatch(guestPathsRequest());
-  fetch(`${API_BASE_URL}/api/paths/guest`, {
+  fetch(`${API_BASE_URL}/paths/guest`, {
     method: 'GET',
   })
     .then(res => {
@@ -51,7 +51,7 @@ export const fetchGuestPaths = () => dispatch => {
 
 export const fetchGuestClassroom = id => dispatch => {
   dispatch(guestClassroomRequest());
-  fetch(`${API_BASE_URL}/api/paths/${id}`, {
+  fetch(`${API_BASE_URL}/paths/${id}`, {
     method: 'GET',
   })
     .then(res => {
@@ -89,7 +89,7 @@ export const fetchGuestClassroom = id => dispatch => {
 
 // export const fetchGuestPaths = () => dispatch => {
 //   dispatch(guestPathsRequest());
-//   fetch(`${API_BASE_URL}/api/paths/guest`, {
+//   fetch(`${API_BASE_URL}/paths/guest`, {
 //     method: 'GET',
 //   })
 //     .then(res => res.json())
@@ -99,7 +99,7 @@ export const fetchGuestClassroom = id => dispatch => {
 
 // export const fetchGuestClassroom = id => dispatch => {
 //   dispatch(guestClassroomRequest());
-//   fetch(`${API_BASE_URL}/api/paths/${id}`, {
+//   fetch(`${API_BASE_URL}/paths/${id}`, {
 //     method: 'GET',
 //   })
 //     .then(res => res.json())

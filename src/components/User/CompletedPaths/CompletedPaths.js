@@ -9,10 +9,10 @@ export function CompletedPaths(props) {
       return (
         <li className='path' key={ index } onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`} }>
           <p>{ path.title }</p>
-          <img src={ path.hero } alt='' className="heroImage"/>
+          <img src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } alt='' className="heroImage"/>
         </li>
-      )
-    })
+      );
+    });
   } else {
     completedPath = <li className='empty' ><p>You have not completed any paths.</p></li>
   }
@@ -24,11 +24,11 @@ export function CompletedPaths(props) {
         { completedPath }
       </ul>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = state => ({
   saved: state.userPaths.completed || 0
-})
+});
 
-export default connect(mapStateToProps)(CompletedPaths)
+export default connect(mapStateToProps)(CompletedPaths);

@@ -44,7 +44,7 @@ export const clearUserPathState = () => ({
 export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(deleteSavedCourseRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/unsave`, {
+  fetch(`${API_BASE_URL}/userpaths/unsave`, {
     method: 'PUT',
     headers: {
       // Provide our auth token as credentials
@@ -66,7 +66,7 @@ export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
 export const removeCourseFromUserCurrent = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(deleteCurrentCourseRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/unstart`, {
+  fetch(`${API_BASE_URL}/userpaths/unstart`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

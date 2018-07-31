@@ -10,10 +10,10 @@ export function SavedPaths(props) {
           <img src={ path.hero } alt='' className="heroImage"/>
           <p>{ path.title }</p>
         </li>
-      )
-    })
+      );
+    });
   } else {
-    savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>
+    savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p><button onClick={() => window.location.href = '/dashboard/explore'}>Explore</button></li>;
   }
 
   return (
@@ -23,11 +23,11 @@ export function SavedPaths(props) {
         { savedPath }
       </ul>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = state => ({
   saved: state.userPaths.saved || 0
-})
+});
 
-export default connect(mapStateToProps)(SavedPaths)
+export default connect(mapStateToProps)(SavedPaths);

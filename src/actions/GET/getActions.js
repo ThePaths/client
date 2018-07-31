@@ -111,7 +111,7 @@ export const getPathStatusError = error => ({
 export const fetchStatus = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getPathStatusRequest())
-  fetch(`${API_BASE_URL}/api/userpaths/status/${id}`, {
+  fetch(`${API_BASE_URL}/userpaths/status/${id}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
@@ -128,7 +128,7 @@ export const fetchStatus = id => (dispatch, getState) => {
 export const fetchCurrentPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getCurrentPathsRequest());
-  fetch(`${API_BASE_URL}/api/dashboard/keeplearning`, {
+  fetch(`${API_BASE_URL}/dashboard/keeplearning`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
@@ -145,7 +145,7 @@ export const fetchCurrentPaths = () => (dispatch, getState) => {
 export const fetchSavedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getSavedPathsRequest());
-  fetch(`${API_BASE_URL}/api/dashboard/savedPaths`, {
+  fetch(`${API_BASE_URL}/dashboard/savedPaths`, {
     method: 'GET',
     headers: {     
       Authorization: `Bearer ${authToken}`
@@ -162,7 +162,7 @@ export const fetchSavedPaths = () => (dispatch, getState) => {
 export const fetchCompletedPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getCompletedPathsRequest());
-  fetch(`${API_BASE_URL}/api/dashboard/completedPaths`, {
+  fetch(`${API_BASE_URL}/dashboard/completedPaths`, {
     method: 'GET',
     headers: {     
       Authorization: `Bearer ${authToken}`
@@ -179,7 +179,7 @@ export const fetchCompletedPaths = () => (dispatch, getState) => {
 export const fetchPathOverview = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getPathOverviewRequest());
-  fetch(`${API_BASE_URL}/api/overview/${id}`, {
+  fetch(`${API_BASE_URL}/overview/${id}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`

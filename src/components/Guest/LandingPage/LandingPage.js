@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect} from 'react-router-dom';
 import 'console.image';
 import './landingPage.css';
-import { fetchGuestPaths } from '../../../actions/GUEST/guestPaths'
+import { fetchGuestPaths } from '../../../actions/GUEST/guestPaths';
 
 export class LandingPage extends React.Component {
 
@@ -14,28 +14,28 @@ export class LandingPage extends React.Component {
   render() {
     if (this.props.loggedIn) { return <Redirect to="/dashboard" />; }
     if(!this.props.loading){
-    const jimm =
+      const jimm =
       'https://media.licdn.com/dms/image/C4D03AQE5aRtIPHO6HQ/profile-displayphoto-shrink_800_800/0?e=1537401600&v=beta&t=kUHFHcnLAoWfegX1JYRQG9ZQP4RK3tYZU3htMo1yPqc';
-    const sayed =
+      const sayed =
       'https://media.licdn.com/dms/image/C4D03AQHn-tjeDHXPVg/profile-displayphoto-shrink_800_800/0?e=1537401600&v=beta&t=i4O7yXaUUx1TY0GtcOSR-_nwW5gNfIhQ_xCYZV3CXJE';
-    const dameon =
+      const dameon =
       'https://media.licdn.com/dms/image/C5603AQE56jBytxJMPA/profile-displayphoto-shrink_800_800/0?e=1537401600&v=beta&t=kTtfTglP1E9jjdpk5mXLGla8dY1wmuKJEtnCN5KQrnY';
-    const terrance =
+      const terrance =
       'https://avatars2.githubusercontent.com/u/20272233?s=460&v=4';
-    console.log('The Four Creators of The Paths');
-    console.image(jimm);
-    console.image(sayed);
-    console.image(dameon);
-    console.image(terrance);
+      console.log('The Four Creators of The Paths');
+      console.image(jimm);
+      console.image(sayed);
+      console.image(dameon);
+      console.image(terrance);
     }
     const paths = this.props.paths.map((path, index) => {
       return (        
         <li key={ index } 
-            onClick={ () => window.location.href = `/classroom/${path.id}` } 
-            className="landingPageBoxes">
-          <img src={ path.hero }
-               alt="FIX"
-               className="heroImage"
+          onClick={ () => window.location.href = `/classroom/${path.id}` } 
+          className="landingPageBoxes">
+          <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}.png`}
+            alt="FIX" // FIX THISSSSSSS
+            className="heroImage"
           />
           <h2>{ path.title }</h2>
           <p>{ path.description }</p>
