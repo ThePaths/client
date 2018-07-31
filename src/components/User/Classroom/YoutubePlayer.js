@@ -5,9 +5,10 @@ import YouTube from 'react-youtube';
 export default class YoutubePlayer extends React.Component {
 
   render() {
+   
     const opts = {
       playerVars: {
-        autoplay: 1,
+        
         'origin': 'https://www.youtube.com',
         rel: 0,
         showinfo: 0
@@ -27,6 +28,7 @@ export default class YoutubePlayer extends React.Component {
         <YouTube className="video-player"
           videoId={this.props.video.videoId}
           opts={opts}
+          player= 'null'
           host='https://www.youtube.com'
           onEnd={() => this.props.completed()}
         />
