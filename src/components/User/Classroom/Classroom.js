@@ -59,7 +59,7 @@ export class Classroom extends React.Component {
              creatorLink={this.props.overview.videos[index].creator.youtube}
              creatorName={this.props.overview.videos[index].creator.name}
              nextBtnClicked={() => this.nextBtnClicked()} />
-          <Repl repl={this.props.overview.videos[index].replit} />
+          <Repl repl={this.props.overview.videos[index].replit} title="replit"/>
           <InstructionModal />
         </section>
       );
