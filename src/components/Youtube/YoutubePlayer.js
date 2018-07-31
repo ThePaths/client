@@ -5,8 +5,14 @@ import YouTube from 'react-youtube';
 
 export class YoutubePlayer extends React.Component { 
 
+
+  
+
   render() {
-    
+
+    if (!window['YTConfig']) {
+      window.YTConfig = {'host': 'http://www.youtube.com'};}
+
     const opts = {
       playerVars: { 
         autoplay: 1,
@@ -26,7 +32,9 @@ export class YoutubePlayer extends React.Component {
             videoId={ this.props.display.videos[0].videoId }
             opts={ opts }
             host='https://www.youtube.com'
+            onReady={this._onReady}
             onEnd={ () => console.log('End Of Video') }
+            
           />
           <footer className="video-footer">
             <h2>Show Notes</h2>
@@ -38,7 +46,11 @@ export class YoutubePlayer extends React.Component {
         </div>
       );}
     return null;
-  }    
+  }  
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }  
 }
 
 const mapStateToProps = state => ({

@@ -13,7 +13,7 @@ export class LandingPage extends React.Component {
 
   render() {
     if (this.props.loggedIn) { return <Redirect to="/dashboard" />; }
-
+    if(!this.props.loading){
     const jimm =
       'https://media.licdn.com/dms/image/C4D03AQE5aRtIPHO6HQ/profile-displayphoto-shrink_800_800/0?e=1537401600&v=beta&t=kUHFHcnLAoWfegX1JYRQG9ZQP4RK3tYZU3htMo1yPqc';
     const sayed =
@@ -27,7 +27,7 @@ export class LandingPage extends React.Component {
     console.image(sayed);
     console.image(dameon);
     console.image(terrance);
-
+    }
     const paths = this.props.paths.map((path, index) => {
       return (        
         <li key={ index } 
@@ -58,7 +58,8 @@ export class LandingPage extends React.Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
-  paths: state.guests.paths || null
+  paths: state.guests.paths || null,
+  loading: state.guests.loading
 });
 
 export default connect(mapStateToProps)(LandingPage);

@@ -40,6 +40,7 @@ export class Classroom extends React.Component {
     document.getElementById('completedButton').className = 'hideCompleted';
   }
 
+
   render() {
 
     if (!this.props.loading) {
@@ -48,15 +49,16 @@ export class Classroom extends React.Component {
       return (
         <section className="classroom-section">
           <a href={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</a>
-          <YoutubePlayer
-            index={index}
-            completedVideos={this.props.completedVideos}
-            completed={() => this.handleCompletedCourses()}
-            video={this.props.overview.videos[index]}
-            title={this.props.overview.title}
-            creatorLink={this.props.overview.videos[index].creator.youtube}
-            creatorName={this.props.overview.videos[index].creator.name}
-            nextBtnClicked={() => this.nextBtnClicked()} />
+          
+           <YoutubePlayer
+             index={index}
+             completedVideos={this.props.completedVideos}
+             completed={() => this.handleCompletedCourses()}
+             video={this.props.overview.videos[index]}
+             title={this.props.overview.title}
+             creatorLink={this.props.overview.videos[index].creator.youtube}
+             creatorName={this.props.overview.videos[index].creator.name}
+             nextBtnClicked={() => this.nextBtnClicked()} />
           <Repl repl={this.props.overview.videos[index].replit} />
           <InstructionModal />
         </section>

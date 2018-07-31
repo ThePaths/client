@@ -7,8 +7,8 @@
   text-align: center;
 }
 
-/* fancy link hover styles */
-.site-creator-link {
+/* fancy link hover styles - CREATES ISSUE ON MOBILE */
+/* .site-creator-link {
   text-decoration: none;
   color: #462749;
 
@@ -53,7 +53,7 @@
 .site-creator-link:focus:before,
 .site-creator-link:focus:after {
   width: 100%;
-}
+} */
 
 /* media queries */
 @media (min-width: 36em) {
