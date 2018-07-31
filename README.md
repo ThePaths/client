@@ -57,7 +57,8 @@ Contributions to the application are accepted.
 
 - [React](https://github.com/gitname/react-gh-pages) - The web framework used
 - [Redux: Usage with React](https://redux.js.org/basics/usage-with-react) - State management
-
+- [React-youtube]
+- [Replit]
 
 ## Authors
 
