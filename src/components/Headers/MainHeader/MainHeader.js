@@ -23,7 +23,9 @@ export class MainHeader extends React.Component {
       'http://localhost:3000/',
       'https://the-paths-client.herokuapp.com/',
       'http://localhost:3000/auth',
-      'https://the-paths-client.herokuapp.com/auth'  
+      'https://the-paths-client.herokuapp.com/auth',
+      'https://the-paths.firebaseapp.com/',
+      'https://the-paths.firebaseapp.com/auth'  
     ];
 
     navClassList = 'site-nav';
