@@ -16,15 +16,6 @@
   display: none;
 }
 
-.form-input input {
-  width: 100%;
-  border: 1px solid grey;
-  background-color: white;
-  height: 30px;
-  padding: 15px 0px 18px 8px;
-  margin:2px;
-}
-
 .auth button {
   display: block;
   width: 60%;
@@ -43,7 +34,7 @@
           box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
 }
 
-.auth button:hover {
+.auth button:hover:enabled {
   transition: 0.15s;
   transform: scale(1.02);
   cursor: pointer;

@@ -1,5 +1,5 @@
 .login-form {
-  max-width: 100%;
+  max-width: 400px;
   max-height: 450px;
   background-color: rgb(36, 34, 34);
   border-radius: 5px;
@@ -7,7 +7,7 @@
   border-top-right-radius: 0;
   padding: 0 5% 10px 5%;
   margin: auto;
-  width: 350px;
+  width: 100%;
 }
 
 .login-form h2{
