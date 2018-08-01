@@ -115,6 +115,6 @@
 @media (min-width: 1px) and (max-width: 600px) {
   .classroom-section {
     display:flex;
-    margin: -2em ;
+    margin: -2em 2px;
   }
 }
