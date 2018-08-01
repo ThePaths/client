@@ -22,6 +22,7 @@ export class PathOverview extends React.Component {
     this.props.dispatch(removeFromUserSaved(id));
   }
 
+  // ADD CLASSROOM REDIRECT FOR ENTIRE LI ON DESKTOP/LAPTOP DISPLAYS
   // linkToClassroom() {
   //   if (this.props.status === 'saved') {
   //     this.removeFromSaved();
