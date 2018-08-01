@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect} from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import 'console.image';
 import './landingPage.css';
 import { fetchGuestPaths } from '../../../actions/GUEST/guestPaths';

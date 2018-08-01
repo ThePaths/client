@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../../../actions/auth';
 import {clearUserPathState} from '../../../actions/DELETE/deleteActions';
 import {clearAuthToken} from '../../../local-storage';
+import './ClassroomHeader.css'
 
 export class ClassroomHeader extends React.Component {
   logOut() {
@@ -23,7 +24,7 @@ export class ClassroomHeader extends React.Component {
 
     return (
       <header className="main-header classroom-header">
-        <div>
+        <div className='back'>
           <Link to='/'>&lsaquo; Back</Link>
         </div>
         <div>

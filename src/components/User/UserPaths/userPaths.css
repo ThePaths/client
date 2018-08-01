@@ -6,10 +6,27 @@
 
 .empty button {
   cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid white;
+  background-color: #037EBC;
+  color: white;
+  height: 30px;
+  max-width: 100px;
+  width: 100%;
+}
+
+.empty button:hover,
+.empty button:focus {
+  color: #037EBC;
+  background-color: #fdfdfd;
+  border-color: #037EBC;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .Paths-Container {
-  border:2px solid black;
+  border:2px solid rgb(29, 30, 31);
+  background-color: #292C2D;
   margin:5px;
   padding:15px;
   min-height: 200px;
@@ -30,7 +47,7 @@
   margin: 0 10px;
   text-align: center;
   transition: 0.15s;
-  background-color: #F2EFDC;
+  background-color: rgb(255, 255, 255);
 
   -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
      -moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
@@ -55,5 +72,5 @@
 
 .path a {
   text-decoration: none;
-  color: #024959;
+  color: #2a6464;
 }

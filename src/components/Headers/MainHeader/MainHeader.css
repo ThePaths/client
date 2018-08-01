@@ -11,7 +11,7 @@ ul {
 .main-header {
   /* display: flex; */
   font-size: 1.4rem;
-  background-color: #1C1919;
+  background-color: rgb(36, 34, 34);
   max-width: 100%;
   padding: 1em 4%;
   min-height: 5em;
@@ -30,10 +30,10 @@ ul {
   margin: 0;
   text-align: center;
   padding-top: 0.5em;
-  color: #5eabc5;
-  text-shadow: 0 1px 0 #5eabc5,
-               0 2px 0 #5eabc5,
-               0 3px 0 #5eabc5,
+  color: #024959;
+  text-shadow: 0 1px 0 #037E8C,
+               0 2px 0 #037E8C,
+               0 3px 0 #037E8C,
                0 4px 0 #fdfdfd,
                0 5px 0 #fdfdfd,
                0 6px 1px rgba(255, 255, 255,.1),
