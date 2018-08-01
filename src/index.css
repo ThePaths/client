@@ -16,12 +16,9 @@ html {
 body {
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
-  background-color: #404040
-} 
-
-body {
+  background-color: #404040;
   color: rgb(216, 216, 216);
-}
+} 
 
 .app {
   display: flex;

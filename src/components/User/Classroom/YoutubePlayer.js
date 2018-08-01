@@ -31,7 +31,7 @@ export default class YoutubePlayer extends React.Component {
           host='https://www.youtube.com'
           onEnd={() => this.props.completed()}
         />
-          <div className="video-info-section">
+        <div className="video-info-section">
           <header className="video-header">
             <h1>{this.props.title}</h1>
             <h2 className="video-title">{this.props.video.title}</h2>

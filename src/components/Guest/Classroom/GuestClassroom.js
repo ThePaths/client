@@ -18,7 +18,6 @@ export class GuestClassroom extends React.Component {
     if (!this.props.loading) {
       return (
         <section className="classroom-section">
-          <InstructionModal />
           <YoutubePlayer
             props={ this.props }
             creatorLink={this.props.display.videos[0].creator.youtube}
