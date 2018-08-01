@@ -7,7 +7,6 @@ export function SavedPaths(props) {
   let savedPath;
   if (props.saved.length > 0) {
     savedPath = props.saved.map((path, index) => {
-      console.log('saved', path)
       return (
         <li className='path' key={index}>
           <Link to={`/dashboard/overview/${path.id}`}>
@@ -19,7 +18,7 @@ export function SavedPaths(props) {
     });
   } else {
     savedPath = <li className='empty'><p>You currently have no saved paths, go to explore to find some</p>
-      <Link to={'/dashboard/explore'}><button >Explore</button></Link></li>;
+      <Link to={'/dashboard/explore'}><button>Explore</button></Link></li>;
   }
 
   return (
