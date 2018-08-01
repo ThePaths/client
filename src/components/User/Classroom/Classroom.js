@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPathOverview } from '../../../actions/GET/getActions';
+import { fetchPathOverview, fetchStatus } from '../../../actions/GET/getActions';
 import { changeLastVideoIndex, userCompletedVideo } from '../../../actions/PUT/putActions';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
@@ -18,6 +18,7 @@ export class Classroom extends React.Component {
   componentDidUpdate() {
     const id = this.props.match.params.id;
     const index = parseInt(this.props.match.params.videoIndex, 10);
+    this.props.dispatch(fetchStatus())
     if (this.props.status === 'current') {
       this.props.dispatch(changeLastVideoIndex(id, index));
     }
@@ -41,7 +42,6 @@ export class Classroom extends React.Component {
     const videoIndex = this.props.match.params.videoIndex;
     const pathId = this.props.match.params.id;
     this.props.dispatch(userCompletedVideo(pathId, videoIndex));
-    document.getElementById('completedButton').className = 'hideCompleted';
   }
 
 
