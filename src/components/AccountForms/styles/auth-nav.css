@@ -1,21 +1,23 @@
-/* .auth-nav {
+.auth-nav {
   margin: auto;
-  max-width: 50%;
+  max-width: 100%;
+  width: 350px;
+  height: 40px;
 }
 
-.auth-button {
+.auth-nav button {
   width: 50%;
-  height: 30px;
+  height: 40px;
   border: 1px solid grey;
   outline: none;
 }
 
-.auth-button:hover,
-.auth-button:focus {
+.auth-nav button:hover,
+.auth-nav button:focus {
   cursor: pointer;
 }
 
 .active {
   border-bottom: none;
   background-color: white;
-} */
+}
