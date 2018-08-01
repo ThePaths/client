@@ -4,10 +4,10 @@ import './Repl.css';
 export default function Repl(props) {
  
   return (
-    <div>
+    <div className="repl">
     <iframe 
       title="firstAttempt"
-      height="900px"
+      height="100%"
       width="100%"
       src={ props.repl }
       scrolling="no"

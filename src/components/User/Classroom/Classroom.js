@@ -7,6 +7,7 @@ import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
 import YoutubePlayer from './YoutubePlayer';
 import { Link } from 'react-router-dom';
+
 export class Classroom extends React.Component {
 
   componentDidMount() {
@@ -51,7 +52,7 @@ export class Classroom extends React.Component {
 
       return (
         <section className="classroom-section">
-          <Link to={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</Link>
+          {/* <Link to={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</Link> */}
           
           <YoutubePlayer
             index={index}
@@ -62,8 +63,8 @@ export class Classroom extends React.Component {
             creatorLink={this.props.overview.videos[index].creator.youtube}
             creatorName={this.props.overview.videos[index].creator.name}
             nextBtnClicked={() => this.nextBtnClicked()} />
-          <Repl repl={this.props.overview.videos[index].replit} title="replit"/>
-          <InstructionModal />
+          <Repl repl={this.props.overview.videos[index].replit} title="replit" />
+          {/* <InstructionModal /> */}
         </section>
       );
     }

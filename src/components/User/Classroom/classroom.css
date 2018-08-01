@@ -1,15 +1,21 @@
 
-.classroom-section ul {
+/* .classroom-section ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+ 
+} */
+.main-content{
+  padding:0;
+}
+.classroom-section {
+  display:flex;
+  margin:-5em -2em ;
 }
 
 .video-player-container {
   color: #fdfdfd;
-  font-size: 1.1rem;
- 
- 
+  font-size: 1.1rem; 
 }
 
 .video-player {
@@ -94,10 +100,6 @@
   width: 100%;
 }
 
-.hideCompleted {
-  display:none;
-}
-
 
 /* media queries */
 @media (min-width: 36em) {
@@ -107,3 +109,12 @@
   } */
 }
 
+@media (min-width: 600px) and (max-width: 50em) {
+  
+}
+@media (min-width: 1px) and (max-width: 600px) {
+  .classroom-section {
+    display:flex;
+    margin: -2em ;
+  }
+}
