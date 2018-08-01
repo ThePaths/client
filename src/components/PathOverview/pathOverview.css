@@ -45,8 +45,6 @@
 }
 
 .path-progress-btn {
-  /* text-align: right; */
-  /* margin-right: 1em; */
   margin-top: 2em;
   width: 100%;
 }
@@ -118,12 +116,24 @@
     display: flex;
   }
 
-  .path-video-container div:nth-child(3) {
-    margin-left: 2em;
+  .path-video-container > div:first-child {
+    flex-grow: 2;
+    flex-basis: 30%;
+  }
+
+  .path-video-container > div:nth-child(2) {
+    flex-grow: 3;
+    flex-basis: 45%;
+  }
+
+  .path-video-container > div:nth-child(3) {
+    flex-grow: 1;
+    flex-basis: 15%;
+    text-align: right;
   }
 
   .path-img-container {
-    margin-right: 1em;
+    margin-right: 1.5em;
   } 
 
   .overview-video-title {

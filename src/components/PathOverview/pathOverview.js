@@ -66,7 +66,8 @@ export class PathOverview extends React.Component {
         return (
           <li key={index} className="path-video-container">
             <div className="path-img-container">
-              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+              <img 
+                src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                 alt="Path Thumbnail" />
             </div>
             <div>
