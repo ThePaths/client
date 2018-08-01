@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 import 'console.image';
 import './landingPage.css';
 import { fetchGuestPaths } from '../../../actions/GUEST/guestPaths';
@@ -30,8 +30,8 @@ export class LandingPage extends React.Component {
     }
     const paths = this.props.paths.map((path, index) => {
       return (        
-        <Link key={ index } 
-         to={`/classroom/${path.id}` } 
+        <li key={ index } 
+          onClick={ () => window.location.href = `/classroom/${path.id}` } 
           className="landingPageBoxes">
           <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}.png`}
             alt="FIX" // FIX THISSSSSSS
@@ -39,8 +39,7 @@ export class LandingPage extends React.Component {
           />
           <h2>{ path.title }</h2>
           <p>{ path.description }</p>
-        </Link>  
-             
+        </li>       
       );
     });
 
