@@ -6,7 +6,7 @@ import './classroom.css';
 import Repl from '../../Repl/Repl';
 import InstructionModal from '../../Modal/InstructionModal';
 import YoutubePlayer from './YoutubePlayer';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export class Classroom extends React.Component {
 
   componentDidMount() {
@@ -51,7 +51,7 @@ export class Classroom extends React.Component {
 
       return (
         <section className="classroom-section">
-          <a href={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</a>
+          <Link to={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</Link>
           
           <YoutubePlayer
             index={index}
