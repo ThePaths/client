@@ -5,13 +5,7 @@ import YouTube from 'react-youtube';
 
 export class YoutubePlayer extends React.Component { 
 
-
-  
-
   render() {
-
-    if (!window['YTConfig']) {
-      window.YTConfig = {'host': 'http://www.youtube.com'};}
 
     const opts = {
       playerVars: { 
@@ -47,10 +41,7 @@ export class YoutubePlayer extends React.Component {
       );}
     return null;
   }  
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }  
+ 
 }
 
 const mapStateToProps = state => ({

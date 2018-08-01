@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { fetchPaths } from '../../../actions/EXPLORE/paths';
+import { Link } from 'react-router-dom';
 import './explorePaths.css';
 
 
@@ -13,17 +14,16 @@ class ExplorePaths extends React.Component {
   render() {
     const paths = this.props.paths.map((path, index) => {
       return (
-        <li key={ index } className="exploreBoxes"
-          onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>         
+        <Link key={ index } className="exploreBoxes" to={`/dashboard/overview/${path.id}`}>         
           <img 
             src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } 
             alt=''className="heroImage"/>
+            
           <h3 className='path-title'>{ path.title }</h3> 
           <p className='path-description'>{ path.description }</p>         
-          {/* <button className='view-path-button'
-            onClick={ () => {window.location.href = `/dashboard/overview/${path.id}`;} }>
-            View Path</button> */}
-        </li>
+         
+          </Link>
+        
       );
     });
 
