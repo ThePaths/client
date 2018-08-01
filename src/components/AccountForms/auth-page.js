@@ -5,8 +5,8 @@ import { Redirect } from 'react-router-dom';
 import AuthNav from './auth-nav';
 import LoginForm from './Login/login-form';
 import RegisterForm from './Register/registration-form';
-//import './auth-page.css';
-import './styles/accountForm.css';
+import './styles/auth-form.css';
+
 function AuthPage(props) {
   if (props.loggedIn) {
     return <Redirect to="/dashboard" />;

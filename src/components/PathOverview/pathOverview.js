@@ -22,6 +22,17 @@ export class PathOverview extends React.Component {
     this.props.dispatch(removeFromUserSaved(id));
   }
 
+  // linkToClassroom() {
+  //   if (this.props.status === 'saved') {
+  //     this.removeFromSaved();
+  //     this.props.dispatch(addToUserCurrent(this.props.path.id));
+  //   } else if (this.props.status !== 'current' && this.props.status !== 'completed') {
+  //     this.props.dispatch(addToUserCurrent(this.props.path.id));
+  //   }
+  //   return <Redirect to={`/dashboard/classroom/${this.props.path.id}/${index}`}></Redirect>;
+  // }
+  
+
   render() {
     if (!this.props.loading) {
       // add click event to redirect user to correct classroom
@@ -75,9 +86,10 @@ export class PathOverview extends React.Component {
               <h2 className={videoTitleClass}>{item.title}</h2>
               <p>{item.description}</p>
             </div>
-            <div>
+            <div className="go-btn-container">
               {/* add link to video's classroom */}
               <Link 
+                className="go-btn"
                 onClick={() => {
                   if (this.props.status === 'saved') {
                     this.removeFromSaved();

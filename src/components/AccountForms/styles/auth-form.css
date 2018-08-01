@@ -1,0 +1,54 @@
+.auth-container {
+  margin: auto;
+  max-width: 1000px;
+  max-height: 490px;
+}
+
+.auth-components {
+  margin: auto;
+  max-width: 100%;
+  height: 450px;
+  position: relative;
+  border-top: none;
+}
+
+.register-form {
+  display: none;
+}
+
+.form-input input {
+  width: 100%;
+  border: 1px solid grey;
+  background-color: white;
+  height: 30px;
+  padding: 15px 0px 18px 8px;
+  margin:2px;
+}
+
+.auth button {
+  display: block;
+  width: 60%;
+  margin: 5px auto 30px auto;
+  padding: 10px;
+
+  font-size: 1.3rem;
+
+  border: none;
+
+  background-color:#5eabc5;
+
+  transition: 0.15s;
+  -webkit-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+}
+
+.auth button:hover {
+  transition: 0.15s;
+  transform: scale(1.02);
+  cursor: pointer;
+
+  -webkit-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+}
