@@ -45,12 +45,36 @@
     top: 8px;
   }
 }
-@media (min-width: 1px) and (max-width: 600px) {
+@media (min-width: 530px) and (max-width: 600px) {
   .classroom-header  {
     font-size: .8rem;
   }
   .form-redirect-container {
     top: 5px;
+  }
+}
+@media (min-width: 430px) and (max-width: 530px) {
+  .classroom-header  {
+    font-size: .7rem;
+  }
+  .form-redirect-container {
+    top: 4px;
+  }
+}
+@media (min-width: 390px) and (max-width: 430px) {
+  .classroom-header  {
+    font-size: .6rem;
+  }
+  .form-redirect-container {
+    top: 4px;
+  }
+}
+@media (min-width: 320px) and (max-width: 390px) {
+  .classroom-header  {
+    font-size: .5rem;
+  }
+  .form-redirect-container {
+    top: 4px;
   }
 }
 
