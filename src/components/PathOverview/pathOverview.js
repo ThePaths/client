@@ -28,16 +28,18 @@ export class PathOverview extends React.Component {
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
         pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>
-        <button>Continue</button></Link>;
+          <button className="path-progress-btn">Continue</button></Link>;
       } else {
         pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/0`}>
-                            <button onClick={() => {
-                              if (this.props.status === 'saved') {
-                                  this.removeFromSaved();
-                                  }
-                              this.props.dispatch(addToUserCurrent(this.props.path.id));
-                            }}>Start</button>
-                          </Link>;
+          <button
+            className="path-progress-btn" 
+            onClick={() => {
+              if (this.props.status === 'saved') {
+                this.removeFromSaved();
+              }
+              this.props.dispatch(addToUserCurrent(this.props.path.id));
+            }}>Start</button>
+        </Link>;
       }
 
       let saveButton;
@@ -62,8 +64,8 @@ export class PathOverview extends React.Component {
           } else videoTitleClass = 'overview-video-title';
         }
         return (
-          <li key={index}>
-            <div>
+          <li key={index} className="path-video-container">
+            <div className="path-img-container">
               <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                 alt="Path Thumbnail" />
             </div>
@@ -72,7 +74,7 @@ export class PathOverview extends React.Component {
               <h2 className={videoTitleClass}>{item.title}</h2>
               <p>{item.description}</p>
             </div>
-            <div>
+            <div className="progress-btn-container">
               {/* add link to video's classroom */}
               <Link 
                 onClick={() => {
@@ -93,7 +95,7 @@ export class PathOverview extends React.Component {
       return (
         <div className="path-overview-container">
           <section className="path-info-container">
-            <h1>{this.props.path.title}</h1>
+            <h1 className="overview-path-title">{this.props.path.title}</h1>
             <p>{this.props.path.description}</p>
             <div>
               {this.props.status === 'completed' ? undefined : pathProgressBtn}
@@ -101,7 +103,7 @@ export class PathOverview extends React.Component {
             </div>
           </section>
           <section className="path-videos-info-container">
-            <ul>
+            <ul className="path-videos-list">
               {videos}
             </ul>
           </section>
