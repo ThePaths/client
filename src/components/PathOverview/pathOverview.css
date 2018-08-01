@@ -44,9 +44,12 @@
   border: 1px solid grey;
 }
 
-/* .progress-btn-container {
-  margin
-} */
+.path-progress-btn {
+  /* text-align: right; */
+  /* margin-right: 1em; */
+  margin-top: 2em;
+  width: 100%;
+}
 
 .path-videos-info-container {
   border: 1px solid grey;
@@ -83,6 +86,16 @@
   .path-overview-container {
     max-width: 78%;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 480px) {
+  .progress-btn-container {
+    text-align: right;
+  }
+
+  .path-progress-btn {
+    width: 10em;
   }
 }
 
