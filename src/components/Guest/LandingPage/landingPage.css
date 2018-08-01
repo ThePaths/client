@@ -10,10 +10,6 @@
   justify-content: center
 }
 
-.gp-container li {
-  margin: 10px;
-}
-
 .heroImage {
   width: 200px;
   margin:20px;
@@ -43,4 +39,14 @@
 
 .landingPageBoxes p {
   padding: 0 10px;
+}
+
+@media (max-width: 800px) {
+  .gp-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .landingPageBoxes {
+    margin: 0 auto 20px auto;
+  }
 }
