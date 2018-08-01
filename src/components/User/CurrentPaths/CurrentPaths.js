@@ -7,12 +7,24 @@ export function CurrentPaths(props) {
   let currentPath;
   if (props.current.length > 0) {
     currentPath = props.current.map((path, index) => {
-      console.log(path)
+      let progress;
+      let divide = 0;
+      for (let i = 0; i <= path.completedVideos.length; i++) {
+        if (path.completedVideos[i] === true) {
+          divide += 1;
+        }
+      }
+      if (divide > 0) {
+        progress = (divide / path.completedVideos.length) * 100
+      } else {
+        progress = divide
+      }
       return (
         <li className='path' key={index}>
           <Link to={`/dashboard/overview/${path.path.id}`}>
             <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
             <p>{path.path.title}</p>
+            <p>{progress}% completed</p>
           </Link>
         </li>
       );

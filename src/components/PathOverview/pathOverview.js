@@ -28,16 +28,18 @@ export class PathOverview extends React.Component {
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
         pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>
-        <button>Continue</button></Link>;
+          <button className="path-progress-btn">Continue</button></Link>;
       } else {
         pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/0`}>
-                            <button onClick={() => {
-                              if (this.props.status === 'saved') {
-                                  this.removeFromSaved();
-                                  }
-                              this.props.dispatch(addToUserCurrent(this.props.path.id));
-                            }}>Start</button>
-                          </Link>;
+          <button
+            className="path-progress-btn" 
+            onClick={() => {
+              if (this.props.status === 'saved') {
+                this.removeFromSaved();
+              }
+              this.props.dispatch(addToUserCurrent(this.props.path.id));
+            }}>Start</button>
+        </Link>;
       }
 
       let saveButton;
@@ -62,9 +64,10 @@ export class PathOverview extends React.Component {
           } else videoTitleClass = 'overview-video-title';
         }
         return (
-          <li key={index}>
-            <div>
-              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+          <li key={index} className="path-video-container">
+            <div className="path-img-container">
+              <img 
+                src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                 alt="Path Thumbnail" />
             </div>
             <div>
@@ -93,15 +96,15 @@ export class PathOverview extends React.Component {
       return (
         <div className="path-overview-container">
           <section className="path-info-container">
-            <h1>{this.props.path.title}</h1>
+            <h1 className="overview-path-title">{this.props.path.title}</h1>
             <p>{this.props.path.description}</p>
-            <div>
+            <div className="progress-btn-container">
               {this.props.status === 'completed' ? undefined : pathProgressBtn}
               {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}
             </div>
           </section>
           <section className="path-videos-info-container">
-            <ul>
+            <ul className="path-videos-list">
               {videos}
             </ul>
           </section>
