@@ -208,6 +208,7 @@ const userPathsReducer = (state = initialState, action) => {
     case UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS:
       return {
         ...state,
+        completedVideos: action.videos,
         loading: false
       }
     case UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR:

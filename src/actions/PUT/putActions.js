@@ -60,8 +60,9 @@ export const updateUserMarkVideoCompletedRequest = () => ({
 });
 
 export const UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS = 'UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS';
-export const updateUserMarkVideoCompletedSuccess = () => ({
+export const updateUserMarkVideoCompletedSuccess = (videos) => ({
   type: UPDATE_USER_MARK_VIDEO_COMPLETED_SUCCESS,
+  videos
 });
 
 export const UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR = 'UPDATE_USER_MARK_VIDEO_COMPLETED_ERROR';
@@ -161,9 +162,9 @@ export const userCompletedVideo = (pathId, videoIndex) => (dispatch, getState) =
     if (!res.ok) { return Promise.reject(res.statusText)}
     return res.json();
     })
-    .then((resp)=>{
-      dispatch(updateUserMarkVideoCompletedSuccess())
-      if (!resp.includes(false)) {        
+    .then((videos)=>{
+      dispatch(updateUserMarkVideoCompletedSuccess(videos))
+      if (!videos.includes(false)) {        
       dispatch(removeCourseFromUserCurrent(pathId))
       dispatch(addToUserCompleted(pathId))
      }
