@@ -94,7 +94,7 @@ export class PathOverview extends React.Component {
         <div className="path-overview-container">
           <section className="path-info-container">
             <h1>{this.props.path.title}</h1>
-            <p>{this.props.path.videos[0].description}</p>
+            <p>{this.props.path.description}</p>
             <div>
               {this.props.status === 'completed' ? undefined : pathProgressBtn}
               {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}

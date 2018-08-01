@@ -1,4 +1,3 @@
-
 ul {
   list-style: none;
   margin: 0;
@@ -10,11 +9,12 @@ ul {
 }
 
 .main-header {
+  /* display: flex; */
   font-size: 1.4rem;
-  background-color: #5eabc5;
+  background-color: #037E8C;
   max-width: 100%;
   padding: 1em 4%;
-  min-height: 12em;
+  min-height: 5em;
   height: 7em;
 }
 
@@ -23,6 +23,7 @@ ul {
 }
 
 .site-logo {
+  /* float: left; */
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: 'Ubuntu', cursive;
@@ -45,7 +46,10 @@ ul {
 }
 
 .form-redirect-container {
-  text-align: right;
+  /* text-align: right; */
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .form-redirect-link {

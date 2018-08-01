@@ -10,6 +10,10 @@ ul{
   display: flex;
 }
 
+.dashboard ul {
+  justify-content: center;
+}
+
 .heroImage{
   margin: 0;
   width: 100%;
@@ -18,13 +22,11 @@ ul{
 
 .path-title{
   font-size: 1.1em;
-  text-align: left;
   margin: 0 9px;
 }
 
 .path-description{
   font-size: 0.8em;
-  text-align: left;  
   margin: 0 9px 9px 9px;
 }
 
@@ -35,7 +37,6 @@ ul{
 .exploreBoxes {
   width: 250px;
   margin-right: 20px;
-  text-align:center;
   transition: 0.15s;
 
   -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);

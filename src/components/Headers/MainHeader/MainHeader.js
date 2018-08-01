@@ -46,7 +46,7 @@ export class MainHeader extends React.Component {
     }
 
     return (
-      <header className='main-header guest-header'>
+      <header className='main-header'>
         <div>
           <Link to='/'>
             <h1 className='site-logo'>The Paths</h1>
