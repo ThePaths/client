@@ -66,7 +66,8 @@ export class PathOverview extends React.Component {
         return (
           <li key={index} className="path-video-container">
             <div className="path-img-container">
-              <img src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+              <img 
+                src={`http://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                 alt="Path Thumbnail" />
             </div>
             <div>
@@ -74,7 +75,7 @@ export class PathOverview extends React.Component {
               <h2 className={videoTitleClass}>{item.title}</h2>
               <p>{item.description}</p>
             </div>
-            <div className="progress-btn-container">
+            <div>
               {/* add link to video's classroom */}
               <Link 
                 onClick={() => {
@@ -97,7 +98,7 @@ export class PathOverview extends React.Component {
           <section className="path-info-container">
             <h1 className="overview-path-title">{this.props.path.title}</h1>
             <p>{this.props.path.description}</p>
-            <div>
+            <div className="progress-btn-container">
               {this.props.status === 'completed' ? undefined : pathProgressBtn}
               {this.props.status === 'none' || this.props.status === 'saved' ? saveButton : undefined}
             </div>

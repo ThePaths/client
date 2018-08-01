@@ -22,7 +22,16 @@ export default class YoutubePlayer extends React.Component {
 
     return (
       <div className="video-player-container">
-        <div className="video-info-section">
+      
+        <YouTube className="video-player"
+          videoId={this.props.video.videoId}
+          opts={opts}
+          
+          player= 'null'
+          host='https://www.youtube.com'
+          onEnd={() => this.props.completed()}
+        />
+          <div className="video-info-section">
           <header className="video-header">
             <h1>{this.props.title}</h1>
             <h2 className="video-title">{this.props.video.title}</h2>
@@ -36,15 +45,7 @@ export default class YoutubePlayer extends React.Component {
             <button onClick={() => this.props.nextBtnClicked()}>Next</button>
             {completeButton}
           </footer>
-        </div>
-        <YouTube className="video-player"
-          videoId={this.props.video.videoId}
-          opts={opts}
-          
-          player= 'null'
-          host='https://www.youtube.com'
-          onEnd={() => this.props.completed()}
-        />
+        </div> 
       
       </div>
     );

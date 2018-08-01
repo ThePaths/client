@@ -1,4 +1,50 @@
-.back a {
-  text-decoration: none;
-  color: #037E8C;
+.site-logo {
+  /* float: left; */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', cursive;
+  margin: 0;
+  text-align: center;
+  padding:0;
+  text-shadow: 0 1px 0 #5eabc5,
+               0 2px 0 #5eabc5,
+               0 3px 0 #5eabc5,
+               0 4px 0 #fdfdfd,
+               0 5px 0 #fdfdfd,
+               0 6px 1px rgba(255, 255, 255,.1),
+               0 0 5px rgba(255, 255, 255,.1),
+               0 1px 3px rgba(255, 255, 255,.3),
+               0 3px 5px rgba(255, 255, 255,.2),
+               0 5px 10px rgba(255, 255, 255,.25),
+               0 10px 10px rgba(255, 255, 255,.2),
+               0 20px 20px rgba(255, 255, 255,.15);
+
 }
+.classroom-header {
+  /* display: flex; */
+  font-size: 1.4rem;
+  background-color: #037E8C;
+  max-width: 100%;
+  padding:0px;
+
+  /* min-height: 5em;
+  height: 7em; */
+}
+.navLinks {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display:flex;
+}
+
+@media (min-width: 600px) and (max-width: 50em) {
+  .classroom-header  {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1px) and (max-width: 600px) {
+  .classroom-header  {
+    font-size: .8rem;
+  }
+}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import { connect } from 'react-redux';
-
+import './instructionModal.css';
 export class InstructionModal extends React.Component {
 
   componentDidMount(){
@@ -26,7 +26,7 @@ export class InstructionModal extends React.Component {
   
     const { open } = this.state;
     return (
-      <div>
+      <div className="modal">
       <button onClick={ this.onOpenModal }>?</button>
       <Modal open={ open } 
              onClose={ this.onCloseModal } 

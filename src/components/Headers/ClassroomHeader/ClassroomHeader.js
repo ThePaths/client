@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../../../actions/auth';
 import {clearUserPathState} from '../../../actions/DELETE/deleteActions';
 import {clearAuthToken} from '../../../local-storage';
-import './ClassroomHeader.css'
-
+import InstructionModal from '../../Modal/InstructionModal';
+import './ClassroomHeader.css';
 export class ClassroomHeader extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
@@ -16,23 +16,36 @@ export class ClassroomHeader extends React.Component {
   render() {
     let headerBtn;
     if (this.props.loggedIn) {
-      headerBtn = <Link className="form-redirect-link" 
-        onClick={ () => this.logOut() } to='/'>Sign Out</Link>;
-    } else {
-      headerBtn = <Link className="form-redirect-link" to='/auth'>Login/Register</Link>;
+      headerBtn = 
+      
+      <Link className="form-redirect-link" 
+        onClick={ () => this.logOut() } to='/'>Sign Out</Link>
+      
     }
 
     return (
       <header className="main-header classroom-header">
-        <div className='back'>
-          <Link to='/'>&lsaquo; Back</Link>
+        <div className="navLinks">
+          <nav className="site-nav">
+            <ul>
+              <li>
+                <Link to='/dashboard/explore'>Explore |</Link>
+              </li>
+              <li>
+                <Link to='/dashboard'>Dashboard</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
+        
         <div>
           <Link to='/'>
             <h1 className='site-logo'>The Paths</h1>
           </Link>
         </div>
+        
         <div className='form-redirect-container'>
+        <InstructionModal></InstructionModal>
           {headerBtn}
         </div>
       </header>
