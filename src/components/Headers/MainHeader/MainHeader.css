@@ -74,6 +74,10 @@ ul {
   cursor: pointer;
 }
 
+.site-nav ul {
+  display: flex;
+}
+
 .site-nav a {
   color: #037E8C;
 }

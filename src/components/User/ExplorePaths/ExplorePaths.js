@@ -28,8 +28,8 @@ class ExplorePaths extends React.Component {
     });
 
     return (
-      <div>
-        <h2>Choose from these many wonderful Paths</h2>
+      <div className='explore-page'>
+        <h2 className='explore-title'>Choose from these many wonderful Paths</h2>
         <ul>
           { paths }
         </ul>
