@@ -24,7 +24,8 @@ export default class Input extends React.Component {
     return (
       <div className="input-component">
         <label htmlFor={this.props.input.name} className="input-component-label">
-          {error ? error : " "}
+          {/* {this.props.label} */}
+          {error}
           {warning}
         </label>
         <input
