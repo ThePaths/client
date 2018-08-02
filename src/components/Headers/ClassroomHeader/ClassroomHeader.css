@@ -10,7 +10,7 @@
 .classroom-header {
   /* display: flex; */
   font-size: 1.4rem;
-  background-color: rgb(36, 34, 34);
+  background-color: #2B2B2B;
   max-width: 100%;
   padding:0px;
 
@@ -36,18 +36,19 @@
   font-size: 0.75em;
   padding: 0.5em;
   color: #fdfdfd;
-  background-color: #037EBC;
+  background-color: #95AB63;
   transition: all 0.2s ease-in-out;
 }
 
 .modal:hover,
 .modal:focus {
-  color: #037EBC;
+  color: #95AB63;
   background-color: #fdfdfd;
   border-radius: 25px;
-  border-color: #037EBC;
+  border-color: #95AB63;
   cursor: pointer;
 }
+
 @media (min-width: 1em) and (max-width: 800px) {
   .navLinks {
     position: inline;
@@ -63,13 +64,21 @@
   }
 }
 .form-redirect-link {
-  color: #fdfdfd;
-  background-color: #037EBC;
+  color: #2B2B2B;
+  background-color: #BDD688;
+  -webkit-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.35);
+          box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.35);
 }
 .form-redirect-link:hover,
 .form-redirect-link:focus {
-  color: #037EBC;
-  background-color: #fdfdfd;
+  transition: 0.15s;
+  transform: scale(1.02);
+  cursor: pointer;
+
+  -webkit-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
 }
 
 /* @media (min-width: 600px) and (max-width: 50em) {

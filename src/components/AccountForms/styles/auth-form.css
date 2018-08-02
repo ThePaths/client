@@ -17,6 +17,7 @@
 }
 
 .auth button {
+  color: #2B2B2B;
   display: block;
   width: 60%;
   margin: 5px auto 30px auto;
@@ -26,12 +27,16 @@
 
   border: none;
 
-  background-color:#5eabc5;
+  background-color:#95AB63;
 
   transition: 0.15s;
   -webkit-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
      -moz-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
           box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+}
+
+.auth button:enabled{
+  background-color:#BDD688;
 }
 
 .auth button:hover:enabled {
