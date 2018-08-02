@@ -13,7 +13,7 @@
   margin-bottom: 10px;
 
   color: #fdfdfd;
-  background-color: #292C2D;
+  background-color: #2B2B2B;
   border-radius: 10px;
 }
 
@@ -45,7 +45,7 @@
 
 .go-btn-container:hover,
 .go-btn-container:focus {
-  background-color: #5CF64A;
+  background-color: #81B84A;
   cursor: pointer;
 }
 
@@ -56,7 +56,7 @@
 
 .path-overview-container h1,
 .path-overview-container h2 {
-  color: #64c3e2;
+  color: #ECF5E6;
 }
 
 .path-info-container {
@@ -95,8 +95,8 @@
 
 .overview-video-title::after {
   content: '\221A';
-  color: green;
-  border: 2px solid green;
+  color: #81B84A;
+  border: 2px solid #81B84A;
   border-radius: 100%;
   padding: 0.1em 0.5em;
   opacity: 0.3;
@@ -165,7 +165,6 @@
 
   .path-video-container {
     display: flex;
-
     flex-wrap: wrap;
   }
 
@@ -179,7 +178,6 @@
   .path-video-container > div:nth-child(2) {
     flex-grow: 3;
     flex-basis: 45%;
-
     flex-basis: 50%;
   }
 
