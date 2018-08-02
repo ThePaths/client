@@ -25,7 +25,12 @@ ul {
   font-family: 'Ubuntu', cursive;
   margin: 0;
   text-align: center;
-  color: #024959;
+  color: #035c70;
+  transition: ease 0.2s;
+}
+
+.site-logo:hover {
+  transition: ease 0.2s;
   text-shadow: 0 1px 0 #037E8C,
                0 2px 0 #037E8C,
                0 3px 0 #037E8C,
@@ -38,7 +43,6 @@ ul {
                0 5px 10px rgba(255, 255, 255,.25),
                0 10px 10px rgba(255, 255, 255,.2),
                0 20px 20px rgba(255, 255, 255,.15);
-
 }
 
 .form-redirect-container {
