@@ -7,6 +7,7 @@
 
 .explore-page ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -41,7 +42,7 @@
 
 .exploreBoxes {
   width: 250px;
-  margin-right: 20px;
+  margin:10px;
   transition: 0.15s;
   text-decoration: none;
   background-color: rgb(61, 61, 61);

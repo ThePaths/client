@@ -5,12 +5,16 @@
   margin-top: 8em;
   padding: 1em 4%;
   text-align: center;
+  height: 60px;
+}
+
+.main-footer p {
+  margin: 0;
 }
 
 .site-creator-link {
   text-decoration: none;
-  color: rgb(238, 164, 177);
-
+  color: rgb(189, 125, 186);
   position: relative;
   font-weight: 600;
   /* display: inline-block; */
@@ -35,7 +39,7 @@
 @media (min-width: 800px) {
   .site-creator-link {
     text-decoration: none;
-    color: rgb(238, 164, 177);
+    color: rgb(189, 125, 186);
   
     position: relative;
     font-weight: 600;
@@ -49,7 +53,7 @@
   .site-creator-link:before,
   .site-creator-link:after {
     content: '';
-    background: rgb(238, 164, 177);
+    background: rgb(189, 125, 186);
     position: absolute;
     width: 0;
     height: 2px;
@@ -69,7 +73,7 @@
   }
   .site-creator-link:hover,
   .site-creator-link:focus {
-    color: #83cbec;
+    color: #72a5bd;
   }
   
   
