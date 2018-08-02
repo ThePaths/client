@@ -2,7 +2,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers'
 import {loadAuthToken} from './local-storage';
-import {setAuthToken, refreshAuthToken} from './actions/AUTH/authActions';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
     rootReducer,

@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../../config';
-import { authSuccess } from '../AUTH/authActions';
+import { authSuccess } from '../auth';
 
 export const PATHS_REQUEST = 'PATHS_REQUEST';
 export const pathsRequest = () => ({
