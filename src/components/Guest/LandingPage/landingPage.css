@@ -11,7 +11,7 @@
 .gp-container {
   list-style: none;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content: center
 }
 
@@ -50,14 +50,4 @@
 
 .landingPageBoxes p {
   padding: 0 10px;
-}
-
-@media (max-width: 800px) {
-  .gp-container {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .landingPageBoxes {
-    margin: 0 auto 20px auto;
-  }
 }
