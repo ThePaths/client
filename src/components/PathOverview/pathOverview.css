@@ -28,7 +28,7 @@
 
 .go-btn-container {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   background-color: #3eb431;
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
@@ -111,7 +111,11 @@
   }
 
   .path-progress-btn {
-    width: 10em;
+    width: 8em;
+  }
+
+  .save-btn {
+    margin-left: 0.5em;
   }
 
   .go-btn-container {
