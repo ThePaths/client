@@ -30,7 +30,11 @@ export class InstructionModal extends React.Component {
       <button className="modal" onClick={ this.onOpenModal }>?</button>
       <Modal open={ open } 
              onClose={ this.onCloseModal } 
-             center>
+             center
+             classNames= {{
+               modal: 'info-modal'
+             }}
+             >
         <p>This is the classroom page of The Paths!</p>
         <p>
           Here you have access to the first video of the path and a repl.it for that video.

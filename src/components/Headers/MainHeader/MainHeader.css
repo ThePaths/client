@@ -19,6 +19,11 @@ ul {
   text-decoration: none;
 }
 
+.site-logo-container {
+  margin: auto;
+  max-width: 250px;
+}
+
 .site-logo {
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -27,6 +32,7 @@ ul {
   text-align: center;
   color: #95AB63;
   transition: ease 0.2s;
+  /* max-width: 400px; */
 }
 
 .site-logo:hover {
@@ -52,14 +58,14 @@ ul {
 }
 
 .form-redirect-link {
-  /* border: 2px solid #fdfdfd; */
+  border: 2px solid #fdfdfd;
   font-size: 0.75em;
   padding: 0.5em;
   background-color: #95AB63;
   -webkit-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
      -moz-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
           box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
-  /* border-radius: 25px; */
+  border-radius: 25px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -80,4 +86,12 @@ ul {
 
 .site-nav a {
   color: #95AB63;
+}
+
+.nav-link {
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #BDD688;
 }

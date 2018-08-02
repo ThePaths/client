@@ -47,7 +47,7 @@ export class MainHeader extends React.Component {
 
     return (
       <header className='main-header'>
-        <div>
+        <div className='site-logo-container'>
           <Link to='/'>
             <h1 className='site-logo'>Melata</h1>
           </Link>
@@ -56,10 +56,11 @@ export class MainHeader extends React.Component {
           <nav className={navClassList}>
             <ul>
               <li>
-                <Link to='/dashboard/explore'>Explore | </Link>
+                <Link className="nav-link" to='/dashboard/explore'>Explore</Link>
               </li>
+              <span>|</span>
               <li>
-                <Link to='/dashboard'>Dashboard</Link>
+                <Link className="nav-link"to='/dashboard'>Dashboard</Link>
               </li>
             </ul>
           </nav>
