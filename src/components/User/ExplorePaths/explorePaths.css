@@ -1,7 +1,7 @@
 .explore-page {
   border:2px solid rgb(29, 30, 31);
-  background-color: #292C2D;
-  border-radius: 12px;
+  background-color: #2B2B2B;
+  border-radius: 10px;
   padding: 10px 10px 30px 10px;
 }
 
@@ -13,7 +13,7 @@
 
 .explore-page a {
   text-decoration: none;
-  color: white;
+  color: #ECF5E6;
 }
 
 .explore-title {
@@ -45,7 +45,7 @@
   margin:10px;
   transition: 0.15s;
   text-decoration: none;
-  background-color: rgb(61, 61, 61);
+  background-color: #4D4D4D;
 
   -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
      -moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);

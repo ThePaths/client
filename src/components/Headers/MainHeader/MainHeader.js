@@ -49,7 +49,7 @@ export class MainHeader extends React.Component {
       <header className='main-header'>
         <div>
           <Link to='/'>
-            <h1 className='site-logo'>The Paths</h1>
+            <h1 className='site-logo'>Melata</h1>
           </Link>
         </div>
         <div>
