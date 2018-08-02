@@ -1,16 +1,10 @@
 
-/* .classroom-section ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
- 
-} */
 .main-content{
   padding:0;
 }
 .classroom-section {
   display:flex;
-  margin:-5em -3.75em ;
+  margin:-5em -3em ;
 }
 
 .video-player-container {
@@ -55,12 +49,9 @@
 
 /* media queries */
 @media (min-width: 36em) {
-  /* testing bgc - disable after */
-  /* body {
-    background-color: orange;
-  } */
+ 
 }
-@media (min-width: 599px) and (max-width: 799px){
+@media (min-width: 599px) and (max-width: 800px){
   .classroom-section {
     margin: -4em -2px;
 }

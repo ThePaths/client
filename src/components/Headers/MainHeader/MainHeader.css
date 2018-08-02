@@ -81,16 +81,3 @@ ul {
 .site-nav a {
   color: #95AB63;
 }
-
-/* media queries */
-
-/* @media (min-width: 36em) {
-  body {
-    background-color: orange;
-  }
-
-  .main-header {
-    font-size: 1.7rem;
-    padding: 2em 6%;
-  }
-} */

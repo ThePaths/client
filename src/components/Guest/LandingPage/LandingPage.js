@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 import 'console.image';
 import './landingPage.css';
 import { fetchGuestPaths } from '../../../actions/GUEST/guestPaths';
@@ -37,8 +37,8 @@ export class LandingPage extends React.Component {
             alt="FIX" // FIX THISSSSSSS
             className="heroImage"
           />
-          <h2>{ path.title }</h2>
-          <p>{ path.description }</p>
+          <h2 className="sample-path-title">{ path.title }</h2>
+          <p className="sample-path-description">{ path.description }</p>
         </li>       
       );
     });
@@ -46,8 +46,8 @@ export class LandingPage extends React.Component {
     return (
       <div className="home">
         <div className='guest-container'>
-          <h2>Welcome to DevOps2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nostrum assumenda et aperiam, ex magnam, perspiciatis delectus fugit exercitationem aliquid quia in maxime pariatur! Omnis at rem, optio reiciendis suscipit vitae aut soluta vel praesentium ullam dolores nam voluptas, quisquam quas? Porro magni temporibus iure aspernatur? Vel explicabo obcaecati quidem?</p>
+          <h2>Welcome to Melata</h2>
+          <p className="site-introduction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nostrum assumenda et aperiam, ex magnam, perspiciatis delectus fugit exercitationem aliquid quia in maxime pariatur! Omnis at rem, optio reiciendis suscipit vitae aut soluta vel praesentium ullam dolores nam voluptas, quisquam quas? Porro magni temporibus iure aspernatur? Vel explicabo obcaecati quidem?</p>
           <p>Check out some of our Paths below</p>
         </div>
         <ul className='gp-container'>{ paths }</ul>

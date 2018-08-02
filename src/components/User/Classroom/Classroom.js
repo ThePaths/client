@@ -4,9 +4,9 @@ import { fetchPathOverview, fetchStatus } from '../../../actions/GET/getActions'
 import { changeLastVideoIndex, userCompletedVideo } from '../../../actions/PUT/putActions';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
-import InstructionModal from '../../Modal/InstructionModal';
+
 import YoutubePlayer from './YoutubePlayer';
-import { Link } from 'react-router-dom';
+
 
 export class Classroom extends React.Component {
 

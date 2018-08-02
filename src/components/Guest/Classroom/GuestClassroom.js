@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchGuestClassroom } from '../../../actions/GUEST/guestPaths';
 import './classroom.css';
 import Repl from '../../Repl/Repl';
-import InstructionModal from '../../Modal/InstructionModal';
+
 import YoutubePlayer from '../../Youtube/YoutubePlayer';
 
 
