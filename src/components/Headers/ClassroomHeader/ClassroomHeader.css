@@ -23,6 +23,15 @@
   left: 10px;
   display:flex;
 }
+
+.nav-link {
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #BDD688;
+}
+
 .modalContainer {
   position: absolute;
   top:10px;

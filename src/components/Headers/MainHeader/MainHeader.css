@@ -81,3 +81,11 @@ ul {
 .site-nav a {
   color: #95AB63;
 }
+
+.nav-link {
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #BDD688;
+}
