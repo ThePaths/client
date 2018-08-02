@@ -1,7 +1,7 @@
 
 .main-footer {
   font-size: 0.875rem;
-  background-color: rgb(36, 34, 34);
+  background-color: #2B2B2B;
   margin-top: 8em;
   padding: 1em 4%;
   text-align: center;
@@ -39,7 +39,7 @@
 @media (min-width: 800px) {
   .site-creator-link {
     text-decoration: none;
-    color: rgb(189, 125, 186);
+    color: #D2F593;
   
     position: relative;
     font-weight: 600;
@@ -53,7 +53,7 @@
   .site-creator-link:before,
   .site-creator-link:after {
     content: '';
-    background: rgb(189, 125, 186);
+    background: #404040;
     position: absolute;
     width: 0;
     height: 2px;
@@ -73,7 +73,7 @@
   }
   .site-creator-link:hover,
   .site-creator-link:focus {
-    color: #72a5bd;
+    color: #81B84A;
   }
   
   

@@ -6,7 +6,7 @@
 }
 
 .video-player-container {
-  color: #fdfdfd;
+  color: #ECF5E6;
   font-size: 1.1rem;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .video-header {
-  background-color: #181716;
+  background-color: #2B2B2B;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -39,7 +39,7 @@
 
 .video-footer {
   margin-top: -8px;
-  background-color: #292C2D;
+  background-color: #2B2B2B;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
