@@ -39,7 +39,7 @@ export class ClassroomHeader extends React.Component {
 
     return (
       <header className="main-header classroom-header">
-        <div>
+        <div className='site-logo-container'>
           <Link to='/'>
             <h1 className='site-logo'>Melata</h1>
           </Link>
