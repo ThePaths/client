@@ -157,7 +157,7 @@
   }
  
 }*/
-@media (min-width: 1px) and (max-width: 400px) {
+@media (min-width: 1px) and (max-width: 560px) {
   .form-redirect-container,
   .modalContainer {   
     font-size: 3.5vw;
@@ -173,6 +173,12 @@
     left:10px;
   }
 }  
+
+@media (max-width: 700px) {
+  .site-nav ul{
+    justify-content: center;
+  }
+}
 .site-nav a {
   color: white;
 }
