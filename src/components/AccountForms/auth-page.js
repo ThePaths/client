@@ -6,6 +6,7 @@ import AuthNav from './auth-nav';
 import LoginForm from './Login/login-form';
 import RegisterForm from './Register/registration-form';
 import './styles/auth-form.css';
+import './styles/auth-page.css'
 
 function AuthPage(props) {
   if (props.loggedIn) {
@@ -14,6 +15,11 @@ function AuthPage(props) {
 
   return (
     <div className='auth-container'>
+      <div className='demo'>
+        <p>quick demo account</p>
+        <p>username: brownfox</p>
+        <p>password: lazydog1</p>
+      </div>
       <AuthNav />
       <div className='auth-components'>
         <LoginForm />
