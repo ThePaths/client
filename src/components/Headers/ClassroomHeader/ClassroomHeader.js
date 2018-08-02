@@ -23,7 +23,7 @@ export class ClassroomHeader extends React.Component {
         <nav className="site-nav">
           <ul>
             <li>
-              <Link to='/dashboard/explore'>Explore |</Link>
+              <Link to='/dashboard/explore'>Explore|</Link>
             </li>
             <li>
               <Link to='/dashboard'>Dashboard</Link>
@@ -32,7 +32,7 @@ export class ClassroomHeader extends React.Component {
         </nav>
       </div>;
     } else {
-      headerBtn = <Link className="form-redirect-link" to='/auth'>Login/Register</Link>;
+      headerBtn = <Link className="form-redirect-link" to='/auth'>Login</Link>;
       siteNav = '';
     }
 

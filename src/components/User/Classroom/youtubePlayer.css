@@ -55,6 +55,7 @@
   height: 30px;
   max-width: 100px;
   width: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
 .youtubeButtons:hover,

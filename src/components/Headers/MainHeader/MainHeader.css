@@ -10,7 +10,7 @@ ul {
 
 .main-header {
   font-size: 1.4rem;
-  background-color: rgb(36, 34, 34);
+  background-color: #2B2B2B;
   max-width: 100%;
   padding: 1em 4%;
 }
@@ -23,14 +23,18 @@ ul {
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: 'Ubuntu', cursive;
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
-  color: #024959;
-  text-shadow: 0 1px 0 #037E8C,
-               0 2px 0 #037E8C,
-               0 3px 0 #037E8C,
-               0 4px 0 #fdfdfd,
-               0 5px 0 #fdfdfd,
+  color: #95AB63;
+  transition: ease 0.2s;
+}
+
+.site-logo:hover {
+  transition: ease 0.2s;
+  text-shadow: 0 1px 0 #BDD688,
+               0 2px 0 #BDD688,
+               0 3px 0 #ECF5E6,
+               0 4px 0 #ECF5E6,
                0 6px 1px rgba(255, 255, 255,.1),
                0 0 5px rgba(255, 255, 255,.1),
                0 1px 3px rgba(255, 255, 255,.3),
@@ -38,7 +42,6 @@ ul {
                0 5px 10px rgba(255, 255, 255,.25),
                0 10px 10px rgba(255, 255, 255,.2),
                0 20px 20px rgba(255, 255, 255,.15);
-
 }
 
 .form-redirect-container {
@@ -49,23 +52,26 @@ ul {
 }
 
 .form-redirect-link {
-  border: 2px solid #fdfdfd;
+  /* border: 2px solid #fdfdfd; */
   font-size: 0.75em;
   padding: 0.5em;
-  color: #fdfdfd;
-  background-color: #037E8C;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
-  border-radius: 25px;
+  background-color: #95AB63;
+  -webkit-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0.5px 1px 8px 1px rgba(0, 0, 0, 0.25);
+  /* border-radius: 25px; */
   transition: all 0.2s ease-in-out;
 }
 
 .form-redirect-link:hover,
 .form-redirect-link:focus {
-  color: #037E8C;
-  background-color: #fdfdfd;
-  border-radius: 25px;
-  border-color: #037E8C;
+  transition: 0.15s;
+  transform: scale(1.02);
   cursor: pointer;
+
+  -webkit-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+     -moz-box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.35);
 }
 
 .site-nav ul {
@@ -73,15 +79,11 @@ ul {
 }
 
 .site-nav a {
-  color: #037E8C;
+  color: #95AB63;
 }
 
 /* media queries */
-@media (max-width: 570px) {
-  .site-logo {
-    padding-top: 40px; 
-  }
-}
+
 /* @media (min-width: 36em) {
   body {
     background-color: orange;
