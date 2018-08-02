@@ -47,8 +47,10 @@ export class LandingPage extends React.Component {
       <div className="home">
         <div className='guest-container'>
           <h2>Welcome to Melata</h2>
-          <p className="site-introduction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nostrum assumenda et aperiam, ex magnam, perspiciatis delectus fugit exercitationem aliquid quia in maxime pariatur! Omnis at rem, optio reiciendis suscipit vitae aut soluta vel praesentium ullam dolores nam voluptas, quisquam quas? Porro magni temporibus iure aspernatur? Vel explicabo obcaecati quidem?</p>
-          <p>Check out some of our Paths below</p>
+          <p className="site-introduction">Melata is a one stop shop for the coding newbie.
+           It has instructional videos along with an essential IDE to code along with on the same screen.
+            Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry.
+           Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.</p>
         </div>
         <ul className='gp-container'>{ paths }</ul>
       </div>
