@@ -25,7 +25,7 @@ export class PathOverview extends React.Component {
   // ADD CLASSROOM REDIRECT FOR ENTIRE LI ON DESKTOP/LAPTOP DISPLAYS
   // linkToClassroom() {
   //   if (this.props.status === 'saved') {
-  //     this.removeFromSaved();
+  //     this.removeFromSaved(); 
   //     this.props.dispatch(addToUserCurrent(this.props.path.id));
   //   } else if (this.props.status !== 'current' && this.props.status !== 'completed') {
   //     this.props.dispatch(addToUserCurrent(this.props.path.id));
