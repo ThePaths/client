@@ -10,7 +10,7 @@
 }
 .classroom-section {
   display:flex;
-  margin:-5em -3.75em ;
+  margin:-5em -3em ;
 }
 
 .video-player-container {
@@ -60,7 +60,7 @@
     background-color: orange;
   } */
 }
-@media (min-width: 599px) and (max-width: 799px){
+@media (min-width: 599px) and (max-width: 800px){
   .classroom-section {
     margin: -4em -2px;
 }
