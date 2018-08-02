@@ -44,6 +44,27 @@
   width:50%;
  
 }
+
+.youtubeButtons {
+  margin:3px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid white;
+  background-color: #037EBC;
+  color: white;
+  height: 30px;
+  max-width: 100px;
+  width: 100%;
+}
+
+.youtubeButtons:hover,
+.youtubeButtons:focus {
+  color: #037EBC;
+  background-color: #fdfdfd;
+  border-color: #037EBC;
+  cursor: pointer;
+  font-weight: bold;
+}
 @media (min-width: 1px) and (max-width: 50em) {
   .video-player-container {
     width: 95%;

@@ -52,6 +52,7 @@
   border-bottom-right-radius: 10px;
 }
 
+
 /* media queries */
 @media (min-width: 36em) {
   /* testing bgc - disable after */
@@ -59,16 +60,20 @@
     background-color: orange;
   } */
 }
-
+@media (min-width: 599px) and (max-width: 799px){
+  .classroom-section {
+    margin: -4em -2px;
+}
+}
 @media (min-width: 576px) and (max-width: 599px) {
   .classroom-section {
-    display:flex;
-    margin: -5em -2px;
-  }
+    
+    margin: -4em -2px;
+   }
 }
 @media (min-width: 1px) and (max-width: 576px) {
   .classroom-section {
-    display:flex;
-    margin: -2em -2px;
+    
+    margin:  -2px;
   }
 }

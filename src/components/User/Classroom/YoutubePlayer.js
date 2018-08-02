@@ -15,7 +15,7 @@ export default class YoutubePlayer extends React.Component {
     };
     let completeButton;
     if (this.props.completedVideos && !this.props.completedVideos[this.props.index]) {
-      completeButton = <button id="completedButton" onClick={() => this.props.completed()}>Complete</button>;
+      completeButton = <button className="youtubeButtons" onClick={() => this.props.completed()}>Complete</button>;
     } else {
       completeButton = null;
     }
@@ -42,7 +42,7 @@ export default class YoutubePlayer extends React.Component {
               {this.props.video.description}
             </p>
             <p>Video Creator: <a href={this.props.creatorLink} target="_blank" rel="noopener">{this.props.creatorName}</a></p>
-            <button onClick={() => this.props.nextBtnClicked()}>Next</button>
+            <button className="youtubeButtons" onClick={() => this.props.nextBtnClicked()}>Next</button>
             {completeButton}
           </footer>
         </div> 

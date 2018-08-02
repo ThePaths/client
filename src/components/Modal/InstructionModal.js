@@ -26,8 +26,8 @@ export class InstructionModal extends React.Component {
   
     const { open } = this.state;
     return (
-      <div className="modal">
-      <button onClick={ this.onOpenModal }>?</button>
+      <div>
+      <button className="modal" onClick={ this.onOpenModal }>?</button>
       <Modal open={ open } 
              onClose={ this.onCloseModal } 
              center>

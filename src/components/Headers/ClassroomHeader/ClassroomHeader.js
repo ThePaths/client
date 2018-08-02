@@ -15,40 +15,39 @@ export class ClassroomHeader extends React.Component {
 
   render() {
     let headerBtn;
-    let siteNav;
     if (this.props.loggedIn) {
-      headerBtn = <Link className="form-redirect-link" 
-        onClick={ () => this.logOut() } to='/'>Sign Out</Link>;
-
-      siteNav = <div className="navLinks">
-        <nav className="site-nav">
-          <ul>
-            <li>
-              <Link to='/dashboard/explore'>Explore |</Link>
-            </li>
-            <li>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>;
-    } else {
-      headerBtn = <Link className="form-redirect-link" to='/auth'>Login/Register</Link>;
-      siteNav = '';
+      headerBtn = 
+      
+      <Link className="form-redirect-link" 
+        onClick={ () => this.logOut() } to='/'>Sign Out</Link>
+      
     }
 
     return (
       <header className="main-header classroom-header">
-        {siteNav}
+      
         
         <div>
           <Link to='/'>
             <h1 className='site-logo'>The Paths</h1>
           </Link>
         </div>
-        
+        <div className="navLinks">
+          <nav className="site-nav">
+            <ul>
+              <li className="navlink">
+                <Link to='/dashboard/explore'> Explore </Link>
+              </li>
+              <li>
+                <Link to='/dashboard'> |  Dashboard </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="modalContainer">
+        <InstructionModal/>
+        </div>
         <div className='form-redirect-container'>
-          <InstructionModal></InstructionModal>
           {headerBtn}
         </div>
       </header>
