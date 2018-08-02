@@ -47,7 +47,19 @@ You can visit  [https://the-paths.firebaseapp.com/](https://the-paths.firebaseap
 - React-Redux was used for the management of the state
 
 ## Screenshots
+![landing page guest](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9sYW5kaW5nLXBnLWd1ZXN0/grid)  
 
+![login page](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250057/c2l0ZV9zY3JlZW5zaG90cy9sb2dpbi1wZw==/grid)  
+
+![guest classroom](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9ndWVzdC1jbGFzc3Jvb20=/grid)  
+
+![dashboard](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250057/c2l0ZV9zY3JlZW5zaG90cy9kYXNoYm9hcmQ=/grid)  
+
+![explore](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9leHBsb3JlLXBn/grid)  
+
+![path overview](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250064/c2l0ZV9zY3JlZW5zaG90cy9wYXRoLW92ZXJ2aWV3/grid)  
+
+![user classroom](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy91c2VyLWNsYXNzcm9vbQ==/grid)  
 
 ## Contributions
 
