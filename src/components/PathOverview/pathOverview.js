@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchPathOverview } from '../../actions/GET/getActions';
 import { addToUserSaved, addToUserCurrent } from '../../actions/PUT/putActions';
 import { removeFromUserSaved } from '../../actions/DELETE/deleteActions';
