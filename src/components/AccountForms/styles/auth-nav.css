@@ -1,14 +1,15 @@
 .auth-nav {
   margin: auto;
   max-width: 100%;
-  width: 350px;
+  width: 101%;
+  max-width: 400px;
   height: 40px;
 }
 
 .auth-nav button {
   width: 50%;
   height: 40px;
-  border: 1px solid grey;
+  border: none;
   outline: none;
 }
 
@@ -18,6 +19,17 @@
 }
 
 .active {
-  border-bottom: none;
-  background-color: white;
+  background-color:#5eabc5;
+  transition: 0.1s;
+}
+
+#login-button.active{
+  transform: scale(1.1) translateX(4.8%);
+}
+#register-button.active{
+  transform: scale(1.1) translateX(-5%);
+}
+
+#login-button, #register-button{
+  transition: 0.1s
 }

@@ -10,10 +10,6 @@
   justify-content: center
 }
 
-.gp-container li {
-  margin: 10px;
-}
-
 .heroImage {
   width: 200px;
   margin:20px;
@@ -25,7 +21,7 @@
   margin:15px;
   text-align:center;
   transition: 0.15s;
-  background-color: #282c35;
+  background-color: rgb(36, 34, 34);
   color: #f0f0f0;
 
   -webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
@@ -43,4 +39,14 @@
 
 .landingPageBoxes p {
   padding: 0 10px;
+}
+
+@media (max-width: 800px) {
+  .gp-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .landingPageBoxes {
+    margin: 0 auto 20px auto;
+  }
 }
