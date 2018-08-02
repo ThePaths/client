@@ -17,19 +17,11 @@
   color: rgb(189, 125, 186);
   position: relative;
   font-weight: 600;
-  /* display: inline-block; */
   text-decoration: none;
 }
 
-/* fancy link hover styles - CREATES ISSUE ON MOBILE */
-
 /* media queries */
 @media (min-width: 36em) {
-  /* testing bgc - disable after */
-  /* body {
-    background-color: orange;
-  } */
-
   .main-footer {
     font-size: 0.925rem;
     padding: 1.2em 6%;
@@ -43,7 +35,6 @@
   
     position: relative;
     font-weight: 600;
-    /* display: inline-block; */
     text-decoration: none;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
@@ -53,7 +44,7 @@
   .site-creator-link:before,
   .site-creator-link:after {
     content: '';
-    background: #404040;
+    background: #D2F593;
     position: absolute;
     width: 0;
     height: 2px;
