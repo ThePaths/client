@@ -48,8 +48,9 @@ export class MainHeader extends React.Component {
     return (
       <header className='main-header'>
         <div className='site-logo-container'>
-          <Link to='/'>
+          <Link className="site-logo-wrapper" to='/'>
             <h1 className='site-logo'>Melata</h1>
+            <div className="site-icon"></div>
           </Link>
         </div>
         <div>
