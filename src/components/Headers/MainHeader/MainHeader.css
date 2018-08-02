@@ -83,11 +83,7 @@ ul {
 }
 
 /* media queries */
-@media (max-width: 570px) {
-  .site-logo {
-    padding-top: 40px; 
-  }
-}
+
 /* @media (min-width: 36em) {
   body {
     background-color: orange;

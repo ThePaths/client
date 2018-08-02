@@ -51,25 +51,10 @@ export class Classroom extends React.Component {
       const index = parseInt(this.props.match.params.videoIndex, 10);
 
       return (
-    //    <div><div>
-    //    <Link to='/'>
-    //      <h1 className='site-logo'>The Paths</h1>
-    //    </Link>
-    //  </div>
-    //  <div className="navLinks">
-    //    <nav className="site-nav">
-    //      <ul>
-    //        <li className="navlink">
-    //          <Link to='/dashboard/explore'> Explore | </Link>
-    //        </li>
-    //        <li>
-    //          <Link to='/dashboard'> Dashboard </Link>
-    //        </li>
-    //      </ul>
-    //    </nav>
+   
     
         <section className="classroom-section">
-          {/* <Link to={`/dashboard/overview/${this.props.match.params.id}`}>Back to Overview</Link> */}
+          
           
           
           <YoutubePlayer

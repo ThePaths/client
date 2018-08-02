@@ -44,11 +44,13 @@ export class PathOverview extends React.Component {
       let saveButton;
       if (this.props.status === 'saved') {
         saveButton = <button
+          className="path-progress-btn save-btn"
           onClick={() => this.removeFromSaved()}>
           Unsave
         </button>;
       } else {
         saveButton = <button
+          className="path-progress-btn save-btn"
           onClick={() => this.addToSaved()}>
           Save
         </button>;
