@@ -1,4 +1,12 @@
 
+/* 
+  #BDD688
+  #95AB63
+
+  #2B2B2B
+*/
+
+
 .path-info-container,
 .path-videos-info-container {
   max-width: 100%;
@@ -10,26 +18,27 @@
 }
 
 .path-progress-btn {
-  color: #fdfdfd;
-  background-color: #037EBC;
+  color: #2B2B2B;
+  background-color: #BDD688;
   padding: 0.5em;
-  border: 2px solid #fdfdfd;
+  border: 2px solid #2B2B2B;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
 
 .path-progress-btn:hover,
 .path-progress-btn:focus {
-  color: #037EBC;
-  background-color: #fdfdfd;
-  border-color: #037EBC;
+  color: #BDD688;
+  background-color: #2B2B2B;
+  border-color: #BDD688;
   cursor: pointer;
 }
 
 .go-btn-container {
   text-align: center;
+  color: #2b2b2b;
   font-size: 1.4rem;
-  background-color: #3eb431;
+  background-color: #BDD688;
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
 }
