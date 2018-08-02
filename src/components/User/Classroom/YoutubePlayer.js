@@ -41,7 +41,7 @@ export default class YoutubePlayer extends React.Component {
             <p className="video-recap">
               {this.props.video.description}
             </p>
-            <p>Video Creator: <a href={this.props.creatorLink} target="_blank" rel="noopener">{this.props.creatorName}</a></p>
+            <p>Video Creator: <a className='video-creator-link' href={this.props.creatorLink} target="_blank" rel="noopener">{this.props.creatorName}</a></p>
             <button className="youtubeButtons" onClick={() => this.props.nextBtnClicked()}>Next</button>
             {completeButton}
           </footer>
