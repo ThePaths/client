@@ -22,7 +22,7 @@ export function CurrentPaths(props) {
       return (
         <li className='path' key={index}>
           <Link to={`/dashboard/overview/${path.path.id}`}>
-            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}`} alt='' className="heroImage" />
+            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}.png`} alt='' className="heroImage" />
             <p>{path.path.title}</p>
             <p>{progress}% completed</p>
           </Link>

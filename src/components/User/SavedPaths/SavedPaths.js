@@ -10,7 +10,7 @@ export function SavedPaths(props) {
       return (
         <li className='path' key={index}>
           <Link to={`/dashboard/overview/${path.id}`}>
-            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}`} alt='' className="heroImage" />
+            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}.png`} alt='' className="heroImage" />
             <p>{path.title}</p>
           </Link>
         </li>
