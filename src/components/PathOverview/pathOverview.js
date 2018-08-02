@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { fetchPathOverview } from '../../actions/GET/getActions';
 import { addToUserSaved, addToUserCurrent } from '../../actions/PUT/putActions';
 import { removeFromUserSaved } from '../../actions/DELETE/deleteActions';
@@ -22,21 +22,8 @@ export class PathOverview extends React.Component {
     this.props.dispatch(removeFromUserSaved(id));
   }
 
-  // ADD CLASSROOM REDIRECT FOR ENTIRE LI ON DESKTOP/LAPTOP DISPLAYS
-  // linkToClassroom() {
-  //   if (this.props.status === 'saved') {
-  //     this.removeFromSaved(); 
-  //     this.props.dispatch(addToUserCurrent(this.props.path.id));
-  //   } else if (this.props.status !== 'current' && this.props.status !== 'completed') {
-  //     this.props.dispatch(addToUserCurrent(this.props.path.id));
-  //   }
-  //   return <Redirect to={`/dashboard/classroom/${this.props.path.id}/${index}`}></Redirect>;
-  // }
-  
-
   render() {
     if (!this.props.loading) {
-      // add click event to redirect user to correct classroom
       let pathProgressBtn;
       if (this.props.path.status === 'current') {
         pathProgressBtn = <Link to={`/dashboard/classroom/${this.props.path.id}/${this.props.lastVideoIndex}`}>
@@ -83,12 +70,10 @@ export class PathOverview extends React.Component {
                 alt="Path Thumbnail" />
             </div>
             <div>
-              {/* in css add checkmark to h2 with ::after */}
               <h2 className={videoTitleClass}>{item.title}</h2>
               <p>{item.description}</p>
             </div>
             <div className="go-btn-container">
-              {/* add link to video's classroom */}
               <Link 
                 className="go-btn"
                 onClick={() => {
