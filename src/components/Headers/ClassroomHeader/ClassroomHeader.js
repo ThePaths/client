@@ -23,8 +23,9 @@ export class ClassroomHeader extends React.Component {
         <nav className="site-nav">
           <ul>
             <li>
-              <Link className="nav-link" to='/dashboard/explore'>Explore|</Link>
+              <Link className="nav-link" to='/dashboard/explore'>Explore</Link>
             </li>
+            <span>|</span>
             <li>
               <Link className="nav-link" to='/dashboard'>Dashboard</Link>
             </li>
