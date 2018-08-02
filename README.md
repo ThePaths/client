@@ -1,8 +1,8 @@
-# The Path's Frontend
+# Melata's Frontend
 
 ## Application details
 
-  The Paths is a one stop shop for the coding newbie. It has instructional videos along with an essential IDE to code along with on the same screen. Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry. Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.
+  Melata is a one stop shop for the coding newbie. It has instructional videos along with an essential IDE to code along with on the same screen. Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry. Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.
 
 
 ## Where to find
