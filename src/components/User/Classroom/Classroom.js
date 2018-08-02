@@ -18,7 +18,7 @@ export class Classroom extends React.Component {
   componentDidUpdate() {
     const id = this.props.match.params.id;
     const index = parseInt(this.props.match.params.videoIndex, 10);
-    this.props.dispatch(fetchStatus())
+    this.props.dispatch(fetchStatus(id))
     if (this.props.status === 'current') {
       this.props.dispatch(changeLastVideoIndex(id, index));
     }
