@@ -32,7 +32,7 @@ export class MainHeader extends React.Component {
 
     for (let i = 0; i <= mainHeaderUrls.length; i++) {
       if (url === mainHeaderUrls[i]) {
-        linkText = 'Login/Register';
+        linkText = 'Login';
         navClassList += ' hide';
       }
     }
@@ -41,7 +41,7 @@ export class MainHeader extends React.Component {
       linkText = 'Sign Out';
       linkTo = '/';
     } else {
-      linkText = 'Login/Register';
+      linkText = 'Login';
       linkTo = '/auth';
     }
 

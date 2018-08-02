@@ -57,6 +57,11 @@ ul {
   display:flex;
 }
 
+.form-redirect-container a {
+  width: 100px;
+  text-align: center;
+}
+
 .form-redirect-link {
   border: 2px solid #2B2B2B;
   font-size: 0.75em;
