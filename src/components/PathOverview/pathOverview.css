@@ -52,6 +52,8 @@
 .go-btn {
   text-decoration: none;
   color: #495355;
+
+  padding: 2em;
 }
 
 .path-overview-container h1,
@@ -191,5 +193,27 @@
 
   .go-btn-container {
     flex-basis: 40%;
+  }
+
+  .go-btn {
+    padding: 3em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .go-btn {
+    padding: 5em;
+  }
+}
+
+@media (min-width: 1600px) {
+  .go-btn {
+    padding: 6em;
+  }
+}
+
+@media (min-width: 1750px) {
+  .go-btn {
+    padding: 7em;
   }
 }
