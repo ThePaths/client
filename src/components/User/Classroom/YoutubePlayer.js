@@ -37,7 +37,7 @@ export default class YoutubePlayer extends React.Component {
         <div className="video-info-section">
           
           <footer className="video-footer">
-            <h3>Show Notes</h3>
+            <h2>Show Notes</h2>
             <p className="video-recap">
               {this.props.video.description}
             </p>

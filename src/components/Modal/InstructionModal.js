@@ -32,7 +32,8 @@ export class InstructionModal extends React.Component {
              onClose={ this.onCloseModal } 
              center
              classNames= {{
-               modal: 'info-modal'
+               modal: 'info-modal',
+               closeButton: 'info-btn'
              }}
              >
         <p>This is the classroom page of The Paths!</p>

@@ -59,7 +59,7 @@ export class MainHeader extends React.Component {
               <li>
                 <Link className="nav-link" to='/dashboard/explore'>Explore</Link>
               </li>
-              <span>|</span>
+              <li><span>|</span></li>
               <li>
                 <Link className="nav-link"to='/dashboard'>Dashboard</Link>
               </li>
