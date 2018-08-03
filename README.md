@@ -1,8 +1,8 @@
-# The Path's Frontend
+# Melata's Frontend
 
 ## Application details
 
-  The Paths is a one stop shop for the coding newbie. It has instructional videos along with an essential IDE to code along with on the same screen. Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry. Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.
+  Melata is a one stop shop for the coding newbie. It has instructional videos along with an essential IDE to code along with on the same screen. Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry. Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.
 
 
 ## Where to find
@@ -47,19 +47,26 @@ You can visit  [https://the-paths.firebaseapp.com/](https://the-paths.firebaseap
 - React-Redux was used for the management of the state
 
 ## Screenshots
-![landing page guest](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9sYW5kaW5nLXBnLWd1ZXN0/grid)  
+### Guest Landing Page
+![landing page guest](./assets/img/landing-pg-guest.png "landing page guest screenshot")  
 
-![login page](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250057/c2l0ZV9zY3JlZW5zaG90cy9sb2dpbi1wZw==/grid)  
+### Login Page
+![login page](./assets/img/login-pg.png "login page screenshot")  
 
-![guest classroom](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9ndWVzdC1jbGFzc3Jvb20=/grid)  
+### Guest Classroom 
+![guest classroom](./assets/img/guest-classroom.png "guest classroom screenshot")  
 
-![dashboard](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250057/c2l0ZV9zY3JlZW5zaG90cy9kYXNoYm9hcmQ=/grid)  
+### Dashboard
+![dashboard](./assets/img/dashboard.png "dashboard screenshot")  
 
-![explore](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy9leHBsb3JlLXBn/grid)  
+### Explore Page
+![explore](./assets/img/explore-pg.png "explore page screenshot")  
 
-![path overview](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250064/c2l0ZV9zY3JlZW5zaG90cy9wYXRoLW92ZXJ2aWV3/grid)  
+### Path Overview 
+![path overview](./assets/img/path-overview.png "path overview screenshot")  
 
-![user classroom](https://res-console.cloudinary.com/thepaths/thumbnails/v1/image/upload/v1533250065/c2l0ZV9zY3JlZW5zaG90cy91c2VyLWNsYXNzcm9vbQ==/grid)  
+### User Classroom
+![user classroom](./assets/img/user-classroom.png "user classroom screenshot")  
 
 ## Contributions
 
