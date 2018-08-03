@@ -15,13 +15,13 @@ class ExplorePaths extends React.Component {
     const paths = this.props.paths.map((path, index) => {
       return (
         <li key={ index } className="exploreBoxes">
-        <Link to={`/dashboard/overview/${path.id}`}>         
-          <img 
-            src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } 
-            alt=''className="heroImage"/>
+          <Link to={`/dashboard/overview/${path.id}`}>         
+            <img 
+              src={ `https://res.cloudinary.com/thepaths/image/upload/v1533070510/thumbnails/${path.id}.png` } 
+              alt=''className="heroImage"/>
             
-          <h3 className='path-title'>{ path.title }</h3> 
-          <p className='path-description'>{ path.description }</p>         
+            <h3 className='path-title'>{ path.title }</h3> 
+            <p className='path-description'>{ path.description }</p>         
           </Link>
         </li>
       );

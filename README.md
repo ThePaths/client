@@ -47,7 +47,26 @@ You can visit  [https://the-paths.firebaseapp.com/](https://the-paths.firebaseap
 - React-Redux was used for the management of the state
 
 ## Screenshots
+### Guest Landing Page
+![landing page guest](./assets/img/landing-pg-guest.png "landing page guest screenshot")  
 
+### Login Page
+![login page](./assets/img/login-pg.png "login page screenshot")  
+
+### Guest Classroom 
+![guest classroom](./assets/img/guest-classroom.png "guest classroom screenshot")  
+
+### Dashboard
+![dashboard](./assets/img/dashboard.png "dashboard screenshot")  
+
+### Explore Page
+![explore](./assets/img/explore-pg.png "explore page screenshot")  
+
+### Path Overview 
+![path overview](./assets/img/path-overview.png "path overview screenshot")  
+
+### User Classroom
+![user classroom](./assets/img/user-classroom.png "user classroom screenshot")  
 
 ## Contributions
 

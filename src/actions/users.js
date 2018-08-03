@@ -25,16 +25,3 @@ export const registerUser = user => dispatch => {
             }
         });
 };
-
-// export const setPaths = (id) => (dispatch, getState) => {
-//     fetch(`${API_BASE_URL}/api/userpaths`, {
-//         method: 'POST',
-//         headers: {
-//             // Provide our auth token as credentials
-//             // 'Content-Type': 'application/json',
-//             Authorization: `Bearer ${authToken}`
-//         },
-//         body: JSON.stringify({ pathId })
-//     })
-//     .then(res => res.json())
-// }

@@ -194,6 +194,3 @@ export const fetchPathOverview = (id) => (dispatch, getState) => {
     .catch(error => dispatch(getPathOverviewError(error)));
 };
 
-
-
-///------MISSING GET COMPLETED PATHS
