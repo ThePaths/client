@@ -20,6 +20,7 @@ export class RegistrationForm extends React.Component {
 
   render() {
     return (
+      
       <form
         id="register-form"
         className="register-form auth"
@@ -27,12 +28,14 @@ export class RegistrationForm extends React.Component {
           this.onSubmit(values)
         )}>
         <h2>Sign Up to Learn</h2>
+        
         <Field
           component={ Input } 
           type="email" 
           name="email" 
           label='Email'
         />
+       
         <Field
           component={ Input }
           type="text"
@@ -40,6 +43,7 @@ export class RegistrationForm extends React.Component {
           validate={ [required, nonEmpty, isTrimmed] }
           label='Username'
         />
+       
         <Field
           component={ Input }
           type="password"
