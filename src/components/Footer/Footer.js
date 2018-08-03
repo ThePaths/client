@@ -11,11 +11,11 @@ export default class Footer extends React.Component {
             target="_blank" 
             rel="noopener noreferrer">Jimm</a>, 
           <a className="site-creator-link" 
-            href="https://github.com/Dameon1" 
+            href="https://www.dameonmendoza.com/" 
             target="_blank" 
             rel="noopener noreferrer"> Dameon</a>, 
           <a className="site-creator-link" 
-            href="https://www.dameonmendoza.com/" 
+            href="https://www.sayedkhan.work/"
             target="_blank" 
             rel="noopener noreferrer"> Sayed</a>, &amp;
           <a className="site-creator-link" 
