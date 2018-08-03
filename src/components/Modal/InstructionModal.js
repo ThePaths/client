@@ -36,7 +36,7 @@ export class InstructionModal extends React.Component {
                closeButton: 'info-btn'
              }}
              >
-        <p>This is the classroom page of The Paths!</p>
+        <p>This is the classroom page of Melata!</p>
         <p>
           Here you have access to the first video of the path and a repl.it for that video.
           The repl.it allows you to code along with and try the things you learned in the video.
