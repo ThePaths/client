@@ -34,7 +34,7 @@ export class LandingPage extends React.Component {
           onClick={ () => window.location.href = `/classroom/${path.id}` } 
           className="landingPageBoxes">
           <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.id}.png`}
-            alt="FIX" // FIX THISSSSSSS
+            alt={`image of ${path.title}`}
             className="heroImage"
           />
           <h2 className="sample-path-title">{ path.title }</h2>
@@ -49,7 +49,7 @@ export class LandingPage extends React.Component {
           <h2>Welcome to Melata</h2>
           <p className="site-introduction">Melata is a one stop shop for the coding newbie.
            It has instructional videos along with an essential IDE to code along with on the same screen.
-            Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry.
+            Users can pick through an assortment of languages and frameworks to learn the latest 'best-practices' in the industry.
            Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.</p>
         </div>
         <ul className='gp-container'>{ paths }</ul>
