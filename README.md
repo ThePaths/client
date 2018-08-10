@@ -7,7 +7,8 @@
 
 ## Where to find
 
-You can visit  [https://the-paths.firebaseapp.com/](https://the-paths.firebaseapp.com/)
+You can visit  [https://melata-app.firebaseapp.com/](https://the-paths.firebaseapp.com/) 
+You can find our API documentation [here](https://github.com/ThePaths/firebase-server)
 
 ## Instructions
 
