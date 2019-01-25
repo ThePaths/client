@@ -1,5 +1,5 @@
 # Melata's Frontend
-
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ## Application details
 
   Melata is a one stop shop for the coding newbie. It has instructional videos along with an essential IDE to code along with on the same screen. Users can pick through an assortment of languages and frameworks to learn the lastest 'best-practices' in the industry. Sample code is provided with each video to be able to follow along with the developer inspired instructional videos.
