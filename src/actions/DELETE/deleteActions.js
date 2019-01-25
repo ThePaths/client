@@ -1,82 +1,81 @@
-import { API_BASE_URL } from '../../config';
-import { fetchSavedPaths , fetchStatus } from '../GET/getActions'
+import { API_BASE_URL } from "../../config";
+import { fetchSavedPaths, fetchStatus } from "../GET/getActions";
 
-// DELETE
-export const DELETE_CURRENT_COURSE_REQUEST = 'DELETE_CURRENT_COURSE_REQUEST';
+export const DELETE_CURRENT_COURSE_REQUEST = "DELETE_CURRENT_COURSE_REQUEST";
 export const deleteCurrentCourseRequest = () => ({
-  type: DELETE_CURRENT_COURSE_REQUEST,
+  type: DELETE_CURRENT_COURSE_REQUEST
 });
 
-export const DELETE_CURRENT_COURSE_SUCCESS = 'DELETE_CURRENT_COURSE_SUCCESS';
+export const DELETE_CURRENT_COURSE_SUCCESS = "DELETE_CURRENT_COURSE_SUCCESS";
 export const deleteCurrentCourseSuccess = () => ({
-  type: DELETE_CURRENT_COURSE_SUCCESS,
+  type: DELETE_CURRENT_COURSE_SUCCESS
 });
 
-export const DELETE_CURRENT_COURSE_ERROR = 'DELETE_CURRENT_COURSE_ERROR';
+export const DELETE_CURRENT_COURSE_ERROR = "DELETE_CURRENT_COURSE_ERROR";
 export const deleteCurrentCourseError = error => ({
   type: DELETE_CURRENT_COURSE_ERROR,
   error
 });
 
-export const DELETE_SAVED_COURSE_REQUEST = 'DELETE_SAVED_COURSE_REQUEST';
+export const DELETE_SAVED_COURSE_REQUEST = "DELETE_SAVED_COURSE_REQUEST";
 export const deleteSavedCourseRequest = () => ({
-  type: DELETE_SAVED_COURSE_REQUEST,
+  type: DELETE_SAVED_COURSE_REQUEST
 });
 
-export const DELETE_SAVED_COURSE_SUCCESS = 'DELETE_SAVED_COURSE_SUCCESS';
+export const DELETE_SAVED_COURSE_SUCCESS = "DELETE_SAVED_COURSE_SUCCESS";
 export const deleteSavedCourseSuccess = () => ({
-  type: DELETE_SAVED_COURSE_SUCCESS,
+  type: DELETE_SAVED_COURSE_SUCCESS
 });
 
-export const DELETE_SAVED_COURSE_ERROR = 'DELETE_SAVED_COURSE_ERROR';
+export const DELETE_SAVED_COURSE_ERROR = "DELETE_SAVED_COURSE_ERROR";
 export const deleteSavedCourseError = error => ({
   type: DELETE_SAVED_COURSE_ERROR,
   error
 });
 
-// CLEAR STATE
-export const CLEAR_USER_PATH_STATE = 'CLEAR_USER_PATH_STATE';
+export const CLEAR_USER_PATH_STATE = "CLEAR_USER_PATH_STATE";
 export const clearUserPathState = () => ({
-  type: CLEAR_USER_PATH_STATE,
-})
+  type: CLEAR_USER_PATH_STATE
+});
 
-//Delete
-export const removeFromUserSaved = (pathId) => (dispatch, getState) => {
+export const removeFromUserSaved = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(deleteSavedCourseRequest())
+  dispatch(deleteSavedCourseRequest());
   fetch(`${API_BASE_URL}/userpaths/unsave`, {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      // Provide our auth token as credentials
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({ pathId })
   })
-  .then(res => {
-    if (!res.ok) { return Promise.reject(res.statusText)}
-    return res.json();
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
     })
     .then(() => dispatch(fetchSavedPaths()))
     .then(() => dispatch(fetchStatus(pathId)))
     .catch(err => dispatch(deleteSavedCourseError(err)));
 };
 
-//Delete
 export const removeCourseFromUserCurrent = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(deleteCurrentCourseRequest())
+  dispatch(deleteCurrentCourseRequest());
   fetch(`${API_BASE_URL}/userpaths/unstart`, {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({ pathId })
   })
     .then(res => {
-      if (!res.ok) { return Promise.reject(res.statusText)}
-        dispatch(deleteCurrentCourseSuccess())
-      })
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      dispatch(deleteCurrentCourseSuccess());
+    })
     .catch(err => dispatch(deleteCurrentCourseError(err)));
 };

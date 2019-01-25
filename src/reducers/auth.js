@@ -4,7 +4,7 @@ import {
   AUTH_REQUEST,
   AUTH_SUCCESS,
   AUTH_ERROR
-} from '../actions/auth';
+} from "../actions/auth";
 
 const initialState = {
   authToken: null, // authToken !== null does not mean it has been validated
@@ -19,21 +19,21 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         authToken: action.authToken
-      }
+      };
 
     case CLEAR_AUTH:
       return {
         ...state,
         authToken: null,
         currentUser: null
-      }
+      };
 
     case AUTH_REQUEST:
       return {
         ...state,
         loading: true,
         error: null
-      }
+      };
 
     case AUTH_SUCCESS:
       return {
@@ -41,18 +41,18 @@ const authReducer = (state = initialState, action) => {
         loading: false,
         error: null,
         currentUser: action.currentUser
-      }
+      };
 
     case AUTH_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error
-      }
+      };
 
-    default: 
-      return state
+    default:
+      return state;
   }
-}
+};
 
-export default authReducer
+export default authReducer;

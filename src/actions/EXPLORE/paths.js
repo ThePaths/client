@@ -1,24 +1,24 @@
-import { API_BASE_URL } from '../../config';
-import { authSuccess } from '../auth';
+import { API_BASE_URL } from "../../config";
+import { authSuccess } from "../auth";
 
-export const PATHS_REQUEST = 'PATHS_REQUEST';
+export const PATHS_REQUEST = "PATHS_REQUEST";
 export const pathsRequest = () => ({
   type: PATHS_REQUEST
 });
 
-export const PATHS_SUCCESS = 'PATHS_SUCCESS';
+export const PATHS_SUCCESS = "PATHS_SUCCESS";
 export const pathsSuccess = paths => ({
   type: PATHS_SUCCESS,
   paths
 });
 
-export const PATHS_ERROR = 'PATHS_ERROR';
+export const PATHS_ERROR = "PATHS_ERROR";
 export const pathsError = error => ({
   type: PATHS_ERROR,
   error
 });
 
-export const LESSON_SUCCESS = 'LESSON_SUCCESS';
+export const LESSON_SUCCESS = "LESSON_SUCCESS";
 export const lessonSuccess = lesson => ({
   type: LESSON_SUCCESS,
   lesson
@@ -28,7 +28,7 @@ export const fetchPaths = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(pathsRequest());
   fetch(`${API_BASE_URL}/paths`, {
-    method: 'GET',
+    method: "GET",
     headers: {
       // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
@@ -39,16 +39,16 @@ export const fetchPaths = () => (dispatch, getState) => {
     .catch(error => dispatch(pathsError(error)));
 };
 
-export const addToCurrent = (pathId) => (dispatch, getState) => {
+export const addToCurrent = pathId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   fetch(`${API_BASE_URL}/paths/start`, {
-    method: 'POST',
+    method: "POST",
     headers: {
       // Provide our auth token as credentials
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${authToken}`
     },
-    body: JSON.stringify({pathId})
+    body: JSON.stringify({ pathId })
   })
     .then(res => res.json())
     .then(data => {

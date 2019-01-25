@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import '../UserPaths/userPaths.css';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import "../UserPaths/userPaths.css";
 
 export function CurrentPaths(props) {
   let currentPath;
@@ -15,14 +15,20 @@ export function CurrentPaths(props) {
         }
       }
       if (divide > 0) {
-        progress = (divide / path.completedVideos.length) * 100
+        progress = (divide / path.completedVideos.length) * 100;
       } else {
-        progress = divide
+        progress = divide;
       }
       return (
-        <li className='path' key={index}>
+        <li className="path" key={index}>
           <Link to={`/dashboard/overview/${path.path.id}`}>
-            <img src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${path.path.id}.png`} alt='' className="heroImage" />
+            <img
+              src={`https://res.cloudinary.com/thepaths/image/upload/v1533069112/thumbnails/${
+                path.path.id
+              }.png`}
+              alt=""
+              className="heroImage"
+            />
             <p>{path.path.title}</p>
             <p>{progress}% completed</p>
           </Link>
@@ -30,20 +36,20 @@ export function CurrentPaths(props) {
       );
     });
   } else {
-    currentPath = <li className='empty' >
-      <p>You are currently following no paths, go to explore to find some</p>
-      <Link to={'/dashboard/explore'}><button className="currentPathsBUtton"
-      >Explore</button>
-      </Link>
-    </li>
+    currentPath = (
+      <li className="empty">
+        <p>You are currently following no paths, go to explore to find some</p>
+        <Link to={"/dashboard/explore"}>
+          <button className="currentPathsBUtton">Explore</button>
+        </Link>
+      </li>
+    );
   }
 
   return (
     <div className="Paths-Container">
       <h2>Keep Learning</h2>
-      <ul>
-        {currentPath}
-      </ul>
+      <ul>{currentPath}</ul>
     </div>
   );
 }

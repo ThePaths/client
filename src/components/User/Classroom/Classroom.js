@@ -1,15 +1,19 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { fetchPathOverview, fetchStatus } from '../../../actions/GET/getActions';
-import { changeLastVideoIndex, userCompletedVideo } from '../../../actions/PUT/putActions';
-import './classroom.css';
-import Repl from '../../Repl/Repl';
+import React from "react";
+import { connect } from "react-redux";
+import {
+  fetchPathOverview,
+  fetchStatus
+} from "../../../actions/GET/getActions";
+import {
+  changeLastVideoIndex,
+  userCompletedVideo
+} from "../../../actions/PUT/putActions";
+import "./classroom.css";
+import Repl from "../../Repl/Repl";
 
-import YoutubePlayer from './YoutubePlayer';
-
+import YoutubePlayer from "./YoutubePlayer";
 
 export class Classroom extends React.Component {
-
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.dispatch(fetchPathOverview(id));
@@ -18,8 +22,8 @@ export class Classroom extends React.Component {
   componentDidUpdate() {
     const id = this.props.match.params.id;
     const index = parseInt(this.props.match.params.videoIndex, 10);
-    this.props.dispatch(fetchStatus(id))
-    if (this.props.status === 'current') {
+    this.props.dispatch(fetchStatus(id));
+    if (this.props.status === "current") {
       this.props.dispatch(changeLastVideoIndex(id, index));
     }
   }
@@ -31,12 +35,10 @@ export class Classroom extends React.Component {
     nextIndex += 1;
     if (nextIndex === this.props.overview.videos.length) {
       this.props.history.push(`/dashboard/classroom/${id}/0`);
-    
-     
     } else {
       this.props.history.push(`/dashboard/classroom/${id}/${nextIndex}`);
-    }}
-
+    }
+  }
 
   handleCompletedCourses() {
     const videoIndex = this.props.match.params.videoIndex;
@@ -44,19 +46,12 @@ export class Classroom extends React.Component {
     this.props.dispatch(userCompletedVideo(pathId, videoIndex));
   }
 
-
   render() {
-
     if (!this.props.loading) {
       const index = parseInt(this.props.match.params.videoIndex, 10);
 
       return (
-   
-    
         <section className="classroom-section">
-          
-          
-          
           <YoutubePlayer
             index={index}
             completedVideos={this.props.completedVideos}
@@ -65,11 +60,14 @@ export class Classroom extends React.Component {
             title={this.props.overview.title}
             creatorLink={this.props.overview.videos[index].creator.youtube}
             creatorName={this.props.overview.videos[index].creator.name}
-            nextBtnClicked={() => this.nextBtnClicked()} />
-          <Repl repl={this.props.overview.videos[index].replit} title="replit" />
+            nextBtnClicked={() => this.nextBtnClicked()}
+          />
+          <Repl
+            repl={this.props.overview.videos[index].replit}
+            title="replit"
+          />
           {/* <InstructionModal /> */}
         </section>
-       
       );
     }
     return null;

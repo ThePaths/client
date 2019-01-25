@@ -1,11 +1,11 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {clearAuth} from '../../../actions/auth';
-import {clearUserPathState} from '../../../actions/DELETE/deleteActions';
-import {clearAuthToken} from '../../../local-storage';
-import InstructionModal from '../../Modal/InstructionModal';
-import './ClassroomHeader.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { clearAuth } from "../../../actions/auth";
+import { clearUserPathState } from "../../../actions/DELETE/deleteActions";
+import { clearAuthToken } from "../../../local-storage";
+import InstructionModal from "../../Modal/InstructionModal";
+import "./ClassroomHeader.css";
 export class ClassroomHeader extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
@@ -17,40 +17,57 @@ export class ClassroomHeader extends React.Component {
     let headerBtn;
     let siteNav;
     if (this.props.loggedIn) {
-      headerBtn = <Link className="form-redirect-link" 
-        onClick={ () => this.logOut() } to='/'>Sign Out</Link>;
-      siteNav = <div className="navLinks">
-        <nav className="site-nav">
-          <ul>
-            <li>
-              <Link className="nav-link" to='/dashboard/explore'>Explore</Link>
-            </li>
-            <li><span>|</span></li>
-            <li>
-              <Link className="nav-link" to='/dashboard'>Dashboard</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>;
+      headerBtn = (
+        <Link
+          className="form-redirect-link"
+          onClick={() => this.logOut()}
+          to="/"
+        >
+          Sign Out
+        </Link>
+      );
+      siteNav = (
+        <div className="navLinks">
+          <nav className="site-nav">
+            <ul>
+              <li>
+                <Link className="nav-link" to="/dashboard/explore">
+                  Explore
+                </Link>
+              </li>
+              <li>
+                <span>|</span>
+              </li>
+              <li>
+                <Link className="nav-link" to="/dashboard">
+                  Dashboard
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      );
     } else {
-      headerBtn = <Link className="form-redirect-link" to='/auth'>Login</Link>;
-      siteNav = '';
+      headerBtn = (
+        <Link className="form-redirect-link" to="/auth">
+          Login
+        </Link>
+      );
+      siteNav = "";
     }
 
     return (
       <header className="main-header classroom-header">
-        <div className='site-logo-container'>
-          <Link to='/'>
-            <h1 className='site-logo'>Melata</h1>
+        <div className="site-logo-container">
+          <Link to="/">
+            <h1 className="site-logo">Melata</h1>
           </Link>
         </div>
         {siteNav}
         <div className="modalContainer">
-          <InstructionModal/>
+          <InstructionModal />
         </div>
-        <div className='form-redirect-container'>
-          {headerBtn}
-        </div>
+        <div className="form-redirect-container">{headerBtn}</div>
       </header>
     );
   }
