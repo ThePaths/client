@@ -40,6 +40,7 @@ export const fetchGuestPaths = () => dispatch => {
     method: "GET"
   })
     .then(res => {
+      console.log(res)
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
