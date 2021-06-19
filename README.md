@@ -9,7 +9,7 @@
 
 You can visit  [https://melata-app.firebaseapp.com/](https://the-paths.firebaseapp.com/) for the live site.  
 You can find our API documentation [here](https://github.com/ThePaths/firebase-server).
-Something
+
 ## Instructions
 
 - As a guest you can visit the first video in the path of your choosing.
